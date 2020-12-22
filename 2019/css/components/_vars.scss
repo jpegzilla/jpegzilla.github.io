@@ -1,0 +1,322 @@
+@import url("https://fonts.googleapis.com/css?family=Archivo+Black&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Crimson+Text&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Nunito+Sans:400,800i,900i&display=swap");
+
+// @import "./anim.scss";
+
+$black: #070109;
+$offwhite: #f8e7fd;
+$white: #ffffff;
+
+$pink: #ebc9ee;
+$purple-2: #6a2c89;
+$purple: #7a104f;
+$red: #b5283b;
+
+$miku: #39c5bb;
+$luka: pink;
+$meiko: #d80000;
+
+$tflag-blue: #91abf7;
+$tflag-pink: #f8a0cb;
+$tflag-white: #edeefd;
+
+$pflag-pink: #e0005d;
+$pflag-yellow: #e0d100;
+$pflag-blue: #007ce0;
+
+$yellow: #dbd361;
+
+$maingradient: linear-gradient(to right, $pink, $purple);
+$lukameikogradient: linear-gradient(
+  35deg,
+  transparentize($purple-2, 0.2),
+  transparentize($luka, 0.7)
+);
+
+$sharetech: "Share Tech Mono", monospace;
+$archivoblack: "Archivo Black", sans-serif;
+$crimsontext: "Crimson Text", serif;
+$nunitosans: "Nunito Sans", sans-serif;
+
+$p-xl: 8rem;
+$p-l: 4rem;
+$p-m: 2rem;
+$p-s: 1rem;
+
+$breakpoint-small: 1500px;
+$breakpoint-tiny: 1200px;
+$breakpoint-miniscule: 961px;
+
+$rotate: rotate 10s linear infinite;
+
+@mixin flexCenterLeft {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin worksBox {
+  padding: 0 16rem;
+
+  @media (max-width: $breakpoint-small) {
+    padding: 0 4rem;
+  }
+
+  @media (max-width: $breakpoint-tiny) {
+    padding: 0 2rem;
+  }
+
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &,
+  * {
+    overflow: hidden;
+  }
+
+  .work-title {
+    opacity: 0;
+    color: $black;
+    transition: color 0.3s;
+    font-family: $nunitosans;
+    margin-bottom: 0.5rem;
+    font-weight: lighter;
+    display: flex;
+
+    body.dark & {
+      color: $white;
+      transition: color 0.3s;
+    }
+  }
+
+  &.visible .work-title {
+    animation: flickerIn 1.25s forwards;
+  }
+
+  .work-date {
+    color: $black;
+    transition: color 0.3s;
+    font-weight: 800;
+    font-style: italic;
+
+    body.dark & {
+      color: $pflag-pink;
+      transition: color 0.3s;
+    }
+  }
+
+  .work-sub {
+    opacity: 0;
+    transition: color 0.3s, opacity 2s;
+    margin-top: 1rem;
+
+    p {
+      font-family: $nunitosans;
+      color: black;
+      transition: color 0.3s;
+      font-size: 1rem;
+
+      body.dark & {
+        color: $white;
+        transition: color 0.3s;
+      }
+    }
+
+    .work-scope {
+      font-style: italic;
+    }
+  }
+
+  &.visible .work-sub {
+    opacity: 1;
+    transition: color 0.3s, opacity 2s;
+  }
+}
+
+@mixin fullPadding {
+  padding: 2rem 16rem;
+
+  @media (max-width: $breakpoint-small) {
+    padding: 2rem 4rem;
+  }
+
+  @media (max-width: $breakpoint-tiny) {
+    padding: 1rem 2rem;
+  }
+}
+
+@mixin sectionHeader {
+  .section-header {
+    width: 100%;
+    display: flex;
+    color: $black;
+    transition: color 0.3s;
+    padding: 10rem 16rem 2rem 16rem;
+
+    @media (max-width: $breakpoint-small) {
+      padding: 8rem 4rem 2rem 4rem;
+    }
+
+    @media (max-width: $breakpoint-tiny) {
+      padding: 6rem 2rem 2rem 2rem;
+    }
+
+    body.dark & {
+      color: $white;
+      transition: color 0.3s;
+    }
+
+    div {
+      display: flex;
+      height: auto;
+      flex-grow: 1;
+      padding-bottom: 0.5rem;
+    }
+
+    .left {
+      align-items: flex-start;
+      font-family: $sharetech;
+      font-size: 1rem;
+      justify-content: flex-start;
+    }
+
+    .right {
+      align-items: flex-end;
+      font-family: $nunitosans;
+      font-size: 2rem;
+      justify-content: flex-end;
+
+      @media (max-width: $breakpoint-tiny) {
+        font-size: 1.7rem;
+      }
+    }
+
+    &,
+    * {
+      overflow: hidden;
+    }
+
+    .left,
+    .right {
+      span {
+        opacity: 0;
+      }
+    }
+
+    &.visible {
+      .left {
+        span {
+          animation: flickerIn 1s ease forwards;
+        }
+      }
+      .right {
+        span {
+          animation: fadeIn 1s ease forwards;
+        }
+      }
+
+      .right {
+        span {
+          animation-delay: 1s;
+        }
+      }
+    }
+  }
+
+  .sec-header {
+    div {
+      transition: border-color 0.3s border-width 0.3s;
+      border-bottom: 2px dashed $black;
+
+      body.dark & {
+        transition: border-color 0.3s border-width 0.3s;
+        border-bottom: 2px dashed $white;
+      }
+    }
+    margin-bottom: 1rem;
+  }
+}
+
+@mixin colorSwitch {
+  color: $black;
+  transition: 0.3s color;
+
+  body.dark & {
+    color: $white;
+    transition: 0.3s color;
+  }
+}
+
+@mixin specialSpanList {
+  span:not(:first-of-type) {
+    display: inline-block;
+    font-size: 1.8rem;
+    a {
+      color: $black;
+      transition: color 0.3s;
+
+      body.dark & {
+        color: $pflag-pink;
+        transition: color 0.3s;
+      }
+      text-decoration: none;
+
+      .arrow {
+        display: inline-block;
+        transition: padding 0.4s ease;
+      }
+
+      &:hover .arrow {
+        transition: padding 0.4s ease;
+        padding-left: 1rem;
+      }
+    }
+
+    opacity: 0;
+    pointer-events: none;
+
+    &.visible {
+      animation: fadeInStop 2.5s ease-out forwards;
+    }
+  }
+}
+
+@mixin layoutDebugger {
+  * {
+    background-color: rgba(255, 0, 0, 0.2);
+  }
+  * * {
+    background-color: rgba(0, 255, 0, 0.2);
+  }
+  * * * {
+    background-color: rgba(0, 0, 255, 0.2);
+  }
+  * * * * {
+    background-color: rgba(255, 0, 255, 0.2);
+  }
+  * * * * * {
+    background-color: rgba(0, 255, 255, 0.2);
+  }
+  * * * * * * {
+    background-color: rgba(255, 255, 0, 0.2);
+  }
+  * * * * * * * {
+    background-color: rgba(255, 0, 0, 0.2);
+  }
+  * * * * * * * * {
+    background-color: rgba(0, 255, 0, 0.2);
+  }
+  * * * * * * * * * {
+    background-color: rgba(0, 0, 255, 0.2);
+  }
+}

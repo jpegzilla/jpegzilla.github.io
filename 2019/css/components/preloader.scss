@@ -1,0 +1,114 @@
+@import "_anim";
+@import "_vars";
+
+#preloader {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: $black;
+  isolation: isolate;
+  opacity: 1;
+  transition: opacity 0.3s;
+
+  &.fadeout {
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  * {
+    overflow: hidden;
+  }
+
+  .preloader-top-layer {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+
+    .preloader-icon-box {
+      padding: 4rem 0 2rem 4rem;
+
+      @media (max-width: $breakpoint-small) {
+        padding: 2rem 0 1rem 1rem;
+      }
+
+      height: auto;
+      width: auto;
+      position: relative;
+      left: 0;
+      bottom: 0;
+      overflow: visible;
+      .preloader-icon {
+        animation: steppedRotation 4s infinite forwards ease;
+        height: 1rem;
+        width: 1rem;
+        background-color: $white;
+
+        &.flicker-out {
+          animation: flickerOut 1s forwards linear;
+        }
+      }
+    }
+
+    .preloader-text {
+      padding: 0 0 0 4rem;
+      color: $white;
+      line-height: 1.46;
+      font-size: 1rem;
+      height: auto;
+      position: relative;
+      font-family: $sharetech;
+      word-break: break-word;
+      overflow-wrap: break-word;
+      -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+      hyphens: auto;
+
+      @media (max-width: $breakpoint-small) {
+        padding: 0 0 0 1rem;
+        font-size: 1rem;
+        max-width: calc(100vw - 1rem);
+      }
+
+      &.flicker-out {
+        animation: flickerOut 1s forwards linear;
+      }
+
+      .blinking-cursor {
+        height: 1rem;
+        top: 2px;
+        min-width: 2px;
+        position: relative;
+        margin-left: 4px;
+        background: $white;
+        display: inline-block;
+        &.blinking {
+          animation: blinking-cursor 0.8s infinite ease-in-out;
+        }
+      }
+    }
+  }
+
+  .preloader-bottom-layer {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .line-expander {
+      will-change: height, width;
+      height: 0;
+      width: 0;
+      background-color: $white;
+      &.expand {
+        animation: lineExpander 1.4s cubic-bezier(0.42, 0.66, 0.39, 0.76)
+          forwards;
+      }
+    }
+  }
+}

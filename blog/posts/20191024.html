@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="I am a web designer and creative developer. this is my blog, where I document interesting things I learn on the web.">
+  <meta name="author" content="jpegzilla">
+  <meta name="robots" content="index, follow">
+  <meta property="og:description" content="I am a web designer and creative developer. this is my blog, where I document interesting things I learn on the web.">
+  <meta property="og:url" content="https://jpegzilla.com">
+  <meta property="og:site_name" content="jpegzilla - web design">
+  <meta property="og:image" content="https://jpegzilla.com/css/img/21af09332037a999a3f58984cdd0cefe.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:site" content="@jpegzilla">
+  <meta name="twitter:creator" content="@jpegzilla">
+  <meta name="twitter:title" content="jpegzilla - web design blog">
+  <meta name="twitter:description" content="jpegzilla is a web designer, creative developer, and digital artist. come make something cool with me.">
+  <meta name="twitter:image" content="https://jpegzilla.com/css/img/21af09332037a999a3f58984cdd0cefe.png">
+  <meta name="twitter:card" content="summary-large-image">
+  <meta name="application-name" content="jpegzilla.com/blog" />
+  <link rel="author" href="http://jpegzilla.com/humans.txt">
+  <title>how to normalize an array to a specific range in javascript &mdash; 2019 10 24</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141114501-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-141114501-1');
+  </script>
+</head>
+<style>
+  body {
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 38rem;
+    margin: 40px auto;
+    padding: 2rem;
+    color: #222;
+    font-family: sans-serif;
+    background-color: #eee
+  }
+
+  h1,
+  h2,
+  h3 {
+    line-height: 1.2
+  }
+
+  span.i {
+    font-style: italic
+  }
+
+  span.b {
+    font-weight: bolder
+  }
+
+  span.s {
+    text-decoration: line-through
+  }
+
+  span.u {
+    text-decoration: underline
+  }
+
+  span.o {
+    text-decoration: overline
+  }
+
+  p span.d {
+    float: left;
+    font-size: 4rem;
+    line-height: 2.5rem;
+    padding-top: 0.7rem;
+    padding-right: 0.25rem;
+    font-weight: bold
+  }
+
+  pre {
+    display: inline
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+    border: 1px solid #000
+  }
+
+  span.c {
+    font-family: monospace;
+    background-color: #d6d6d6;
+    padding: 0 0.25rem;
+    border-radius: 0.25rem
+  }
+
+  code {
+    display: block;
+    font-family: monospace;
+    background: #d6d6d6;
+    padding: 0.5rem 0.25rem 0.5rem 1rem;
+    border-radius: 0.25rem;
+    word-wrap: break-word
+  }
+</style>
+
+<body>
+  <header>
+    <h1><a target="_blank" href="https://jpegzilla.com">JPEGZILLA</a></h1>
+  </header>
+  <main>
+    <article>
+      <h1>how to normalize an array to a specific range in javascript</h1>
+      <time id="mkzDate"><span class='i'>2019 10 24</span></time>
+
+      <div id="mkzBody">
+        <p><span class='d'>I</span>'ve been working a lot on a <a target="_blank" href="https://jpegzilla.com/emerald">piece of software</a> that involves a lot of calculations of and conversions between different number ranges. for example, to
+          convert between one type of hsl color value to another, I'd need to normalize a range for the color's hue from [0, 360] to [0, 1]. so, here's how I did that.</p>
+        <p>here's the final implementation (from my <a target="_blank" href="https://github.com/jpegzilla/exstat">exstat</a> math library):</p>
+        <img src="./../img/normalize-range-final-code.png" alt="an image of the javascript for normalizing a range of numbers." title="an image of the javascript for normalizing a range of numbers.">
+        <p>the breakdown goes something like this: the first line (<span class='c'>const normalize = (set ...</span>) creates a function that takes in two arguments: the set of numbers that needs to be normalized, and the range to normalize to
+          (which defaults to the set [0, 1]).</p>
+        <p>the next two lines just make sure that the range is only a set of two numbers, and that both arguments are arrays &mdash; it throws an error if not.</p>
+        <code>if (range.length > 2 || !Array.isArray(set) || !Array.isArray(range))<br>throw new Error("invalid arguments to normalize");</code>
+        <p>here's where the math goes down. first, we initialize a constant min, which is the smallest number in the set. then, we create a new array from the array of numbers (that is, the <span class='c'>set</span> argument) by mapping the
+          original set to a set of each number in the set minus the smallest number in the array. the purpose of this is to create an array where the first index is zero.</p>
+        <p>then, we get the maximum value from the <span class='i'>new</span> array we just made, and map our set (the one starting at zero) to a set of numbers divided by the largest number in the array. this results in an array of numbers ranging
+          from zero to one!</p>
+        <code>const min = Math.min(...set);<br>let newSet = set.map(n => n - min);<br>const max = Math.max(...newSet);<br>newSet = newSet.map(n => n / max);</code>
+        <p>the next step is to make sure we're normalizing to the range that we passed in as an argument to the function. first, set a variable to equal the difference between the first and last indices in the <span class='c'>range</span> argument.
+          then, set a variable to equal just the <span class='i'>first</span> index in the <span class='c'>range</span>.</p>
+        <code>let newRange = range[1] - range[0];<br>let initial = range[0];</code>
+        <p>then, we'll just do a little mapping, and return our new array mapped to the correct range by adding <span class='c'>newRange</span> and <span class='c'>initial</span> together and multiplying everything in our [0, 1] set by that product.</p>
+        <code>return newSet.map(n => n * newRange + initial);</code>
+        <p>and there we have it! let's try normalizing a set of numbers to an arbitrary range, say <span class='c'>1, 2, 4, 7, 13, 50, 200</span> to <span class='c'>0, 10</span>.</p>
+        <code>normalize([1, 2, 4, 7, 13, 50, 200], [0, 10]) // returns [0, 0.05025125628140704, 0.1507537688442211, 0.3015075376884422, 0.6030150753768844, 2.462311557788945, 10]
+        </code>
+        <p>nice, working correctly. that's about all there is to it! also, I truncated the numbers in the example above for the sake of space (the numbers actually have a lot more decimal places than that. if you wanted less, instead of returning
+          <span class='c'>newSet.map(n => n * newRange + initial)</span> you'd return <span class='c'>newSet.map(n => (n * newRange + initial).toFixed(2))</span> and pass the amount of decimal places you need into <span class='c'>toFixed()</span>.
+          just remember that <span class='c'>toFixed()</span> returns a string...<br>
+          <hr>
+        </p>
+        <p>thanks for reading, I'll be back soon. until then, listen to these (if you want!):</p>
+        <h2>currently listening to:</h2>
+        <p>- <a target="_blank" href="https://www.youtube.com/watch?v=KvQq9dweyFQ">duello</a> by <a target="_blank" href="http://c-h-s.me/">t+pazolite</a><br>- <a target="_blank" href="https://www.youtube.com/watch?v=sl9mulrAo9g">cartoon network</a>
+          by <a target="_blank" href="https://blackdresses.bandcamp.com/album/love-and-affection-for-stupid-little-bitches">black dresses</a></p>
+        <p>- <a target="_blank" href="https://www.youtube.com/watch?v=jHi8W_PV7-Y">landscape</a> by <a target="_blank" href="https://florenceandthemachine.net/">florence + the machine</a> - please please watch this music video. it's not the official
+          video, a photographer created it by stitching together over four thousand of their own photos into a stop-motion masterpiece. it's incredible. the song is good too!</p>
+        <p>- <a target="_blank" href="https://www.youtube.com/watch?v=BwEok9i4aO0">rest in peace, saith the lord</a> by <a target="_blank" href="http://demetori.xii.jp/">demetori</a><br>- <a target="_blank" href="https://www.youtube.com/watch?v=z-biR9t5oY0">samsara</a>
+          by <a target="_blank" href="https://twitter.com/massivecirclez">massive new krew</a><br>
+          <hr>
+        </p>
+
+      </div>
+    </article>
+
+  </main>
+  <footer>
+    <span class="non-icon">&copy;&nbsp;<span id="copyright"></span>&nbsp;<span class="name">jpegzilla</span>&nbsp;&vert;&nbsp;<a target="_blank" href="https://jpegzilla.com/humans.txt">humans.txt</a>
+      &nbsp;&vert;&nbsp;<a href="../">blog directory</a>
+      &nbsp;&vert;&nbsp;<a href="https://discordapp.com/invite/Ft9rVA6" target="_blank" class="con-links">discord</a>
+      &nbsp;&vert;&nbsp;<a target="_blank" href="https://twitter.com/jpegzilla">twitter</a>
+    </span>
+  </footer>
+</body>
+
+</html>

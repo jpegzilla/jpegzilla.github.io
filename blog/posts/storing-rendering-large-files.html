@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="I am a web designer and creative developer. this is my blog, where I document interesting things I learn on the web. - minerva's akasha - how I handled storing and rendering large files in a client-side web application">
+  <meta name="author" content="jpegzilla">
+  <meta name="robots" content="index, follow">
+  <meta property="og:description" content="I am a web designer and creative developer. this is my blog, where I document interesting things I learn on the web. - minerva's akasha - how I handled storing and rendering large files in a client-side web application">
+  <meta property="og:url" content="https://jpegzilla.com">
+  <meta property="og:site_name" content="jpegzilla - web design">
+  <meta property="og:image" content="https://jpegzilla.com/css/img/21af09332037a999a3f58984cdd0cefe.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:site" content="@jpegzilla">
+  <meta name="twitter:creator" content="@jpegzilla">
+  <meta name="twitter:title" content="jpegzilla - web design blog: minerva's akasha - how I handled storing and rendering large files in a client-side web application">
+  <meta name="twitter:description" content="jpegzilla is a web designer, creative developer, and digital artist. come make something cool with me.">
+  <meta name="twitter:image" content="https://jpegzilla.com/css/img/21af09332037a999a3f58984cdd0cefe.png">
+  <meta name="twitter:card" content="summary-large-image">
+  <meta name="application-name" content="jpegzilla.com/blog" />
+
+  <link rel="author" href="http://jpegzilla.com/humans.txt">
+
+  <title>minerva's akasha - how I handled storing and rendering large files in a client-side web application &mdash; 2020 04 16</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141114501-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'UA-141114501-1');
+  </script>
+</head>
+
+<style>
+  body {
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 38rem;
+    margin: 40px auto;
+    padding: 2rem;
+    color: #222;
+    font-family: sans-serif;
+    background-color: #eee
+  }
+
+  h1,
+  h2,
+  h3 {
+    line-height: 1.2
+  }
+
+  span.i {
+    font-style: italic
+  }
+
+  span.b {
+    font-weight: bolder
+  }
+
+  span.s {
+    text-decoration: line-through
+  }
+
+  span.u {
+    text-decoration: underline
+  }
+
+  span.o {
+    text-decoration: overline
+  }
+
+  p span.d {
+    float: left;
+    font-size: 4rem;
+    line-height: 2.5rem;
+    padding-top: 0.7rem;
+    padding-right: 0.25rem;
+    font-weight: bold
+  }
+
+  pre {
+    display: inline
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+    border: 1px solid #000
+  }
+
+  span.c {
+    font-family: monospace;
+    background-color: #d6d6d6;
+    padding: 0 0.25rem;
+    border-radius: 0.25rem
+  }
+
+  code {
+    display: block;
+    font-family: monospace;
+    background: #d6d6d6;
+    padding: 0.5rem 0.25rem 0.5rem 1rem;
+    border-radius: 0.25rem;
+    word-wrap: break-word
+  }
+
+  #mkzAlbumCover {
+    display: flex;
+    margin-top: 1rem
+  }
+
+  #mkzAlbumCover>div:nth-child(1) {
+    width: 150px;
+    flex-grow: 1
+  }
+
+  #mkzAlbumCover>div:nth-child(2) {
+    flex-grow: 2;
+    padding: 0 1rem
+  }
+
+  ol {
+    list-style-type: none;
+    margin: 0;
+    padding: 0
+  }
+
+  ol li {
+    font-style: italic
+  }
+
+  #mkzAlbumCover h2,
+  #mkzAlbumCover h3,
+  #mkzAlbumCover h4,
+  #mkzAlbumCover p {
+    margin: 0
+  }
+
+  audio {
+    width: 100%
+  }
+
+  img+p {
+    margin-top: 0
+  }
+</style>
+
+<body>
+  <header>
+    <h1><a target="_blank" href="https://jpegzilla.com">JPEGZILLA</a></h1>
+  </header>
+  <main>
+    <article>
+      <h1>minerva's akasha - how I handled storing and rendering large files in a client-side web application</h1>
+      <time id="mkzDate"><span class='i'>2020 04 16</span></time>
+
+      <p><span class='d'>F</span>or about three months now, I've been working on a <a target="_blank" href="https://github.com/jpegzilla/minervas-akasha">research data collection and analysis tool.</a> it's called minerva's akasha, and it is the
+        most
+        complicated personal project I've ever worked on. I've learned so much stuff about how browsers work, how javascript works, and how to design a good user interface. I've also learned about a lot of things that I've never really had to think
+        about in web development before, like multithreading, space complexity of algorithms, performance optimization, <a target="_blank" href="https://en.wikipedia.org/wiki/Windowing_system">windowing systems</a>, and much more.</p>
+
+      <div id="mkzBody">
+        <img src="./../img/minervas-akasha-file-loading.gif" alt="loading an audio file into a minerva's akasha shard." title="loading an audio file into a minerva's akasha shard.">
+        <p>one of the major things that I needed to figure out was how to store and render large files with no perceptible delay to the user. when I first implemented file drag and drop into minerva's akasha, the entire ui would hang for a while
+          while the browser loaded the file into memory on the main thread. </p>
+        <p>I think users are accustomed to things happening fairly smoothly. For example, if you click on an image file on your computer, you expect to be able to do other stuff while you're waiting for the file to open.
+          even if the file is huge and takes time to load, you still have that expectation, right? it's a reasonable expectation, and vital to user experience, so it's something that was necessary to build into this software. I'll tell you how.</p>
+        <img src="./../img/minervas-akasha-indexeddb-file.png" alt="a file entry in minerva's indexeddb" title="a file entry in minerva's indexeddb">
+        <p>files have always been stored in minerva's akasha using massive <a target="_blank" href="https://en.wikipedia.org/wiki/Base64">base64</a> strings in an indexeddb database. that's fine for storage, but when you load multiple 10mb+ base64
+          strings into a tab's memory, things start to get a little bit choppy. in fact, before I fixed this problem, here's what I was doing:</p>
+        <p>- when a file needs to be rendered, look in indexeddb for the correct entry using a file id<br>- then, take the base64 string and attach it as a <span class='c'>src</span> attribute to the <span class='c'>audio</span>, <span class='c'>img</span>,
+          or <span class='c'>video</span> element<br>- do this on the main thread, preventing the user from doing literally anything else within the application</p>
+        <p>there are a few major problems with this approach. if you've ever seen a base64 string version of a file, you'll know the first problem: base64 is <span class='i'>huge</span>, usually even larger than the file that it represents. just
+          take a look above at the database entry for that audio file &mdash; the actual file is only seven megabytes, but the base64 is eighteen megabytes.</p>
+        <p>the next problem is that using base64 as an element <span class='c'>src</span> causes a lot of performance issues, especially with files that are already large, like a high-quality <span class='c'>.flac</span> file or a long hd video.</p>
+        <p>so what's the best solution? as a newbie to building complex software and a long-time web developer, multithreading wasn't the first thing that came to mind. after a couple of days' research, that was the solution I arrived at in the end
+          &mdash; using web workers in conjunction with <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/API/URL/createObjectURL">object urls.</a></p>
+        <img src="./../img/audio-component-to-worker.png" alt="the audio component takes in a base64 string" title="the audio component takes in a base64 string">
+        <p>I simply used a <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers">web worker</a> to take the base64 string &mdash; the
+          <span class='c'>src</span> variable in the image above &mdash; and pass it to a worker, seen in the image below. that way, the main thread doesn't have to do the heavy lifting of dealing with the eighteen megabyte string.</p>
+        <img src="./../img/metadata-worker.png" alt="a worker meant for loading a base64 string and turning it into an object url. why is the function async? I don't remember, to be honest." title="a worker meant for loading a base64 string and turning it into an object url. why is the function async? I don't remember, to be honest.">
+        <p>so, no more base64 media sources meant instant, quantifiable, <span class='i b'>massive</span> performance gains. I wish I had a before / after performance analysis screenshot, but I didn't take any screenshots while working on this, (and
+          I don't want to go back and unfix it just to get some) so here's the after shot (chrome dev tools performance tab):</p>
+        <img src="./../img/worker-saving-main-thread.png" alt="very little work is being done on the main thread now, and none of it is interaction-blocking." title="very little work is being done on the main thread now, and none of it is interaction-blocking.">
+        <p>using small, lightweight object urls was incredibly performant, and that was the end of the problems affecting file loading and storage.</p>
+        <img src="./../img/blob-url-minervas-akasha.png" alt="using blob urls as media sources." title="using blob urls as media sources.">
+        <p>here's the entry I made in my <a target="_blank" href="https://github.com/jpegzilla/minervas-akasha/blob/master/docs/main/solved-issues.md#minerva-performance-issues-when-loading-multiple-large-files">solved issues log</a> on the day I
+          fixed this problem.<br>
+          <hr>
+        </p>
+        <p>thanks for reading! if you're working on an application with a complex ui that needs a performance boost, I hope this article gave you some ideas! otherwise, hope you learned something interesting. I'll be back on saturday with another <a
+            target="_blank" href="https://jpegzilla.com/blog/music/">album of the week</a> or other music-related post, and then next week with a technical post on something interesting.<br>
+          <hr>
+        </p>
+        <h2>currently listening to:</h2>
+        <p>- <a target="_blank" href="https://www.youtube.com/watch?v=-_S8g5Sdrq0">silent finale</a> by <a target="_blank" href="http://themusmus.com/">the musmus</a></p>
+        <p>- <a target="_blank" href="https://www.youtube.com/watch?v=j1Id6xTIHUY">q.t. rush</a> by <a target="_blank" href="http://c-h-s.me/">t+pazolite</a></p>
+        <p>- <a target="_blank" href="https://www.youtube.com/watch?v=w9RSZmltcVI">creep u</a> by <a target="_blank" href="https://blackdresses.bandcamp.com/album/peaceful-as-hell">black dresses</a></p>
+        <p>- <a target="_blank" href="https://www.youtube.com/watch?v=2QL4PCfupMw">sunny</a> by <a target="_blank" href="https://advantagelucy.com/">lucy van pelt / advantage lucy</a></p>
+        <p>- <a target="_blank" href="https://www.youtube.com/watch?v=V0Y5uKfJJqw">emil / ultimate weapon no. 7</a> by <a target="_blank" href="http://www.monaca.jp/">keiichi okabe</a></p>
+        <p>- <a target="_blank" href="https://www.youtube.com/watch?v=qfsonB9ZCk0">the last page</a> by <a target="_blank" href="https://twitter.com/ARForest_main">arforest</a><br>
+          <hr>
+        </p>
+        <h2>inspiration:</h2>
+        <p><a target="_blank" href="https://medium.com/@leofabrikant/v1-2-1-web-workers-282e8d0fa676">this article by leo fabrikant</a> really helped me out back when I was working on this feature! </p>
+
+      </div>
+    </article>
+
+  </main>
+  <footer>
+    <span class="non-icon">&copy;&nbsp;<span id="copyright"></span>&nbsp;<span class="name">jpegzilla</span>&nbsp;&vert;&nbsp;<a target="_blank" href="https://jpegzilla.com/humans.txt">humans.txt</a>
+      &nbsp;&vert;&nbsp;<a href="../">blog directory</a>
+      &nbsp;&vert;&nbsp;<a href="https://discordapp.com/invite/Ft9rVA6" target="_blank" class="con-links">discord</a>
+      &nbsp;&vert;&nbsp;<a target="_blank" href="https://twitter.com/jpegzilla">twitter</a>
+    </span>
+  </footer>
+</body>
+
+</html>

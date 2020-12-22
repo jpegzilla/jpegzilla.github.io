@@ -1,0 +1,216 @@
+// main styles
+
+@import "components/vars";
+
+body {
+  background-color: $black;
+  color: $white;
+  min-width: 100vw;
+  min-height: 100vh;
+  height: auto;
+  @include flexCenter;
+  flex-direction: column;
+  isolation: isolate;
+
+  span.p {
+    color: $pink;
+  }
+
+  #preloader {
+    @include flexCenter;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-color: $black;
+    font-family: $crimsontext;
+    z-index: 2;
+    font-size: 4em;
+
+    @media (max-width: $breakpoint-tiny) {
+      font-size: 2em;
+    }
+
+    &.hide {
+      opacity: 0;
+      transition: opacity 1.5s ease;
+      pointer-events: none;
+    }
+
+    p {
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+
+    &.active {
+      p {
+        transition: opacity 0.05s ease;
+        opacity: 1;
+      }
+    }
+  }
+
+  aside {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1rem 2.5rem;
+    font-family: $crimsontext;
+
+    @media (max-width: $breakpoint-tiny) {
+      padding: 0.5rem 1rem;
+    }
+
+    ul {
+      display: flex;
+      list-style-type: none;
+      font-size: 1.25rem;
+
+      li a {
+        color: $white;
+      }
+
+      li + li {
+        margin-left: 1rem;
+      }
+    }
+  }
+
+  header {
+    font-size: 7rem;
+    font-family: $crimsontext;
+
+    @media (max-width: $breakpoint-tiny) {
+      font-size: 5rem;
+    }
+  }
+
+  section {
+    font-family: $sharetech;
+    max-width: 600px;
+
+    @media screen and (max-width: $breakpoint-tiny) {
+      max-width: auto;
+    }
+
+    p {
+      margin: 1rem 0 2rem 0;
+      text-align: center;
+      @media (max-width: $breakpoint-tiny) {
+        font-size: 0.75em;
+      }
+    }
+
+    .cheatcode-entry {
+      width: 100%;
+      display: flex;
+      height: 4rem;
+
+      @media (max-width: $breakpoint-small) {
+        height: 3rem;
+      }
+
+      input,
+      button {
+        height: 100%;
+        font-family: $sharetech;
+      }
+
+      input {
+        flex-grow: 2;
+        background-color: transparent;
+        padding: 1rem;
+        font-size: 2rem;
+
+        @media (max-width: $breakpoint-tiny) {
+          font-size: 1rem;
+        }
+
+        border: none;
+        border-bottom: 2px solid $white;
+        color: $white;
+
+        &::placeholder {
+          color: transparentize($white, 0.5);
+        }
+      }
+
+      button {
+        flex-grow: 1;
+        cursor: pointer;
+        background-color: $white;
+        font-size: 1.25rem;
+        border: none;
+
+        @media (max-width: $breakpoint-tiny) {
+          font-size: 0.75rem;
+        }
+
+        &:active {
+          background-color: transparentize($white, 0.5);
+        }
+      }
+    }
+
+    .cheatcode-list {
+      max-width: 100%;
+
+      .cheatcode {
+        margin-top: 1rem;
+      }
+
+      .cheatcode {
+        display: flex;
+        background-color: $white;
+        color: $black;
+        @include flexCenter;
+        height: 4rem;
+
+        @media (max-width: $breakpoint-small) {
+          height: 3rem;
+        }
+
+        &.flash {
+          animation: $flash-anim;
+        }
+
+        div {
+          height: 100%;
+        }
+
+        .cheatcode-inner {
+          @include flexCenterLeft;
+          flex-grow: 4;
+          padding: 1rem;
+          max-width: 100%;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .cheatcode-remove-button {
+          @include flexCenter;
+          flex-grow: 1;
+          padding: 1rem;
+          height: 100%;
+          cursor: pointer;
+
+          &:hover {
+            background-color: transparentize($black, 0.5);
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    margin-top: 6rem;
+    width: 100%;
+    @include flexCenter;
+    font-family: $crimsontext;
+    font-size: 1.25rem;
+
+    a {
+      text-decoration: none;
+      color: $pink;
+    }
+  }
+}

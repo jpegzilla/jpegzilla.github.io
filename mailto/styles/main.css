@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+:root {
+  font-size: 14px;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+br,
+hr {
+  user-select: none;
+  pointer-events: none;
+}
+
+html {
+  background-color: #070109;
+  color: #ffffff;
+}
+
+body {
+  width: 100vw;
+  height: auto;
+}
+
+body section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Share Tech Mono", monospace;
+  font-size: 1.5rem;
+  min-height: 100vh;
+  position: relative;
+}
+
+body section h2 {
+  font-size: 1em;
+  font-weight: lighter;
+}
+
+body section form {
+  padding: 2rem 0;
+  width: auto;
+}
+
+body section p {
+  word-break: break-all;
+  width: 36em;
+  height: auto;
+  text-align: center;
+  line-height: 1.5;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+body section .invalid {
+  color: #d80000;
+}
+
+body section .form fieldset {
+  display: grid;
+  flex-direction: column;
+  padding: 1rem;
+  width: 100%;
+}
+
+body section .form fieldset label {
+  margin-top: 1rem;
+}
+
+body section .form fieldset input,
+body section .form fieldset textarea {
+  all: unset;
+  background-color: #070109;
+  border-bottom: 1px solid #ffffff;
+  color: #ffffff;
+  padding: 0.25rem 0;
+  font-size: 0.7em;
+}
+
+body section .form fieldset input::placeholder,
+body section .form fieldset textarea::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+body section .form fieldset textarea {
+  word-wrap: break-word;
+  margin-top: 1rem;
+  height: auto;
+  border: 1px solid #ffffff;
+  padding: 0.5rem;
+  max-width: 100%;
+  min-height: 8rem;
+}
+
+body section footer {
+  font-size: 0.7em;
+  padding-top: 2rem;
+}
+
+body section footer a {
+  color: #ffffff;
+}

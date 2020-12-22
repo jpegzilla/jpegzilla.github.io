@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="I am a web designer and creative developer. this is my blog, where I document interesting things I learn on the web.">
+  <meta name="author" content="jpegzilla">
+  <meta name="robots" content="index, follow">
+  <meta property="og:description" content="I am a web designer and creative developer. this is my blog, where I document interesting things I learn on the web.">
+  <meta property="og:url" content="https://jpegzilla.com">
+  <meta property="og:site_name" content="jpegzilla - web design">
+  <meta property="og:image" content="https://jpegzilla.com/css/img/21af09332037a999a3f58984cdd0cefe.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:site" content="@jpegzilla">
+  <meta name="twitter:creator" content="@jpegzilla">
+  <meta name="twitter:title" content="jpegzilla - web design blog">
+  <meta name="twitter:description" content="jpegzilla is a web designer, creative developer, and digital artist. come make something cool with me.">
+  <meta name="twitter:image" content="https://jpegzilla.com/css/img/21af09332037a999a3f58984cdd0cefe.png">
+  <meta name="twitter:card" content="summary-large-image">
+  <meta name="application-name" content="jpegzilla.com/blog" />
+  <link rel="author" href="http://jpegzilla.com/humans.txt">
+  <title>findings - week of 2/6/2019 &mdash; 2019 06 09</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141114501-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-141114501-1');
+  </script>
+</head>
+<style>
+  body {
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 38rem;
+    margin: 40px auto;
+    padding: 2rem;
+    color: #222;
+    font-family: sans-serif;
+    background-color: #eee
+  }
+
+  h1,
+  h2,
+  h3 {
+    line-height: 1.2
+  }
+
+  span.i {
+    font-style: italic
+  }
+
+  span.b {
+    font-weight: bolder
+  }
+
+  span.s {
+    text-decoration: line-through
+  }
+
+  span.u {
+    text-decoration: underline
+  }
+
+  span.o {
+    text-decoration: overline
+  }
+
+  p span.d {
+    float: left;
+    font-size: 4rem;
+    line-height: 2.5rem;
+    padding-top: 0.7rem;
+    padding-right: 0.25rem;
+    font-weight: bold
+  }
+
+  pre {
+    display: inline
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+    border: 1px solid #000
+  }
+
+  span.c {
+    font-family: monospace;
+    background-color: #d6d6d6;
+    padding: 0 0.25rem;
+    border-radius: 0.25rem
+  }
+
+  code {
+    display: block;
+    font-family: monospace;
+    background: #d6d6d6;
+    padding: 0.5rem 0.25rem 0.5rem 1rem;
+    border-radius: 0.25rem;
+    word-wrap: break-word
+  }
+</style>
+
+<body>
+  <header>
+    <h1><a target="_blank" href="https://jpegzilla.com">JPEGZILLA</a></h1>
+  </header>
+  <main>
+    <article>
+      <h1>findings - week of 2.6.2019</h1>
+      <time id="mkzDate"><span class='i'>2019 06 09</span></time>
+
+      <div id="mkzBody">
+        <p><span class='d'>T</span>he last few days were pretty busy for me. I ended up spending less time doing recreational research this week, and when I did, I ended up doing a ton of reading about the <a target="_blank" href="https://principiadiscordia.com/Black_Iron_Prison_July2007_booklet.pdf">black
+            iron prison</a>. I was tempted to just write about that and consider it a 'finding' but I didn't. check it out if you want to. it's kind of interesting.</p>
+        <p>anyway,</p>
+        <h2>number one: <a target="_blank" href="https://github.com/Miserlou/NoDB">nodb</a>.</h2>
+        <p>according to the repository description on github, nodb isn't a database...but it sort of looks like one. it's a file storage utility written in python. this is interesting to me because something like this (a schema-less object-based
+          data store) could be done in javascript within the context of a static website. what exactly is interesting about it is the methods used to store and retrieve information. I'll probably be referencing this project a lot during the next few
+          weeks as I work on my own javascript storage engine and database management system.</p>
+        <img src="./../img/nodb.png" alt="nodb's github readme" title="nodb's github readme">
+        <h2>number two: <a target="_blank" href="http://lsdrevamped.net/">lsd revamped</a>.</h2>
+        <p>if you've ever played (or just heard of) the obscure playstation 1 title lsd: dream emulator, this one may be of interest to you. it's not actually something I found this week; I bookmarked this about 5 years ago and unfortunately forgot
+          about it. the project, which started in 2011, seeks to port lsd to unity3d. as of today, it's still in alpha and the list of <a target="_blank" href="http://lsdrevamped.net/assets/list/">3d models</a> which the developer (<a target="_blank"
+            href="https://blog.figglewatts.co.uk/">figglewatts</a>) needs is still incomplete.</p>
+        <img src="./../img/lsd-revamped.png" alt="the front page of lsdrevamped.net." title="the front page of lsdrevamped.net.">
+        <p>by the way, osamu sato, the creator of the game, posted an art collection, <a target="_blank" href="http://www.osamusato.net/#lsd-revamped">also called "lsd revamped"</a> on the 20th anniversary of lsd a few months ago.</p>
+        <h2>number three: <a target="_blank" href="http://paperjs.org/">paperjs</a>.</h2>
+        <p>I was recently looking for some kind of way to create an interactive fluid animation in javascript for a website that I've been working on. and lo and behold, the demo on the front page of paperjs.org has the exact interaction I was
+          looking for. however, the framework does way more than just that one thing. it is, of course, canvas based. it's main function is to allow developers to create vector graphics in a more intuitive way.</p>
+        <img src="./../img/paper-js.png" alt="front page of paperjs.org" title="front page of paperjs.org">
+        <h2>number four: <a target="_blank" href="https://www.experimentaljetset.nl/">experimental jetset</a>.</h2>
+        <p>experimental jetset is an independent graphic design studio based in the netherlands. I added it to my findings this week because they have quite a large archive of design projects, installations, lectures, and other things that they've
+          created from 1996 to late 2018.</p>
+        <img src="./../img/experimental-jetset.png" alt="experimental jetset's archive." title="experimental jetset's archive.">
+        <p>as I've pretty much always been inspired by the european schools of design, finding this website was like finding a gold mine.<br>
+          <hr>
+        </p>
+        <p>most of the things I find are pretty old, as in they've been on the internet since long before I came and found them; so they're new, but only to me. hopefully one day I'll be better at finding things that are actually new. but until then
+          I'm just an archaeologist &mdash; and a pretty mediocre one at that. but at least writing these is fun! thanks for reading, I'll try to gather more stuff for next week.<br>
+          <hr>
+        </p>
+        <p>currently listening to <a target="_blank" href="https://www.youtube.com/watch?v=NUyc4c0tc6g">FUWATINITY</a> by <a target="_blank" href="https://www.sharpnel.com/">DJ Sharpnel</a> and <a target="_blank" href="https://www.youtube.com/watch?v=9_gkpYORQLU">G.O.A.T.</a>
+          by <a target="_blank" href="https://polyphia.com/">Polyphia</a>.</p>
+
+      </div>
+    </article>
+
+  </main>
+  <footer>
+    <span class="non-icon">&copy;&nbsp;<span id="copyright"></span>&nbsp;<span class="name">jpegzilla</span>&nbsp;&vert;&nbsp;<a target="_blank" href="https://jpegzilla.com/humans.txt">humans.txt</a>
+      &nbsp;&vert;&nbsp;<a href="../">blog directory</a>
+      &nbsp;&vert;&nbsp;<a href="https://discordapp.com/invite/Ft9rVA6" target="_blank" class="con-links">discord</a>
+      &nbsp;&vert;&nbsp;<a target="_blank" href="https://twitter.com/jpegzilla">twitter</a>
+    </span>
+  </footer>
+</body>
+
+</html>

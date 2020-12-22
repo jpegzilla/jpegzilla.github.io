@@ -1,0 +1,47 @@
+{
+  "posts": [{
+    "20190413": {
+      "title": "How I built this blog: an exercise in JSON and hubris",
+      "body": [{
+          "p1": "<p>As someone who likes to save money, I decided to host my blog on Github Pages. That meant that I'd have no access at all to server-side technologies like PHP or Node with which to construct some sort of dynamic blog, because Github Pages is strictly static. I'd heard of ways to create a blog easily on Pages, like Jekyll, but instead I decided to try making my own blog - without: <br><br>1. researching how to do it <span class=\"it\">correctly</span><br>2. using NodeJS or PHP to get articles from a database (probably closer to the right way to do it)<br>3. any knowledge of how blogging platforms/applications work.<br><br>I <span class=\"it\">did</span>, however, know a couple of things:<br><br>1. This is probably <span class=\"it\">terrible</span> for SEO.<br>2. It's pretty tedious to write articles in the way that I decided to store them (more on that later).<br><br> Since you're reading this now, I assume that I followed through on this ridiculous project. Ridiculousness aside, I learned a <span class=\"it\">lot</span> about JSON and javascript during this project. I did not, however, learn anything about how to build a halfway decent or efficient blogging platform. All I started with was a few lines of HTML that I figured were enough to render dynamically content inside. </p>"
+        },
+        {
+          "i1": "<img src=\"img/blog-post-basics.png\" alt=\"image of my HTML code where the dynamically generated content goes.\" />"
+        },
+        {
+          "p2": "<p>I planned to just take the content and use Jquery functions like <span class=\"code\">.text()</span> and <span class=\"code\">.append()</span> to put in content where it needed to go.</p>"
+        },
+        {
+          "p3": "<p>That was tame compared to what I did next. The dilemma I had come across was the fact that regular Javascript alone has no way to read a directory on a server, meaning that if I wanted to get a list of articles I've written and create links to them (yet another limitation coming from not having access to any sort of backend). So I thought of a few different ways to get a list of articles and the content of those articles until I came up with a really strange idea.</p>"
+        },
+        {
+          "i2": "<img src=\"img/json-structure.png\" alt=\"image of my JSON structure, where I write the articles to retrieve later.\" />"
+        },
+        {
+          "p4": "<p>If you've ever done web development or something similar, you'll know that this is an image of a JSON file. This is what I came up with to store all the articles in a way that Javascript could read and that I could easily manipulate and retrieve information from. I sort of thought of it like a document in a MongoDB database, minus a way to write to the document. I wrote an ajax request to get the JSON file from my website:</p>"
+        },
+        {
+          "i3": "<img src=\"img/get-request-original.png\" alt=\"image of a GET request from my javascript to retrieve the JSON list of articles.\">"
+        },
+        {
+          "p5": "<p>The function <span class=\"code\">loadArticle()</span> will then take the information from that post and format it into a post that looks just like the one you're reading now. I wrote a couple of helper functions including one that just takes a date in the format \"YYYYMMDD\" and splits it into a \"YYYY MM DD\" format like you can see at the beginning of this article.</p>"
+        },
+        {
+          "p6": "<p>Maybe in the future I'll write some kind of compiler, almost like a Markdown compiler. It would take a file I write with some kind of Markdown-like syntax and convert it into this weird JSON structure I've concieved.</p>"
+        }
+      ]
+    }
+
+  }, {
+    "20190414": {
+      "title": "second post",
+      "body": [{
+          "p1": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>"
+        },
+        {
+          "i1": "img/blogpost.png"
+        }
+      ]
+    }
+  }]
+}

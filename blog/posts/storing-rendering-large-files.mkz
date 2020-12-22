@@ -1,0 +1,65 @@
+#h1 minerva's akasha - how I handled storing and rendering large files in a client-side web application
+
+#p [d F]or about a month now, I've been working on a [a research data collection and analysis tool.](https://github.com/jpegzilla/minervas-akasha) it's called minerva's akasha, and it is the most complicated personal project I've ever worked on. I've learned so much stuff about how browsers work, how javascript works, and how to design a good user interface. I've also learned about a lot of things that I've never really had to think about in web development before, like multithreading, space complexity of algorithms, performance optimization, [a windowing systems](https://en.wikipedia.org/wiki/Windowing_system), and much more.
+
+#img ./../img/minervas-akasha-file-loading.gif loading an audio file into a minerva's akasha shard.
+
+#p one of the major things that I needed to figure out was how to store and render large files with no perceptible delay to the user. when I first implemented file drag and drop into minerva's akasha, the entire ui would hang for a while while the browser loaded the file into memory on the main thread. 
+
+#p this was super annoying. I think users are accustomed to things happening fairly instantly. I mean, if you click on an image file on your computer, even if the file is huge and takes time to load, you expect to be able to do other stuff while you're waiting, right? if you take a look at the gif above, you'll see that I fixed this problem! I'll tell you how.
+
+#img ./../img/minervas-akasha-indexeddb-file.png a file entry in minerva's indexeddb
+
+#p files have always been stored in minerva's akasha using massive [a base64](https://en.wikipedia.org/wiki/Base64) strings in an indexeddb database. that's fine for storage, but when you load multiple 10mb+ base64 strings into a tab's memory, things start to get a little bit choppy. in fact, before I fixed this problem, here's what I was doing:
+
+#p - when a file needs to be rendered, look in indexeddb for the correct entry using a file id
+- then, take the base64 string and attach it as a [c src] attribute to the [c audio], [c img], or [c video] element
+- do this on the main thread, preventing the user from doing literally anything else within the application
+
+#p there are a few major problems with this approach. if you've ever seen a base64 string version of a file, you'll know the first problem: base64 is [i huge], usually even larger than the file that it represents. just take a look above at the database entry for that audio file &mdash; the actual file is only seven megabytes, but the base64 is eighteen megabytes.
+
+#p the next problem is that using base64 as an element [c src] causes a lot of performance issues, especially with files that are already large, like a high-quality [c .flac] file or a long hd video.
+
+#p so what's the best solution? as a newbie to building complex software and a long-time web developer, multithreading wasn't the first thing that came to mind. after a couple of days' research, that was the solution I arrived at in the end &mdash; using web workers in conjunction with [a object urls.](https://developer.mozilla.org/en-US/docs/Web/API/URL/createObjectURL)
+
+#img ./../img/audio-component-to-worker.png the audio component takes in a base64 string
+
+#p I simply used a [a web worker](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers) (a feature of javascript that was completely new to me) to take the base64 string &mdash; the [c src] variable in the image above &mdash; and passes it to a worker, seen in the image below. that way, the main thread doesn't have to do the heavy lifting of dealing with the eighteen megabyte string.
+
+#img ./../img/metadata-worker.png a worker meant for loading a base64 string and turning it into an object url. why is the function async? I don't remember, to be honest.
+
+#p so, no more base64 media sources meant instant, quantifiable, [ib massive] performance gains. I wish I had a before / after performance analysis screenshot, but I didn't take any screenshots while working on this and I don't want to go back and unfix it just to get some, so here's just the after shot (chrome dev tools performance tab):
+
+#img ./../img/worker-saving-main-thread.png very little work is being done on the main thread now, and none of it is interaction-blocking.
+
+#p using small, lightweight object urls was incredibly performant, and that was the end of the problems affecting file loading and storage.
+
+#img ./../img/blob-url-minervas-akasha.png using blob urls as media sources.
+
+#p here's the entry I made in my [a solved issues log](https://github.com/jpegzilla/minervas-akasha/blob/master/docs/main/solved-issues.md#minerva-performance-issues-when-loading-multiple-large-files) on the day I fixed this problem.
+
+<hr>
+
+#p thanks for reading! if you're working on an application with a complex ui that needs a performance boost, I hope this article gave you some ideas! otherwise, hope you learned something interesting. I'll be back on saturday with another [a album of the week](https://jpegzilla.com/blog/music/) or other music-related post, and then next week with a technical post on something interesting.
+
+<hr>
+
+#h2 currently listening to:
+
+#p - [a silent finale](https://www.youtube.com/watch?v=-_S8g5Sdrq0) by [a the musmus](http://themusmus.com/)
+
+#p - [a q.t. rush](https://www.youtube.com/watch?v=j1Id6xTIHUY) by [a t+pazolite](http://c-h-s.me/)
+
+#p - [a creep u](https://www.youtube.com/watch?v=w9RSZmltcVI) by [a black dresses](https://blackdresses.bandcamp.com/album/peaceful-as-hell)
+
+#p - [a sunny](https://www.youtube.com/watch?v=2QL4PCfupMw) by [a lucy van pelt / advantage lucy](https://advantagelucy.com/)
+
+#p - [a emil / ultimate weapon no. 7](https://www.youtube.com/watch?v=V0Y5uKfJJqw) by [a keiichi okabe](http://www.monaca.jp/)
+
+#p - [a the last page](https://www.youtube.com/watch?v=qfsonB9ZCk0) by [a arforest](https://twitter.com/ARForest_main)
+
+<hr>
+
+#h2 inspiration:
+
+#p [a this article by leo fabrikant](https://medium.com/@leofabrikant/v1-2-1-web-workers-282e8d0fa676) really helped me out back when I was working on this feature! 

@@ -1,0 +1,65 @@
+#h1 findings - another audio resource and other random information &mdash; 2020.10.19
+
+<hr> 
+
+#p [d H]ello again! I've been working on a couple of large writing projects for a few months now, so I haven't been quite as active on this blog as I'd like to be. I'm back now though! thanks for sticking around. of course, I never really stop collecting findings, so here's some that I've had piled up for a few weeks now.
+
+<hr>
+
+#h2 number one: [a rejecta](https://actofplay.com/rejecta/).
+
+#p I've been in love with this piece of writing ever since I discovered it a couple of months ago. [a pietro righi riva](http://actofplay.com/) wrote this as a 'nontraditional playable media manifesto' and it serves as their guidelines for creating games.
+
+#img ../img/findings11/rejecta.png an image of a portion of the rejecta. it contains rules four through six. I love the way it's written!
+
+#p I liked it so much that I decided to make something similar for my style of website design and development. it's finished, and I would link to it here, but I haven't come up with a catchy name for it yet! so it sits in my editor until I figure out what to call it. oh well. [a two hard things, right?](https://www.karlton.org/2017/12/naming-things-hard/)
+
+<hr>
+
+#h2 number two: [a tips for reverse engineering files.](https://www.codementor.io/@gbbofh/general-tips-for-reverse-engineering-files-156eju2qfz)
+
+#p this one was particularly interesting to me because I've been (slowly) working on a rhythm game whose file format is loosely based on that of [a bemani's format](http://bm98.yaneu.com/bm98/bmsformat.html) for storing song data. this project was actually my first time seriously reading a format spec for a reason, so I became pretty interested in learning how to reverse engineer files. in my quest for more knowledge, I came across [a this blog post](https://www.codementor.io/@gbbofh/general-tips-for-reverse-engineering-files-156eju2qfz) by [a garret bates](https://github.com/gbbofh). I think it's a pretty interesting read, even if you only read file format specs for fun, like I used to (lol).
+
+<hr>
+
+#h2 number three: [a ubuweb/sound.](https://www.ubu.com/sound/)
+
+#p this is a large archive of sound clips. according to the website, all clips 'are either out-of-print, incredibly difficult to find, or, in our opinion, absurdly overpriced'. this is an incredible resource for some really interesting audio.
+
+#img ./../img/findings11/ubuweb.png an image of a sound clip page. it shows a simplistic audio player, a list of tracks, and the author and title of the track - jaques derrida, circonfession.
+
+#p you could use it for whatever, but I think strange and interesting vocal clips lend themselves really well to odd music sketches.
+
+#p <audio controls style='width: 100%;' src='./../audio/findings11/matilda.wav' alt='a short clip of a song I made 2 years ago from a clip of natalia poklonskaya talking about the film matilda.' title='a short clip of a song I made 2 years ago from a clip of natalia poklonskaya talking about the film matilda.'></audio>
+
+#p take a look at the clips and see what you can do!
+
+<hr>
+
+#h2 number four: [a the meaning of shah mat](http://gchess.bizland.com/Chess%20Lessons%20-%20Shah%20Mat.htm).
+
+#p having listened to [a shah mat](https://www.youtube.com/watch?v=j9l4hdMGqd0) by [a the musmus](https://themusmus.com) like a million times, I started wondering what [i shah mat] actually meant. I was able to quickly find out that it was a chess term, and then eventually stumbled upon this great article by jan newton from 2003.
+
+#img ./../img/findings11/shah-mat.png an image of the header of the article. it's called CHESS LESSONS.
+
+#p it's a cool bit of trivia &mdash; the type of thing that I love &mdash; and it might be interesting to you as well!
+
+<hr>
+
+#p [d S]o I used to try force myself to work with these findings articles until I had at least five findings, but I think from now on I'll just write until I get distracted and leave the flow state. it feels better that way. thanks for reading, and I think I'll be back soon with something interesting!
+
+<hr>
+
+#h2 currently listening to:
+
+#p - [a スーパーヒーローミュージック](https://www.youtube.com/watch?v=038vNg88oXg) by [a bish](https://www.bish.tokyo/) (I've listened to this like 100 times since it was released sixty-six days ago.)
+
+#p - [a giant killers](https://www.youtube.com/watch?v=j_TjkQuENXM) by [a bish](https://www.bish.tokyo/) (this too.)
+
+#p - [a 1,000,000 watts](https://www.youtube.com/watch?v=KFOmb9BrdtQ&list=PLt58VO2vbq9zfQSmKkuzh0Ya2ANaoynaa&index=53) by [a norma jean](http://www.normajeannoise.com/)
+
+#p - [a flim](https://www.youtube.com/watch?v=RhHkUg-QCwk) by [a aphex twin](https://aphextwin.warp.net/)
+
+#p - [a fly above -album extended- ](https://www.youtube.com/watch?v=RTwjGeCEHUs) by [a sota fujimori](https://twitter.com/sotafujimori)
+
+<hr>

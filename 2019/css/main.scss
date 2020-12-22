@@ -1,0 +1,106 @@
+// main styles
+
+@import "./components/defaults";
+@import "./components/vars";
+@import "./components/text";
+@import "./components/preloader";
+@import "./components/header";
+@import "./components/top";
+@import "./components/works";
+@import "./components/extras";
+@import "./components/about";
+@import "./components/footer";
+
+::selection {
+  background: $pink;
+}
+
+body {
+  isolation: isolate;
+  min-height: 100vh;
+  margin: 0 auto;
+  width: 100vw;
+  max-width: 2000px;
+  height: auto;
+  background-color: $white;
+  overflow: hidden;
+  transition: background-color 0.2s;
+
+  #preloader {
+    z-index: 99;
+  }
+
+  header,
+  footer {
+    z-index: 3;
+  }
+
+  main {
+    z-index: 2;
+  }
+
+  main {
+    min-height: 100vh;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    position: relative;
+    isolation: isolate;
+
+    .background-title {
+      align-items: center;
+      color: transparentize($black, 0.92);
+      transition: color 0.2s;
+      display: flex;
+      font-family: $sharetech;
+      letter-spacing: 2rem;
+      font-size: 20em;
+      height: 100%;
+      justify-content: center;
+      left: 0;
+      pointer-events: none;
+      position: fixed;
+      top: 0;
+      user-select: none;
+      width: 100%;
+      z-index: 1;
+
+      span {
+        filter: blur(4px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+      }
+    }
+
+    section {
+      min-height: 100vh;
+      height: auto;
+      width: 100vw;
+      position: relative;
+    }
+  }
+
+  &.dark {
+    background-color: $black;
+    transition: background-color 0.2s;
+
+    main .background-title {
+      color: transparentize($miku, 0.92);
+      transition: color 0.2s;
+    }
+  }
+}
+
+#intersector {
+  top: 75vh;
+  width: 100%;
+  height: 1px;
+  // border-bottom: 1px dotted $meiko;
+  position: fixed;
+}
+
+a[rel="me"] {
+  display: none;
+}

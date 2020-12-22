@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="I am a web designer and creative developer. this is my blog, where I document interesting things I learn on the web.">
+  <meta name="author" content="jpegzilla">
+  <meta name="robots" content="index, follow">
+  <meta property="og:description" content="I am a web designer and creative developer. this is my blog, where I document interesting things I learn on the web.">
+  <meta property="og:url" content="https://jpegzilla.com">
+  <meta property="og:site_name" content="jpegzilla - web design">
+  <meta property="og:image" content="https://jpegzilla.com/css/img/21af09332037a999a3f58984cdd0cefe.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:site" content="@jpegzilla">
+  <meta name="twitter:creator" content="@jpegzilla">
+  <meta name="twitter:title" content="jpegzilla - web design blog">
+  <meta name="twitter:description" content="jpegzilla is a web designer, creative developer, and digital artist. come make something cool with me.">
+  <meta name="twitter:image" content="https://jpegzilla.com/css/img/21af09332037a999a3f58984cdd0cefe.png">
+  <meta name="twitter:card" content="summary-large-image">
+  <meta name="application-name" content="jpegzilla.com/blog" />
+  <link rel="author" href="http://jpegzilla.com/humans.txt">
+  <title>findings - week of 2.9.2019 &mdash; 2019 09 08</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141114501-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-141114501-1');
+  </script>
+</head>
+<style>
+  body {
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 38rem;
+    margin: 40px auto;
+    padding: 2rem;
+    color: #222;
+    font-family: sans-serif;
+    background-color: #eee
+  }
+
+  h1,
+  h2,
+  h3 {
+    line-height: 1.2
+  }
+
+  span.i {
+    font-style: italic
+  }
+
+  span.b {
+    font-weight: bolder
+  }
+
+  span.s {
+    text-decoration: line-through
+  }
+
+  span.u {
+    text-decoration: underline
+  }
+
+  span.o {
+    text-decoration: overline
+  }
+
+  p span.d {
+    float: left;
+    font-size: 4rem;
+    line-height: 2.5rem;
+    padding-top: 0.7rem;
+    padding-right: 0.25rem;
+    font-weight: bold
+  }
+
+  pre {
+    display: inline
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+    border: 1px solid #000
+  }
+
+  span.c {
+    font-family: monospace;
+    background-color: #d6d6d6;
+    padding: 0 0.25rem;
+    border-radius: 0.25rem
+  }
+
+  code {
+    display: block;
+    font-family: monospace;
+    background: #d6d6d6;
+    padding: 0.5rem 0.25rem 0.5rem 1rem;
+    border-radius: 0.25rem;
+    word-wrap: break-word
+  }
+</style>
+
+<body>
+  <header>
+    <h1><a target="_blank" href="https://jpegzilla.com">JPEGZILLA</a></h1>
+  </header>
+  <main>
+    <article>
+      <h1>findings - week of 2.9.2019</h1>
+      <time id="mkzDate"><span class='i'>2019 09 08</span></time>
+
+      <div id="mkzBody">
+        <p><span class='d'>H</span>ello! it's been about thirty days since the last entry in this series. here's some of the interesting stuff I've found recently.<br>
+          <hr>
+        </p>
+        <h2>number one: <a target="_blank" href="https://vimeo.com/263356178">programmable droplets for interaction</a>.</h2>
+        <p>water is probably the most common material on earth, so it makes sense that projects are coming out all the time with water as the main focus (this is something that I want to write about soon). this one, however, caught my attention
+          because it's just so simplistic and elegant. it seems like the amount of possibilities for something like this are pretty massive, considering all the things that <a target="_blank" href="https://tangible.media.mit.edu/">the creators</a>
+          can already demonstrate with it.</p>
+        <img src="./../img/programmable-droplets.gif" alt="a short clip of the aforementioned droplets in action." title="a short clip of the aforementioned droplets in action.">
+        <p>this is part of a subset of digital design known as 'calm technology'. It's basically about making tech that's there when you need it and practically invisible when you don't! I'll probably write a post going into detail on what that is
+          pretty soon (for real this time).</p>
+        <h2>number two: <a target="_blank" href="https://www.thegrammarof.com">the grammar of frames</a>.</h2>
+        <p>this page is an essay on how frames shape and change our experiences for better or for worse. as stated in the first line: <span class='i'>"we live in a world of frames"</span>.</p>
+        <img src="./../img/grammar-of-frames.gif" alt="navigation menu for the grammar of frames." title="navigation menu for the grammar of frames.">
+        <p>in practice, a frame can be any number of things &mdash; a computer monitor, a piece of paper, a product's packaging. the point this essay makes is this: the frame in which content is presented has an undeniable, nontrivial impact on the
+          consumer's experience of that content. it's an incredibly well-written and interesting article, so check it out!</p>
+        <h2>number three: <a target="_blank" href="https://cubic-bezier.com/">cubic-bezier</a>.</h2>
+        <p>cubic bezier is another tool created by one of my favorite web developers, <a target="_blank" href="http://lea.verou.me/">lea verou</a>. it allows for simple visualization of animations with timing functions defined by a <a target="_blank"
+            href="https://en.wikipedia.org/wiki/B%C3%A9zier_curve">bezier curve</a>. it writes the curve function for you!</p>
+        <img src="./../img/cubic-bezier.gif" alt="example usage of cubic-bezier.com." title="example usage of cubic-bezier.com.">
+        <p>I don't understand any of the math behind bezier curves, but I do make a lot of animations, so this is a godsend.</p>
+        <h2>number four: <a target="_blank" href="http://www.doqk.ml">doq's homepage</a>.</h2>
+        <p>to be honest, I don't know much about doq. what I do know is that the homepage he made last year is pretty incredible. he uses css' <span class='c'>content</span> properties and pseudoelements to write almost the entirety of the page, and
+          uses css escape sequences in order to draw some pretty cool ascii art.</p>
+        <img src="./../img/doq-homepage.gif" alt="image of doq's css updating his page in real time!" title="image of doq's css updating his page in real time!">
+        <p>the coolest part about this is the method he used here: he wrote a (javascript) class called <span class='c'>SelfBuildingSite</span> that runs through the pre-written css and writes it out on the screen, and also updates the style of the
+          page in real time. there are a lot of <a target="_blank" href="https://en.wikipedia.org/wiki/Regular_expression">regex</a> involved. pretty slick.</p>
+        <h2>number five: <a target="_blank" href="http://m3.euagendas.org/">m3 web demo</a>.</h2>
+        <p>m3 is a deep learning project that can learn about people just from their social media profiles. I've been using this a lot, and it seems really really accurate. I think deep learning and ai is really cool, but as a web developer, I'm
+          pretty much on the outside looking in. that's why web-based demos for things like this are pretty interesting. just enter a username and see what information appears &mdash; switch to the json tab for more detailed information.</p>
+        <img src="./../img/m3-twitter.png" alt="information from m3 about twitter's twitter account." title="information from m3 about twitter's twitter account.">
+        <p>this information is useful to me personally for several reasons, but it's also just interesting to look at. <span class='i'>related:</span> you can see what things twitter itself thinks you're interested in <a target="_blank" href="https://twitter.com/settings/your_twitter_data/twitter_interests">right
+            here</a> if you're logged in.</p>
+        <h2>number six: <a target="_blank" href="https://colorable.jxnblk.com">colorable</a>.</h2>
+        <p>colorable is a color tool that allows you to pick two colors and see the contrast ratio between them, with <span class='b'>aaa</span> being the best and <span class='b'>fail</span> being most difficult to read.</p>
+        <img src="./../img/colorable-interface.png" alt="colorable's interaface." title="colorable's interaface.">
+        <p>the primary focus of this tool is ensuring acceptable contrast ratios, and it's really useful if you just need to look for a foreground / background color combination. check it out!</p>
+        <p>I'm essentially obsessed with color in any form, so I love this tool. in fact, it's one of the four things that inspired me to make <a target="_blank" href="https://jpegzilla.com/emerald/">emerald</a> &mdash; the other three being <a
+            target="_blank" href="https://contrast-ratio.com/">contrast-ratio</a>, <a target="_blank" href="https://monochrome.jxnblk.com/">monochrome</a>, and <a target="_blank" href="https://coolors.co/app">coolors</a>.<br>
+          <hr>
+        </p>
+        <p>thanks for reading! I'll be back with a non-findings post soon, I think. I have a few ideas so far!<br>
+          <hr>
+        </p>
+        <h2>currently listening to:</h2>
+        <p>- <a target="_blank" href="https://www.youtube.com/watch?v=73oroJshX8o">dear deathwaters</a> by <a target="_blank" href="https://twitter.com/ivy_hollivana">ivy hollivana</a> (just recently bought this album and talked with the artist
+          briefly. she's really nice!)<br>- <a target="_blank" href="https://www.youtube.com/watch?v=RdAjAhP7Ga4">NULCTRL - meiso FLIP</a> by <a target="_blank" href="https://silentrm.net/">silentroom</a> (warning: <span class='i'>loud</span>)<br>-
+          <a target="_blank" href="https://www.youtube.com/watch?v=n2IW1KQITlk">NEW ERA</a> by <a target="_blank" href="https://www.foxcaptureplan.com/">fox capture plan</a><br>- <a target="_blank" href="https://www.youtube.com/watch?v=UBrgHEF8EfE">Oh,
+            Susquehanna</a> by <a target="_blank" href="http://defianceohio.terrorware.com/">defiance, ohio</a><br>- <a target="_blank" href="https://www.youtube.com/watch?v=7hqTxVowKsc">CHOCOLATE PHILOSOPHY</a> by <a target="_blank" href="https://yu-tokiwa.com/">yu
+            tokiwa</a><br>- <a target="_blank" href="https://www.youtube.com/watch?v=-7Ou_EaSze4">Clinpf Eepfwoof</a> by <a target="_blank" href="https://rubymydear.bandcamp.com/">Ruby My Dear</a></p>
+
+      </div>
+    </article>
+
+  </main>
+  <footer>
+    <span class="non-icon">&copy;&nbsp;<span id="copyright"></span>&nbsp;<span class="name">jpegzilla</span>&nbsp;&vert;&nbsp;<a target="_blank" href="https://jpegzilla.com/humans.txt">humans.txt</a>
+      &nbsp;&vert;&nbsp;<a href="../">blog directory</a>
+      &nbsp;&vert;&nbsp;<a href="https://discordapp.com/invite/Ft9rVA6" target="_blank" class="con-links">discord</a>
+      &nbsp;&vert;&nbsp;<a target="_blank" href="https://twitter.com/jpegzilla">twitter</a>
+    </span>
+  </footer>
+</body>
+
+</html>

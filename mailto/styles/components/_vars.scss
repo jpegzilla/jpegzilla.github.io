@@ -1,0 +1,14 @@
+@import url("https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap");
+
+$black: #070109;
+$offwhite: #f8e7fd;
+$white: #ffffff;
+$meiko: #d80000;
+
+$sharetech: "Share Tech Mono", monospace;
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

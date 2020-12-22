@@ -1,0 +1,13 @@
+/* creator */
+
+designer and developer: eris brown
+site: jpegzilla.com
+twitter: @jpegzilla
+location: atlanta, ga
+email: eris(at)jpegzilla.com
+
+/* site */
+
+standards: html5, css3, es6
+components: jquery, lodash
+software: atom, chrome

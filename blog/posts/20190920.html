@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="I am a web designer and creative developer. this is my blog, where I document interesting things I learn on the web.">
+  <meta name="author" content="jpegzilla">
+  <meta name="robots" content="index, follow">
+  <meta property="og:description" content="I am a web designer and creative developer. this is my blog, where I document interesting things I learn on the web.">
+  <meta property="og:url" content="https://jpegzilla.com">
+  <meta property="og:site_name" content="jpegzilla - web design">
+  <meta property="og:image" content="https://jpegzilla.com/css/img/21af09332037a999a3f58984cdd0cefe.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:site" content="@jpegzilla">
+  <meta name="twitter:creator" content="@jpegzilla">
+  <meta name="twitter:title" content="jpegzilla - web design blog">
+  <meta name="twitter:description" content="jpegzilla is a web designer, creative developer, and digital artist. come make something cool with me.">
+  <meta name="twitter:image" content="https://jpegzilla.com/css/img/21af09332037a999a3f58984cdd0cefe.png">
+  <meta name="twitter:card" content="summary-large-image">
+  <meta name="application-name" content="jpegzilla.com/blog" />
+  <link rel="author" href="http://jpegzilla.com/humans.txt">
+  <title>(almost) everything I've learned about color science in javascript. &mdash; 2019 09 20</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141114501-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-141114501-1');
+  </script>
+</head>
+<style>
+  body {
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 38rem;
+    margin: 40px auto;
+    padding: 2rem;
+    color: #222;
+    font-family: sans-serif;
+    background-color: #eee
+  }
+
+  h1,
+  h2,
+  h3 {
+    line-height: 1.2
+  }
+
+  span.i {
+    font-style: italic
+  }
+
+  span.b {
+    font-weight: bolder
+  }
+
+  span.s {
+    text-decoration: line-through
+  }
+
+  span.u {
+    text-decoration: underline
+  }
+
+  span.o {
+    text-decoration: overline
+  }
+
+  p span.d {
+    float: left;
+    font-size: 4rem;
+    line-height: 2.5rem;
+    padding-top: 0.7rem;
+    padding-right: 0.25rem;
+    font-weight: bold
+  }
+
+  pre {
+    display: inline
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+    border: 1px solid #000
+  }
+
+  span.c {
+    font-family: monospace;
+    background-color: #d6d6d6;
+    padding: 0 0.25rem;
+    border-radius: 0.25rem
+  }
+
+  code {
+    display: block;
+    font-family: monospace;
+    background: #d6d6d6;
+    padding: 0.5rem 0.25rem 0.5rem 1rem;
+    border-radius: 0.25rem;
+    word-wrap: break-word
+  }
+</style>
+
+<body>
+  <header>
+    <h1><a target="_blank" href="https://jpegzilla.com">JPEGZILLA</a></h1>
+  </header>
+  <main>
+    <article>
+      <h1>(almost) everything I've learned about color science in javascript.</h1>
+      <time id="mkzDate"><span class='i'>2019 09 20</span></time>
+
+      <div id="mkzBody">
+        <p><span class='d'>I</span>n the past month, I've learned more about color science and color math than I have in my entire life. that's because I recently created an <a target="_blank" href="https://jpegzilla.com/emerald">application whose
+            entire purpose is color</a>. for this, I needed to know several things — how <a target="_blank" href="https://en.wikipedia.org/wiki/RGB_color_space">rgb color space works</a>, how to use <a target="_blank" href="https://en.wikipedia.org/wiki/SRGB">srgb</a>,
+          how <a target="_blank" href="https://en.wikipedia.org/wiki/Web_colors#Hex_triplet">hex colors work</a>, how <a target="_blank" href="https://en.wikipedia.org/wiki/HSL_and_HSV">hsl colors work</a>, how to find the <a target="_blank" href="https://en.wikipedia.org/wiki/Contrast_ratio">contrast
+            ratio</a> between colors and <a target="_blank" href="https://www.w3.org/TR/WCAG20-TECHS/G18.html">how that works on the web</a>.</p>
+        <p>I learned all that among many other things — including application of bitwise operations in javascript, which I never have any reason to use otherwise. here are the most important techniques that I learned.<br>
+          <hr>
+        </p>
+        <h2>first technique: hex to rgba and back.</h2>
+        <p><span class='d'>C</span>onverting from a hex value to an rgba color is pretty straightforward, as you'll see. however, I like to be thorough — the function I've written will accept hex values in almost any common format - three, four,
+          six, and eight characters. the first thing that needs to be done, upon recieving a hex string, is validating it:</p>
+        <img src="./../img/hex-to-rgba-validate.png" alt="snippet of code showing how hex values are validated." title="snippet of code showing how hex values are validated.">
+        <p>if the value passed in is not a string, doesn't exist, or is too short, the function immediately stops. if the function is passed a hex color that begins with a <span class='c'>#</span> symbol like <span class='c'>#f4ffc3</span>, that
+          symbol is removed and the function continues with just the numbers and letters. finally, a regular expression is used to make sure the value only contains a specific range of characters. I'll describe why these specific characters are used
+          in a second.<br>after validation, the function figures out how long the string is and then performs the conversion. I'll focus on the common six-character string case, for the sake of brevity.</p>
+        <img src="./../img/hex-to-rgba-six-conv.png" alt="snippet of code showing how six-character hex values are converted." title="snippet of code showing how six-character hex values are converted.">
+        <p>a hex color, like <span class='c'>#50c878</span>, is a number in hexadecimal — a base sixteen numeral system made with sixteen symbols as opposed to our traditional ten (numbers zero through nine). base sixteen consists of those symbols
+          plus the letters a through f. a would come after nine, and be equal to ten, therefore f is equal to fifteen. knowing this, you can see more clearly how the color is structured. <span class='c'>#</span> is just to specify to the computer
+          that what follows that symbol is a hex color. after that, every pair of numbers is a single value ranging from zero to two hundred fifty-five — the minimum and maximum values for individual colors in srgb (<span class='b'>s</span>tandard
+          <span class='b'>r</span>ed <span class='b'>g</span>reen <span class='b'>b</span>lue) space.</p>
+        <p>so where does this function begin? well, to start, it gets a raw integer from the hex value. let's work with my example color of <span class='c'>50c878</span> (remember, the number sign is removed). I'll use javascript's <span class='c'>parseInt("50c878",
+            16)</span> to convert the base sixteen number to an integer. the output looks like this:</p>
+        <img src="./../img/hex-to-rgba-parseint-output.png" alt="parsing the hex value to an integer." title="parsing the hex value to an integer.">
+        <p>now, we're working with a regular integer, which we'll call <span class='i'>rgb</span>. this is where bitwise operations are applied to get each part of the final rgb value! red is calculated by shifting <span class='i'>rgb</span> to the
+          right by sixteen bits. the value from this operation is used in a bitwise <span class='c'>and</span> with the hex literal <span class='c'>0xff</span> (255). let's see what this step looks like.</p>
+        <img src="./../img/hex-to-rgba-bitwise-1.png" alt="bitwise operation part one - getting the value for red." title="bitwise operation part one - getting the value for red.">
+        <p>we end up with the integer eighty, and the <span class='c'>and</span> operation appears to have had no effect. the <span class='c'>and</span> operation with the hex literal for 255 (<span class='c'>0xff</span>), in this case, will only
+          have an effect with certain numbers, which you'll see here with the second operation — finding the green value.</p>
+        <img src="./../img/hex-to-rgba-bitwise-2.png" alt="bitwise operation part two - getting the value for green." title="bitwise operation part two - getting the value for green.">
+        <p>we continue this process until we have three values calculated and the function returns an object: <span class='c'>{ r: 80, g: 200, b: 120 }</span>.</p>
+        <p>so how do we go back? that's much, much simpler. I wrote a helper function to convert a number to it's hex representation:</p>
+        <img src="./../img/hex-conversion-util.png" alt="utility function for converting numbers to hex." title="utility function for converting numbers to hex.">
+        <p>and then all you have to do is something like:</p>
+        <code>const rgbToHex = (r, g, b) => `#${hex(r)}${hex(g)}${hex(b)}`;</code>
+        <p>and that's all there is to it. running the rgb values we just got from <span class="c">hexToRGBA</span> through this function results in...the hex color we started with! no surprise there.</p>
+        <img src="./../img/rgb-to-hex-output.png" alt="output of the rgbToHex function." title="output of the rgbToHex function.">
+        <h2>second technique: converting rgb to hsl.</h2>
+        <p><span class='d'>I</span> also needed to know how to convert rgb to hsl, for another part of my color display and certain calculations. the function involved is a little bit complicated and is definitely not my original work. it's a
+          combination of several implementations I've seen written in a few different languages. here's the first part:</p>
+        <img src="./../img/rgb-to-hsl-1.png" alt="converting rgb to hsl - defining initial variables." title="converting rgb to hsl - defining initial variables.">
+        <p>the first thing done is dividing all the rgb values by the maximum possible value of each (in order to limit the values to the set of <span class='0 ,'>1</span>), and then finding the maximum and minimum among the resulting numbers. then,
+          we do the heavy lifting:</p>
+        <img src="./../img/rgb-to-hsl-2.png" alt="converting rgb to hsl - doing the math." title="converting rgb to hsl - doing the math.">
+        <p>this second part first makes sure the color isn't just white or black (<span class='c'>if (max != min)</span>). then, we find the saturation by dividing the difference of the maximum and minimum in the <span class='r ,'>g, b</span> set by
+          the sum of the same, or, if lightness is about 0.5 as defined in the first part, we divide the difference of the maximum and minimum by two minus the difference of the maximum and minimum.</p>
+        <p>then, we determine which color has the highest value and use that to calculate the hue. I then multiply the resulting values to convert them to values that would be used in a typical application of hsl values, and make sure that the hue
+          is not negative. the output of this function looks something like this:</p>
+        <img src="./../img/rgb-to-hsl-output.png" alt="output of the rgbToHSL function." title="output of the rgbToHSL function.">
+        <h2>third technique: calculating luminance / finding contrast ratio.</h2>
+        <p><span class='d'>C</span>ontrast ratio is important for accessibility reasons. it's usually important when deciding on colors to use as the background and text color. the web content accessibility guidelines (wcag) define a range of
+          contrast ratios from one to twenty-one &mdash; one meaning the two colors are the same (ergo impossible to read), twenty-one meaning the two colors are the highest contrast possible (very easy to read).</p>
+        <img src="./../img/contrast-ratio-going-down.gif" alt="contrast ratio decreasing between colors." title="contrast ratio decreasing between colors.">
+        <p>as contrast ratio decreases, text becomes harder and harder to read. so how would we calculate contrast ratio? <a target="_blank" href="https://www.w3.org/TR/WCAG20-TECHS/G18.html">w3c describes the process mathematically here</a>:</p>
+        <img src="./../img/wcag-contrast-ratio-procedure.png" alt="calculating contrast beween two colors." title="calculating contrast beween two colors.">
+        <p>which I translated into javascript like this:</p>
+        <img src="./../img/javascript-contrast-ratio.png" alt="calculating contrast ratio in javascript." title="calculating contrast ratio in javascript.">
+        <p>this function was meant to take in hex colors as arguments, so first we convert the hex values to rgb values. then we calculate the luminance of the rgb colors as described <a target="_blank" href="https://www.w3.org/TR/2008/REC-WCAG20-20081211/#relativeluminancedef">here</a>
+          which I converted to this function:</p>
+        <img src="./../img/javascript-luminance.png" alt="calculating luminance in javascript." title="calculating luminance in javascript.">
+        <p>the values of the constants are defined elsewhere, but described at <a target="_blank" href="https://www.w3.org/TR/2008/REC-WCAG20-20081211/#relativeluminancedef">this link</a>. after the luminance calculation, we can determine which
+          color is darker and which one is lighter. then the contrast between the two colors is determined by dividing the sum of the color and 0.05 by the sum of the other color and 0.05. we can use that value to get the contrast number from one to
+          twenty-one by multiplying it by one hundred, rounding it down, and then dividing it by one hundred. I used this function in many places while I was developing <a target="_blank" href="https://github.com/jpegzilla/emerald">emerald</a>.</p>
+        <h2>fourth technique: finding the closest "human-readable" color.</h2>
+        <p><span class='d'>T</span>his is a really interesting part. I wanted some way to find out the closest css color name (like <span class='c'>mediumseagreen</span>) to any given color. so, I got a dictionary of every css color name mapped to
+          its hex value:</p>
+        <img src="./../img/simplecolors-json.png" alt="library of simple css colors." title="library of simple css colors.">
+        <p>I also did the same thing with a <span class='i'>much</span> larger library of colors, so I'd have to option to switch to more detailed color names, which you can use in emerald if you click on 'css color names' &mdash; it will
+          switch to 'fancy color names'.</p>
+        <p>the function that finds the closest color name to any given hex color is probably the single most complicated function in all of emerald, at least for me. first of all, an array is created containing all the hex values from the selected
+          color library: it will either be <span class='c'>colorHexArray</span> or <span class='c'>fancyColorHexArray</span> depending on the user's choice. the important thing is just to have a dictionary of colors ready to go and a variable
+          outside the scope of the function that will hold the last known closest color as the function searches for a match. get some validation and variable initialization out of the way:</p>
+        <img src="./../img/findnearestcolor-validation.png" alt="findNearestColor validation." title="findNearestColor validation.">
+        <p><span class='c'>rgba1</span> is just the initial rgb equivalent of the hex value passed into the function. delta depends on the currently selected color library, which I determine by asking whether a flag variable <span class='c'>FANCY_COLOR_NAMES</span>
+          is <span class='c'>true</span> or <span class='c'>false</span>. <span class='c'>delta</span> essentially determines the granularity of the function, meaning it needs to be more granular when working with more colors &mdash; so, if the
+          larger color lib is in play, delta is huge. I also initialize <span class='c'>rgba2</span> and <span class='c'>result</span> which will be used later. and then it's time for a little color math &mdash; a little three dimensional math never
+          hurt anyone.</p>
+        <img src="./../img/findnearestcolor-regularcolors.png" alt="calculating distance between colors." title="calculating distance between colors.">
+        <p>I'll just focus on the case in which we're using the css color lib, not the fancy one, but the process is essentially the same. the only thing that changes is the array that the <span class='c'>forEach</span> loop is iterating over. this
+          part goes through every single color in the array and measures the distance between our original color and the current color, which I assign to <span class='c'>rgba2</span>. when the distance is small enough, <span class='c'>result</span>
+          becomes the closest acceptable color to our input.</p>
+        <img src="./../img/findnearestcolor-get-result.png" alt="finding the closest color name." title="finding the closest color name.">
+        <p>then, the actual closest color name is selected based on the final hex value we assigned to <span class='c'>result</span>, which is the last known closest color if there was no result (this only happens in very limited situations, but
+          it's just to prevent <span class='c'>undefined</span> from ever showing up as the closest color). the color is located in the <span class='c'>cssColorNames</span> array, which is either the css color lib or the fancy one, and the name of
+          that color is returned. this is what the output of the function <span class='c'>findNearestColor</span> looks like when you're sliding the color slider around:</p>
+        <img src="./../img/findnearestcolor-output.png" alt="findNearestColor updates really fast, and a lot." title="findNearestColor updates really fast, and a lot.">
+        <h2>fifth technique: changing the shade of a hex color.</h2>
+        <p><span class='d'>I</span> decided at some point to add a feature to emerald that would allow you to see alternative shades of the current color pair, from light to dark. it currently looks like this:</p>
+        <img src="./../img/color-swatches-alt-shades.png" alt="alternative color shade display in emerald." title="alternative color shade display in emerald.">
+        <p>this function involves more bitwise operations. what it does is get the integer from a base sixteen hex number, like we did before when converting from hex to rgb. then it adds whatever <span class='c'>amount</span> we pass in to each of
+          the r, g, and b values (I used fifteen to lighten and negative fifteen to darken). if r, g, or b go below zero as a result of darkening, they become zero &mdash; no such thing as negative colors (yet).</p>
+        <img src="./../img/changeshade-function.png" alt="the body of the changeShade function." title="the body of the changeShade function.">
+        <p>initially, I was showing six alternative shades of a color in emerald. however, if the color was too dark, the alternative shades would all be black, because you can't darken black, so if more than one swatch was black, I started taking
+          the first swatch and tacking on a lighter version to the top of the stack, chopping off the unnecessary black swatches. you can see that behavior here (notice how the bottom swatches stop darkening and only the top swatches change after a
+          bit):</p>
+        <img src="./../img/swatch-adjusted-darkening.gif" alt="swatches only darken to a certain point." title="swatches only darken to a certain point.">
+        <h2>sixth technique: determining the brightness of a color.</h2>
+        <p><span class='d'>F</span>inally, I wanted to implement a way to change certain text to be white or black if the background it was in front of became too dark or light. <a target="_blank" href="https://www.w3.org/WAI/ER/WD-AERT/#color-contrast">w3c's
+            description of how to find a color's brightness</a> is useful here. the algorithm described in that link is taken from an algorithm made for converting from rgb to <a target="_blank" href="https://en.wikipedia.org/wiki/YIQ">yiq</a>
+          color &mdash; that algorithm is <a target="_blank" href="https://www.eembc.org/techlit/datasheets/yiq_consumer.pdf">here</a>. I converted the w3c's interpretation of the algorithm to this javscript:</p>
+        <img src="./../img/javascript-brightness.png" alt="javascript algorithm for color brightness." title="javascript algorithm for color brightness.">
+        <p>also in this screenshot: you can see where I determine whether to make certain text black depending on the brightness of the background.</p>
+        <p>that's pretty much everything I've learned so far. I'm working on writing a utility that will take two colors and find the nearest two colors with <span class='i'>x</span> contrast ratio, which is proving to be incredibly hard for me
+          since I'm not too great at math. thank you for reading, and if you're writing an application that needs to programmatically handle color, then I hope this was useful to you, even if we speak different (programming) languages.<br>
+          <hr>
+        </p>
+        <h1>currently listening to:</h1>
+        <p>- <a target="_blank" href="https://www.youtube.com/watch?v=sMbW4sptVnE">ares</a> by <a target="_blank" href="https://www.facebook.com/yveyoung">yvette young</a> of <a target="_blank" href="https://covetband.bandcamp.com">covet</a><br>- <a
+            target="_blank" href="https://www.youtube.com/watch?v=1Rk1K5Mmnbg">tout petit moineau</a> by <a target="_blank" href="https://igorrr.com">igorrr</a><br>- <a target="_blank" href="https://www.youtube.com/watch?v=cm2Xz8WKf-4">人間なんか大嫌い+ / I
+            just hate people+</a> by <a target="_blank" href="http://pinocchiop.com/">pinocchiop</a><br>- <a target="_blank" href="https://www.youtube.com/watch?v=NTeNLK0Q0wc">exavid</a> by <a target="_blank" href="http://acutic.net/">an</a><br>- <a
+            target="_blank" href="https://www.youtube.com/watch?v=aCT5mClB3yM">ウテナ / utena</a> by <a target="_blank" href="https://www.reol.jp/">reol</a><br>- <a target="_blank" href="https://www.youtube.com/watch?v=W761DtH1oRg&feature=youtu.be">deja
+            vu</a> by <a target="_blank" href="https://twitter.com/hf_dreamcatcher">dreamcatcher</a><br>
+          <hr>
+        </p>
+
+      </div>
+    </article>
+
+  </main>
+  <footer>
+    <span class="non-icon">&copy;&nbsp;<span id="copyright"></span>&nbsp;<span class="name">jpegzilla</span>&nbsp;&vert;&nbsp;<a target="_blank" href="https://jpegzilla.com/humans.txt">humans.txt</a>
+      &nbsp;&vert;&nbsp;<a href="../">blog directory</a>
+      &nbsp;&vert;&nbsp;<a href="https://discordapp.com/invite/Ft9rVA6" target="_blank" class="con-links">discord</a>
+      &nbsp;&vert;&nbsp;<a target="_blank" href="https://twitter.com/jpegzilla">twitter</a>
+    </span>
+  </footer>
+</body>
+
+</html>

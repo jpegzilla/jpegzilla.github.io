@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Crimson+Text&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+$breakpoint-small: 1500px;
+$breakpoint-tiny: 1200px;
+$breakpoint-miniscule: 961px;
+
+:root {
+  font-size: 18px;
+  overflow-x: hidden;
+
+  @media (max-width: $breakpoint-small) {
+    font-size: 16px;
+  }
+
+  @media (max-width: $breakpoint-tiny) {
+    font-size: 14px;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 14px !important;
+  display: block;
+  height: 18px !important;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 10px 10px #33300000;
+  box-shadow: inset 0 0 10px 10px #33300000;
+  border: solid 5px transparent;
+  width: 6px !important;
+  display: block;
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-box-shadow: inset 0 0 10px 10px #dfdfdf;
+  box-shadow: inset 0 0 10px 10px #dfdfdf;
+  border: solid 5px transparent;
+}
+
+$black: #070109;
+$offwhite: #f8e7fd;
+$white: #ffffff;
+$pink: #e0005d;
+
+$sharetech: "Share Tech Mono", monospace;
+$crimsontext: "Crimson Text", serif;
+
+@keyframes flash {
+  from {
+    background-color: $white;
+  }
+
+  25% {
+    background-color: $pink;
+  }
+
+  50% {
+    background-color: $white;
+  }
+
+  75% {
+    background-color: $pink;
+  }
+
+  to {
+    background-color: $white;
+  }
+}
+
+$flash-anim: flash 0.5s forwards linear;
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flexCenterLeft {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}

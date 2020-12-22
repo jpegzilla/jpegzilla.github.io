@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="I am a web designer and creative developer. this is my blog, where I document interesting things I learn on the web.">
+  <meta name="author" content="jpegzilla">
+  <meta name="robots" content="index, follow">
+  <meta property="og:description" content="I am a web designer and creative developer. this is my blog, where I document interesting things I learn on the web.">
+  <meta property="og:url" content="https://jpegzilla.com">
+  <meta property="og:site_name" content="jpegzilla - web design">
+  <meta property="og:image" content="https://jpegzilla.com/css/img/21af09332037a999a3f58984cdd0cefe.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:site" content="@jpegzilla">
+  <meta name="twitter:creator" content="@jpegzilla">
+  <meta name="twitter:title" content="jpegzilla - web design blog">
+  <meta name="twitter:description" content="jpegzilla is a web designer, creative developer, and digital artist. come make something cool with me.">
+  <meta name="twitter:image" content="https://jpegzilla.com/css/img/21af09332037a999a3f58984cdd0cefe.png">
+  <meta name="twitter:card" content="summary-large-image">
+  <meta name="application-name" content="jpegzilla.com/blog" />
+  <link rel="author" href="http://jpegzilla.com/humans.txt">
+  <title>internet research techniques number one: random user generated content &mdash; 2019 06 30</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141114501-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-141114501-1');
+  </script>
+</head>
+<style>
+  body {
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 38rem;
+    margin: 40px auto;
+    padding: 2rem;
+    color: #222;
+    font-family: sans-serif;
+    background-color: #eee
+  }
+
+  h1,
+  h2,
+  h3 {
+    line-height: 1.2
+  }
+
+  span.i {
+    font-style: italic
+  }
+
+  span.b {
+    font-weight: bolder
+  }
+
+  span.s {
+    text-decoration: line-through
+  }
+
+  span.u {
+    text-decoration: underline
+  }
+
+  span.o {
+    text-decoration: overline
+  }
+
+  p span.d {
+    float: left;
+    font-size: 4rem;
+    line-height: 2.5rem;
+    padding-top: 0.7rem;
+    padding-right: 0.25rem;
+    font-weight: bold
+  }
+
+  pre {
+    display: inline
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+    border: 1px solid #000
+  }
+
+  span.c {
+    font-family: monospace;
+    background-color: #d6d6d6;
+    padding: 0 0.25rem;
+    border-radius: 0.25rem
+  }
+
+  code {
+    display: block;
+    font-family: monospace;
+    background: #d6d6d6;
+    padding: 0.5rem 0.25rem 0.5rem 1rem;
+    border-radius: 0.25rem;
+    word-wrap: break-word
+  }
+</style>
+
+<body>
+  <header>
+    <h1><a target="_blank" href="https://jpegzilla.com">JPEGZILLA</a></h1>
+  </header>
+  <main>
+    <article>
+      <h1>internet research techniques number one: random user generated content</h1>
+      <time id="mkzDate"><span class='i'>2019 06 30</span></time>
+
+      <div id="mkzBody">
+        <p>one of the things that makes finding new and interesting information on the internet so much fun is the sheer immensity of the place. however, this is also one of the things that increases the probability that you won't find what you're
+          looking for. a <span class='i'>ton</span> of websites that exist right now are dead, empty, broken, or otherwise abandoned. these websites are part of the internet wastelands. on the surface web, the wastelands are massive. outside of
+          that, they're likely to be <span class='i'>much</span>, much larger. my point is, when you want to find something new, rather than going for a truly random result, your best bet is probably to use some sort of content aggregator.</p>
+        <h2>number one: <a target="_blank" href="https://are.na">are.na</a>.</h2>
+        <p>are.na is one I picked mainly because the users are mainly comprised of people looking to find inspiration and expand their ideas. most of the content there is well-curated. are.na, in this way, is very far detached from the wastelands.</p>
+        <img src="./../img/arena-homepage.png" alt="screenshot of the are.na homepage." title="screenshot of the are.na homepage.">
+        <p>the are.na urls that we want look like this: <span class='c'>https://are.na/block/xxxxxxx</span><br> where the x's are numbers. so, since I don't want to determine the type of content that I'll find, and I just want to find anything that
+          I haven't seen before, I'll write something like this:</p>
+        <img src="./../img/random-x-numbers.png" alt="I know it could be shorter. I just thought this function was cute." title="I know it could be shorter. I just thought this function was cute.">
+        <p><span class='c'>rDigits(d)</span> just basically writes a string with <span class='c i'>d</span> amount of x's and then replaces them with random numbers from 0 to 9; then, randUrl is set equal to an arena block url with those <span class='c i'>d</span>
+          random numbers. so we'd get some output like this:</p>
+        <img src="./../img/random-arena-url.png" alt="a random url generated by the rDigits function." title="a random url generated by the rDigits function.">
+        <p>then, we just write a quick function that checks to see if the url actually goes anywhere and makes a new one if the first one doesn't work. it just repeats until it finds one that works, and then opens the block in a new tab. you can try
+          this out at my <a target="_blank" href="https://jpegzilla.com/randomarena/">randomarena utility</a>! if you like finding new stuff online, then you'll probably like this.</p>
+        <p>the reason this works is because I'm using a proxy service to 'get around' cors policy. I'll probably remove this dependency in the future but right now <span class='s'>I'm too stupid to understand how to do cross-origin requests
+            correctly</span> I'm busy!</p>
+        <h2>number two: any other website that uses similar url schemes</h2>
+        <p>finding random content is often just this simple. example: youtube. simply generate a string of eleven random characters and then append said characters to youtube's ubiquitous <span class='c'>https://youtube.com/watch?v=</span> url. this
+          type of thing also works on imgur. any website that uses relatively consistent urls to point to user-generated content can be sifted through with this exact technique! generate url, check url, navigate to url/retry, rinse and repeat.</p>
+        <p>here's a quick example of how one might find a random youtube video (you'd still want to automate a validity check):</p>
+        <img src="./../img/random-youtube-video-function.png" alt="a function for generating a random youtube video url." title="a function for generating a random youtube video url.">
+        <p>and the output looks like this:</p>
+        <img src="./../img/random-youtube-video-function-console-log.png" alt="console log showing the generated url." title="console log showing the generated url.">
+        <p>I haven't though of a non-stupid way to do this yet. take a look at the <a target="_blank" href="https://jpegzilla.com/scraps/index.html#randomYoutubeVideo">stupid way</a> that I came up with if you want to lose some brain cells free of
+          charge! I tried this method and was confused for about 30 seconds as to why I was getting rate-limited &mdash; I zoned out and accidentally let it run for about 1000 requests. guess I'll be manually validating the urls!<br>
+          <hr>
+        </p>
+        <p>I really want to expand on the ideas I've had around collecting randomly selected user-generated data (like collecting things from various sources that fit a similar theme, allowing people to choose how many results they get back, <span
+            class='s'>wait am I just reinventing search engines</span>, etc.), so I'll come back and make some more scripts around this concept later.</p>
+        <p>I kinda want to start documenting my research processes just so I can look back and laugh at myself later, and also so anyone reading this can find any helpful information that I might write about. I'll probably do these posts on a pretty
+          irregular basis, as well.<br>
+          <hr>
+        </p>
+        <p>currently listening to <a target="_blank" href="https://www.youtube.com/watch?v=05IZxpCWSao">Push Every Button</a> by <a target="_blank" href="https://lapfoxtrax.com/">Mayhem</a> and <a target="_blank" href="https://www.youtube.com/watch?v=wyL4xH4hvLg">MEGATON
+            BLAST</a> by <a target="_blank" href="https://twitter.com/BlackY_bemani">BlackY</a> and <a target="_blank" href="https://twitter.com/Yooh_st5">Yooh</a> remixed by <a target="_blank" href="https://twitter.com/tpazolite">t+pazolite</a></p>
+
+      </div>
+    </article>
+
+  </main>
+  <footer>
+    <span class="non-icon">&copy;&nbsp;<span id="copyright"></span>&nbsp;<span class="name">jpegzilla</span>&nbsp;&vert;&nbsp;<a target="_blank" href="https://jpegzilla.com/humans.txt">humans.txt</a>
+      &nbsp;&vert;&nbsp;<a href="../">blog directory</a>
+      &nbsp;&vert;&nbsp;<a href="https://discordapp.com/invite/Ft9rVA6" target="_blank" class="con-links">discord</a>
+      &nbsp;&vert;&nbsp;<a target="_blank" href="https://twitter.com/jpegzilla">twitter</a>
+    </span>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/jpegzilla
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://jpegzilla.com
+  * I am jpegzilla (https://keybase.io/jpegzilla) on keybase.
+  * I have a public key ASAO5n0Ya11USbGhp22edi6oL31uYJTgk0Z02XlSbgZr6Qo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01200ee67d186b5d5449b1a1a76d9e762ea82f7d6e6094e0934674d979526e066be90a",
+      "host": "keybase.io",
+      "kid": "01200ee67d186b5d5449b1a1a76d9e762ea82f7d6e6094e0934674d979526e066be90a",
+      "uid": "a5b1c2b030bc0dc0eead17931d75f519",
+      "username": "jpegzilla"
+    },
+    "merkle_root": {
+      "ctime": 1558092527,
+      "hash": "889dbf414c37d5227681d0ef1ee82378150a88ce11aac6f878eb89223fbc53b24ab3001e48ffd7bfe90cd311cf112f1df25b12beddc0b6cd9db1a0dd87235810",
+      "hash_meta": "8eccab6a96317f23449a85f81a12b9f5c6d24f2e17c15ea0d92d1df4838b29ce",
+      "seqno": 5392536
+    },
+    "service": {
+      "entropy": "2cHKn3s7dXav6b/ux+s15lGl",
+      "hostname": "jpegzilla.com",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "4.0.0"
+  },
+  "ctime": 1558092542,
+  "expire_in": 504576000,
+  "prev": "870b3c61be14c9239331bcd4bef7ecba5e9b7aade7c3173c1f5b40ad908b0d30",
+  "seqno": 8,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgDuZ9GGtdVEmxoadtnnYuqC99bmCU4JNGdNl5Um4Ga+kKp3BheWxvYWTESpcCCMQghws8Yb4UySOTMbzUvvfsul6beq3nwxc8H1tArZCLDTDEIG23JNPT949yw+UlalRzzfETKWEa5U10XNet4V3Amid3AgHCo3NpZ8RAfslUJuL3VKOcgMGR1QdK9Cc4yG6vKbIXAKJO46l12HJCkwC9MeHjvPvh/TZkqUelweYJRI6gXyWtqvgUxkIxAqhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIOPYwqrpkR7UBRJ2ylDPjxMsJ9ChPtJ7VRfaxuKt0TNSo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/jpegzilla
+
+==================================================================

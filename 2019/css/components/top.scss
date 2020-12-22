@@ -1,0 +1,116 @@
+@import "./vars";
+
+#section-1 {
+  @include flexCenter;
+  isolation: isolate;
+  position: relative;
+  .intro-container {
+    opacity: 1;
+    padding: 10rem 8rem;
+
+    @media (max-width: $breakpoint-small) {
+      padding: 2rem;
+    }
+
+    @media (max-width: $breakpoint-tiny) {
+      padding: 2rem 2rem 4rem 2rem;
+    }
+
+    pointer-events: auto;
+    transition: opacity 0.3s;
+    z-index: 1;
+
+    &,
+    * {
+      overflow: hidden;
+    }
+
+    p {
+      transition: color 0.2s;
+      font-family: $crimsontext;
+      color: $black;
+      font-size: 3rem;
+
+      @media (max-width: $breakpoint-tiny) {
+        font-size: 1.75rem;
+      }
+
+      span a {
+        color: $pflag-blue;
+        transition: color 0.2s;
+      }
+
+      span {
+        opacity: 0;
+        display: inline-block;
+        b {
+          font-weight: normal;
+        }
+      }
+
+      &.active {
+        span {
+          animation: fadeIn 1.5s ease-out forwards;
+        }
+        @for $i from 1 through 5 {
+          span:nth-of-type(#{$i}) {
+            animation-delay: #{$i * 0.05}s;
+          }
+        }
+      }
+    }
+
+    body.dark & p {
+      color: $white;
+      a {
+        color: $miku;
+      }
+    }
+
+    p + p {
+      margin-top: 1rem;
+    }
+
+    &.hidden {
+      opacity: 0;
+      transition: opacity 0.3s;
+      pointer-events: none;
+    }
+  }
+
+  .shining-moon {
+    @include flexCenter;
+    animation: fadeOut 0.5s ease-out forwards;
+    bottom: 5rem;
+    height: 20rem;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    z-index: 0;
+
+    &.active {
+      animation: fadeIn 0.5s ease-out forwards;
+    }
+
+    .moon {
+      @include flexCenter;
+      animation: rotate 480s linear infinite;
+      border-radius: 50%;
+      height: 100%;
+      overflow: hidden;
+      width: 20rem;
+      .moon-inner {
+        background-image: url("./img/gradient-1.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 200%;
+        height: 100%;
+        opacity: 0.7;
+        overflow: hidden;
+        transform-origin: center;
+        width: 100%;
+      }
+    }
+  }
+}

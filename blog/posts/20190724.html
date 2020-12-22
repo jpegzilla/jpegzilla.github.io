@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="I am a web designer and creative developer. this is my blog, where I document interesting things I learn on the web.">
+  <meta name="author" content="jpegzilla">
+  <meta name="robots" content="index, follow">
+  <meta property="og:description" content="I am a web designer and creative developer. this is my blog, where I document interesting things I learn on the web.">
+  <meta property="og:url" content="https://jpegzilla.com">
+  <meta property="og:site_name" content="jpegzilla - web design">
+  <meta property="og:image" content="https://jpegzilla.com/css/img/21af09332037a999a3f58984cdd0cefe.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:site" content="@jpegzilla">
+  <meta name="twitter:creator" content="@jpegzilla">
+  <meta name="twitter:title" content="jpegzilla - web design blog">
+  <meta name="twitter:description" content="jpegzilla is a web designer, creative developer, and digital artist. come make something cool with me.">
+  <meta name="twitter:image" content="https://jpegzilla.com/css/img/21af09332037a999a3f58984cdd0cefe.png">
+  <meta name="twitter:card" content="summary-large-image">
+  <meta name="application-name" content="jpegzilla.com/blog" />
+  <link rel="author" href="http://jpegzilla.com/humans.txt">
+  <title>findings - week of 15.7.2019 &mdash; 2019 07 24</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141114501-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-141114501-1');
+  </script>
+</head>
+<style>
+  body {
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 38rem;
+    margin: 40px auto;
+    padding: 2rem;
+    color: #222;
+    font-family: sans-serif;
+    background-color: #eee
+  }
+
+  h1,
+  h2,
+  h3 {
+    line-height: 1.2
+  }
+
+  span.i {
+    font-style: italic
+  }
+
+  span.b {
+    font-weight: bolder
+  }
+
+  span.s {
+    text-decoration: line-through
+  }
+
+  span.u {
+    text-decoration: underline
+  }
+
+  span.o {
+    text-decoration: overline
+  }
+
+  p span.d {
+    float: left;
+    font-size: 4rem;
+    line-height: 2.5rem;
+    padding-top: 0.7rem;
+    padding-right: 0.25rem;
+    font-weight: bold
+  }
+
+  pre {
+    display: inline
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+    border: 1px solid #000
+  }
+
+  span.c {
+    font-family: monospace;
+    background-color: #d6d6d6;
+    padding: 0 0.25rem;
+    border-radius: 0.25rem
+  }
+
+  code {
+    display: block;
+    font-family: monospace;
+    background: #d6d6d6;
+    padding: 0.5rem 0.25rem 0.5rem 1rem;
+    border-radius: 0.25rem;
+    word-wrap: break-word
+  }
+</style>
+
+<body>
+  <header>
+    <h1><a target="_blank" href="https://jpegzilla.com">JPEGZILLA</a></h1>
+  </header>
+  <main>
+    <article>
+      <h1>findings - week of 15.7.2019</h1>
+      <time id="mkzDate"><span class='i'>2019 07 24</span></time>
+
+      <div id="mkzBody">
+        <p><span class='d'>O</span>ne night last week I thought of a dumb joke that I <a target="_blank" href="https://twitter.com/jpegzilla/status/1151735029556531200">tweeted out</a>. I ended up spending most of that same night and a lot of the
+          early morning actually researching numbers stations, and <span class='s'>trying to follow through on my joke</span>. that devolved into research on radio communication technology, and that sort of branched off until I had like six tabs
+          open about morse code, some on numbers stations, and a bunch of wikipedia articles. But the one tab I kept going back to was an online radio reciever called websdr (web <span class='b'>s</span>oftware <span class='b'>d</span>efined <span
+            class='b'>r</span>adio). so, that's my first finding for this post.</p>
+        <h2>number one: <a target="_blank" href="http://websdr.ewi.utwente.nl:8901">websdr</a>.</h2>
+        <p>this sdr is a reciever run by the amateur radio club at the netherlands' university of twente. there are a wide array of controls for fine-tuning your listening experience.</p>
+        <img src="./../img/websdr-waterfall-gif.gif" alt="an image of the main interface and controls for websdr. I'm listening to volmet!" title="an image of the main interface and controls for websdr. I'm listening to volmet!">
+        <p>as an absolute hoarder of audio, I found the recording function to be absolutely enthralling. there are so many strange broadcasts to be heard, from straight noise, to polytones, to morse code, to numbers broadcasts, to regular news...the
+          list goes on. in a few hours, I'd collected a modest array of recordings of sounds I thought were interesting. if you're interested, I highly recommend going there and recording some sounds of your own. could be a good source of samples!</p>
+        <h2>number two: <a target="_blank" href="http://blur.website">blur.website</a>.</h2>
+        <img src="./../img/blur-website-home.png" alt="screenshot of the homepage of blur.website." title="screenshot of the homepage of blur.website.">
+        <p>I briefly mentioned this in my <a target="_blank" href="https://jpegzilla.com/blog/posts/20190715">last blog post</a>, but didn't explain what it was. blur.website is a site created by web architect elliott cost. the only thing it does is
+          accept the url of a website, and then redirect you to a page where you can browse the website as usual &mdash; except the website is now near unrecognizably blurry. it's fun! my favorite thing about the website, though, is probably this
+          tagline:</p>
+        <img src="./../img/blur-website-tagline.png" alt="the tagline of blur.website: I left this website in the rain." title="the tagline of blur.website: I left this website in the rain.">
+        <h2>number three: <a target="_blank" href="https://metroxe.github.io/one-html-page-challenge">one html page challenge</a>.</h2>
+        <p>the one html page challenge is exactly what it sounds like: participants create anything they want, but using <span class='i'>only</span> one html file and nothing else. so, this essentially limits you to what you can do using vanilla
+          html, css, and javascript. take a look at some of the previous submissions, they're all pretty impressive.</p>
+        <img src="./../img/one-html-page-challenge.png" alt="homepage of the one html page challenge." title="homepage of the one html page challenge.">
+        <p>here's one of the entries: a single html document containing no image files whatsoever, and zero svg. this still life was created using only vanilla css and html. this is just one of the incredible entries to this challenge.</p>
+        <img src="./../img/pure-css-still-life.png" alt="some water and lemons rendered using only css and html." title="some water and lemons rendered using only css and html.">
+        <p>it really does seem like a fun challenge, and I plan on doing one soon!</p>
+        <h2>number four: <a target="_blank" href="http://echo.brycewilner.com">echo</a>.</h2>
+        <p>echo is a website that echos your key inputs. it's pretty, and the animation is so satisfying. I don't know why this is so enthralling, but it really is. besides that, I've been doing a lot of research related to key-input reactions in
+          the browser (due to the rhythm game I'm working on), and this site gave me some inspiration!</p>
+        <img src="./../img/echo-hello.gif" alt="me, typing 'hello world' in echo." title="me, typing 'hello world' in echo.">
+        <p>this is a project by web designer <a target="_blank" href="http://brycewilner.com">bryce wilner</a>. their homepage is pretty mesmerizing as well. check it out and you'll see what I mean!</p>
+        <h2>number five: <a target="_blank" href="https://www.are.na/the-creative-independent-1522276020/how-do-you-use-the-internet-mindfully">how do you use the internet mindfully?</a></h2>
+        <p>this is a collection of resources in are.na focused around the concept of mindful internet browsing. I initially came across it through <a target="_blank" href="https://thecreativeindependent.com/notes/arena-tci-how-do-you-use-the-internet-mindfully">this
+            ci article</a>. I kinda like how the article describes the contents of the collections as 'internet-based ephemera'.</p>
+        <img src="./../img/arena-mindful.gif" alt="some of the resources in the creative independent's 'how do you use the internet mindfully' collection." title="some of the resources in the creative independent's 'how do you use the internet mindfully' collection.">
+        <p>I definitely will come back to this collection and probably write about a few of the things in it.<br>
+          <hr>
+        </p>
+        <p><span class='d'>I</span>'m doing some traveling soon so my next post might come out on an even more...sporadic...time frame. hope you enjoyed this one, and I'll see you later!<br>
+          <hr>
+        </p>
+        <h2>currently listening to:</h2>
+        <p>- <a target="_blank" href="https://www.youtube.com/watch?v=XtXRvEsWzQo">nhelv</a> by <a target="_blank" href="https://silentrm.net/">silentroom</a> (probably one of my favorite songs right now)<br>- <a target="_blank" href="https://www.youtube.com/watch?v=vnw8zURAxkU">rolling
+            girl</a> by <a target="_blank" href="https://twitter.com/wowaka">wowaka</a><br>- <a target="_blank" href="https://www.youtube.com/watch?v=VNuwo94q0qs">under en sort sol</a> by <a target="_blank" href="https://www.discogs.com/artist/275907-Sort-Sol">sods/sort
+            sol</a><br>- <a target="_blank" href="https://www.youtube.com/watch?v=xZuHY9ugokM">stitchface</a> by <a target="_blank" href="https://goodgameband.bandcamp.com">good game</a><br>
+          <hr>
+        </p>
+
+      </div>
+    </article>
+
+  </main>
+  <footer>
+    <span class="non-icon">&copy;&nbsp;<span id="copyright"></span>&nbsp;<span class="name">jpegzilla</span>&nbsp;&vert;&nbsp;<a target="_blank" href="https://jpegzilla.com/humans.txt">humans.txt</a>
+      &nbsp;&vert;&nbsp;<a href="../">blog directory</a>
+      &nbsp;&vert;&nbsp;<a href="https://discordapp.com/invite/Ft9rVA6" target="_blank" class="con-links">discord</a>
+      &nbsp;&vert;&nbsp;<a target="_blank" href="https://twitter.com/jpegzilla">twitter</a>
+    </span>
+  </footer>
+</body>
+
+</html>

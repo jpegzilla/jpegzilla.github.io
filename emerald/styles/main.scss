@@ -1,0 +1,50 @@
+// main styles
+
+@import "./components/_vars";
+@import "./components/_anims";
+@import "./components/_defaults";
+@import "./components/preloader";
+@import "./components/header";
+@import "./components/update";
+@import "./components/colorfield";
+@import "./components/palette";
+@import "./components/alt-shades-display";
+@import "./components/modals";
+@import "./components/color-controls";
+
+body {
+  color: $emerald;
+  min-width: 100vw;
+  background-color: $white;
+  overflow: hidden;
+  &.scroll {
+    overflow: auto;
+    overflow-x: hidden;
+  }
+  height: auto;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  main {
+    position: relative;
+    left: 0;
+    top: 0;
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    will-change: background-color;
+  }
+
+  #hiddenElements {
+    height: 0;
+    width: 0;
+
+    & * {
+      height: 0;
+      width: 0;
+    }
+  }
+}

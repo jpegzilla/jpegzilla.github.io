@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="I am a web designer and creative developer. this is my blog, where I document interesting things I learn on the web.">
+  <meta name="author" content="jpegzilla">
+  <meta name="robots" content="index, follow">
+  <meta property="og:description" content="I am a web designer and creative developer. this is my blog, where I document interesting things I learn on the web.">
+  <meta property="og:url" content="https://jpegzilla.com">
+  <meta property="og:site_name" content="jpegzilla - web design">
+  <meta property="og:image" content="https://jpegzilla.com/css/img/21af09332037a999a3f58984cdd0cefe.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:site" content="@jpegzilla">
+  <meta name="twitter:creator" content="@jpegzilla">
+  <meta name="twitter:title" content="jpegzilla - web design blog">
+  <meta name="twitter:description" content="jpegzilla is a web designer, creative developer, and digital artist. come make something cool with me.">
+  <meta name="twitter:image" content="https://jpegzilla.com/css/img/21af09332037a999a3f58984cdd0cefe.png">
+  <meta name="twitter:card" content="summary-large-image">
+  <meta name="application-name" content="jpegzilla.com/blog" />
+  <link rel="author" href="http://jpegzilla.com/humans.txt">
+  <title>the subtle art of the website loading screen. &mdash; 2019 08 22</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141114501-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-141114501-1');
+  </script>
+</head>
+<style>
+  body {
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 38rem;
+    margin: 40px auto;
+    padding: 2rem;
+    color: #222;
+    font-family: sans-serif;
+    background-color: #eee
+  }
+
+  h1,
+  h2,
+  h3 {
+    line-height: 1.2
+  }
+
+  span.i {
+    font-style: italic
+  }
+
+  span.b {
+    font-weight: bolder
+  }
+
+  span.s {
+    text-decoration: line-through
+  }
+
+  span.u {
+    text-decoration: underline
+  }
+
+  span.o {
+    text-decoration: overline
+  }
+
+  p span.d {
+    float: left;
+    font-size: 4rem;
+    line-height: 2.5rem;
+    padding-top: 0.7rem;
+    padding-right: 0.25rem;
+    font-weight: bold
+  }
+
+  pre {
+    display: inline
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+    border: 1px solid #000
+  }
+
+  span.c {
+    font-family: monospace;
+    background-color: #d6d6d6;
+    padding: 0 0.25rem;
+    border-radius: 0.25rem
+  }
+
+  code {
+    display: block;
+    font-family: monospace;
+    background: #d6d6d6;
+    padding: 0.5rem 0.25rem 0.5rem 1rem;
+    border-radius: 0.25rem;
+    word-wrap: break-word
+  }
+</style>
+
+<body>
+  <header>
+    <h1><a target="_blank" href="https://jpegzilla.com">JPEGZILLA</a></h1>
+  </header>
+  <main>
+    <article>
+      <h1>the subtle art of the website loading screen.</h1>
+      <time id="mkzDate"><span class='i'>2019 08 22</span></time>
+
+      <div id="mkzBody">
+        <p><span class='d'>I</span>f you use technology, which you do, then loading screens are probably a part of your everyday life. so much so, in fact, that you probably don't even notice or care when interacting with a loading screen. the only
+          times loading screens are particularly noticeable is when they take a long time or if they're doing something special. this post is about the latter. what makes a good loading screen? how can you create a nice loading screen experience
+          while making the loading screen as lightweight as possible to minimize loading time? after all, the desired outcome of a loading screen is technically to disappear as quickly as possible. but, if it has to take a few seconds, it's ideal to
+          keep the user occupied in some way. how?</p>
+        <p>there are many examples of great loading screens &mdash; mainly in games, software, and the web. I'll focus on the web, because I'm a web designer, but I will draw examples and inspirations from other media!<br>
+          <hr>
+        </p>
+        <h2>first off: what is a loading screen even for?</h2>
+        <p>loading screens are a concept that originated in early video games, mainly as a way to give the user some indication that the computer was doing something. loading screens quickly evolved beyond something like a simple line of text that
+          said "loading" &mdash; to include things like minigames, music, and flavor text. one well-known example of this is namco's 1993 title <span class='i'>ridge racer</span>, whose loading screen allows you to play a round of <span class='i'>galaxian</span>
+          while the game is being prepared.</p>
+        <img src="./../img/ridge-racer-loading.gif" alt="ridge racer's loading screen, featuring one of my dad's favorite childhood games. fun fact!" title="ridge racer's loading screen, featuring one of my dad's favorite childhood games. fun fact!">
+        <p>however, at the time that loading screens came to prominence, they weren't really necessary, or reasonable to use on the early internet (side note: I'm going to exclude flash-based sites from this post). websites weren't packed with
+          multiple large javascript files, executing <a target="_blank" href="https://codyhouse.co/gem/animated-page-transition">fancy ajax transitions</a> or sending a hundred network requests to download images from a cdn. loading screens only
+          started to become more common on the internet when websites started doing those things.</p>
+        <p>the earliest references I can find on the internet referring to loading screens being used on websites point to late 2010. websites started to use loading screens in order to hide the fact that the website had not fully rendered yet and
+          also to avoid things like <a target="_blank" href="https://en.wikipedia.org/wiki/Flash_of_unstyled_content">flashes of unstyled text</a> &mdash; essentially some of the same reasons why they're used on the web today.</p>
+        <h2>timeline of a loading screen.</h2>
+        <p>I'm going to divide the lifespan of a website loading screen into four distinct parts:</p>
+        <p>&emsp;&emsp;1. the intro<br>&emsp;&emsp;2. the wait state<br>&emsp;&emsp;3. the outro / removing the loading screen<br>&emsp;&emsp;4. revealing the content</p>
+        <p>I'm including the post-load content reveal because it's a pretty important part of the loading screen. let's begin with the intro!</p>
+        <h3>number one: the intro.</h3>
+        <p>I'm defining the intro as 'what the user sees immediately upon and a few seconds after loading the site'. this is typically just a completely blank, white canvas upon which the content will be rendered. this is the transitional state
+          immediately followed by rendering the loading screen, on top of and before any other content. the main idea of this section is to make sure that the loading screen is displayed as quickly as possible. basically, just make sure that any
+          javascript related to the loading screen executes first, loading screen-related css loads first, etc.</p>
+        <h3>number two: the wait state.</h3>
+        <p>the wait state is basically the meat and potatoes of the loading screen, and contains all the most important elements of the loading screen. this is the part where you have to be careful about what you're loading / displaying, because
+          again, the loading screen itself should be fairly lightweight. as a result, they can tend to be incredibly boring and meaningless (i.e. just showing a spinner animation). this is where I like to take inspiration from video games, a medium
+          that's been getting loading screens right for like, thirty years.</p>
+        <p>there are five games that come to mind when I think about well-done loading screens: <span class='i'>ridge racer</span>, (the original) <span class='i'>nier:automata</span>, (a motion and ui design masterclass on it's own) <span class='i'>assassin's
+            creed</span>, (a shining example of perfect, thematically appropriate interactivity) <span class='i'>bayonetta</span>, (whose loading screens can be just as fun as the game) and <span class='i'>skyrim</span> (a calm, minimal experience
+          that enhances the gameplay) &mdash; as well as one music video.</p>
+        <p>I don't want to talk about all of these, because this post is going to get kinda long anyway, but I'll talk about a couple.</p>
+        <h4>example one: <span class='i'>nier:automata</span> - simple text, minimal animation, engaging interaction.</h4>
+        <img src="./../img/nier-loading-screen.gif" alt="nier:automata's loading screen." title="nier:automata's loading screen.">
+        <p>yes, nier automata is essentially the greatest recent mainstream example of world-class ui design in games. <a target="_blank" href="https://www.platinumgames.com/official-blog/article/9624">more on that here</a>, but I'm focusing on the
+          loading screens.</p>
+        <p>nier's loading screen is the perfect example of a simple, elegant, interactive loading screen that would be feasible to implement as a website preloader. the animations are subtle but engaging, and the text options that the system
+          presents to you are enough to interest (or at least confuse) the player while they wait. implementing something like this would most likely involve adding an artificial extra wait time so the user actually has time to interact with the
+          screen, or perhaps some sort of 'continue' confirmation prompt so that the user can move on from it whenever they'd like.</p>
+        <img src="./../img/jpegzilla-five-loading-screen.gif" alt="a loading screen I've been working on. the gif is almost too small to read!" title="a loading screen I've been working on. the gif is almost too small to read!">
+        <p>a similar concept with less interactivity involves simply showing text to the user while they wait, along with a simple animation to spice things up. it works well, and is fairly unobtrusive. the text is randomized each time, to add some
+          interesting flavor for a returning visitor.</p>
+        <p>another possibility is to use slightly more complex elements, albeit with limited, simple animation and interactivity, like in my second example....</p>
+        <h4>example two: skyrim - simple flavor text, complex element with interaction / simple animation.</h4>
+        <img src="./../img/skyrim-loading-screen.gif" alt="skyrim's iconic loading screen." title="skyrim's iconic loading screen.">
+        <p>skyrim does this very well. the loading screen offers some simple flavor text that often is interesting to read, some minor smoke animation for texture, and a model from the game that you can spin around and move as you please.</p>
+        <p>in my opinion, however, when creating a loading screen for website, the best type of component to use is some sort of infinite, sequential animation. I've been churning these out like it's my job recently, just to practice and to have
+          some decent ideas to work with when creating future loading screens &mdash; and that brings me to the third example.</p>
+        <h4>example three: silentroom's <span class='i'>nhelv</span> - sequential, eye-catching animations.</h4>
+        <p>again, I could probably write an entire blog post on how amazing the motion design is in <a target="_blank" href="https://www.youtube.com/watch?v=XtXRvEsWzQo">this particular music video</a>. it's crazy.</p>
+        <img src="./../img/silentroom-nhelv-1.gif" alt="introduction to silentroom's nhelv." title="introduction to silentroom's nhelv.">
+        <p>this seems to be a reference to early animation techniques like the one used by a <a target="_blank" href="https://en.wikipedia.org/wiki/Phenakistiscope">phenakistiscope</a>. animations like these are probably the type of thing most
+          average users think of when they hear 'loading screen animation' or something like that, because the infinite, looping nature of it conveys some sense of waiting. the animation never 'resolves' during the wait state, it just repeats
+          indefinitely. an animation like this is literally <span class='i'>perfect</span> for a website loading screen (even though this is from the beginning of a music video, lol).</p>
+        <img src="./../img/bar-expander.gif" alt="it never resolves." title="it never resolves.">
+        <p>the most important part to me is that the animation doesn't come to a reasonable resolution, or conclusion. it just represents the essence of <span class='b'>waiting.</span> note: I like to combine this type of element with something
+          else, like a more complex element or something static, just for added visual interest. I've also been experimenting with 3d software to create infinitely looping animations...</p>
+        <img src="./../img/spinning-cube-iridescence.gif" alt="a spinning 3d cube I made in blender." title="a spinning 3d cube I made in blender.">
+        <p>...but I have yet to think of a good way to bring them into the arena of the web in a lightweight way. gif format? probably not. webgl? maybe....</p>
+        <h3>number three: the outro, or removing the loading screen / number four: revealing the content.</h3>
+        <p>these two are actually distinct stages, but the overlap is so significant that I'll combine it into one section.</p>
+        <p>also, this is the part where I typically take a lot of inspiration from other designer's loading screen animations. during my research I found about seven websites that exemplify the types of loading screens, which I've listed in my
+          sources at the end of this article.</p>
+        <p>removing the loading screen is a delicate act. it needs to be done in a way that seamlessly blends into the content, or else the whole experience feels disjointed. usually what I like to do is use some animation on the background to
+          remove it. sometimes a simple quick swipe away works, or some play on that:</p>
+        <img src="./../img/bekin-loading-screen.gif" alt="loading screen for one of my most recent projects, in glorious 10fps. god, gifs suck. when can I put mp4s in img tags?" title="loading screen for one of my most recent projects, in glorious 10fps. god, gifs suck. when can I put mp4s in img tags?">
+        <p>another common method is simply fading out the screen. but there are many more interesting things you can do. for example, here's an excellent example of a <a target="_blank" href="https://angle2.agency">perfectly seamless transition from
+            loading screen to content</a>:</p>
+        <img src="./../img/angle2-loading-screen.gif" alt="angle2's simple yet impressive loading screen." title="angle2's simple yet impressive loading screen.">
+        <p>the circle on the loading bar becomes your cursor. text smoothly flows into place. the loading bar moves back to the center of the screen, repurposed as a call to action. it's simple, elegant, and looks so slick and smooth. it's perfect.
+          there are a few more that I looked at while I was writing this, and I've listed them at the end of the article, so check them out if you like nice loading screens!<br>
+          <hr>
+        </p>
+        <p>I hope this was useful or interesting to you! even if you're not making loading screens all the time like I am, maybe some of this visual information can translate to your field of expertise! after all, my loading screens are inspired by
+          music videos and video games, and I don't make either of those things very often, right?<br>
+          <hr>
+        </p>
+        <h2>currently listening to:</h2>
+        <p>- <a target="_blank" href="https://www.youtube.com/watch?v=VrI3at_WqyU">aoba to warutsu</a> by <a target="_blank" href="http://themusmus.com/">the musmus</a><br>- <a target="_blank" href="https://www.youtube.com/watch?v=dicBYDBfsyI">spicy</a>
+          by <a target="_blank" href="https://syncatto.bandcamp.com/album/coloratura">charlie robbins</a><br>- <a target="_blank" href="https://www.youtube.com/watch?v=6jGArDmrHuA">soundso</a> by <a target="_blank" href="http://www.wirsindhelden.com/">wir
+            sind helden</a><br>- <a target="_blank" href="https://www.youtube.com/watch?v=XiMrrleH_hI">born slippy</a> by <a target="_blank" href="https://underworldlive.com/">underworld</a><br>- <a target="_blank" href="https://www.youtube.com/watch?v=RhHkUg-QCwk">flim</a>
+          by <a target="_blank" href="https://warp.net/artists/91436-aphex-twin">aphex twin</a><br>
+          <hr>
+        </p>
+        <h2>sources.</h2>
+        <p><a target="_blank" href="https://en.wikipedia.org/wiki/Phenakistiscope">wikipedia - phenakistiscope</a><br><a target="_blank" href="https://www.youtube.com/watch?v=XtXRvEsWzQo">silentroom - nhelv</a><br><a target="_blank" href="https://www.platinumgames.com/official-blog/article/9624">platinumgames
+            - ui design in nier:automata</a><br><a target="_blank" href="https://www.youtube.com/watch?v=RSV4rHCPJ0M">art of video game loading screens</a></p>
+        <h2>sites that inspired me...</h2>
+        <h3>with very minimalist loading screens.</h3>
+        <p>1. <a target="_blank" href="https://angle2.agency">angle2</a><br>2. <a target="_blank" href="https://maxcolt.com/">max colt</a></p>
+        <h3>with less minimalist loading screens.</h3>
+        <p>1. <a target="_blank" href="https://poolside.fm">poolside</a><br>2. <a target="_blank" href="https://www.white-elephant.fr">white elephant</a><br>3. <a target="_blank" href="https://www.rickymichiels.com">ricky michiels</a></p>
+        <h3>with more maximalist loading screens.</h3>
+        <p>1. <a target="_blank" href="https://tiltstory.com">tilt</a><br>2. <a target="_blank" href="https://drivestudios.dk">drive</a><br>
+          <hr>
+        </p>
+
+      </div>
+    </article>
+
+  </main>
+  <footer>
+    <span class="non-icon">&copy;&nbsp;<span id="copyright"></span>&nbsp;<span class="name">jpegzilla</span>&nbsp;&vert;&nbsp;<a target="_blank" href="https://jpegzilla.com/humans.txt">humans.txt</a>
+      &nbsp;&vert;&nbsp;<a href="../">blog directory</a>
+      &nbsp;&vert;&nbsp;<a href="https://discordapp.com/invite/Ft9rVA6" target="_blank" class="con-links">discord</a>
+      &nbsp;&vert;&nbsp;<a target="_blank" href="https://twitter.com/jpegzilla">twitter</a>
+    </span>
+  </footer>
+</body>
+
+</html>

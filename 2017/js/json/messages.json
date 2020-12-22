@@ -1,0 +1,7 @@
+{
+	"messages": [{
+		"me": "hello"
+	}, {
+		"you": "hi"
+	}]
+}

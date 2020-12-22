@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+        <html lang="en" dir="ltr">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <meta name="description" content="I am a web designer and creative developer. this is my blog, where I document interesting things I learn on the web.">
+          <meta name="author" content="jpegzilla">
+          <meta name="robots" content="index, follow">
+          <meta property="og:description" content="I am a web designer and creative developer. this is my blog, where I document interesting things I learn on the web.">
+          <meta property="og:url" content="https://jpegzilla.com">
+          <meta property="og:site_name" content="jpegzilla - web design">
+          <meta property="og:image" content="https://jpegzilla.com/css/img/21af09332037a999a3f58984cdd0cefe.png">
+          <meta property="og:type" content="website">
+          <meta name="twitter:site" content="@jpegzilla">
+          <meta name="twitter:creator" content="@jpegzilla">
+          <meta name="twitter:title" content="jpegzilla - web design blog">
+          <meta name="twitter:description" content="jpegzilla is a web designer, creative developer, and digital artist. come make something cool with me.">
+          <meta name="twitter:image" content="https://jpegzilla.com/css/img/21af09332037a999a3f58984cdd0cefe.png">
+          <meta name="twitter:card" content="summary-large-image">
+          <meta name="application-name" content="jpegzilla.com/blog" />
+          <link rel="author" href="http://jpegzilla.com/humans.txt">
+          <title>creating a color palette from two colors: three methods. &mdash; 2019 12 12</title>
+
+          <!-- Global site tag (gtag.js) - Google Analytics -->
+          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141114501-1"></script>
+          <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-141114501-1');
+          </script>
+        </head>
+          <style>
+            body{font-size:18px;line-height:1.6;max-width:38rem;margin:40px auto;padding:2rem;color:#222;font-family:sans-serif;background-color:#eee}h1,h2,h3{line-height:1.2}span.i{font-style:italic}span.b{font-weight:bolder}span.s{text-decoration:line-through}span.u{text-decoration:underline}span.o{text-decoration:overline}p span.d{float:left;font-size:4rem;line-height:2.5rem;padding-top:0.7rem;padding-right:0.25rem;font-weight:bold}pre{display:inline}img{width:100%;height:auto;margin-bottom:1rem;border:1px solid #000}span.c{font-family:monospace;background-color:#d6d6d6;padding:0 0.25rem;border-radius:0.25rem}code{display:block;font-family:monospace;background:#d6d6d6;padding:0.5rem 0.25rem 0.5rem 1rem;border-radius:0.25rem;word-wrap:break-word}
+          </style>
+          <body>
+            <header>
+              <h1><a target="_blank" href="https://jpegzilla.com">JPEGZILLA</a></h1>
+            </header>
+            <main>
+              <article>
+                <h1>creating a color palette from two colors: three methods.</h1>
+                <time id="mkzDate"><span class='i'>2019 12 12</span></time>
+
+                <div id="mkzBody">
+                  <p><span class='d'>O</span>ver the past few months, I've been working on a <a target="_blank" href="https://jpegzilla.com/emerald">piece of software designed to make it easier to create color palettes</a>. as a result of that, I've had to learn a lot about color science and stuff, so I thought I'd share what I've learned. so, here are three methods I've used in emerald to programatically generate color palettes. all code is in javascript.<br><hr></p>
+<h2>method one: gradients.</h2>
+<p>this method might just be the easiest one &mdash; interpolating between two colors is fairly simple. you take one color and use it as the starting point, and then mathematically alter that color until you reach the second color.</p>
+<img src="./../img/emerald-gradient-gen-1.png" alt="the code that interpolates between two colors." title="the code that interpolates between two colors.">
+<p>essentially, this function takes in two arrays of three rgb values each and a factor to modify the colors by. then, it essentially maps each value in the first array to a new value that's a derivative of the first and second array's corresponding values, modified by the factor. if I were to implement this again, I'd probably just use javascript's <span class='c'>array.prototype.map()</span> or something. I used <span class='c'>slice()</span> as a quick way to create a copy of the original array. there are other ways to do this, of course, but that must have been the first thing that came to mind for whatever reason.</p>
+<img src="./../img/emerald-gradient-gen-2.png" alt="more of the code that interpolates between two colors." title="more of the code that interpolates between two colors.">
+<p>the rest of the interpolate function creates the actual array of newly generated colors by taking in the amount of steps to interpolate by (which in my case is just an option in emerald's settings) and the two original colors. it loops through each step and spits out a new array of the gradient. say, for example, I put in white and black, and a factor of ten (default):</p>
+<img src="./../img/emerald-gradient-gen-3.png" alt="a generated palette in emerald from white to black. I like how that particular shade of grey is just called 'cape cod'." title="a generated palette in emerald from white to black. I like how that particular shade of grey is just called 'cape cod'.">
+<p>and here's an example from red to blue:</p>
+<img src="./../img/emerald-gradient-gen-4.png" alt="a generated palette in emerald from red to blue." title="a generated palette in emerald from red to blue.">
+<p>and here's one with the count set to ten colors and the factor set to ten.</p>
+<img src="./../img/emerald-gradient-gen-5.png" alt="a generated palette in emerald from red to blue, with ten steps." title="a generated palette in emerald from red to blue, with ten steps.">
+<p>I haven't written a way to export a palette with ten colors (because drawing on an html <span class='c'><\canvas></span> is hard sometimes...).</p>
+<h2>method two: analogous colors.</h2>
+<p>analogous colors are groups of directly adjacent colors. for my implementation, I created a loop that creates a new color in an array by shifting the hue of the previous color in the array by whatever factor the user defines.</p>
+<img src="./../img/emerald-analogous-gen-1.png" alt="the code that generates an analogous palette." title="the code that generates an analogous palette.">
+<p>and for reference, here's the <span class='c'>shiftHue</span> function, which just takes in a color object with the r, g, and b values as keys, modifies the hue of the color by any amount of degrees, and spits out the new rgb color:</p>
+<img src="./../img/emerald-analogous-gen-0.png" alt="the code that generates an analogous palette." title="the code that generates an analogous palette.">
+<p>this one is somewhat subjective. another method you could try is using adjacent colors on either side of the original color. here's what I mean (gracefully illustrated in ms paint):</p>
+<img src="./../img/emerald-analogous-gen-2.png" alt="I went to savannah college of art and design. this is the best I could do." title="I went to savannah college of art and design. this is the best I could do.">
+<p>here's what emerald does (at least in analogous mode!):</p>
+<img src="./../img/emerald-analogous-gen-3.png" alt="I pay twenty dollars a month for adobe illustrator, and I use ms paint to draw diagrams." title="I pay twenty dollars a month for adobe illustrator, and I use ms paint to draw diagrams.">
+<p>and finally, here's an example of an analogous color palette generated in emerald from the colors 'spanish sky blue' and 'picasso'. it's actually really pretty! it's really obvious from this picture that the hue has only been modified in one direction.</p>
+<img src="./../img/emerald-analogous-gen-4.png" alt="analogous palette generated in emerald from the colors 'spanish sky blue' and 'picasso'." title="analogous palette generated in emerald from the colors 'spanish sky blue' and 'picasso'.">
+<h2>method three: monochromatic palettes.</h2>
+<p>call me boring, but monochromatic palettes are really beautiful to me. limitations breed creativity, of course, but that's only one of the reasons why it's so fun to use monochromatic palettes. this method is pretty dead simple:</p>
+<img src="./../img/emerald-monochrome-gen-1.png" alt="monochrome palette generation code." title="monochrome palette generation code.">
+<p>again, this just involves a loop that runs as many times as the user has specified. however, instead of shifting the hue, this time we're just shifting from the last color's saturation. here's what <span class='c'>shiftSat</span> does (converting from rgb to hsl, changing saturation, and converting back to rgb):</p>
+<img src="./../img/emerald-monochrome-gen-2.png" alt="the utility function for shifting a color's saturation." title="the utility function for shifting a color's saturation.">
+<p>you might have noticed from the first image that the saturation unconditionally shifts saturation downward. of course, if you have a color with low saturation already, this results in something like this:</p>
+<img src="./../img/emerald-monochrome-gen-3.png" alt="white white white white white white white white...." title="white white white white white white white white....">
+<p>right now, all I'd have to do is change the sign of the factor from negative to positive depending on how saturated the color is. that's coming in the next release of emerald for me &mdash; but for you...you already know how to handle it, so don't make the same mistake I did! and, for good measure, here's a pretty monochrome palette from emerald based on lavender:</p>
+<img src="./../img/emerald-monochrome-gen-4.png" alt="I love the color purple more than I love myself." title="I love the color purple more than I love myself.">
+<p>and a similar palette with a higher modification factor (twenty):</p>
+<img src="./../img/emerald-monochrome-gen-5.png" alt="ok, this is a little too much purple, maybe. but you get the point." title="ok, this is a little too much purple, maybe. but you get the point.">
+<p><span class='b'>notes regarding emerald:</span> <span class='i'>sometimes colors in emerald are so close that they are named as the same color. I might fix that later if I can find / create a larger color name library.</span></p>
+<p><span class='i'>also, if you set the modification factor really really high, like a hundred, and you're only modifying saturation, you'll only get two colors repeating alternately. because if you take too much saturation out of a color, the saturation shifting function just 'loops around' to the max / min saturation. the max saturation of a color is only one hundred, anyway.</span><br><hr></p>
+<p><span class='d'>A</span>nyway, that's about it for now. I'll be adding new palette generation functionality to emerald sometime early next year &mdash; I already have the framework laid for complementary palettes. thanks for reading, and I'll be back in <span class='i c'>(indeterminate amount of time)</span> with another hopefully useful post!<br><hr></p>
+<h2>currently listening to:</h2>
+<p>- <a target="_blank" href="https://www.youtube.com/watch?v=BwEok9i4aO0">rest in peace, saith the lord</a> by <a target="_blank" href="http://demetori.xii.jp/">demetori</a> (instrumental metal)<br>- <a target="_blank" href="https://www.youtube.com/watch?v=lHd64tV50AM">heaven-adjacent</a> by <a target="_blank" href="https://lapfoxtrax.com/">halley hard sound unit</a> (ambient / drum n bass / psytrance)<br>- <a target="_blank" href="https://www.youtube.com/watch?v=vdb05YOSMC0">ssfme</a> by <a target="_blank" href="http://themusmus.com/">the musmus</a> (emo rock)<br>- <a target="_blank" href="https://www.youtube.com/watch?v=B9wvTuDC-H0">ludens</a> by <a target="_blank" href="https://www.bmthofficial.com/">bring me the horizon</a> (post-hardcore)<br>- <a target="_blank" href="https://youtube.com/watch?v=AScYUcEoacs">excavation of asphodel meadows</a> by <a target="_blank" href="https://lapfoxtrax.com/">halley hard sound unit</a> (ambient / drum n bass / psytrance)<br>- <a target="_blank" href="https://www.youtube.com/watch?v=zBU4R1Jm46k">you so / youth soul</a> by <a target="_blank" href="https://imeanus.bandcamp.com">I mean us</a> (dream pop / shoegaze)<br><hr></p>
+
+                </div>
+              </article>
+
+            </main>
+            <footer>
+            <span class="non-icon">&copy;&nbsp;<span id="copyright"></span>&nbsp;<span class="name">jpegzilla</span>&nbsp;&vert;&nbsp;<a target="_blank" href="https://jpegzilla.com/humans.txt">humans.txt</a>
+              &nbsp;&vert;&nbsp;<a href="../">blog directory</a>
+              &nbsp;&vert;&nbsp;<a href="https://discordapp.com/invite/Ft9rVA6" target="_blank" class="con-links">discord</a>
+              &nbsp;&vert;&nbsp;<a target="_blank" href="https://twitter.com/jpegzilla">twitter</a>
+            </span>
+            </footer>
+          </body>
+        </html>
+      
