@@ -1,89 +1,333 @@
 <!DOCTYPE html>
-        <html lang="en" dir="ltr">
-        <head>
-          <meta charset="UTF-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1">
-          <meta name="description" content="I am a web designer and creative developer. this is my blog, where I document interesting things I learn on the web.">
-          <meta name="author" content="jpegzilla">
-          <meta name="robots" content="index, follow">
-          <meta property="og:description" content="I am a web designer and creative developer. this is my blog, where I document interesting things I learn on the web.">
-          <meta property="og:url" content="https://jpegzilla.com">
-          <meta property="og:site_name" content="jpegzilla - web design">
-          <meta property="og:image" content="https://jpegzilla.com/css/img/21af09332037a999a3f58984cdd0cefe.png">
-          <meta property="og:type" content="website">
-          <meta name="twitter:site" content="@jpegzilla">
-          <meta name="twitter:creator" content="@jpegzilla">
-          <meta name="twitter:title" content="Jpegzilla - web design blog">
-          <meta name="twitter:description" content="Jpegzilla is a web designer, creative developer, and digital artist. come make something cool with me.">
-          <meta name="twitter:image" content="https://jpegzilla.com/css/img/21af09332037a999a3f58984cdd0cefe.png">
-          <meta name="twitter:card" content="summary-large-image">
-          <meta name="application-name" content="jpegzilla.com/blog" />
-          <link rel="author" href="http://jpegzilla.com/humans.txt">
-          <title>bekin - project review. &mdash; 2019 09 22</title>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="I am a web designer and creative developer. this is my blog, where I document interesting things I learn on the web."
+    />
+    <meta name="author" content="jpegzilla" />
+    <meta name="robots" content="index, follow" />
+    <meta
+      property="og:description"
+      content="I am a web designer and creative developer. this is my blog, where I document interesting things I learn on the web."
+    />
+    <meta property="og:url" content="https://jpegzilla.com" />
+    <meta property="og:site_name" content="jpegzilla - web design" />
+    <meta
+      property="og:image"
+      content="https://jpegzilla.com/css/img/21af09332037a999a3f58984cdd0cefe.png"
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:site" content="@jpegzilla" />
+    <meta name="twitter:creator" content="@jpegzilla" />
+    <meta name="twitter:title" content="Jpegzilla - web design blog" />
+    <meta
+      name="twitter:description"
+      content="Jpegzilla is a web designer, creative developer, and digital artist. come make something cool with me."
+    />
+    <meta
+      name="twitter:image"
+      content="https://jpegzilla.com/css/img/21af09332037a999a3f58984cdd0cefe.png"
+    />
+    <meta name="twitter:card" content="summary-large-image" />
+    <meta name="application-name" content="jpegzilla.com/blog" />
+    <link rel="author" href="http://jpegzilla.com/humans.txt" />
+    <title>bekin - project review. &mdash; 2019 09 22</title>
 
-          <!-- Global site tag (gtag.js) - Google Analytics -->
-          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141114501-1"></script>
-          <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-141114501-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-            gtag('config', 'UA-141114501-1');
-          </script>
-        </head>
-          <style>
-            body{font-size:18px;line-height:1.6;max-width:38rem;margin:40px auto;padding:2rem;color:#222;font-family:sans-serif;background-color:#eee}h1,h2,h3{line-height:1.2}span.i{font-style:italic}span.b{font-weight:bolder}span.s{text-decoration:line-through}span.u{text-decoration:underline}span.o{text-decoration:overline}p span.d{float:left;font-size:4rem;line-height:2.5rem;padding-top:0.7rem;padding-right:0.25rem;font-weight:bold}pre{display:inline}img{width:100%;height:auto;margin-bottom:1rem;border:1px solid #000}span.c{font-family:monospace;background-color:#d6d6d6;padding:0 0.25rem;border-radius:0.25rem}code{display:block;font-family:monospace;background:#d6d6d6;padding:0.5rem 0.25rem 0.5rem 1rem;border-radius:0.25rem;word-wrap:break-word}
-          </style>
-          <body>
-            <header>
-              <h1><a target="_blank" href="https://jpegzilla.com">JPEGZILLA</a></h1>
-            </header>
-            <main>
-              <article>
-                <h1>bekin - project review.</h1>
-                <time id="mkzDate"><span class='i'>2019 09 22</span></time>
+      gtag("config", "UA-141114501-1");
+    </script>
+  </head>
+  <style>
+    body {
+      font-size: 18px;
+      line-height: 1.6;
+      max-width: 38rem;
+      margin: 40px auto;
+      padding: 2rem;
+      color: #222;
+      font-family: sans-serif;
+      background-color: #eee;
+    }
+    h1,
+    h2,
+    h3 {
+      line-height: 1.2;
+    }
+    span.i {
+      font-style: italic;
+    }
+    span.b {
+      font-weight: bolder;
+    }
+    span.s {
+      text-decoration: line-through;
+    }
+    span.u {
+      text-decoration: underline;
+    }
+    span.o {
+      text-decoration: overline;
+    }
+    p span.d {
+      float: left;
+      font-size: 4rem;
+      line-height: 2.5rem;
+      padding-top: 0.7rem;
+      padding-right: 0.25rem;
+      font-weight: bold;
+    }
+    pre {
+      display: inline;
+    }
+    img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 1rem;
+      border: 1px solid #000;
+    }
+    span.c {
+      font-family: monospace;
+      background-color: #d6d6d6;
+      padding: 0 0.25rem;
+      border-radius: 0.25rem;
+    }
+    code {
+      display: block;
+      font-family: monospace;
+      background: #d6d6d6;
+      padding: 0.5rem 0.25rem 0.5rem 1rem;
+      border-radius: 0.25rem;
+      word-wrap: break-word;
+    }
+  </style>
+  <body>
+    <header>
+      <h1><a target="_blank" href="https://jpegzilla.com">JPEGZILLA</a></h1>
+    </header>
+    <main>
+      <article>
+        <h1>bekin - project review.</h1>
+        <time id="mkzDate"><span class="i">2019 09 22</span></time>
 
-                <div id="mkzBody">
-                  <p><span class='d'>A</span>t the end of 2017, I was an art student at the savannah college of art and design. around november, one of my friends who had recently graduated recommended me as a web designer to a new atlanta-based startup company called 'bekin'. I met with the ceo of the company and they brought me on to their small team.<br><hr></p>
-<h2>overview.</h2>
-<p>bekin is a company that offers a way for event attendees to save time during networking by pre-matching them with people at the event that they might like to talk to. this is either done by email, or through a mobile app. when the company first started, we did the matching by hand and literally created cards for each attendee at an event that had information about their match(es) and we handed them out before networking began.</p>
-<img src="./../img/bekin-logo.png" alt="the original bekin logo, designed by chandler saunders." title="the original bekin logo, designed by chandler saunders.">
-<p>the bekin project ended up spanning two years. my role in the project was as the lead web developer and designer (of both websites, applications, and graphics). I learned a lot from this project &mdash; when I began, I didn't even know javascript. now, I've written everything from node.js apis, to hashing algorithms. I learned php, ruby, react, mongodb, and many other technologies out of sheer necessity.</p>
-<p>I created four landing pages for bekin over the years. I worked on their mobile application, ported that app to a web app, created internal apis, created databases, maintained web servers, developed emails, and designed almost every piece of material the company ever released, software or otherwise.</p>
-<h2>2017 - the first website.</h2>
-<p>this is the first landing page I created for bekin, back when the actual bekin product &mdash; the algorithm and api &mdash; didn't even exist. it was about as simple as it gets, but it was pretty nice.</p>
-<img src="./../img/bekin-landing-original.gif" alt="the original bekin landing page." title="the original bekin landing page.">
-<h2>2018 - slowly evolving.</h2>
-<p>this is when bekin had a product. as I learned more, I started to take more and more responsibility for bekin's digital identity, I started using more motion in my designs (and often went over the top):</p>
-<img src="./../img/bekin-landing-2.gif" alt="a landing page with scrolling animations from 2018." title="a landing page with scrolling animations from 2018.">
-<p>the finished version of this iteration is completely lost, so all I have is this work in progress shot that I ripped from an old slack message.</p>
-<p>near the end of this year was when bekin's web presence was at its most tame. it wasn't even interesting again until early 2019.</p>
-<h2>2019 - final iteration.</h2>
-<p>in 2019, I headed up the rebranding of bekin. I created their new design system, and did created the final revamp of their website. during this time, I worked with interns to create a new web application to streamline the process for event organizers who want to use bekin's services.</p>
-<img src="./../img/bekin-landing-final.png" alt="the final website I designed for bekin." title="the final website I designed for bekin.">
-<p>I was lucky to have a lot of freedom and time to experiment on this project. I created some fun little interactions:</p>
-<img src="./../img/bekin-landing-final-hover.gif" alt="one of the interactions on bekin's final website." title="one of the interactions on bekin's final website.">
-<img src="./../img/bekin-landing-final-menu.gif" alt="and the social icon menu." title="and the social icon menu.">
-<p>I played with the motif of circles made up of individual dashes a lot. it sort of fits with the theme of helping people to make meaningful connections and meet other likeminded individuals.</p>
-<img src="./../img/bekin-landing-final-clients.gif" alt="detail of the clients section, again with the circle motif." title="detail of the clients section, again with the circle motif.">
-<p>and finally, something I made for the site that sparked my love of nice loading screens and made me want to <a target="_blank" href="https://jpegzilla.com/blog/posts/20190822">take a deep dive</a> into the world of loading screen design:</p>
-<img src="./../img/bekin-loading-screen.gif" alt="bekin's loading screen. looks better in 60fps." title="bekin's loading screen. looks better in 60fps.">
-<p>it works well and looks pretty sleek. even though the loading screen is typically the part of the website you spend the least amount of time on, it still doesn't hurt to make it nice.<br><hr></p>
-<p><span class='d'>T</span>hat's about all I wanted to share about this project &mdash; this concludes my first 'case study'. next time I do this, I'll have done much more research on writing comprehensive case studies, but I do hope that this one was at least insightful. thank you for reading!<br><hr></p>
-<h2>currently listening to:</h2>
-<p>- <a target="_blank" href="https://www.youtube.com/watch?v=et4fYTAJWL0">LIFE</a> by <a target="_blank" href="https://www.rude-alpha.com/">Rude-α</a><br>- <a target="_blank" href="https://www.youtube.com/watch?v=LgrpIobzFSE">それは恋の終わり</a> by <a target="_blank" href="https://kagurairo-artifact.com/">mafumafu</a><br>- <a target="_blank" href="https://www.youtube.com/watch?v=3zRU-VU87HI">ieud</a> by <a target="_blank" href="https://igorrr.com">igorrr</a> (warning - very french video)<br>- <a target="_blank" href="https://www.youtube.com/watch?v=uFtfSnR4-Wc">just dive</a> by <a target="_blank" href="https://anamanaguchi.com/">anamanaguchi</a><br>- <a target="_blank" href="https://www.youtube.com/watch?v=rPWtIf087_U">今宵は飄逸なエゴイスト ～ ego,schizoid,beat</a> by <a target="_blank" href="http://demetori.xii.jp/">demetori</a><br><hr></p>
-
-                </div>
-              </article>
-
-            </main>
-            <footer>
-            <span class="non-icon">&copy;&nbsp;<span id="copyright"></span>&nbsp;<span class="name">jpegzilla</span>&nbsp;&vert;&nbsp;<a target="_blank" href="https://jpegzilla.com/humans.txt">humans.txt</a>
-              &nbsp;&vert;&nbsp;<a href="../">blog directory</a>
-              &nbsp;&vert;&nbsp;<a href="https://discordapp.com/invite/Ft9rVA6" target="_blank" class="con-links">discord</a>
-              &nbsp;&vert;&nbsp;<a target="_blank" href="https://twitter.com/jpegzilla">twitter</a>
-            </span>
-            </footer>
-          </body>
-        </html>
-      
+        <div id="mkzBody">
+          <p>
+            <span class="d">A</span>t the end of 2017, I was an art student at
+            the savannah college of art and design. around november, one of my
+            friends who had recently graduated recommended me as a web designer
+            to a new atlanta-based startup company called 'bekin'. I met with
+            the ceo of the company and they brought me on to their small
+            team.<br />
+            <hr />
+          </p>
+          <h2>overview.</h2>
+          <p>
+            bekin was a company that offers a way for event attendees to save
+            time during networking by pre-matching them with people at the event
+            that they might like to talk to. this is either done by email, or
+            through a mobile app. when the company first started, we did the
+            matching by hand and literally created cards for each attendee at an
+            event that had information about their match(es) and we handed them
+            out before networking began.
+          </p>
+          <img
+            src="./../img/bekin-logo.png"
+            alt="the original bekin logo, designed by chandler saunders."
+            title="the original bekin logo, designed by chandler saunders."
+          />
+          <p>
+            the bekin project ended up spanning two years. my role in the
+            project was as the lead web developer and designer (of both
+            websites, applications, and graphics). I learned a lot from this
+            project &mdash; when I began, I didn't even know javascript. now,
+            I've written everything from node.js apis, to hashing algorithms. I
+            learned php, ruby, react, mongodb, and many other technologies out
+            of sheer necessity.
+          </p>
+          <p>
+            I created four landing pages for bekin over the years. I worked on
+            their mobile application, ported that app to a web app, created
+            internal apis, created databases, maintained web servers, developed
+            emails, and designed almost every piece of material the company ever
+            released, software or otherwise.
+          </p>
+          <h2>2017 - the first website.</h2>
+          <p>
+            this is the first landing page I created for bekin, back when the
+            actual bekin product &mdash; the algorithm and api &mdash; didn't
+            even exist. it was about as simple as it gets, but it was pretty
+            nice.
+          </p>
+          <img
+            src="./../img/bekin-landing-original.gif"
+            alt="the original bekin landing page."
+            title="the original bekin landing page."
+          />
+          <h2>2018 - slowly evolving.</h2>
+          <p>
+            this is when bekin had a product. as I learned more, I started to
+            take more and more responsibility for bekin's digital identity, I
+            started using more motion in my designs (and often went over the
+            top):
+          </p>
+          <img
+            src="./../img/bekin-landing-2.gif"
+            alt="a landing page with scrolling animations from 2018."
+            title="a landing page with scrolling animations from 2018."
+          />
+          <p>
+            the finished version of this iteration is completely lost, so all I
+            have is this work in progress shot that I ripped from an old slack
+            message.
+          </p>
+          <p>
+            near the end of this year was when bekin's web presence was at its
+            most tame. it wasn't even interesting again until early 2019.
+          </p>
+          <h2>2019 - final iteration.</h2>
+          <p>
+            in 2019, I headed up the rebranding of bekin. I created their new
+            design system, and did the final revamp of their website. during
+            this time, I worked with interns to create a new web application to
+            streamline the process for event organizers who want to use bekin's
+            services.
+          </p>
+          <img
+            src="./../img/bekin-landing-final.png"
+            alt="the final website I designed for bekin."
+            title="the final website I designed for bekin."
+          />
+          <p>
+            I was lucky to have a lot of freedom and time to experiment on this
+            project. I created some fun little interactions:
+          </p>
+          <img
+            src="./../img/bekin-landing-final-hover.gif"
+            alt="one of the interactions on bekin's final website."
+            title="one of the interactions on bekin's final website."
+          />
+          <img
+            src="./../img/bekin-landing-final-menu.gif"
+            alt="and the social icon menu."
+            title="and the social icon menu."
+          />
+          <p>
+            I played with the motif of circles made up of individual dashes a
+            lot. it sort of fits with the theme of helping people to make
+            meaningful connections and meet other likeminded individuals.
+          </p>
+          <img
+            src="./../img/bekin-landing-final-clients.gif"
+            alt="detail of the clients section, again with the circle motif."
+            title="detail of the clients section, again with the circle motif."
+          />
+          <p>
+            and finally, something I made for the site that sparked my love of
+            nice loading screens and made me want to
+            <a target="_blank" href="https://jpegzilla.com/blog/posts/20190822"
+              >take a deep dive</a
+            >
+            into the world of loading screen design:
+          </p>
+          <img
+            src="./../img/bekin-loading-screen.gif"
+            alt="bekin's loading screen. looks better in 60fps."
+            title="bekin's loading screen. looks better in 60fps."
+          />
+          <p>
+            it works well and looks pretty sleek. even though the loading screen
+            is typically the part of the website you spend the least amount of
+            time on, it still doesn't hurt to make it nice.<br />
+            <hr />
+          </p>
+          <p>
+            <span class="d">T</span>hat's about all I wanted to share about this
+            project &mdash; this concludes my first 'case study'. next time I do
+            this, I'll have done much more research on writing comprehensive
+            case studies, but I do hope that this one was at least insightful.
+            thank you for reading!<br />
+            <hr />
+          </p>
+          <h2>currently listening to:</h2>
+          <p>
+            -
+            <a
+              target="_blank"
+              href="https://www.youtube.com/watch?v=et4fYTAJWL0"
+              >LIFE</a
+            >
+            by <a target="_blank" href="https://www.rude-alpha.com/">Rude-α</a
+            ><br />-
+            <a
+              target="_blank"
+              href="https://www.youtube.com/watch?v=LgrpIobzFSE"
+              >それは恋の終わり</a
+            >
+            by
+            <a target="_blank" href="https://kagurairo-artifact.com/"
+              >mafumafu</a
+            ><br />-
+            <a
+              target="_blank"
+              href="https://www.youtube.com/watch?v=3zRU-VU87HI"
+              >ieud</a
+            >
+            by <a target="_blank" href="https://igorrr.com">igorrr</a> (warning
+            - very french video)<br />-
+            <a
+              target="_blank"
+              href="https://www.youtube.com/watch?v=uFtfSnR4-Wc"
+              >just dive</a
+            >
+            by
+            <a target="_blank" href="https://anamanaguchi.com/">anamanaguchi</a
+            ><br />-
+            <a
+              target="_blank"
+              href="https://www.youtube.com/watch?v=rPWtIf087_U"
+              >今宵は飄逸なエゴイスト ～ ego,schizoid,beat</a
+            >
+            by <a target="_blank" href="http://demetori.xii.jp/">demetori</a
+            ><br />
+            <hr />
+          </p>
+        </div>
+      </article>
+    </main>
+    <footer>
+      <span class="non-icon"
+        >&copy;&nbsp;<span id="copyright"></span>&nbsp;<span class="name"
+          >jpegzilla</span
+        >&nbsp;&vert;&nbsp;<a
+          target="_blank"
+          href="https://jpegzilla.com/humans.txt"
+          >humans.txt</a
+        >
+        &nbsp;&vert;&nbsp;<a href="../">blog directory</a> &nbsp;&vert;&nbsp;<a
+          href="https://discordapp.com/invite/Ft9rVA6"
+          target="_blank"
+          class="con-links"
+          >discord</a
+        >
+        &nbsp;&vert;&nbsp;<a
+          target="_blank"
+          href="https://twitter.com/jpegzilla"
+          >twitter</a
+        >
+      </span>
+    </footer>
+  </body>
+</html>
