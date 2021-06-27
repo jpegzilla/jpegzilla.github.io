@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<rss version="2.0">
+  <channel>
+    <title>jpegzilla / blog</title>
+    <link>https://jpegzilla.com/blog</link>
+    <webMaster>eris@jpegzilla.com</webMaster>
+    <language>en-us</language>
+    <description>a normal blog about things I find on the internet.</description>
+    <image>
+      <url>https://jpegzilla.com/css/img/app/ms-icon-150x150.png</url>
+      <title>jpegzilla's blog</title>
+      <link>https://jpegzilla.com/blog</link>
+      <width>32</width>
+      <height>32</height>
+    </image>
+
+    <!-- posts -->
+    <item>
+      <title>my favorite serif font yet. — 2020.11.23</title>
+      <link>https://jpegzilla.com/blog/posts/best-serif-font-and-hyperart-thomasson.html</link>
+      <description>a bit about my favorite serif font.</description>
+    </item>
+  </channel>
+</rss>
