@@ -16,6 +16,138 @@
 
     <!-- posts -->
     <item>
+      <title>163 bytes of functionalism — 2019 05 08</title>
+      <link>https://jpegzilla.com/blog/posts/20190508.html</link>
+      <description>getting a beautiful layout with extremely minimal css. the first 'blog post' I ever posted here.</description>
+    </item>
+
+    <item>
+      <title>findings - primaverism, library databases, and random data — 2019 06 02</title>
+      <link>https://jpegzilla.com/blog/posts/20190602.html</link>
+      <description>the first findings. primaverism would dictate that this one is the best, but....</description>
+    </item>
+
+    <item>
+      <title>findings - old games, experimental design, and high-tech vector graphics manipulation — 2019 06 09</title>
+      <link>https://jpegzilla.com/blog/posts/20190609.html</link>
+      <description>the second findings episode, where I talk about lsd.</description>
+    </item>
+
+    <item>
+      <title>findings - solar powered websites and remnants of the early internet — 2019 06 23</title>
+      <link>https://jpegzilla.com/blog/posts/20190623.html</link>
+      <description>the solar powered website is one of the most interesting things I've ever seen on the internet in my life. check it out!!</description>
+    </item>
+
+    <item>
+      <title>findings - color tools, unicode recognition, and digital wandering — 2019 06 30</title>
+      <link>https://jpegzilla.com/blog/posts/20190630-1.html</link>
+      <description>the digital wandering stuff is pretty interesting, but the color tools are also dear to me!</description>
+    </item>
+
+    <item>
+      <title>internet research techniques number one: random user generated content — 2019 06 30</title>
+      <link>https://jpegzilla.com/blog/posts/20190630.html</link>
+      <description>how to get good at finding what you want part 1. random ugc is pretty cool!!</description>
+    </item>
+
+    <item>
+      <title>findings - interactive music and drawing with artificial intelligence — 2019 07 15</title>
+      <link>https://jpegzilla.com/blog/posts/20190715.html</link>
+      <description>a findings in which we make some art.</description>
+    </item>
+
+    <item>
+      <title>findings - radio signals and soaking wet webpages — 2019 07 24</title>
+      <link>https://jpegzilla.com/blog/posts/20190724.html</link>
+      <description>a damp and dreary findings (in a good way).</description>
+    </item>
+
+    <item>
+      <title>the subtle art of the website loading screen — 2019 08 22</title>
+      <link>https://jpegzilla.com/blog/posts/20190822.html</link>
+      <description>about the art and importance of designing good loading screens - for the sake of it, or for other reasons.</description>
+    </item>
+
+    <item>
+      <title>findings - colors, frames, and more — 2019 09 08</title>
+      <link>https://jpegzilla.com/blog/posts/20190908.html</link>
+      <description>if you only read one finding, read the frames one!</description>
+    </item>
+
+    <item>
+      <title>everything I know about color science in javascript (so far) — 2019 09 20</title>
+      <link>https://jpegzilla.com/blog/posts/20190920.html</link>
+      <description>some color stuff I learned while working on an app called emerald.</description>
+    </item>
+
+    <item>
+      <title>findings - photographic inspiration and other resources — 2019 10 17</title>
+      <link>https://jpegzilla.com/blog/posts/20191017.html</link>
+      <description>last findings of 2019!</description>
+    </item>
+
+    <item>
+      <title>how to normalize an array to a specific range in javascript — 2019 10 24</title>
+      <link>https://jpegzilla.com/blog/posts/20191024.html</link>
+      <description>a little math for ya</description>
+    </item>
+
+    <item>
+      <title>creating a color palette from two colors: three methods — 2019 12 12</title>
+      <link>https://jpegzilla.com/blog/posts/20191212.html</link>
+      <description>color palette creation methods that I like to use.</description>
+    </item>
+
+    <item>
+      <title>internet research techniques number two: effective search — 2019 12 21</title>
+      <link>https://jpegzilla.com/blog/posts/20191221.html</link>
+      <description>how to be good at finding what you want - part 2! (this post is sick and I put a lot into it)</description>
+    </item>
+
+    <item>
+      <title>the abandoned buildings of the web. — 2020 02 02</title>
+      <link>https://jpegzilla.com/blog/posts/20200202.html</link>
+      <description>a post about my love of internet archaeology...or something like that.</description>
+    </item>
+
+    <item>
+      <title>the state of the mobile web. — 2020 03 05</title>
+      <link>https://jpegzilla.com/blog/posts/20200305.html</link>
+      <description>a post where I complain about paywalls.</description>
+    </item>
+
+    <item>
+      <title>minerva's akasha - how I handled storing and rendering large files in a client-side web application — 2020 04 16</title>
+      <link>https://jpegzilla.com/blog/posts/storing-rendering-large-files.html</link>
+      <description>a little information about handling client-side data storage for an offline-focused application.</description>
+    </item>
+
+    <item>
+      <title>the best font for writing code — 2020 05 27</title>
+      <link>https://jpegzilla.com/blog/posts/the-best-programming-font.html</link>
+      <description>a little information about one of my favorite programming fonts.</description>
+    </item>
+
+    <item>
+      <title>advanced debugging in javascript - prototype modification — 2020 05 30</title>
+      <link>https://jpegzilla.com/blog/posts/advanced-debugging-javascript-1.html</link>
+      <description>a little bit of information on an interesting debugging technique I use very rarely.</description>
+    </item>
+
+    <item>
+      <title>findings - a return to posting (random things) — 2020 08 01</title>
+      <link>https://jpegzilla.com/blog/posts/findings-ten.html</link>
+      <description>findings episode 10.</description>
+    </item>
+
+    <item>
+      <title>findings - another audio resource and other random information — 2020.10.19</title>
+      <link>https://jpegzilla.com/blog/posts/findings-eleven.html</link>
+      <description>findings episode 11.</description>
+    </item>
+
+    <item>
       <title>my favorite serif font yet. — 2020.11.23</title>
       <link>https://jpegzilla.com/blog/posts/best-serif-font-and-hyperart-thomasson.html</link>
       <description>a bit about my favorite serif font.</description>
