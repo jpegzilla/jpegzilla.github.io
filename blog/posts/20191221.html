@@ -1,133 +1,780 @@
 <!DOCTYPE html>
-        <html lang="en" dir="ltr">
-        <head>
-          <meta charset="UTF-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1">
-          <meta name="description" content="I am a web designer and creative developer. this is my blog, where I document interesting things I learn on the web.">
-          <meta name="author" content="jpegzilla">
-          <meta name="robots" content="index, follow">
-          <meta property="og:description" content="I am a web designer and creative developer. this is my blog, where I document interesting things I learn on the web.">
-          <meta property="og:url" content="https://jpegzilla.com">
-          <meta property="og:site_name" content="jpegzilla - web design">
-          <meta property="og:image" content="https://jpegzilla.com/css/img/21af09332037a999a3f58984cdd0cefe.png">
-          <meta property="og:type" content="website">
-          <meta name="twitter:site" content="@jpegzilla">
-          <meta name="twitter:creator" content="@jpegzilla">
-          <meta name="twitter:title" content="jpegzilla - web design blog">
-          <meta name="twitter:description" content="jpegzilla is a web designer, creative developer, and digital artist. come make something cool with me.">
-          <meta name="twitter:image" content="https://jpegzilla.com/css/img/21af09332037a999a3f58984cdd0cefe.png">
-          <meta name="twitter:card" content="summary-large-image">
-          <meta name="application-name" content="jpegzilla.com/blog" />
-          <link rel="author" href="http://jpegzilla.com/humans.txt">
-          <title>internet research techniques number two: effective text search and ugc. &mdash; 2019 12 21</title>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="I am a web designer and creative developer. this is my blog, where I document interesting things I learn on the web."
+    />
+    <meta name="author" content="jpegzilla" />
+    <meta name="robots" content="index, follow" />
+    <meta
+      property="og:description"
+      content="I am a web designer and creative developer. this is my blog, where I document interesting things I learn on the web."
+    />
+    <meta property="og:url" content="https://jpegzilla.com" />
+    <meta property="og:site_name" content="jpegzilla - web design" />
+    <meta
+      property="og:image"
+      content="https://jpegzilla.com/css/img/21af09332037a999a3f58984cdd0cefe.png"
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:site" content="@jpegzilla" />
+    <meta name="twitter:creator" content="@jpegzilla" />
+    <meta name="twitter:title" content="jpegzilla - web design blog" />
+    <meta
+      name="twitter:description"
+      content="jpegzilla is a web designer, creative developer, and digital artist. come make something cool with me."
+    />
+    <meta
+      name="twitter:image"
+      content="https://jpegzilla.com/css/img/21af09332037a999a3f58984cdd0cefe.png"
+    />
+    <meta name="twitter:card" content="summary-large-image" />
+    <meta name="application-name" content="jpegzilla.com/blog" />
+    <link rel="author" href="http://jpegzilla.com/humans.txt" />
+    <title>
+      internet research techniques number two: effective text search and ugc.
+      &mdash; 2019 12 21
+    </title>
 
-          <!-- Global site tag (gtag.js) - Google Analytics -->
-          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141114501-1"></script>
-          <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-141114501-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-            gtag('config', 'UA-141114501-1');
-          </script>
-        </head>
-          <style>
-            body{font-size:18px;line-height:1.6;max-width:38rem;margin:40px auto;padding:2rem;color:#222;font-family:sans-serif;background-color:#eee}h1,h2,h3{line-height:1.2}span.i{font-style:italic}span.b{font-weight:bolder}span.s{text-decoration:line-through}span.u{text-decoration:underline}span.o{text-decoration:overline}p span.d{float:left;font-size:4rem;line-height:2.5rem;padding-top:0.7rem;padding-right:0.25rem;font-weight:bold}pre{display:inline}img{width:100%;height:auto;margin-bottom:1rem;border:1px solid #000}span.c{font-family:monospace;background-color:#d6d6d6;padding:0 0.25rem;border-radius:0.25rem}code{display:block;font-family:monospace;background:#d6d6d6;padding:0.5rem 0.25rem 0.5rem 1rem;border-radius:0.25rem;word-wrap:break-word}
-          </style>
-          <body>
-            <header>
-              <h1><a target="_blank" href="https://jpegzilla.com">JPEGZILLA</a></h1>
-            </header>
-            <main>
-              <article>
-                <h1>internet research techniques number two: effective text search and ugc.</h1>
-                <time id="mkzDate"><span class='i'>2019 12 21</span></time>
+      gtag("config", "UA-141114501-1");
+    </script>
+  </head>
+  <style>
+    body {
+      font-size: 18px;
+      line-height: 1.6;
+      max-width: 38rem;
+      margin: 40px auto;
+      padding: 2rem;
+      color: #222;
+      font-family: sans-serif;
+      background-color: #eee;
+    }
+    h1,
+    h2,
+    h3 {
+      line-height: 1.2;
+    }
+    span.i {
+      font-style: italic;
+    }
+    span.b {
+      font-weight: bolder;
+    }
+    span.s {
+      text-decoration: line-through;
+    }
+    span.u {
+      text-decoration: underline;
+    }
+    span.o {
+      text-decoration: overline;
+    }
+    p span.d {
+      float: left;
+      font-size: 4rem;
+      line-height: 2.5rem;
+      padding-top: 0.7rem;
+      padding-right: 0.25rem;
+      font-weight: bold;
+    }
+    pre {
+      display: inline;
+    }
+    img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 1rem;
+      border: 1px solid #000;
+    }
+    span.c {
+      font-family: monospace;
+      background-color: #d6d6d6;
+      padding: 0 0.25rem;
+      border-radius: 0.25rem;
+    }
+    code {
+      display: block;
+      font-family: monospace;
+      background: #d6d6d6;
+      padding: 0.5rem 0.25rem 0.5rem 1rem;
+      border-radius: 0.25rem;
+      word-wrap: break-word;
+    }
+  </style>
+  <body>
+    <header>
+      <h1><a target="_blank" href="https://jpegzilla.com">JPEGZILLA</a></h1>
+    </header>
+    <main>
+      <article>
+        <h1>
+          internet research techniques number two: effective text search and
+          ugc.
+        </h1>
+        <time id="mkzDate"><span class="i">2019 12 21</span></time>
 
-                <div id="mkzBody">
-                  <p><span class='d'>O</span>ver the years, I've spent a lot of time doing research. as a completely self-taught web developer, I've gotten pretty damn good at finding things on the internet. and besides, I'm super <span class='i s'>nosy</span> hungry for information on anything and everything. so, I've learned a lot about how to absolutely scour the depths of the web for the information I need.</p>
-<p>anyway, something that I wanted to write about for a while is effective searching techniques. a lot of things &mdash; such as knowing where to look to find certain information &mdash; come with years of experience. <span class='i'>"search techniques?"</span> you might be thinking. <span class='i'>"I already know how to use search engines, though..."</span></p>
-<p>do you <span class='i'>really</span> though? because most people's search techniques are like an old kitchen knife. it does the job, but you kind of wish you could cut a little faster. if you continue reading this series, though, I'll swap out <a target="_blank" href="https://i.etsystatic.com/13702655/r/il/1bfe0d/1514542945/il_570xN.1514542945_5ka4.jpg">your blade</a> for a <a target="_blank" href="https://www.echefknife.com/product/yoshihiro-mizuyaki-honyaki-mirror-finished-mt-fuji-full-moon-yanagi-kiritsuke-gold-phoenix-fuki-urushi-lacquered-rosewood-handle-saya/">yoshihiro mizuyaki honyaki</a>. I already wrote a (scant) <a target="_blank" href="./../posts/20190630.html">part one to this post a while ago</a>, so check that out if you'd like.<br><hr></p>
-<h2>number one: searching for specific text.</h2>
-<p>most good search engines have special syntax for crafting better search queries. in regards to google, the best technique for finding specific text &mdash; if you already know exactly what phrase you want to find &mdash; is to just wrap your search in double quotes "like this". of course, this goes much, much deeper. the two search engines I most often use, google and duckduckgo, both have tons of special syntax that's sort of reminiscent of a query language like sql or cql. <a target="_blank" href="https://support.google.com/websearch/answer/2466433">here is google's syntax</a>, and <a target="_blank" href="https://help.duckduckgo.com/duckduckgo-help-pages/results/syntax/">duckduckgo's is here.</a>. memorize just <span class='i'>a few</span> of these and you'll easily cut your time spent searching in half.</p>
-<img src="./../img/search-exact-text.png" alt="just a couple of methods google offers to refine your search." title="just a couple of methods google offers to refine your search.">
-<h2>number two: searching complex ugc (user generated content).</h2>
-<p>okay, here's where it starts getting a little more interesting. user generated content is what makes the internet what it is. I'm talking about blog posts, forum discussions, documents, open source code, social media posts...the list goes on. here are a few things I do when searching user generated content.</p>
-<p>one of the most important things to take into consideration here is language. it's much easier to search within ugc that's written in your native language, because you'll understand irregularities, you'll be able to mentally gloss over typos, etc. you do need to keep things like that in mind when searching.</p>
-<h3>example one: blogs, inurl, and site.</h3>
-<p>ok, I'll use a recent example from my real life. say I'm using google, and looking for information on <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining">optional chaining</a>, and I only want to see blog-type ugc. and for the sake of the exercise let's say I don't have <a target="_blank" href="https://github.com/swapagarwal/mediumship">a way to bypass medium's paywall</a>, so I want to exclude it:</p>
-<img src="./../img/search-blog-inurl-nomedium.png" alt="searching for optional chaining on blog sites, but not on medium." title="searching for optional chaining on blog sites, but not on medium.">
-<p>and if I really wanted to see medium links? I'd combine the <span class='c'>site:</span> and <span class='c'>inurl:</span> operators to get really specific &mdash;</p>
-<img src="./../img/search-blog-inurl-medium.png" alt="searching for optional chaining in javascript, using medium." title="searching for optional chaining in javascript, using medium.">
-<p>here's something you might run into as you start using more and more advanced search techniques: search engines like google will sometimes think your search traffic might be coming from a bot:</p>
-<img src="./../img/search-captcha.png" alt="google's page telling me that there's unusual traffic coming from my network." title="google's page telling me that there's unusual traffic coming from my network.">
-<p>from google's explanation (emphasis mine):</p>
-<img src="./../img/search-captcha-explanation.png" alt="google's explanation that I am behaving like a robot." title="google's explanation that I am behaving like a robot.">
-<p>and that's no big deal, it just means your searching is getting more powerful. <span class='i'>you're becoming one with the machine.</span></p>
-<h3>example two: forums, discussions, and combo syntax.</h3>
-<p>forums are among the most complex information sources that can be searched on the internet. in fact, I'd like to write an entire seperate post about how to efficiently search forums. message boards, forums, and the like very often contain threads and discussions that can span hundreds of pages of highly unpredictable &mdash; <a target="_blank" href="https://en.wikipedia.org/wiki/Godwin%27s_law">and sometimes very predictable</a> &mdash; content. this makes them difficult to search, but not impossible. the key here is to use the correct tools.</p>
-<p>so here's the example: say I'm an artist who just found out about <a target="_blank" href="https://www.systemax.jp/en/sai/">paint tool sai</a>, one of the most popular illustration applications, and I want to see what other artists are saying about it. I'd want to find a forum, and I'd want to find a discussion among my peers, who I know are denizens of the notorious <a target="_blank" href="https://deviantart.com">deviantart.com</a>. here's what my query would look like:</p>
-<img src="./../img/search-combine-site-inurl.png" alt="combining site, inurl, and a search term." title="combining site, inurl, and a search term.">
-<p>I'd immediately find what I was looking for. however, what if I wanted to see other discussions going on on other sites? I could change my query to <span class='c'>paint tool sai inurl:forum</span> or something like that. I could also use a little extension called <a target="_blank" href="https://chrome.google.com/webstore/detail/discussions-button-for-go/igjiggoeheaondbmhmilpmbdkpgcjmdn">discussions button for google search</a> which would construct a <span class='u'><abbr title="in a good way though">nasty</abbr></span> little combo for me to find pretty much any and every forum discussion on the topic I want. with this extension, I click on that little "discussions" button in the screenshot above and my query becomes:</p>
-<code>paint tool sai inurl:forum|viewthread|showthread|viewtopic|showtopic|"index.php?topic" | intext:"reading this topic"|"next thread"|"next topic"|"send private message"</code>
-<p>and if you're further along in your self-mechanization than me, and you've perfectly memorized search syntax, then you can do what this extension does on your own. I'm a human though (I think), so I just use the extension.</p>
-<h3>example three: using established archives.</h3>
-<p>online communities grow and change over time, some more rapidly than others. websites get restructured, content is removed or replaced, users delete their profiles and move to other sites, and so forth. as a result, sometimes you'll find yourself seeking information that technically no longer exists &mdash; at least not as it used to. this is where archives come in handy.</p>
-<img src="./../img/search-wayback.png" alt="the internet archive's wayback machine." title="the internet archive's wayback machine.">
-<p>there are a few archive sites out there, but none are really as good as the internet archive's wayback machine. you've probably heard about this one at least once in your life, even if you don't use it every day. so say you're researching some obscure topic through a web of ancient forum threads scattered around multiple websites and you come across a thread that got wiped by mods or locked or something.</p>
-<p>sometimes all you have to do is throw the link to the page into the wayback machine &mdash; <span class='i'>et voilà!</span> &mdash; (sometimes) the page will have been archived in the past and you can read it in it's original glory. example: I was reading a <a target="_blank" href="https://forum.starmen.net/forum/General/BFG/45107/page/7/">thread</a> that ran from two thousand eight &mdash; two thousand nine, and one particular user's comments seemed to all be missing, leaving pretty significant gaps in the discussion. I don't know why; maybe they deleted their account or something.</p>
-<img src="./../img/yume-thread-before.png" alt="this person's blank comments are leaving odd gaps in the conversation." title="this person's blank comments are leaving odd gaps in the conversation.">
-<p>I was lucky that an <a target="_blank" href="https://en.wikipedia.org/wiki/Alexa_Internet">alexa crawler</a> had been there way, way before me (about ten years ahead of me) and there was an archived copy on the wayback machine as a result.</p>
-<img src="./../img/yume-thread-after.png" alt="blank comments restored, along with old profile pictures, badges, forum signatures, etc.... I can hear their voices." title="blank comments restored, along with old profile pictures, badges, forum signatures, etc.... I can hear their voices.">
-<p><a target="_blank" href="https://web.archive.org/web/20090903120826/http://forum.starmen.net/forum/General/BFG/45107/page/8/">the archived original thread</a> contains the comments I needed to read, the original profile pictures, badge sprites, and the original exact timestamps. it was like going back in time and seeing exactly what the actual forum participants would have seen. it's like visiting a memorial of some event or other, and being surrounded by the ghosts of the people who were present for the actual event.</p>
-<p>the comment I was missing in particular was posted april first, two thousand nine at two twenty-one pm &mdash; exactly three thousand, nine hundred fifteen days, twenty-two hours, and fifty-seven minutes ago from the writing of this line.<br><hr></p>
-<p><span class='d'>N</span><span class='i'>ota bene: when traversing the rapidly shifting landscape of internet ugc, keep in mind that time distortion and erosion are very real things. for example, the content that I found on that thread mentioned above was on page seven. ten years ago, that same content was on a different page, so I had to search for it in the archived copy. that's just a fairly mundane example, so watch out when you're searching. things change, so it's often more important to see the forest than the trees. you just need to understand the shape of the content &mdash; that's what informs your navigation. and that comes with experience.</span></p>
-<p><span class='i'>if you're good enough, you can find people having similar discussions at similar times in history across huge divides between ugc. tracking synchronicity between even two to four sources becomes almost exponentially more difficult as time wears on, but it is nearly always possible. I use the term erosion when it comes to cases like this, but it's more like dispersion, in all honesty. just remember that (most of the time) nothing is truly lost &mdash; if you know how to look for it.</span><br><hr></p>
-<p>once you find the resource you actually want, though, how do you search within it? how do you cross-reference? you need to quickly be able to parse a large amount of textual information, and jump from point to point in the page as nimbly as a web crawler could...which brings me to technique number three.</p>
-<h2>number three: cross-referencing / searching within a text resource.</h2>
-<p>cross-referencing on a page becomes much easier when you can just immediately jump to the text you want to see, right? so here's technique number three: <span class='c'>ctrl (cmd for macs) + f / ctrl + g</span>. both key combinations will bring up a search box to type into, and immediately jump to the word or phrase you type in.</p>
-<img src="./../img/search-ctrl-f.gif" alt="example of the ctrl-f function." title="example of the ctrl-f function.">
-<p>it will even show you the amount of ocurrences of a term on a page, and you can go to the next ocurrence by hitting enter or f3.</p>
-<p>look, I get it. you already know this one. <a target="_blank" href="https://www.theatlantic.com/technology/archive/2011/08/crazy-90-percent-of-people-dont-know-how-to-use-ctrl-f/243840/">statistics say</a> that <a target="_blank" href="http://searchresearch1.blogspot.com/2010/02/why-control-f-is-single-most-important.html">you most likely don't</a>, but we both know you're the exception, right?</p>
-<h2>number four: searching for special characters.</h2>
-<p>when using a traditional search engine, sometimes special characters are ignored, or even treated like special search syntax, such as in the case of google always treating the asterisk (*) as a wildcard operator. it can be difficult to search for something that has a special character in it's name, which is why a specialized engine called <a target="_blank" href="http://symbolhound.com/">symbolhound</a> exists.</p>
-<img src="./../img/search-symbolhound.png" alt="the homepage of symbolhound." title="the homepage of symbolhound.">
-<p>as you can see, this is mainly for people who, like me, need to search for strings with unconventional character combinations in them, mainly relating to some programming language or another. it's not super strong as a general purpose engine, and certainly is not perfect.</p>
-<p>there are a few ways you can search for special symbols on traditional search engines, though, including using the literal spelling of the symbol you're looking for.</p>
-<h2>number five: avoiding bias.</h2>
-<p>there exists, of course, a certain amount of bias when using a search engine. there are three main biases that I'm talking about here: <span class='b'>confirmation bias</span>, the <span class='b'>baader–meinhof effect</span>, and the bias caused by <span class='b'>search engines tracking your search history.</span></p>
-<h3>example one: confirmation bias and the baader–meinhof effect.</h3>
-<p>also known as the frequency illusion, this is a type of cognitive bias that refers to humans' disposition toward noticing patterns, names, and other information with highly increased frequency after initially being exposed to that information. this most definitely goes in hand with confirmation bias, and if your goal is to perform effective, unbiased, and objective searching, you have to at least be aware of it to try to mitigate its effects.<br><hr></p>
-<p><span class='d'>N</span><span class='i'>ota bene: keep in mind at all times that</span> <a target="_blank" href="https://en.wikipedia.org/wiki/Metacognition">metacognition</a> <span class='i'>is an incredibly important part of</span> <span class='b i'>any</span> <span class='i'>research. if you don't remain aware of your own tendencies to think of things in a certain light, or your personal biases, your</span> <a target="_blank" href="https://webliteracy.pressbooks.com/chapter/avoiding-confirmation-bias-in-searches/">search will only show you what you want to see.</a><br><hr></p>
-<p>you don't always want to find <span class='i'>only</span> what you think you need to know, and paying special attention to only a certain type of information can lead to unfruitful searches. for example, maybe you notice a discussion going on about a new movie you've seen recently. the thread is mostly positive information.</p>
-<p>you continue looking for information about the movie, and you continue finding positive information &mdash; through no coincidence at all. you may conclude "oh, everyone loves this movie!" and never see any information saying otherwise, because you selectively gave attention to the information you wanted to believe. you remain unaware, even, of the <span class='i'>scope</span> of the information you're missing out on &mdash; <a target="_blank" href="https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect">you're not even aware of what you don't know</a>. and this is only a fairly innocent example of the effects of this bias.</p>
-<h3>example two: the search history bias.</h3>
-<img src="./../img/search-personalization.png" alt="google's blog post about personalized search." title="google's blog post about personalized search.">
-<p>over ten years ago, google started allowing searches to be <a target="_blank" href="https://googleblog.blogspot.com/2009/12/personalized-search-for-everyone.html">affected by a user's search history</a>. essentially, this introduces some result skewing based on a user's previous searches. this effect is often not noticeable to the average google user at all, but in some cases, it is very very obvious. it can also be difficult to get a good example of because it happens fairly rarely. if this <span class='i'>is</span> actually affecting you, then take a look at <a target="_blank" href="https://duckduckgo.com/">duckduckgo!</a>, which doesn't track you or your search history at all.<br><hr></p>
-<p><span class='d'>T</span>hat's about all I want to write about for now, especially since this post is getting kind of long. there's much more to learn, so go ahead and see what you can find! you'll soon become a <a target="_blank" href="https://en.wiktionary.org/wiki/Google-fu">google-fu</a> master yourself.</p>
-<p>the internet is massive, and only getting larger. and no matter how obscure the thing you're researching is, chances are someone else has what you want and posted it at some point. you are never truly alone. that is the nature of the web.</p>
-<p>if this was too basic for you though, I'll be back with a post about searching audiovisual content soon &mdash; which can be very complicated. so stay tuned if you think that's interesting! thanks for reading my disjointed posts.</p>
-<p>now listen to this:<br><hr></p>
-<h2>currently listening to:</h2>
-<p>- <a target="_blank" href="https://www.youtube.com/watch?v=QigYDF1SCw4">ハナヒカリ</a> by <a target="_blank" href="http://www.office-augusta.com/regallily/">リーガルリリー</a> &mdash; (alt / shoegaze)<br>- <a target="_blank" href="https://www.youtube.com/watch?v=F0hx6bVSX6Y">Surf Zapping</a> by <a target="_blank" href="http://c-h-s.me/">t+pazolite</a> &mdash; (<a target="_blank" href="https://daily.bandcamp.com/scene-report/j-core-japanese-electronic">japanese hardcore</a>)<br>- <a target="_blank" href="https://www.youtube.com/watch?v=zhsS_CTz9tE">The Artist's House</a> by <a target="_blank" href="https://calumbowen.bandcamp.com/">calum bowen</a> &mdash; (electronic)<br>- <a target="_blank" href="https://www.youtube.com/watch?v=m-UWS0-qPWA">STATIC</a> by <a target="_blank" href="https://blackdresses.bandcamp.com/album/love-and-affection-for-stupid-little-bitches">black dresses</a> &mdash; (volume warning - industrial noise pop)<br>- <a target="_blank" href="https://www.youtube.com/watch?v=njGUtA3yol4">AIN'T NOTHIN' LIKE A FUNKY BEAT</a> by <a target="_blank" href="https://hidekinaganuma.bandcamp.com/releases">hideki naganuma</a> &mdash; (electro / dance)<br>- <a target="_blank" href="https://www.youtube.com/watch?v=Og39iIBeOHI">Sultan's Curse</a> by <a target="_blank" href="https://www.mastodonrocks.com/">mastodon</a> &mdash; (heavy metal)<br>- <a target="_blank" href="https://www.youtube.com/watch?v=QcSGhkAus-8">Lonely, It's Fate</a> by <a target="_blank" href="https://shysignals.bandcamp.com">pasteboy</a> &mdash; (house)<br><hr></p>
-<h2>further reading:</h2>
-<p>- <a target="_blank" href="https://ahrefs.com/blog/google-advanced-search-operators/">all of google's search operators</a>.</p>
-<p>- <a target="_blank" href="https://wikimediafoundation.org/our-work/wikimedia-projects/">the wikimedia project, an absolute dragon's hoard of information</a>.</p>
-<p>- <a target="_blank" href="https://www.techrepublic.com/blog/it-security/search-engine-bias-what-search-results-are-telling-you-and-what-theyre-not/">about search engine bias</a>.</p>
-<p>- <a target="_blank" href="https://digitalcommons.law.yale.edu/cgi/viewcontent.cgi?article=1027&context=yjolt">an article arguing that search engine bias is not necessarily bad</a>.</p>
-<p>- <a target="_blank" href="https://en.wikipedia.org/wiki/Search_neutrality">more on the nuance of search neutrality</a> and the <a target="_blank" href="https://www.bsi.umn.edu/~odlyzko/doc/rne81.pdf">original paper that coined the term</a>.</p>
-<p>- <a target="_blank" href="https://science.howstuffworks.com/life/inside-the-mind/human-brain/baader-meinhof-phenomenon.htm">howstuffworks on the baader-meinhof phenomenon</a>.<br><hr></p>
-
-                </div>
-              </article>
-
-            </main>
-            <footer>
-            <span class="non-icon">&copy;&nbsp;<span id="copyright"></span>&nbsp;<span class="name">jpegzilla</span>&nbsp;&vert;&nbsp;<a target="_blank" href="https://jpegzilla.com/humans.txt">humans.txt</a>
-              &nbsp;&vert;&nbsp;<a href="../">blog directory</a>
-              &nbsp;&vert;&nbsp;<a href="https://discordapp.com/invite/Ft9rVA6" target="_blank" class="con-links">discord</a>
-              &nbsp;&vert;&nbsp;<a target="_blank" href="https://twitter.com/jpegzilla">twitter</a>
-            </span>
-            </footer>
-          </body>
-        </html>
-      
+        <div id="mkzBody">
+          <p>
+            <span class="d">O</span>ver the years, I've spent a lot of time
+            doing research. as a completely self-taught web developer, I've
+            gotten pretty damn good at finding things on the internet. and
+            besides, I'm super <span class="i s">nosy</span> hungry for
+            information on anything and everything. so, I've learned a lot about
+            how to absolutely scour the depths of the web for the information I
+            need.
+          </p>
+          <p>
+            anyway, something that I wanted to write about for a while is
+            effective searching techniques. a lot of things &mdash; such as
+            knowing where to look to find certain information &mdash; come with
+            years of experience. <span class="i">"search techniques?"</span> you
+            might be thinking.
+            <span class="i"
+              >"I already know how to use search engines, though..."</span
+            >
+          </p>
+          <p>
+            do you <span class="i">really</span> though? because most people's
+            search techniques are like an old kitchen knife. it does the job,
+            but you kind of wish you could cut a little faster. if you continue
+            reading this series, though, I'll swap out
+            <a
+              target="_blank"
+              href="https://i.etsystatic.com/13702655/r/il/1bfe0d/1514542945/il_570xN.1514542945_5ka4.jpg"
+              >your blade</a
+            >
+            for a
+            <a
+              target="_blank"
+              href="https://www.echefknife.com/product/yoshihiro-mizuyaki-honyaki-mirror-finished-mt-fuji-full-moon-yanagi-kiritsuke-gold-phoenix-fuki-urushi-lacquered-rosewood-handle-saya/"
+              >yoshihiro mizuyaki honyaki</a
+            >. I already wrote a (scant)
+            <a target="_blank" href="./../posts/20190630.html"
+              >part one to this post a while ago</a
+            >, so check that out if you'd like.<br />
+            <hr />
+          </p>
+          <h2>number one: searching for specific text.</h2>
+          <p>
+            most good search engines have special syntax for crafting better
+            search queries. in regards to google, the best technique for finding
+            specific text &mdash; if you already know exactly what phrase you
+            want to find &mdash; is to just wrap your search in double quotes
+            "like this". of course, this goes much, much deeper. the two search
+            engines I most often use, google and duckduckgo, both have tons of
+            special syntax that's sort of reminiscent of a query language like
+            sql or cql.
+            <a
+              target="_blank"
+              href="https://support.google.com/websearch/answer/2466433"
+              >here is google's syntax</a
+            >, and
+            <a
+              target="_blank"
+              href="https://help.duckduckgo.com/duckduckgo-help-pages/results/syntax/"
+              >duckduckgo's is here.</a
+            >. memorize just <span class="i">a few</span> of these and you'll
+            easily cut your time spent searching in half.
+          </p>
+          <img
+            src="./../img/search-exact-text.png"
+            alt="just a couple of methods google offers to refine your search."
+            title="just a couple of methods google offers to refine your search."
+          />
+          <h2>number two: searching complex ugc (user generated content).</h2>
+          <p>
+            okay, here's where it starts getting a little more interesting. user
+            generated content is what makes the internet what it is. I'm talking
+            about blog posts, forum discussions, documents, open source code,
+            social media posts...the list goes on. here are a few things I do
+            when searching user generated content.
+          </p>
+          <p>
+            one of the most important things to take into consideration here is
+            language. it's much easier to search within ugc that's written in
+            your native language, because you'll understand irregularities,
+            you'll be able to mentally gloss over typos, etc. you do need to
+            keep things like that in mind when searching.
+          </p>
+          <h3>example one: blogs, inurl, and site.</h3>
+          <p>
+            ok, I'll use a recent example from my real life. say I'm using
+            google, and looking for information on
+            <a
+              target="_blank"
+              href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining"
+              >optional chaining</a
+            >, and I only want to see blog-type ugc. and for the sake of the
+            exercise let's say I don't have
+            <a target="_blank" href="https://github.com/swapagarwal/mediumship"
+              >a way to bypass medium's paywall</a
+            >, so I want to exclude it:
+          </p>
+          <img
+            src="./../img/search-blog-inurl-nomedium.png"
+            alt="searching for optional chaining on blog sites, but not on medium."
+            title="searching for optional chaining on blog sites, but not on medium."
+          />
+          <p>
+            and if I really wanted to see medium links? I'd combine the
+            <span class="c">site:</span> and
+            <span class="c">inurl:</span> operators to get really specific
+            &mdash;
+          </p>
+          <img
+            src="./../img/search-blog-inurl-medium.png"
+            alt="searching for optional chaining in javascript, using medium."
+            title="searching for optional chaining in javascript, using medium."
+          />
+          <p>
+            here's something you might run into as you start using more and more
+            advanced search techniques: search engines like google will
+            sometimes think your search traffic might be coming from a bot:
+          </p>
+          <img
+            src="./../img/search-captcha.png"
+            alt="google's page telling me that there's unusual traffic coming from my network."
+            title="google's page telling me that there's unusual traffic coming from my network."
+          />
+          <p>from google's explanation (emphasis mine):</p>
+          <img
+            src="./../img/search-captcha-explanation.png"
+            alt="google's explanation that I am behaving like a robot."
+            title="google's explanation that I am behaving like a robot."
+          />
+          <p>
+            and that's no big deal, it just means your searching is getting more
+            powerful.
+            <span class="i">you're becoming one with the machine.</span>
+          </p>
+          <h3>example two: forums, discussions, and combo syntax.</h3>
+          <p>
+            forums are among the most complex information sources that can be
+            searched on the internet. in fact, I'd like to write an entire
+            seperate post about how to efficiently search forums. message
+            boards, forums, and the like very often contain threads and
+            discussions that can span hundreds of pages of highly unpredictable
+            &mdash;
+            <a
+              target="_blank"
+              href="https://en.wikipedia.org/wiki/Godwin%27s_law"
+              >and sometimes very predictable</a
+            >
+            &mdash; content. this makes them difficult to search, but not
+            impossible. the key here is to use the correct tools.
+          </p>
+          <p>
+            so here's the example: say I'm an artist who just found out about
+            <a target="_blank" href="https://www.systemax.jp/en/sai/"
+              >paint tool sai</a
+            >, one of the most popular illustration applications, and I want to
+            see what other artists are saying about it. I'd want to find a
+            forum, and I'd want to find a discussion among my peers, who I know
+            are denizens of the notorious
+            <a target="_blank" href="https://deviantart.com">deviantart.com</a>.
+            here's what my query would look like:
+          </p>
+          <img
+            src="./../img/search-combine-site-inurl.png"
+            alt="combining site, inurl, and a search term."
+            title="combining site, inurl, and a search term."
+          />
+          <p>
+            I'd immediately find what I was looking for. however, what if I
+            wanted to see other discussions going on on other sites? I could
+            change my query to
+            <span class="c">paint tool sai inurl:forum</span> or something like
+            that. I could also use a little extension called
+            <a
+              target="_blank"
+              href="https://chrome.google.com/webstore/detail/discussions-button-for-go/igjiggoeheaondbmhmilpmbdkpgcjmdn"
+              >discussions button for google search</a
+            >
+            which would construct a
+            <span class="u"
+              ><abbr title="in a good way though">nasty</abbr></span
+            >
+            little combo for me to find pretty much any and every forum
+            discussion on the topic I want. with this extension, I click on that
+            little "discussions" button in the screenshot above and my query
+            becomes:
+          </p>
+          <code
+            >paint tool sai
+            inurl:forum|viewthread|showthread|viewtopic|showtopic|"index.php?topic"
+            | intext:"reading this topic"|"next thread"|"next topic"|"send
+            private message"</code
+          >
+          <p>
+            and if you're further along in your self-mechanization than me, and
+            you've perfectly memorized search syntax, then you can do what this
+            extension does on your own. I'm a human though (I think), so I just
+            use the extension.
+          </p>
+          <h3>example three: using established archives.</h3>
+          <p>
+            online communities grow and change over time, some more rapidly than
+            others. websites get restructured, content is removed or replaced,
+            users delete their profiles and move to other sites, and so forth.
+            as a result, sometimes you'll find yourself seeking information that
+            technically no longer exists &mdash; at least not as it used to.
+            this is where archives come in handy.
+          </p>
+          <img
+            src="./../img/search-wayback.png"
+            alt="the internet archive's wayback machine."
+            title="the internet archive's wayback machine."
+          />
+          <p>
+            there are a few archive sites out there, but none are really as good
+            as the internet archive's wayback machine. you've probably heard
+            about this one at least once in your life, even if you don't use it
+            every day. so say you're researching some obscure topic through a
+            web of ancient forum threads scattered around multiple websites and
+            you come across a thread that got wiped by mods or locked or
+            something.
+          </p>
+          <p>
+            sometimes all you have to do is throw the link to the page into the
+            wayback machine &mdash; <span class="i">et voilà!</span> &mdash;
+            (sometimes) the page will have been archived in the past and you can
+            read it in it's original glory. example: I was reading a
+            <a
+              target="_blank"
+              href="https://forum.starmen.net/forum/General/BFG/45107/page/7/"
+              >thread</a
+            >
+            that ran from two thousand eight &mdash; two thousand nine, and one
+            particular user's comments seemed to all be missing, leaving pretty
+            significant gaps in the discussion. I don't know why; maybe they
+            deleted their account or something.
+          </p>
+          <img
+            src="./../img/yume-thread-before.png"
+            alt="this person's blank comments are leaving odd gaps in the conversation."
+            title="this person's blank comments are leaving odd gaps in the conversation."
+          />
+          <p>
+            I was lucky that an
+            <a
+              target="_blank"
+              href="https://en.wikipedia.org/wiki/Alexa_Internet"
+              >alexa crawler</a
+            >
+            had been there way, way before me (about ten years ahead of me) and
+            there was an archived copy on the wayback machine as a result.
+          </p>
+          <img
+            src="./../img/yume-thread-after.png"
+            alt="blank comments restored, along with old profile pictures, badges, forum signatures, etc.... I can hear their voices."
+            title="blank comments restored, along with old profile pictures, badges, forum signatures, etc.... I can hear their voices."
+          />
+          <p>
+            <a
+              target="_blank"
+              href="https://web.archive.org/web/20090903120826/http://forum.starmen.net/forum/General/BFG/45107/page/8/"
+              >the archived original thread</a
+            >
+            contains the comments I needed to read, the original profile
+            pictures, badge sprites, and the original exact timestamps. it was
+            like going back in time and seeing exactly what the actual forum
+            participants would have seen. it's like visiting a memorial of some
+            event or other, and being surrounded by the ghosts of the people who
+            were present for the actual event.
+          </p>
+          <p>
+            the comment I was missing in particular was posted april first, two
+            thousand nine at two twenty-one pm &mdash; exactly three thousand,
+            nine hundred fifteen days, twenty-two hours, and fifty-seven minutes
+            ago from the writing of this line.<br />
+            <hr />
+          </p>
+          <p>
+            <span class="d">N</span
+            ><span class="i"
+              >ota bene: when traversing the rapidly shifting landscape of
+              internet ugc, keep in mind that time distortion and erosion are
+              very real things. for example, the content that I found on that
+              thread mentioned above was on page seven. ten years ago, that same
+              content was on a different page, so I had to search for it in the
+              archived copy. that's just a fairly mundane example, so watch out
+              when you're searching. things change, so it's often more important
+              to see the forest than the trees. you just need to understand the
+              shape of the content &mdash; that's what informs your navigation.
+              and that comes with experience.</span
+            >
+          </p>
+          <p>
+            <span class="i"
+              >if you're good enough, you can find people having similar
+              discussions at similar times in history across huge divides
+              between ugc. tracking synchronicity between even two to four
+              sources becomes almost exponentially more difficult as time wears
+              on, but it is nearly always possible. I use the term erosion when
+              it comes to cases like this, but it's more like dispersion, in all
+              honesty. just remember that (most of the time) nothing is truly
+              lost &mdash; if you know how to look for it.</span
+            ><br />
+            <hr />
+          </p>
+          <p>
+            once you find the resource you actually want, though, how do you
+            search within it? how do you cross-reference? you need to quickly be
+            able to parse a large amount of textual information, and jump from
+            point to point in the page as nimbly as a web crawler could...which
+            brings me to technique number three.
+          </p>
+          <h2>
+            number three: cross-referencing / searching within a text resource.
+          </h2>
+          <p>
+            cross-referencing on a page becomes much easier when you can just
+            immediately jump to the text you want to see, right? so here's
+            technique number three:
+            <span class="c">ctrl (cmd for macs) + f / ctrl + g</span>. both key
+            combinations will bring up a search box to type into, and
+            immediately jump to the word or phrase you type in.
+          </p>
+          <img
+            src="./../img/search-ctrl-f.gif"
+            alt="example of the ctrl-f function."
+            title="example of the ctrl-f function."
+          />
+          <p>
+            it will even show you the amount of ocurrences of a term on a page,
+            and you can go to the next ocurrence by hitting enter or f3.
+          </p>
+          <p>
+            look, I get it. you already know this one.
+            <a
+              target="_blank"
+              href="https://www.theatlantic.com/technology/archive/2011/08/crazy-90-percent-of-people-dont-know-how-to-use-ctrl-f/243840/"
+              >statistics say</a
+            >
+            that
+            <a
+              target="_blank"
+              href="http://searchresearch1.blogspot.com/2010/02/why-control-f-is-single-most-important.html"
+              >you most likely don't</a
+            >, but we both know you're the exception, right?
+          </p>
+          <h2>number four: searching for special characters.</h2>
+          <p>
+            when using a traditional search engine, sometimes special characters
+            are ignored, or even treated like special search syntax, such as in
+            the case of google always treating the asterisk (*) as a wildcard
+            operator. it can be difficult to search for something that has a
+            special character in it's name, which is why a specialized engine
+            called
+            <a target="_blank" href="http://symbolhound.com/">symbolhound</a>
+            exists.
+          </p>
+          <img
+            src="./../img/search-symbolhound.png"
+            alt="the homepage of symbolhound."
+            title="the homepage of symbolhound."
+          />
+          <p>
+            as you can see, this is mainly for people who, like me, need to
+            search for strings with unconventional character combinations in
+            them, mainly relating to some programming language or another. it's
+            not super strong as a general purpose engine, and certainly is not
+            perfect.
+          </p>
+          <p>
+            there are a few ways you can search for special symbols on
+            traditional search engines, though, including using the literal
+            spelling of the symbol you're looking for.
+          </p>
+          <h2>number five: avoiding bias.</h2>
+          <p>
+            there exists, of course, a certain amount of bias when using a
+            search engine. there are three main biases that I'm talking about
+            here: <span class="b">confirmation bias</span>, the
+            <span class="b">baader–meinhof effect</span>, and the bias caused by
+            <span class="b">search engines tracking your search history.</span>
+          </p>
+          <h3>example one: confirmation bias and the baader–meinhof effect.</h3>
+          <p>
+            also known as the frequency illusion, this is a type of cognitive
+            bias that refers to humans' disposition toward noticing patterns,
+            names, and other information with highly increased frequency after
+            initially being exposed to that information. this most definitely
+            goes in hand with confirmation bias, and if your goal is to perform
+            effective, unbiased, and objective searching, you have to at least
+            be aware of it to try to mitigate its effects.<br />
+            <hr />
+          </p>
+          <p>
+            <span class="d">N</span
+            ><span class="i">ota bene: keep in mind at all times that</span>
+            <a
+              target="_blank"
+              href="https://en.wikipedia.org/wiki/Metacognition"
+              >metacognition</a
+            >
+            <span class="i">is an incredibly important part of</span>
+            <span class="b i">any</span>
+            <span class="i"
+              >research. if you don't remain aware of your own tendencies to
+              think of things in a certain light, or your personal biases,
+              your</span
+            >
+            <a
+              target="_blank"
+              href="https://webliteracy.pressbooks.com/chapter/avoiding-confirmation-bias-in-searches/"
+              >search will only show you what you want to see.</a
+            ><br />
+            <hr />
+          </p>
+          <p>
+            you don't always want to find <span class="i">only</span> what you
+            think you need to know, and paying special attention to only a
+            certain type of information can lead to unfruitful searches. for
+            example, maybe you notice a discussion going on about a new movie
+            you've seen recently. the thread is mostly positive information.
+          </p>
+          <p>
+            you continue looking for information about the movie, and you
+            continue finding positive information &mdash; through no coincidence
+            at all. you may conclude "oh, everyone loves this movie!" and never
+            see any information saying otherwise, because you selectively gave
+            attention to the information you wanted to believe. you remain
+            unaware, even, of the <span class="i">scope</span> of the
+            information you're missing out on &mdash;
+            <a
+              target="_blank"
+              href="https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect"
+              >you're not even aware of what you don't know</a
+            >. and this is only a fairly innocent example of the effects of this
+            bias.
+          </p>
+          <h3>example two: the search history bias.</h3>
+          <img
+            src="./../img/search-personalization.png"
+            alt="google's blog post about personalized search."
+            title="google's blog post about personalized search."
+          />
+          <p>
+            over ten years ago, google started allowing searches to be
+            <a
+              target="_blank"
+              href="https://googleblog.blogspot.com/2009/12/personalized-search-for-everyone.html"
+              >affected by a user's search history</a
+            >. essentially, this introduces some result skewing based on a
+            user's previous searches. this effect is often not noticeable to the
+            average google user at all, but in some cases, it is very very
+            obvious. it can also be difficult to get a good example of because
+            it happens fairly rarely. if this <span class="i">is</span> actually
+            affecting you, then take a look at
+            <a target="_blank" href="https://duckduckgo.com/">duckduckgo!</a>,
+            which doesn't track you or your search history at all.<br />
+            <hr />
+          </p>
+          <p>
+            <span class="d">T</span>hat's about all I want to write about for
+            now, especially since this post is getting kind of long. there's
+            much more to learn, so go ahead and see what you can find! you'll
+            soon become a
+            <a target="_blank" href="https://en.wiktionary.org/wiki/Google-fu"
+              >google-fu</a
+            >
+            master yourself.
+          </p>
+          <p>
+            the internet is massive, and only getting larger. and no matter how
+            obscure the thing you're researching is, chances are someone else
+            has what you want and posted it at some point. you are never truly
+            alone. that is the nature of the web.
+          </p>
+          <p>
+            if this was too basic for you though, I'll be back with a post about
+            searching audiovisual content soon &mdash; which can be very
+            complicated. so stay tuned if you think that's interesting! thanks
+            for reading my disjointed posts.
+          </p>
+          <p>
+            now listen to this:<br />
+            <hr />
+          </p>
+          <h2>currently listening to:</h2>
+          <p>
+            -
+            <a
+              target="_blank"
+              href="https://www.youtube.com/watch?v=QigYDF1SCw4"
+              >ハナヒカリ</a
+            >
+            by
+            <a target="_blank" href="http://www.office-augusta.com/regallily/"
+              >リーガルリリー</a
+            >
+            &mdash; (alt / shoegaze)<br />-
+            <a
+              target="_blank"
+              href="https://www.youtube.com/watch?v=g6ZW6qgMcBM"
+              >Surf Zapping</a
+            >
+            by <a target="_blank" href="http://c-h-s.me/">t+pazolite</a> &mdash;
+            (<a
+              target="_blank"
+              href="https://daily.bandcamp.com/scene-report/j-core-japanese-electronic"
+              >japanese hardcore</a
+            >)<br />-
+            <a
+              target="_blank"
+              href="https://www.youtube.com/watch?v=zhsS_CTz9tE"
+              >The Artist's House</a
+            >
+            by
+            <a target="_blank" href="https://calumbowen.bandcamp.com/"
+              >calum bowen</a
+            >
+            &mdash; (electronic)<br />-
+            <a
+              target="_blank"
+              href="https://www.youtube.com/watch?v=fpmcuKb4QDw"
+              >STATIC</a
+            >
+            by
+            <a
+              target="_blank"
+              href="https://blackdresses.bandcamp.com/album/love-and-affection-for-stupid-little-bitches"
+              >black dresses</a
+            >
+            &mdash; (volume warning - industrial noise pop)<br />-
+            <a
+              target="_blank"
+              href="https://www.youtube.com/watch?v=njGUtA3yol4"
+              >AIN'T NOTHIN' LIKE A FUNKY BEAT</a
+            >
+            by
+            <a
+              target="_blank"
+              href="https://hidekinaganuma.bandcamp.com/releases"
+              >hideki naganuma</a
+            >
+            &mdash; (electro / dance)<br />-
+            <a
+              target="_blank"
+              href="https://www.youtube.com/watch?v=Og39iIBeOHI"
+              >Sultan's Curse</a
+            >
+            by
+            <a target="_blank" href="https://www.mastodonrocks.com/"
+              >mastodon</a
+            >
+            &mdash; (heavy metal)<br />-
+            <a
+              target="_blank"
+              href="https://www.youtube.com/watch?v=QcSGhkAus-8"
+              >Lonely, It's Fate</a
+            >
+            by
+            <a target="_blank" href="https://shysignals.bandcamp.com"
+              >pasteboy</a
+            >
+            &mdash; (house)<br />
+            <hr />
+          </p>
+          <h2>further reading:</h2>
+          <p>
+            -
+            <a
+              target="_blank"
+              href="https://ahrefs.com/blog/google-advanced-search-operators/"
+              >all of google's search operators</a
+            >.
+          </p>
+          <p>
+            -
+            <a
+              target="_blank"
+              href="https://wikimediafoundation.org/our-work/wikimedia-projects/"
+              >the wikimedia project, an absolute dragon's hoard of
+              information</a
+            >.
+          </p>
+          <p>
+            -
+            <a
+              target="_blank"
+              href="https://www.techrepublic.com/blog/it-security/search-engine-bias-what-search-results-are-telling-you-and-what-theyre-not/"
+              >about search engine bias</a
+            >.
+          </p>
+          <p>
+            -
+            <a
+              target="_blank"
+              href="https://digitalcommons.law.yale.edu/cgi/viewcontent.cgi?article=1027&context=yjolt"
+              >an article arguing that search engine bias is not necessarily
+              bad</a
+            >.
+          </p>
+          <p>
+            -
+            <a
+              target="_blank"
+              href="https://en.wikipedia.org/wiki/Search_neutrality"
+              >more on the nuance of search neutrality</a
+            >
+            and the
+            <a
+              target="_blank"
+              href="https://www.bsi.umn.edu/~odlyzko/doc/rne81.pdf"
+              >original paper that coined the term</a
+            >.
+          </p>
+          <p>
+            -
+            <a
+              target="_blank"
+              href="https://science.howstuffworks.com/life/inside-the-mind/human-brain/baader-meinhof-phenomenon.htm"
+              >howstuffworks on the baader-meinhof phenomenon</a
+            >.<br />
+            <hr />
+          </p>
+        </div>
+      </article>
+    </main>
+    <footer>
+      <span class="non-icon"
+        >&copy;&nbsp;<span id="copyright"></span>&nbsp;<span class="name"
+          >jpegzilla</span
+        >&nbsp;&vert;&nbsp;<a
+          target="_blank"
+          href="https://jpegzilla.com/humans.txt"
+          >humans.txt</a
+        >
+        &nbsp;&vert;&nbsp;<a href="../">blog directory</a> &nbsp;&vert;&nbsp;<a
+          href="https://discordapp.com/invite/Ft9rVA6"
+          target="_blank"
+          class="con-links"
+          >discord</a
+        >
+        &nbsp;&vert;&nbsp;<a
+          target="_blank"
+          href="https://twitter.com/jpegzilla"
+          >twitter</a
+        >
+      </span>
+    </footer>
+  </body>
+</html>
