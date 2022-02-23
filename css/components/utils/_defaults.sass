@@ -1,0 +1,14 @@
+@use './vars' as v
+
+*
+  box-sizing: border-box
+  margin: 0
+  padding: 0
+  word-wrap: break-word
+  text-rendering: geometricPrecision
+
+:root
+  font-size: 16px
+
+  @media (max-width: v.$breakpoint-small)
+    font-size: 14px

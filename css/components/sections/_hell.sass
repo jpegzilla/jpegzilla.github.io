@@ -1,0 +1,160 @@
+// ♪音楽 → ZTS - RESURRECTEDREPLAYER : https://youtu.be/OpHcE-Oxzg0
+
+@use 'sass:color' as c
+@use './../utils/vars' as v
+@use './../utils/animations/fadeoutincolor' as fc
+@use './../utils/animations/fadein' as f
+@use './../utils/animations/slide' as s
+@use './../utils/animations/pointright' as p
+@use './../utils/animations/width' as w
+
+#contact
+  +v.section(visible)
+
+  header
+    +v.sectionhead('[ AS03 > SIGNAL MOVING ON THE SURFACE ]')
+    +v.mfont
+
+  .contact-info-container
+    .contact-item-list
+      +v.antibullet
+
+      .contact-item + .contact-item
+        margin-top: 2rem
+
+        @media (max-width: v.$breakpoint-miniscule)
+          margin-top: 3rem
+
+      .contact-item
+        position: relative
+        font-family: v.$prompt
+        padding: 0 0 1rem 0
+        opacity: 0
+        transform: scale(0.97)
+        transition: opacity 0.3s ease 0.3s, transform 0.5s ease-out, margin 0.25s ease
+
+        @media (max-width: v.$breakpoint-miniscule)
+          padding-bottom: 0.5rem
+
+        a
+          +v.kfocus
+          +v.color
+
+          height: 100%
+          width: 100%
+          text-decoration: none
+          display: inline-block
+
+        &:hover
+          margin-left: 0.25rem
+          transition: opacity 0.3s ease 0.3s, transform 0.5s ease-out, margin 0.3s ease-in, color 0.3s ease-out
+
+          @media (max-width: v.$breakpoint-tiny)
+            margin-left: 0
+
+          .bar b::after
+            opacity: 1
+            transition: opacity 0.35s
+
+        &.intersector-visible
+          opacity: 1
+          transform: scale(1)
+          transition: opacity 0.3s ease 0.3s, transform 0.5s ease-out, margin 0.3s ease-out
+
+        body.dark &
+          // border-bottom: 1px solid v.$white-bright
+          transition: opacity 0.3s ease 0.3s, transform 0.5s ease-out, margin 0.3s ease-out
+
+        &:first-of-type
+          +v.coolshittag($content: 'IDEAL', $top: 5%)
+
+        .bar
+          display: flex
+          justify-content: center
+          align-items: center
+          position: absolute
+          bottom: 0
+          left: 0
+          width: 100%
+          height: 1px
+          font-weight: 300
+
+          span
+            display: inline-block
+            min-width: max-content
+            margin-top: -1px
+
+            @media (max-width: v.$breakpoint-miniscule)
+              display: none
+
+            &.contact-item-subtitle-extra
+              margin: 0 1rem
+
+              @media (max-width: v.$breakpoint-medium)
+                display: none
+
+          b
+            width: 100%
+            height: 100%
+            border-radius: v.$border-radius
+            transition: background-color 0.2s
+            background-color: v.$black-dark
+            position: relative
+
+            &:last-of-type
+              width: 2rem
+
+              @media (max-width: v.$breakpoint-medium)
+                display: none
+
+              &::after
+                background-image: none
+
+            &::after
+              opacity: 0
+              transition: opacity 0.35s
+              background-image: v.$rainbow-grad-hor
+              content: ''
+              position: absolute
+              bottom: 0
+              left: 0
+              height: 100%
+              width: 100%
+
+            body.dark &
+              transition: background-color 0.2s
+              background-color: v.$white-bright
+
+        .contact-item-title
+          +v.jfont
+
+          $size: 5rem
+
+          font-size: $size
+          line-height: $size
+          user-select: none
+          font-weight: 400
+
+          @media (max-width: v.$breakpoint-miniscule)
+            $size: 4rem
+
+            font-size: $size
+            line-height: $size
+
+          .title.revert
+            font-family: v.$prompt
+            font-weight: 400
+
+        .contact-item-subtitle
+          display: flex
+          font-size: 1.45rem
+          font-family: v.$nunito
+          flex-grow: 1
+          // max-width: 60ch
+          margin-top: -0.25rem
+          font-weight: 300
+          font-style: italic
+
+          @media (max-width: v.$breakpoint-miniscule)
+            margin-top: 0
+            font-size: 1rem

@@ -1,0 +1,14 @@
+@use "./../vars" as v
+
+=glowbreathe($speed: 5s, $size: 4px, $color: v.$white-bright)
+  @keyframes glowbreathe
+    from
+      filter: drop-shadow(0 0 -1px $color)
+
+    50%
+      filter: drop-shadow(0 0 $size $color)
+
+    to
+      filter: drop-shadow(0 0 -1px $color)
+
+  animation: glowbreathe $speed infinite cubic-bezier(0.5, 0.30, 0.45, 0.95)

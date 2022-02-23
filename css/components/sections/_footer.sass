@@ -1,0 +1,58 @@
+@use 'sass:color' as c
+@use './../utils/vars' as v
+@use './../utils/animations/fadeoutincolor' as fc
+@use './../utils/animations/fadein' as f
+@use './../utils/animations/slide' as s
+
+#footer
+  +v.section(hidden)
+  +v.color
+
+  padding-bottom: v.$offset
+  font-family: v.$nunito
+
+  border-top: 1px solid c.adjust(v.$black-dark, $alpha: -0.95)
+  transition: border-color 0.3s ease
+
+  body.dark &
+    border-top: 1px solid c.adjust(v.$white-bright, $alpha: -0.95)
+    transition: border-color 0.3s ease
+
+    @media (min-width: v.$breakpoint-huge)
+      border-top: none
+
+  @media (min-width: v.$breakpoint-huge)
+    border-top: none
+
+  @media (max-width: v.$breakpoint-huge), (max-width: v.$breakpoint-medium), (max-width: v.$breakpoint-tiny)
+    padding-top: v.$offset
+
+  @media (max-width: v.$breakpoint-small)
+    padding-bottom: v.$p-l
+
+  span
+    font-size: 1rem
+    display: block
+
+    &.red
+      +v.highlight
+
+      display: revert
+
+    @media (max-width: v.$breakpoint-small)
+      font-size: 1em
+
+    & + span
+      margin-top: v.$halfgap
+
+    a
+      +v.color
+
+  .emojis
+    display: flex
+    align-items: center
+    gap: v.$p-s
+
+    img
+      height: 1.5rem
+      width: 1.5rem

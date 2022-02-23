@@ -1,0 +1,13 @@
+=shrinklr($speed: 2s, $maxwidth: 100%)
+  @keyframes shrinklr
+    from
+      width: $maxwidth
+
+    99.99%
+      width: 0
+
+    to
+      width: 0
+      display: none
+
+  animation: shrinklr $speed ease forwards

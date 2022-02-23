@@ -1,0 +1,52 @@
+// コンパイル
+
+@use "sass:color" as c
+
+@use "./components/utils/defaults"
+@use "./components/utils/vars" as v
+@use "./components/utils/filters"
+@use "./components/utils/fx"
+@use "./components/utils/fontimports"
+
+// コンポネント
+@use "./components/loadingscreen"
+@use "./components/site/controls"
+@use "./components/site/header"
+@use "./components/site/overlay"
+@use "./components/site/underlay"
+
+@use "./components/sections/heaven"
+@use "./components/sections/works"
+@use "./components/sections/about"
+@use "./components/sections/hell"
+@use "./components/sections/footer"
+@use "./components/sections/divider"
+
+\:root
+  +v.theme
+
+*::selection
+  background-color: c.adjust(v.$red-in-mid, $alpha: -0.35)
+
+body
+  +v.no-scrollbar
+
+  height: 100vh
+  width: 100vw
+  font-size: #{'clamp(1rem, -0.875rem + 8.333vw, 1rem)'} // うるせぇ！
+  background-color: v.$white-bright
+  transition: background-color v.$color-transition
+  overflow-x: hidden
+
+  &.dark
+    background-color: v.$black-dark
+    transition: background-color v.$color-transition
+
+a[rel="me"]
+  display: none
+
+a
+  cursor: pointer
+
+a:focus
+  outline: 1px dotted v.$white-bright

@@ -1,0 +1,482 @@
+@use 'sass:color'
+@use './animations/fadein' as f
+@use './animations/fadeout' as fo
+
+$p-xl: 8rem
+$p-l: 4rem
+$p-m: 2rem
+$p-s: 1rem
+$halfgap: 0.5rem
+$offset: 3rem
+$offset2x: 8rem
+
+$color-transition: 0.2s
+
+$breakpoint-huge: 2000px
+$breakpoint-large: 1920px
+$breakpoint-medium: 1700px
+$breakpoint-small: 1500px
+$breakpoint-tiny: 1350px
+$breakpoint-miniscule: 961px
+$breakpoint-infinitesimal: 700px
+
+$max-width: 2500px
+
+$resolution-default: 166dpi
+$resolution-2: 192dpi
+$resolution-3: 288dpi
+$resolution-4: 554dpi
+
+$border-radius: 4px
+
+// 色
+
+$black-blue: #09080f
+$blue-in-black: #41414c
+$gold-in-black: #e9a25f
+$orange-in-black: #e47d19
+$purple-in-black: #744c98
+
+$calvin: #2c75ff
+$calvin-light: #64a7ec
+$eris-dark: #780032
+$eris: #e0005d
+$eris-light: #e25b93
+
+// $black-dark: #0b0b0b
+$black-dark: #060606
+$white-bright: #f5eff4
+
+$red: #b5283b
+$red-one: #e92d48
+$red-mid: #791b2c
+$red-in-mid: #ffa7e8
+$red-compliment: #87042c
+
+$hl: $red-in-mid
+
+$rainbow-grad-hor: linear-gradient(90deg, rgb(237, 172, 204) 10%, rgb(17, 249, 223) 30%, rgb(255, 241, 81) 50%, rgb(235, 155, 208) 70%, rgb(124, 210, 255) 90%)
+
+$rainbow-grad-vert: linear-gradient(0deg, rgb(237, 172, 204) 10%, rgb(17, 249, 223) 30%, rgb(255, 241, 81) 50%, rgb(235, 155, 208) 70%, rgb(124, 210, 255) 90%)
+
+// ボーカロイド
+
+$miku: #39c5bb
+$miku-dark: #247782
+$luka: pink
+$meiko: #d80000
+
+// 旗
+
+$tflag-blue: #91abf7
+$tflag-pink: #f8a0cb
+$tflag-white: #edeefd
+
+$pflag-pink: #e0005d
+$pflag-yellow: #e0d100
+$pflag-blue: #007ce0
+
+// フォント
+
+$msgothic: "ＭＳ ゴシック", "ms gothic", monospace
+$kaisho: "kaisho", serif
+$crimson: "crimson", serif
+$nunito: "Nunito Sans", sans-serif
+$kosugi: "kosugi", sans-serif
+$prompt: "prompt", $nunito, sans-serif
+$neutral: "neutral", $nunito, sans-serif
+
+// レイヤー
+
+$layer-underlay: 48
+$layer-sections: 49
+$layer-deco-grid: 50
+$layer-controls: 51
+$layer-header: 52
+$layer-overlay: 54
+
+// mixins
+
+=toosmalldontshow
+  @media (max-width: $breakpoint-tiny)
+    display: none
+
+=blurbg($distance: 2px, $sat: 180%)
+  backdrop-filter: blur($distance) saturate($sat)
+
+=theme($theme: "dark")
+  --text-highlight: #{$red-in-mid}
+
+  @if $theme == "light"
+    --bg-main: #{$white-bright}
+    --bg-main-halfop: #{color.adjust($white-bright, $alpha: -0.5)}
+    --text-main: #{$black-blue}
+    --hl-main: #{$red-in-mid}
+  @else if $theme == "dark"
+    --bg-main: #{$black-dark}
+    --bg-main-halfop: #{color.adjust($black-dark, $alpha: -0.5)}
+    --text-main: #{$white-bright}
+    --hl-main: #{$red-in-mid}
+
+=flexcenter($left: false)
+  display: flex
+  align-items: center
+  justify-content: center
+
+  @if $left
+    justify-content: flex-start
+
+=no-scrollbar
+  scrollbar-width: none
+  overflow: -moz-scrollbars-none
+  overflow-y: auto
+
+  &::-webkit-scrollbar
+    display: none
+    width: 0
+
+=custom-scrollbar
+  overflow-y: auto
+
+  &::-webkit-scrollbar
+    width: 1rem
+    display: block
+    background-color: transparent
+
+  &::-webkit-scrollbar-track
+    -webkit-box-shadow: inset 0 0 10px 10px transparent
+    box-shadow: inset 0 0 10px 10px transparent
+    border: solid 5px transparent
+    width: 6px !important
+    display: block
+
+  &::-webkit-scrollbar-thumb
+    -webkit-box-shadow: inset 0 0 10px 10px $white-bright
+    box-shadow: inset 0 0 10px 10px $white-bright
+    border: solid 5px transparent
+
+  &::-webkit-scrollbar-corner, &::-webkit-resizer
+    display: none
+
+=fadein($opacity: 1)
+  @keyframes fadein
+    from
+      opacity: 0
+
+    to
+      opacity: $opacity
+
+=focus($othertransitions: '')
+  &:focus
+    outline: 1px dotted $black-dark
+    transition: outline-color 0.3s, #{$othertransitions}
+    outline-offset: 0.25rem
+
+    body.dark &
+      outline: 1px dotted $white-bright
+      transition: outline-color 0.3s, #{$othertransitions}
+
+=color($color1: $black-dark, $color2: $white-bright)
+  color: $color1
+  transition: color 0.3s
+
+  body.dark &
+    color: $color2
+    transition: color 0.3s
+
+=background-color($color1: $black-dark, $color2: $white-bright)
+  background-color: $color2
+  transition: background-color 0.3s
+
+  body.dark &
+    background-color: $color1
+    transition: background-color 0.3s
+
+=highlight
+  +color($miku-dark, $red-in-mid)
+
+=both-colors($color1: $white-bright, $color2: $black-dark)
+  background-color: $color2
+  color: $color1
+  transition: background-color 0.3s, color 0.3s
+
+  body.dark &
+    color: $color2
+    background-color: $color1
+    transition: background-color 0.3s, color 0.3s
+
+=border-color($color1: $black-dark, $color2: $white-bright)
+  border: 1px solid $color1
+  transition: border-color 0.3s
+
+  body.dark &
+    border: 1px solid $color2
+    transition: border-color 0.3s
+
+=jfont
+  body:lang(ja) &
+    font-family: $kosugi
+    font-weight: 600
+    @content
+
+=sectionfader
+  opacity: 0
+  transform: scale(0.97)
+  transition: opacity 0.3s ease 0.3s, transform 0.5s ease-out, margin 0.3s ease-out
+
+  &.intersector-visible
+    opacity: 1
+    transform: scale(1)
+    transition: opacity 0.3s ease 0.3s, transform 0.5s ease-out, margin 0.3s ease-out
+
+=section($overflow: hidden, $padding-top: 10rem, $padding-sides: 16rem, $padding-bottom: 2rem)
+  isolation: isolate
+  max-width: $max-width
+  margin: 0 auto
+  overflow-x: hidden
+  overflow-y: $overflow
+  padding: $padding-top $padding-sides $padding-bottom $padding-sides
+  position: relative
+  width: 100vw
+  z-index: $layer-sections
+
+  & + &
+    margin-top: 4rem
+
+  @media (min-width: $breakpoint-huge)
+    padding: 10rem 25rem $padding-bottom 25rem
+
+  @media (max-width: $breakpoint-medium)
+    padding: 10rem 12rem $padding-bottom 12rem
+
+  @media (max-width: $breakpoint-tiny)
+    padding: 10rem 2rem $padding-bottom 2rem
+
+=mfont
+  @media (max-width: $breakpoint-miniscule)
+    font-size: 5rem
+
+=hiddentransition($time: 0.3s)
+  transition: opacity $time ease-out
+
+  &.hidden
+    opacity: 0
+    transition: opacity $time ease-out
+
+=kfocus($othertransitions: '')
+  &:focus
+    outline: 1px dotted $meiko
+
+  &:focus:not(:focus-visible)
+    outline: none
+
+  &:focus-visible
+    +focus($othertransitions)
+
+=gocrazygostupid
+  opacity: 0
+  transition: opacity 0.3s ease, filter 0.3s ease
+  filter: blur(2px)
+  pointer-events: none
+  user-select: none
+
+  &.intersector-visible
+    opacity: 1
+    transition: opacity 0.3s ease, filter 0.3s ease
+    filter: blur(0)
+    pointer-events: auto
+    user-select: auto
+
+=hlblock
+  +color($white-bright, $black-dark)
+  +background-color($white-bright, $black-dark)
+
+  font-size: 0.75rem
+  max-width: max-content
+  font-family: $prompt
+  padding: 0 0.25rem
+  user-select: text
+  font-weight: 300
+
+=sectionhead($content)
+  +color
+
+  $border-width: 1px
+
+  align-items: center
+  border-bottom: $border-width solid transparent
+  display: flex
+  font-family: $prompt
+  font-size: 12rem
+  font-weight: 400
+  grid-template-columns: max-content 1fr
+  line-height: 1.2
+  margin-bottom: 4rem
+  padding-bottom: 0
+  position: relative
+  text-align: right
+  transition: opacity 0.3s ease 0.3s, transform 0.5s ease-out, border-color 0.3s ease
+  width: 100%
+
+  &, span
+    flex-direction: row-reverse
+
+  body.dark &
+    border-bottom: $border-width solid transparent
+    transition: opacity 0.3s ease 0.3s, transform 0.5s ease-out, border-color 0.3s ease
+
+  &::before
+    content: $content
+    font-family: $msgothic
+    font-size: 0.75rem
+    opacity: 0
+    position: absolute
+    left: 0
+    bottom: -2rem
+    transition: opacity 0.3s
+
+    @media (max-width: $breakpoint-small)
+      bottom: -1.75rem
+      font-size: 1rem
+
+  &::after
+    content: ''
+    position: absolute
+    width: 200vw
+    bottom: -1px
+    left: -50%
+    height: 1px
+    z-index: -1
+    background-color: currentColor
+    opacity: 0.1
+    transition: opacity 0.3s
+    display: none
+
+    @media (max-width: $breakpoint-large)
+      display: block
+
+  @media (max-width: $breakpoint-small)
+    font-size: 8rem
+
+  @media (max-width: $breakpoint-miniscule)
+    font-size: 6rem
+
+  &.intersector-visible
+    border-bottom: $border-width solid $black-dark
+
+    body.dark &
+      border-bottom: $border-width solid $white-bright
+      transition: opacity 0.3s ease 0.3s, transform 0.5s ease-out, border-color 0.3s ease
+
+    span
+      opacity: 1
+      transition: opacity 0.3s ease, color 0.3s ease
+
+    &::after
+      opacity: 0.1
+      transition: opacity 0.3s 0.2s, color 0.3s ease
+
+    &::before
+      opacity: 1
+      transition: opacity 0.3s 0.2s, color 0.3s ease
+
+  & > span
+    display: flex
+    opacity: 0
+    transition: opacity 0.3s ease, color 0.3s ease
+    margin-bottom: -2rem
+
+    @media (max-width: $breakpoint-small)
+      margin-bottom: -0.75rem
+
+=semisame
+  opacity: 0
+  transition: opacity 0.3s ease
+
+  &.intersector-visible
+    opacity: 1
+    transition: opacity 0.3s ease
+
+=antibullet
+  list-style-type: none
+  margin: 0
+  padding: 0
+
+=big
+  height: 100%
+  width: 100%
+
+=notforscreenreaders
+  @media speech
+    display: none
+    visibility: hidden
+
+=ffonly
+  @-moz-document url-prefix()
+    @content
+
+=copyrules
+  +color
+
+  font-size: 2rem
+  font-weight: 300
+  line-height: 1.42
+  font-family: $prompt
+
+  @media (max-width: $breakpoint-huge)
+    font-size: 1.75rem
+
+  b
+    flex-grow: 666
+    margin: $p-m 0
+
+  p + p
+    margin-top: $p-m
+
+  p.large + p
+    margin-top: $p-l
+
+  p.large
+    font-size: 1.5em
+
+  span.emph
+    font-weight: 400
+
+  span.italic
+    font-style: italic
+
+  span.hl
+    @media (max-width: $breakpoint-miniscule)
+      +color($calvin, $red-in-mid)
+
+  span.break
+    display: block
+
+=coolshittag($content, $bgcolor: $red-in-mid, $angle: -10deg, $top: 30%)
+  &::before
+    background-color: $calvin-light
+    border-radius: $border-radius
+    border: 4px solid $white-bright
+    color: $black-dark
+    content: $content
+    display: block
+    font-family: $kaisho
+    font-size: 1rem
+    left: 0
+    max-height: min-content
+    padding: 0.25rem 0.5rem
+    position: absolute
+    top: 0
+    transform: rotateZ($angle) translate(-20%, $top)
+    transition: border-color $color-transition ease
+    z-index: 2
+
+    body.dark &
+      transition: border-color $color-transition ease
+      border-color: $black-dark
+      background-color: $bgcolor
+
+    @media (max-width: $breakpoint-tiny)
+      font-size: 0.75rem
+      transform: translate(-20%, -25%)
+      padding: 0.25rem

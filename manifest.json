@@ -1,7 +1,7 @@
 {
-  "name": "jpegzilla 2019",
+  "name": "jpegzilla 2022",
   "short_name": "jpegzilla",
-  "description": "jpegzilla's portfolio site",
+  "description": "jpegzilla's portfolio site - 2022 edition!",
   "icons": [
     {
       "src": "/css/img/app/android-icon-36x36.png",
@@ -35,9 +35,8 @@
       "density": "4.0"
     }
   ],
-
-  "start_url": "./index.html",
-  "theme_color": "#070109",
-  "background_color": "#070109",
+  "start_url": "/",
+  "theme_color": "#060606",
+  "background_color": "#060606",
   "display": "standalone"
 }

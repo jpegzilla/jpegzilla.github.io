@@ -1,0 +1,12 @@
+=slide($deg: 60deg, $scount: 8, $bg: transparent, $fg: white, $spd: 3s)
+  @keyframes slide
+    from
+      background-position: 100%
+
+    to
+      background-position: 0
+
+  background-color: $bg
+  background-size: 200% 100%
+  background-image: repeating-linear-gradient($deg, transparent, transparent 10px, $fg 10px, $fg 20px)
+  animation: slide $spd linear infinite

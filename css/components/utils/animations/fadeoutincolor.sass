@@ -1,0 +1,13 @@
+=fadeoutincolor($speed, $color)
+  @keyframes fadeoutincolor
+    from
+      opacity: 1
+
+    50%
+      opacity: 0
+      color: $color
+
+    to
+      opacity: 1
+
+  animation: fadeoutincolor $speed

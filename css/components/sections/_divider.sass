@@ -1,0 +1,17 @@
+@use './../utils/vars' as v
+
+b.section-divider
+  +v.flexcenter
+
+  font-family: v.$msgothic
+  color: v.$white-bright
+  position: absolute
+  z-index: v.$layer-overlay
+  width: 100vw
+
+  svg
+    +v.color
+
+    height: 4rem
+    stroke-width: 1rem
+    stroke: currentColor

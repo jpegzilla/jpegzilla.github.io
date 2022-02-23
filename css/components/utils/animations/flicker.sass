@@ -1,0 +1,45 @@
+=flicker($speed, $from, $to)
+  @keyframes flicker
+    from
+      opacity: $from
+
+    60%
+      opacity: 0
+
+    62%
+      opacity: $to
+
+    63%
+      opacity: 0.6
+
+    65%
+      opacity: 0.1
+
+    68%
+      opacity: 0
+
+    71%
+      opacity: 0.3
+
+    73%
+      opacity: 0
+
+    76%
+      opacity: 0.7
+
+    79%
+      opacity: 0
+
+    82%
+      opacity: 0.2
+
+    84%
+      opacity: 0
+
+    86%
+      opacity: 0.4
+
+    to
+      opacity: $to
+
+  animation: flicker $speed infinite forwards

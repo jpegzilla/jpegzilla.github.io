@@ -1,0 +1,123 @@
+// ♪音楽 → VIRTUAL SELF - EON BREAK : https://www.youtube.com/watch?v=e7QeR0VxnlA
+
+@use 'sass:color' as c
+@use './../utils/vars' as v
+
+#site-controls
+  display: flex
+  align-items: center
+  justify-content: flex-end
+  flex-direction: column
+  height: 100vh
+  font-size: 0.5rem
+  padding: v.$offset
+  position: fixed
+  right: 0
+  color: white
+  z-index: v.$layer-controls
+
+  @media (min-width: v.$breakpoint-huge)
+    padding: v.$offset2x
+    padding-bottom: 4rem
+
+  @media (max-width: v.$breakpoint-small)
+    padding: 0 1.75rem 1.5rem 0
+
+  > div + div
+    margin-top: 1rem
+
+  .email-container
+    padding-bottom: v.$p-l
+    writing-mode: vertical-rl
+    font-family: v.$prompt
+    font-size: 1rem
+    display: block
+    font-style: normal
+
+    @media (max-width: v.$breakpoint-miniscule)
+      display: none
+
+    a
+      +v.color(v.$black-dark, v.$miku)
+
+      text-decoration: none
+      text-decoration: overline
+
+  .controls
+    font-family: v.$prompt
+    font-size: 0.75rem
+    display: flex
+    flex-direction: column
+    align-items: center
+    text-align: center
+    color: v.$black-dark
+    transition: color 0.2s
+    user-select: none
+    pointer-events: none
+
+    body.dark &
+      color: v.$white-bright
+      transition: color 0.2s
+
+  .light-controls-on,
+  .light-controls-icon-on,
+  .lang-controls-en
+    margin-bottom: v.$halfgap
+
+  .light-controls-off,
+  .light-controls-icon-off,
+  .lang-controls-ja
+    margin-top: v.$halfgap
+
+  .lang-controls-switch, .light-controls-switch
+    +v.kfocus
+
+    width: 1rem
+    height: 3rem
+    display: flex
+    background-color: v.$black-dark
+    transition: background-color 0.2s
+    align-items: flex-start
+    cursor: pointer
+    pointer-events: auto
+
+    body.dark &
+      transition: background-color 0.2s
+      background-color: v.$white-bright
+
+    &.off
+      align-items: flex-end
+
+    b
+      pointer-events: none
+      width: 100%
+      height: 50%
+      background-color: v.$white-bright
+      border: 2px solid v.$black-dark
+      transition: height 0.2s, background-color 0.2s, border-color 0.2s
+
+      body.dark &
+        background-color: v.$black-dark
+        border: 2px solid v.$white-bright
+        transition: height 0.2s, background-color 0.2s, border-color 0.2s
+
+      &.stretch
+        height: 100%
+        transition: height 0.2s, background-color 0.2s, border-coor 0.2s
+
+  .light-controls-on,
+  .light-controls-off
+    display: none
+
+  .light-controls-icon-on,
+  .light-controls-icon-off
+    // display: none
+    width: 1rem
+    stroke-width: 2px
+    shape-rendering: optimizeQuality
+
+  .light-controls-icon-off
+    fill: v.$black-dark
+
+  .light-controls-icon-on
+    fill: v.$white-bright

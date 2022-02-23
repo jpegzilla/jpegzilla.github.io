@@ -1,12 +1,12 @@
 /* CREATOR */
 
-designer and developer: e brown
+designer and developer: eris brown
 site: jpegzilla.com
 twitter: @jpegzilla
-location: atlanta, ga
+location: baltimore, md
 email: eris(at)jpegzilla.com
 
 /* SITE */
 
-standards: html5, scss, es6
+standards: html5, sass, es6
 software: atom, chrome

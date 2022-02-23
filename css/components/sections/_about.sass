@@ -1,0 +1,147 @@
+// ♪音楽 → BIS - HIDE IN SEW : https://www.youtube.com/watch?v=VuepFaUYxvk
+
+@use 'sass:color' as c
+@use './../utils/vars' as v
+@use './../utils/animations/fadein' as f
+@use './../utils/animations/fadeoutincolor' as fc
+
+#about
+  +v.section
+
+  header
+    +v.sectionhead("[ AS02 > SHARP BEAK OF THE CROW ]")
+    +v.mfont
+
+  .about-info-container
+    +v.color
+
+    display: grid
+    grid-template-columns: 0.5fr 1fr
+    gap: v.$p-l
+
+    @media (max-width: v.$breakpoint-miniscule)
+      grid-template-columns: 1fr
+
+    &-image
+      align-items: center
+      border-radius: v.$border-radius v.$border-radius v.$border-radius 2rem
+      display: flex
+      height: 100%
+      justify-content: center
+      max-height: 60rem
+      min-height: 58rem
+      overflow: hidden
+      position: relative
+      user-select: none
+
+      &::after
+        position: absolute
+        inset: 0
+        height: 100%
+        width: 100%
+        z-index: 1
+        pointer-events: none
+        content: ''
+        background-color: c.adjust(v.$red-in-mid, $alpha: -0.75)
+
+      @media (max-width: v.$breakpoint-huge)
+        min-height: 63rem
+        max-height: 65rem
+
+      @media (max-width: v.$breakpoint-large)
+        min-height: 50rem
+        max-height: 50rem
+
+      @media (max-width: v.$breakpoint-miniscule)
+        display: none
+
+      .me
+        position: absolute
+        height: 100%
+        width: 100%
+        object-fit: cover
+        opacity: 0.75
+        pointer-events: none
+
+        &.animated
+          z-index: -1
+          opacity: 0.15
+
+          body.dark &
+            opacity: 0.5
+
+        body.dark &
+          opacity: 0.95
+
+    &-text
+      +v.color
+      +v.copyrules
+
+      display: flex
+      flex-direction: column
+
+      .text-container-main,
+      .text-container-extra
+        display: flex
+        flex-direction: column
+
+      p.ja
+        +v.jfont
+
+      .now-playing,
+      .awake
+        font-size: 1rem
+        text-align: right
+        margin-top: 0
+        opacity: 1
+
+        span
+          opacity: 0.75
+
+      .now-playing span
+        text-transform: lowercase
+
+  .about-stats-button
+    +v.background-color
+
+    position: absolute
+    top: v.$p-s
+    left: v.$p-s
+    height: 2rem
+    width: 2rem
+    border-radius: v.$border-radius
+    display: flex
+    z-index: 4
+
+    b
+      height: 0.5rem
+      width: 90%
+      background-color: v.$black-dark
+
+    b + b
+      transform: rotateZ(90deg)
+      margin-top: -0.5rem
+
+  .about-logos-container
+    position: absolute
+    bottom: v.$p-s
+    right: v.$p-s
+    width: 14rem
+    cursor: pointer
+    z-index: 4
+
+    img
+      +v.blurbg(4px)
+
+      display: block
+      width: 100%
+      padding: v.$halfgap
+      pointer-events: none
+      background-color: c.adjust(v.$white-bright, $alpha: -0.75)
+      transition: background-color 0.3s ease
+      padding: v.$p-s
+      border-radius: v.$border-radius
+
+      body.dark &
+        transition: background-color 0.3s ease
+        background-color: c.adjust(v.$black-dark, $alpha: -0.65)

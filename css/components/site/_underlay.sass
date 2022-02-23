@@ -1,0 +1,88 @@
+// ♪音楽 → ASAKI NO'9 - 忘却心中 : https://www.youtube.com/watch?v=M7EVT7Q3_50
+
+@use 'sass:color' as c
+@use './../utils/vars' as v
+@use './../utils/animations/rotate' as r
+
+#site-underlay
+  +v.jfont
+
+  height: 100vh
+  isolation: isolate
+  left: 0
+  position: fixed
+  top: 0
+  width: 100vw
+  z-index: v.$layer-underlay
+
+  @media (max-width: v.$breakpoint-tiny)
+    display: none
+
+  .overlay
+    +v.blurbg(3px)
+    +v.background-color(c.adjust(v.$black-dark, $alpha: -0.2), c.adjust(v.$white-bright, $alpha: -0.3))
+
+    +v.ffonly
+      +v.background-color(c.adjust(v.$black-dark, $alpha: -0.01), c.adjust(v.$white-bright, $alpha: -0.1))
+
+    height: 100%
+    width: 100%
+    top: 0
+    left: 0
+    position: absolute
+    z-index: 10
+
+  .eclipse-layer
+    +v.flexcenter
+
+    z-index: 0
+    position: absolute
+    width: 100vw
+    height: 100vh
+    top: 0
+    left: 0
+    overflow: hidden
+    z-index: 1
+
+    $size: 90vh
+    $innersize: 99%
+    $sizesmall: 90vw
+
+    @media (max-width: v.$breakpoint-tiny)
+      display: none
+
+    .moon-color
+      +v.flexcenter
+      +r.rotate(120s)
+
+      position: absolute
+      height: $size
+      width: $size
+      background-image: v.$rainbow-grad-hor
+      border-radius: 50%
+
+      @media (max-width: v.$breakpoint-miniscule)
+        height: $sizesmall
+        width: $sizesmall
+
+    .moon-outer
+      +v.flexcenter
+
+      position: absolute
+      height: $size
+      width: $size
+      border-radius: 50%
+
+      @media (max-width: v.$breakpoint-miniscule)
+        height: $sizesmall
+        width: $sizesmall
+
+      .moon-inner
+        +v.background-color
+
+        background-clip: border-box
+        height: $innersize
+        width: $innersize
+        display: block
+        border-radius: 50%
+        position: relative

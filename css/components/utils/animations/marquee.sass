@@ -1,0 +1,9 @@
+=marquee($speed: 2s, $pos-initial, $pos-final)
+  @keyframes marquee
+    from
+      transform: translate3d($pos-initial, 0, 0)
+
+    to
+      transform: translate3d($pos-final, 0, 0)
+
+  animation: marquee $speed infinite linear

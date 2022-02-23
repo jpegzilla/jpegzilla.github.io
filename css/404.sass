@@ -1,0 +1,22 @@
+@use "./components/utils/defaults"
+@use "./components/utils/vars" as v
+
+body
+  height: 100vh
+  width: 100vw
+
+main
+  +v.background-color
+
+  height: 100%
+  width: 100%
+  padding: v.$p-m
+
+  p
+    +v.color
+
+    font-family: v.$prompt
+    font-size: 2rem
+
+  a
+    +v.color

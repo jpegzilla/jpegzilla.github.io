@@ -1,0 +1,77 @@
+// ♪音楽 → REDALICE - TEMPESTA : https://youtu.be/pPkYF4liMko
+
+@use './components/utils/vars' as v
+@use "./components/utils/defaults"
+
+body
+  display: flex
+  justify-content: center
+  width: 100vw
+  padding: v.$p-l
+  min-height: 100vh
+  height: unset
+  background-color: v.$black-dark
+  overflow-x: hidden
+
+.credits-page
+  +v.background-color
+  +v.color
+
+  max-width: 50vw
+  padding: v.$p-l
+  display: grid
+  gap: v.$p-m
+  grid-auto-rows: max-content
+  min-height: 100%
+
+  a
+    +v.color
+
+  img
+    width: 100%
+    border: 1px solid v.$white-bright
+    display: block
+    margin-top: v.$p-m
+
+  span
+    display: block
+
+    &.red
+      display: inline-block
+      color: v.$red-in-mid
+      text-decoration: inherit
+
+    & + span
+      margin-top: v.$p-s
+
+  @media (max-width: v.$breakpoint-tiny)
+    max-width: 90vw
+    padding: v.$p-m
+
+  font-family: v.$nunito
+  line-height: 1.42
+
+  &-header
+    font-size: 2.5rem
+
+  &-intro
+    font-size: 1.25rem
+
+    p + p
+      margin-top: v.$p-m
+
+  &-credits
+    ul
+      margin: 0
+      padding: 0
+
+    ul li
+      & + li
+        margin-top: v.$p-m
+
+  &-credits-extra
+    h2
+      font-size: 2rem
+      margin-top: v.$p-l
+    p
+      margin-top: v.$p-m

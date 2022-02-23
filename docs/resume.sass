@@ -1,0 +1,143 @@
+// ♪音楽 → OF MICE AND MEN - HOW TO SURVIVE : https://www.youtube.com/watch?v=k2XDbRbULuw
+
+// fonts
+
+@font-face
+  font-family: "neutral"
+  src: local("Neutral Face"), url("./../css/fonts/NeutralFace.otf") format("opentype")
+  font-weight: 500
+
+@font-face
+  font-family: "crimson"
+  src: local("Crimson Text"), url("./../css/fonts/CrimsonText-Regular.ttf")
+
+@font-face
+  font-family: "Bitter"
+  src: local("Bitter")
+
+// vars
+
+=bog
+  border: 1px dotted red !important
+
+=hide
+  display: none
+
+$neutral: "neutral", helvetica, sans-serif
+$crimson: "crimson", serif
+$bitter: "Bitter", serif
+
+$black: #0b0b0b
+$white: #f5eff4
+
+$wid: 4px
+$spa: 4rem
+
+$border: $wid solid $black
+
+// styles
+
+:root
+  font-size: 16px
+
+html
+  background-color: $white
+  display: flex
+  justify-content: center
+  text-rendering: optimizeLegibility
+
+h1, h2, h3
+  margin: 0
+  letter-spacing: 1px
+
+body
+  padding: $spa
+  max-width: 80rem
+  display: flex
+  justify-content: center
+  flex-direction: column
+  // user-select: none
+
+header
+  font-family: $neutral
+  font-size: 5rem
+  position: relative
+  letter-spacing: 1px
+  border-bottom: $border
+  padding-bottom: 0.45rem
+
+  aside
+    position: absolute
+    right: 0
+    bottom: 0
+    opacity: 0.06
+    font-size: 2em
+    user-select: none
+
+    // +hide
+
+  span
+    display: block
+
+    &:first-of-type
+      font-size: 0.25em
+
+    &:last-of-type
+      font-weight: bold
+
+main
+  padding-top: 2.5rem
+  display: flex
+  justify-content: space-between
+  gap: 2rem
+
+  h2, h3
+    letter-spacing: 1px
+
+  section
+    $h2spacing: 2.5rem
+
+    & div + div
+      margin-top: 1.5rem
+
+    & div + h2
+      margin-top: $h2spacing
+
+    &:nth-child(1)
+      flex-grow: 666
+
+    &:nth-child(2)
+      p
+        max-width: 30ch
+
+    h2
+      font-size: 2.5rem
+      font-family: $neutral
+      opacity: 0.25
+      min-width: max-content
+      margin-bottom: $h2spacing
+
+    h3
+      font-size: 1.25rem
+      font-family: $neutral
+
+      &.fullwidth
+        white-space: nowrap
+
+      & + h3
+        margin-top: 1rem
+
+      aside
+        font-size: 0.25em
+
+      span
+        opacity: 0.25
+        // font-size: 0.75em
+        // font-style: italic
+
+    p
+      line-height: 1.6
+      max-width: 60ch
+      font-family: $bitter
+      font-weight: 300
+      margin: 1rem 0 0 0

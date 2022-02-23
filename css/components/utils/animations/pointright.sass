@@ -1,0 +1,12 @@
+=pointright($speed: 2s, $distance: 0.5rem)
+  @keyframes pointright
+    from
+      transform: translateX(0)
+
+    50%
+      transform: translateX($distance)
+
+    to
+      transform: translateX(0)
+
+  animation: pointright $speed infinite ease-in-out

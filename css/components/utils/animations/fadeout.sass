@@ -1,0 +1,9 @@
+=fadeout($fo: 1, $dur: 0.25s, $tim: ease, $del: 0, $fill: forwards)
+  @keyframes fadeout
+    from
+      opacity: $fo
+
+    to
+      opacity: 0
+
+  animation: fadeout $dur $tim $del $fill

@@ -1,380 +1,229 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+  <head>
+    <!-- base meta tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+      name="description"
+      content="I am a creative developer, artist, internet horticulturalist, and digital archaeologist from atlanta, georgia. let's build something nice together."
+    />
+    <meta name="author" content="jpegzilla" />
+    <meta name="robots" content="index, follow" />
 
-<head>
-  <!--  ios meta tags and icons -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="#070109">
-  <meta name="apple-mobile-web-app-title" content="jpegzilla">
-  <!-- extra icon tags -->
-  <link rel="apple-touch-icon" sizes="57x57" href="./css/img/appapple-icon-57x57.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="./css/img/app/apple-icon-60x60.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="./css/img/app/apple-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="./css/img/app/apple-icon-76x76.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="./css/img/app/apple-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="./css/img/app/apple-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="./css/img/app/apple-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="./css/img/app/apple-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="./css/img/app/apple-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="./css/img/app/android-icon-192x192.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="./css/img/app/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="./css/img/app/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="./css/img/app/favicon-16x16.png">
-  <link rel="manifest" href="/manifest.json">
-  <meta name="msapplication-TileColor" content="#070109">
-  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-  <meta name="theme-color" content="#070109">
-  <!-- application tags -->
-  <link rel="manifest" href="./manifest.json">
-  <meta name="msapplication-TileColor" content="#070109">
-  <meta name="msapplication-TileImage" content="./css/img/app/ms-icon-144x144.png">
-  <meta name="theme-color" content="#070109">
-  <meta name="msapplication-config" content="./browserconfig.xml" />
-  <!-- default meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- extra meta tags -->
-  <meta name="description" content="I am a web designer, creative developer, internet horticulturalist, and digital archaeologist from atlanta, georgia. let's build something nice together.">
-  <meta name="author" content="jpegzilla">
-  <meta name="robots" content="index, follow">
-  <meta name="application-name" content="jpegzilla.com" />
-  <!-- opengraph tags -->
-  <meta property="og:title" content="jpegzilla | web creator | digital artist | creative developer">
-  <meta property="og:description" content="I am a creative developer and digital artist. let's make something cool together.">
-  <meta property="og:url" content="https://jpegzilla.com">
-  <meta property="og:site_name" content="jpegzilla - web designer">
-  <meta property="og:image" content="css/img/6a7065677a696c6c61.png">
-  <meta property="og:type" content="website">
-  <!-- twitter card tags -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@jpegzilla">
-  <meta property="twitter:url" content="https://jpegzilla.com">
-  <meta name="twitter:creator" content="@jpegzilla">
-  <meta name="twitter:creator:id" content="2513519351">
-  <meta name="twitter:description" content="I am a creative developer and digital artist. come make something cool with me.">
-  <meta name="twitter:title" content="jpegzilla - web designer">
-  <meta name="twitter:image" content="https://jpegzilla.com/css/img/6a7065677a696c6c61.png">
-  <meta name="twitter:image:alt" content="preview screenshot of jpegzilla.com">
-  <!-- links -->
-  <link type="text/plain" rel="author" href="humans.txt">
-  <link rel="stylesheet" href="./css/main.min.css">
-  <link rel="icon" href="favicon.ico">
-  <link rel="canonical" href="https://jpegzilla.com/">
-  <!-- title -->
-  <title>jpegzilla &mdash; web designer and creative developer</title>
+    <!-- application tags -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#070109" />
+    <meta name="application-name" content="jpegzilla.com" />
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141114501-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
+    <!-- ms tags -->
+    <meta name="msapplication-TileColor" content="#070109" />
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
 
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
+    <!-- ios tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="#060606" />
+    <meta name="apple-mobile-web-app-title" content="jpegzilla" />
 
-    gtag('config', 'UA-141114501-1');
-  </script>
-</head>
-<!-- mastodon verification -->
-<a rel="me" href="https://coolmathgam.es/@jpegzilla">Mastodon</a>
+    <!-- icon tags -->
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="./css/img/appapple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="./css/img/app/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="./css/img/app/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="./css/img/app/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="./css/img/app/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="./css/img/app/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="./css/img/app/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="./css/img/app/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./css/img/app/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="./css/img/app/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./css/img/app/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="./css/img/app/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./css/img/app/favicon-16x16.png"
+    />
 
-<body class="dark">
+    <!-- social meta tags -->
 
-  <!-- preloader -->
-  <div id="preloader">
-    <div class="preloader-top-layer">
-      <div class="preloader-icon-box">
-        <div class="preloader-icon"></div>
-      </div>
-      <div class="preloader-text">
-        <span><span class="preloader-text-actual"></span><b class="blinking-cursor"></b></span>
-      </div>
+    <!-- opengraph tags -->
+    <meta property="og:title" content="jpegzilla - creative developer" />
+    <meta
+      property="og:description"
+      content="I am a creative developer and digital artist. let's make something cool together."
+    />
+    <meta property="og:url" content="https://jpegzilla.com" />
+    <meta property="og:site_name" content="jpegzilla - web designer" />
+    <meta property="og:image" content="./css/img/misc/preview.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
 
-    </div>
+    <!-- twitter card tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@jpegzilla" />
+    <meta property="twitter:url" content="https://jpegzilla.com" />
+    <meta name="twitter:creator" content="@jpegzilla" />
+    <meta name="twitter:creator:id" content="2513519351" />
+    <meta
+      name="twitter:description"
+      content="I am a creative developer and digital artist. make something cool with me!"
+    />
+    <meta name="twitter:title" content="jpegzilla - creative developer" />
+    <meta
+      name="twitter:image"
+      content="https://jpegzilla.com/css/img/misc/preview.png"
+    />
+    <meta
+      name="twitter:image:alt"
+      content="preview screenshot of jpegzilla.com"
+    />
 
-    <div class="preloader-bottom-layer">
-      <b class="line-expander"></b>
-    </div>
-  </div>
+    <!-- other stuff that goes in the head -->
+    <link rel="stylesheet" href="./css/main.min.css" />
+    <link rel="icon" href="favicon.ico" />
+    <link type="text/plain" rel="author" href="humans.txt" />
+    <link rel="canonical" href="https://jpegzilla.com/" />
+    <title>jpegzilla &mdash; internet horticulturalist</title>
 
-  <!-- sensor for intersectionobserver that I'm not actually using -->
-  <div id="intersector"></div>
+    <!-- google analytics -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-141114501-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || []
 
-  <!-- contact links, wordmark, etc -->
-  <header>
+      function gtag() {
+        dataLayer.push(arguments)
+      }
+      gtag('js', new Date())
 
-    <div class="left">
-      <span class="hoverEvents">jpegzilla '19</span>
-    </div>
+      gtag('config', 'UA-141114501-1')
+    </script>
+  </head>
 
-    <nav class="right">
-      <ul>
-        <li><a data-scroll="anchor" data-section="works" href="#section-2"><span>w</span><span>o</span><span>r</span><span>k</span><span>s</span></a></li>
-        <li><a data-scroll="anchor" data-section="about" href="#section-3"><span>a</span><span>b</span><span>o</span><span>u</span><span>t</span></a></li>
-      </ul>
-    </nav>
+  <noscript>
+    <p>
+      hello! nice to meet you. my name is eris, or jpegzilla. if you're seeing
+      this, it means you have javascript disabled. that's okay, but just letting
+      you know in case you had it off by mistake.
+    </p>
 
-  </header>
+    <p>I am a professional web architect.</p>
 
-  <!-- actual content -->
-  <main>
+    <p>you can contact me at:</p>
+  </noscript>
 
-    <!-- this is what changes when user goes to a different section -->
-    <div class="background-title">
-      <span id="backgroundTitle">
-        <!-- contains text generated by javascript -->
-      </span>
-    </div>
+  <!-- excellent mastodon verification -->
+  <a rel="me" href="https://coolmathgam.es/@jpegzilla">Mastodon</a>
 
-    <!-- just the intro section -->
-    <section id="section-1">
-      <div class="intro-container">
-        <p id="intro-para">
-          <span>web designer & creative developer.</span><br>
-          <span>I treasure type, motion, and simplicity.</span><br>
-          <span>currently seeking new projects.</span><br>
-          <span>I'm sure we can be friends, so <a target="_blank" href="mailto:eris@jpegzilla.com?subject=hi%20jpeg%2C%20I%27d%20like%20to%20work%20with%20you!">please get in touch</a>.</span><br>
-          <!-- <span>&darr;</span> -->
-        </p>
-      </div>
-      <div class="shining-moon">
-        <div class="moon">
-          <div class="moon-inner"></div>
-        </div>
-      </div>
-    </section>
+  <body>
+    <!-- sacred filters -->
+    <div class="filters noise"></div>
 
-    <section id="section-2">
-      <div class="intersection-item section-header sec-header">
-        <div class="left"><span>SC-01 [SELECTED WORKS]</span></div>
-        <div class="right"><span>
-            <span>/</span><span>w</span><span>o</span><span>r</span><span>k</span><span>s</span>
-          </span></div>
-      </div>
+    <!-- beloved loading screen -->
+    <loading-screen></loading-screen>
 
-      <!-- emerald -->
-      <div class="works-box intersection-item">
-        <div class="work-title">
-          <span>/works/emerald</span>&nbsp;&mdash;&nbsp;<span class="work-date">08 2019</span>
-        </div>
-        <div class="work">
-          <div class="overlay">
-            <span>emerald: color palette tool &starf;</span>
-            <div class="work-links">
-              <a target="_blank" rel="noopener noreferrer" href="https://github.com/jpegzilla/emerald" class="ext">github &neArr;</a>
-              <a target="_blank" rel="noopener noreferrer" href="https://jpegzilla.com/emerald/?bg=000000&text=ff5b75" class="ext">view &neArr;</a>
-            </div>
-          </div>
-          <div class="image">
-            <img src="css/img/emerald.png" alt="emerald, color palette tool">
-          </div>
-        </div>
+    <!-- pretty decorative stuff, exalted fixed position stuff -->
+    <site-header></site-header>
+    <site-controls></site-controls>
+    <site-overlay></site-overlay>
+    <site-underlay></site-underlay>
 
-        <div class="work-sub">
-          <p>emerald is a simple color palette creation app. randomize colors, create / export palettes, check contrast, and more.<br><span class="work-scope">&mdash; software design, development</span></p>
-        </div>
-      </div>
+    <!-- glorious site content -->
+    <section-heaven></section-heaven>
+    <section-works></section-works>
+    <section-about></section-about>
+    <section-hell></section-hell>
+    <section-footer></section-footer>
+  </body>
 
-      <!-- randomarena -->
-      <div class="works-box intersection-item">
-        <div class="work-title">
-          <span>/works/randomarena</span>&nbsp;&mdash;&nbsp;<span class="work-date">06 2019</span>
-        </div>
+  <!-- <site-lang-control></site-lang-control> -->
 
-        <div class="work">
-          <div class="overlay">
-            <span>randomarena: random arena block</span>
-            <div class="work-links">
-              <a target="_blank" rel="noopener noreferrer" href="https://github.com/jpegzilla/jpegzilla.github.io/blob/master/randomarena/js.js" class="ext">github &neArr;</a>
-              <a target="_blank" rel="noopener noreferrer" href="/randomarena" class="ext">view &neArr;</a>
-            </div>
-          </div>
-          <div class="image">
-            <img src="css/img/randomarena.png" alt="randomarena tool">
-          </div>
-        </div>
+  <script src="./js/main.mjs" type="module" charset="utf-8"></script>
 
-        <div class="work-sub">
-          <p>randomarena is a small tool I made to allow me to quickly 'surf' through are.na.<br><span class="work-scope">&mdash; programming</span></p>
-        </div>
-      </div>
+  <!-- sorvice worker!!! -->
+  <script type="text/javascript">
+    if (
+      'serviceWorker' in navigator &&
+      !(location.hostname === 'localhost' || location.hostname === '127.0.0.1')
+    ) {
+      // register service worker file
+      navigator.serviceWorker
+        .register('./serviceworker.mjs')
+        .then(reg => {
+          console.log('[serviceworker] registered. ', reg.scope)
 
-      <!-- cheatcodes.js -->
-      <div class="works-box intersection-item">
-        <div class="work-title">
-          <span>/works/cheatcodes</span>&nbsp;&mdash;&nbsp;<span class="work-date">09 2019</span>
-        </div>
-
-        <div class="work">
-          <div class="overlay">
-            <span>cheatcodes.js: script for creating cheat codes</span>
-            <div class="work-links">
-              <a target="_blank" rel="noopener noreferrer" href="https://github.com/jpegzilla/cheatcodes.js" class="ext">github &neArr;</a>
-              <a target="_blank" rel="noopener noreferrer" href="/cheatcodes" class="ext">view &neArr;</a>
-            </div>
-          </div>
-          <div class="image">
-            <img src="css/img/cheatcodes.png" alt="cheatcodes script">
-          </div>
-        </div>
-
-        <div class="work-sub">
-          <p>cheatcodes.js is a class for creating "hotkey" or "cheat code" actions in the browser.<br><span class="work-scope">&mdash; programming</span></p>
-        </div>
-      </div>
-
-      <!-- bekin -->
-      <div class="works-box intersection-item">
-        <div class="work-title">
-          <span>/works/bekin</span>&nbsp;&mdash;&nbsp;<span class="work-date">09 2019</span>
-        </div>
-
-        <div class="work">
-          <div class="overlay">
-            <span>bekin: networking service</span>
-            <div class="work-links">
-              <a target="_blank" rel="noopener noreferrer" href="/works/bekin" class="ext">project review &neArr;</a>
-            </div>
-          </div>
-          <div class="image">
-            <img src="css/img/bekin.png" alt="emerald, color palette tool">
-          </div>
-        </div>
-
-        <div class="work-sub">
-          <p>bekin is a saas startup focused on offering a better networking experience to event attendees.<br><span class="work-scope">&mdash; web development, web design, graphic design / branding</span>
-          </p>
-        </div>
-      </div>
-
-      <!-- saltlines -->
-
-      <footer class="intersection-item">
-        <p>
-          <span class="intersection-item">SC-01.<span class="subsection">A</span> [ SHIFTING CONTENT ] other items for consideration</span>
-          <span class="intersection-item"><a target="_blank" href="/blog">blog about the internet, on the internet <b class="arrow">→</b></a></span>
-          <span class="intersection-item"><a target="_blank" href="/blog/music">blog about music I like <b class="arrow">→</b></a></span>
-          <span class="intersection-item"><a target="_blank" href="https://jpegzilla.com/scraps/">scraps of code <b class="arrow">→</b></a></span>
-          <span class="intersection-item"><a target="_blank" href="https://jpegzilla.com/cheatcodes">cheatcodes.js <b class="arrow">→</b></a></span>
-          <span class="intersection-item"><a target="_blank" href="https://github.com/jpegzilla/lowercase-discord">lowercase <b class="arrow">→</b></a></span>
-          <span class="intersection-item"><a target="_blank" href="https://github.com/jpegzilla/colorsheet">colorsheet <b class="arrow">→</b></a></span>
-          <span class="intersection-item"><a target="_blank" href="https://github.com/jpegzilla/saltlines.ruler.js">saltlines.ruler.js <b class="arrow">→</b></a></span>
-          <span class="intersection-item"><a target="_blank" href="https://jpegzilla.com/mailto">mailto link generator <b class="arrow">→</b></a></span>
-        </p>
-      </footer>
-    </section>
-
-    <section id="section-3">
-      <div class="intersection-item section-header sec-header">
-        <div class="left"><span>SC-02 [ABOUT]</span></div>
-        <div class="right"><span>
-            <span>/</span><span>a</span><span>b</span><span>o</span><span>u</span><span>t</span>
-          </span></div>
-      </div>
-
-      <div class="about-info-box">
-        <h1 class="intersection-item">I will make the <br>web beautiful.</h1>
-        <p class="indent intersection-item">I am a web designer, creative developer, internet horticulturalist, and digital archaeologist from atlanta, georgia. this is my 2019 portfolio.
-        </p>
-        <p class="indent intersection-item">
-          I have been exploring various facets of software creation and digital arts for over five years now. I love
-          designing microinteractions, programming
-          beautiful interfaces,
-          and creating
-          sleek animations.</p>
-
-        <p class="indent intersection-item">I am currently taking on new projects, so if you need someone with my skills, please get in touch.</p>
-        <p class="skills-para intersection-item"><span class="skills-title">SC-02.<span class="subsection">A</span> [ PARAMETER ] skills:</span>
-        </p>
-        <p class="indent intersection-item">ux / ui design,
-          frontend web
-          development,
-          motion / interaction design, backend development, web administration</p>
-        <p class="skills-para intersection-item"><span class="skills-title">SC-02.<span class="subsection">B</span> [ PARAMETER ] interests:</span>
-        </p>
-        <p class="indent intersection-item">digital art, <a target="_blank" href="./blog/music">music collection</a>, cryptography, video games (rhythm games [bemani, osu!], fighting games [hisoutensoku, street fighter], smite, metal gear...),
-          biking,
-          game development,
-          color science, and many other things.</p>
-        <p class="extras-para intersection-item"><span class="extras-title">SC-02.<span class="subsection">C</span> [ EXTRA MATERIALS ] documents:</span>
-          <span class="indent intersection-item"><a target="_blank" href="mailto:eris@jpegzilla.com?subject=I%27d%20like%20to%20see%20your%20resume&body=hi!%20can%20you%20send%20over%20a%20copy%20of%20your%20resume?">résumé <b class="arrow">→</b></a></span>
-          <span class="indent intersection-item"><a target="_blank" href="/pgp/pgp.txt">pgp key <b class="arrow">→</b></a></span>
-        </p>
-      </div>
-
-      <footer class="about-footer">
-        <div class="info">
-          <p>
-            it is <span id="time-display">2:13</span> where I am, meaning I am likely to be <span id="awake-or-not"></span>. <span id="comms-recommendation"></span>
-          </p>
-          <p>
-            &copy; <span id="current-year"></span> jpegzilla. &mdash; find me on <a target="_blank" href="https://discordapp.com/invite/Ft9rVA6">discord</a>, <a target="_blank" href="https://twitter.com/jpegzilla">twitter</a>, or <a target="_blank"
-              href="https://github.com/jpegzilla">github</a>
-            &bull; <span id="show-flags">&#10033;</span>
-          </p>
-        </div>
-        <div id="flag-display" class="lines">
-          <div class="t"><b></b>
-            <b></b>
-            <b></b>
-            <b></b>
-            <b></b></div>
-          <div class="p"><b></b>
-            <b></b>
-            <b></b></div>
-        </div>
-      </footer>
-
-    </section>
-
-  </main>
-
-  <footer class="page-footer">
-    <div class="left"><span>currently available</span><a href="mailto:eris@jpegzilla.com?subject=hi%20jpeg%2C%20I%27d%20like%20to%20work%20with%20you!">&rarr; eris@jpegzilla.com</a></div>
-    <div class="right">
-      <b class="scrollbar"><b class="scrollbar-inner"></b></b>
-      <b id="social-icons">
-        <ul>
-          <li><a target="_blank" rel="noopener noreferrer" href="https://discordapp.com/invite/Ft9rVA6">d<span class="letter-hide">i</span>s<span class="letter-hide">cord</span></a></li>
-          <li><a target="_blank" rel="noopener noreferrer" href="https://twitter.com/jpegzilla">tw<span class="letter-hide">itter</span></a></li>
-          <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/jpegzilla">g<span class="letter-hide">it</span>h<span class="letter-hide">ub</span></a></li>
-        </ul>
-        <b id="social-expand">
-          <b></b><b></b>
-        </b>
-      </b>
-      <b id="ls-container" class="lightsOut"><b id="ls"></b></b>
-    </div>
-  </footer>
-</body>
-<script src="./js/utils.js" charset="utf-8"></script>
-<script src="./js/main.js" charset="utf-8"></script>
-<script src="./js/scroll.min.js" charset="utf-8"></script>
-
-<script type="text/javascript">
-  if ('serviceWorker' in navigator) {
-    // register service worker file
-    navigator.serviceWorker.register('./service-worker.js')
-      .then(reg => {
-        console.log('[ServiceWorker] registered. ', reg.scope)
-
-        reg.onupdatefound = () => {
-          console.log('[ServiceWorker] update found. requesting update')
-          const installingWorker = reg.installing;
-          installingWorker.onstatechange = () => {
-            switch (installingWorker.state) {
-              case 'installed':
-                if (navigator.serviceWorker.controller) {
-                  reg.update();
-                } else return false
-                break;
+          reg.onupdatefound = () => {
+            console.log('[serviceworker] update found. requesting update')
+            const installingWorker = reg.installing
+            installingWorker.onstatechange = () => {
+              switch (installingWorker.state) {
+                case 'installed':
+                  if (navigator.serviceWorker.controller) {
+                    reg.update()
+                  } else return false
+                  break
+              }
             }
-          };
-        };
-      })
-      .catch(err => console.error('[ServiceWorker: ERROR]', err));
-  }
-</script>
-
+          }
+        })
+        .catch(err => console.error('[serviceworker: error]', err))
+    }
+  </script>
 </html>

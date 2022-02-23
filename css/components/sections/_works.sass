@@ -1,0 +1,295 @@
+// ♪音楽 → RENARD - BASS SPEAKS CANINE : https://www.youtube.com/watch?v=9HG7Oy8of1g
+
+@use 'sass:color' as c
+@use './../utils/vars' as v
+@use './../utils/animations/fadein' as f
+@use './../utils/animations/pointright' as p
+@use './../utils/animations/width' as w
+@use './../utils/animations/fadeoutincolor' as fc
+@use './../utils/animations/rotate' as r
+@use './../utils/animations/marquee' as m
+
+#works
+  +v.section
+
+  min-height: 100vh
+
+  header
+    +v.sectionhead('[ AS01 > POLISHED ROUND OBJECTS ]')
+    +v.mfont
+
+  .works-underlay
+    +v.flexcenter
+    +v.color
+
+    position: fixed
+    pointer-events: none
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    opacity: 0
+    font-size: 20rem
+    white-space: nowrap
+    font-family: v.$prompt
+    transition: opacity 0.3s
+    filter: blur(2px)
+
+    @media (max-width: v.$breakpoint-tiny)
+      display: none
+
+    &.active
+      transition: opacity 0.3s
+      opacity: 0.04
+
+      body.dark &
+        opacity: 0.01
+
+  .works-item-list
+    +v.antibullet
+
+    .works-item + .works-item
+      margin-top: 4rem
+
+      @media (max-width: v.$breakpoint-miniscule)
+        margin-top: 3rem
+
+    .works-item
+      position: relative
+      font-family: v.$prompt
+      padding: 0 0 1rem 0
+      opacity: 0
+      transform: scale(0.97)
+      transition: opacity 0.3s ease 0.3s, transform 0.5s ease-out, margin 0.25s ease
+
+      @media (max-width: v.$breakpoint-miniscule)
+        padding-bottom: 0.5rem
+
+      a
+        +v.kfocus
+        +v.color
+
+        height: 100%
+        width: 100%
+        text-decoration: none
+        display: inline-block
+
+      &:hover
+        margin-left: 0.25rem
+        transition: opacity 0.3s ease 0.3s, transform 0.5s ease-out, margin 0.3s ease-in, color 0.3s ease-out
+
+        @media (max-width: v.$breakpoint-tiny)
+          margin-left: 0
+
+        .bar b::after
+          opacity: 1
+          transition: opacity 0.35s
+
+        .works-image
+          opacity: 1
+          transition: opacity 0.3s
+
+      &.intersector-visible
+        opacity: 1
+        transform: scale(1)
+        transition: opacity 0.3s ease 0.3s, transform 0.5s ease-out, margin 0.3s ease-out
+
+      &.unreleased
+        +v.coolshittag('UNRELEASED', v.$pflag-yellow)
+
+        pointer-events: none
+
+        a
+          opacity: 0.5
+          z-index: -1
+
+      body.dark &
+        // border-bottom: 1px solid v.$white-bright
+        transition: opacity 0.3s ease 0.3s, transform 0.5s ease-out, margin 0.3s ease-out
+
+      &:first-of-type
+        +v.coolshittag('NEW SHIT')
+
+      .bar
+        display: flex
+        justify-content: center
+        align-items: center
+        position: absolute
+        bottom: 0
+        left: 0
+        width: 100%
+        height: 1px
+        font-weight: 300
+
+        span
+          display: inline-block
+          min-width: max-content
+          margin-top: -1px
+
+          @media (max-width: v.$breakpoint-miniscule)
+            display: none
+
+          &.works-item-subtitle-extra
+            @media (max-width: v.$breakpoint-medium)
+              display: none
+
+        b
+          width: 100%
+          height: 100%
+          border-radius: v.$border-radius
+          margin-right: 1rem
+          transition: background-color 0.2s
+          background-color: v.$black-dark
+          position: relative
+
+          &:last-of-type
+            width: 2rem
+            margin-left: 1rem
+
+            @media (max-width: v.$breakpoint-medium)
+              display: block
+
+            @media (max-width: v.$breakpoint-miniscule)
+              display: none
+
+            &::after
+              background-image: none
+
+          &::after
+            opacity: 0
+            transition: opacity 0.35s
+            background-image: v.$rainbow-grad-hor
+            content: ''
+            position: absolute
+            bottom: 0
+            left: 0
+            height: 100%
+            width: 100%
+
+          body.dark &
+            transition: background-color 0.2s
+            background-color: v.$white-bright
+
+      .works-item-title
+        +v.jfont
+
+        $size: 9rem
+
+        font-size: $size
+        line-height: $size
+        user-select: none
+        font-weight: 400
+
+        &-number
+          font-size: 1.5em
+          opacity: 0.025
+          font-family: v.$neutral
+          display: inline-block
+          position: absolute
+          left: -3rem
+          font-weight: 300
+          font-style: oblique
+
+          body.dark &
+            opacity: 0.0125
+            // display: none
+
+        @media (max-width: v.$breakpoint-tiny)
+          $size: 7rem
+
+          font-size: $size
+          line-height: $size
+
+        @media (max-width: v.$breakpoint-miniscule)
+          $size: 4rem
+
+          font-size: $size
+          line-height: $size
+
+          &:hover .view-button
+            transform: translateX(v.$halfgap)
+            opacity: 1
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out
+
+          .view-button
+            margin-left: 1rem
+            font-size: 0.5em
+            display: inline-block
+            transform: translateX(0)
+            transition: transform 0.3s ease-out, opacity 0.3s ease-in-out, color 0.3s ease
+            opacity: 0
+            color: v.$black-dark
+
+            .arrow
+              +p.pointright(2s)
+
+              display: inline-block
+
+            body.dark &
+              color: v.$white-bright
+              transition: transform 0.3s ease-out, opacity 0.3s ease-in-out, color 0.3s ease
+
+            @media (max-width: v.$breakpoint-miniscule)
+              display: none
+
+      .works-item-subtitle
+        display: flex
+        font-size: 1.45rem
+        font-family: v.$nunito
+        flex-grow: 1
+        // max-width: 60ch
+        margin-top: -0.25rem
+        font-weight: 300
+        font-style: italic
+
+        +v.jfont
+          font-style: normal
+          font-weight: 300
+
+        @media (max-width: v.$breakpoint-miniscule)
+          margin-top: 0
+          font-size: 1rem
+
+        .spacer
+          flex-grow: 1
+
+        &-misc
+          $fadetime: 0.05
+          $size: 1rem
+          $smaller: calc(#{$size} - 0.25rem)
+
+          flex-grow: 1
+          display: flex
+          align-items: center
+          justify-content: flex-end
+          gap: 0.5rem
+
+          @media (max-width: v.$breakpoint-tiny)
+            display: none
+
+          &.active span
+            opacity: 1
+            transition: opacity 0.3s
+
+            @for $i from 1 through 3
+              &:nth-last-of-type(#{$i})
+                transition-delay: #{$i * $fadetime}s
+
+          span
+            +v.flexcenter
+
+            min-height: $size
+            font-size: $smaller
+            line-height: 0
+            opacity: 0
+            transition: opacity 0.3s, color 0.3s
+            font-family: v.$crimson
+            color: v.$black-dark
+
+            body.dark &
+              transition: opacity 0.3s, color 0.3s
+              color: v.$white-bright
+
+            @for $i from 1 through 3
+              &:nth-of-type(#{$i})
+                transition-delay: #{$i * $fadetime}s

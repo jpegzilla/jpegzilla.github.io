@@ -1,0 +1,304 @@
+// ♪音楽 → UPLIFT SPICE - QUEEN ANNE'S REVENGE : (link here)
+
+@use 'sass:color' as c
+@use './../utils/vars' as v
+@use './../utils/animations/fadeoutincolor' as f
+
+=novertpadding
+  padding-bottom: 0
+  padding-top: 0
+
+.overlay-linedecoration
+  +v.section
+  +novertpadding
+
+  height: 100vh
+  padding-bottom: 0
+  padding-top: 0
+  position: fixed
+  inset: 0 0 0 0
+  width: 100vw
+  isolation: isolate
+  display: none
+  z-index: v.$layer-sections
+
+  @media (max-width: v.$breakpoint-small)
+    display: block
+
+  @media (min-width: v.$breakpoint-huge), (max-width: v.$breakpoint-medium), (max-width: v.$breakpoint-tiny)
+    +novertpadding
+
+  .overlay-linedecoration-inner
+    +v.color
+
+    background-color: currentColor
+    height: 100%
+    opacity: 0.15
+    margin-left: -1px
+    width: 1px
+
+#site-overlay
+  position: fixed
+  pointer-events: none
+  height: 100vh
+  width: 100vw
+  top: 0
+  left: 0
+  color: v.$white-bright
+  z-index: v.$layer-overlay
+  overflow: hidden
+
+  .overlay-hexbox
+    +v.blurbg
+    +v.notforscreenreaders
+
+    position: absolute
+    bottom: 2rem
+    right: 16rem
+    font-family: monospace
+    padding: v.$halfgap
+    border-radius: v.$border-radius
+    background-color: c.adjust(v.$white-bright, $alpha: -0.99)
+    opacity: 0
+    transition: opacity 0.3s 0.5s
+
+    @media (max-width: v.$breakpoint-small)
+      right: 8rem
+
+    @media (max-width: v.$breakpoint-small)
+      display: none
+
+    &.active
+      transition: opacity 0.3s
+      opacity: 0.3
+
+    &-text
+      +v.color
+
+      opacity: 0.5
+      font-size: v.$halfgap
+
+  .overlay-scrollindicator
+    +v.flexcenter
+    +v.color
+
+    position: absolute
+    margin-left: v.$offset
+    top: 0
+    left: 0
+    width: 1.75rem
+    min-height: 100vh
+    opacity: 0.5
+
+    @media (min-width: v.$breakpoint-huge)
+      margin-left: v.$offset2x
+
+    @media (max-width: v.$breakpoint-small)
+      margin-left: 2rem
+
+    &-container
+      +v.background-color
+
+      width: 1px
+      height: 30vh
+      transform: scaleX(0.25)
+
+    &-inner
+      +v.flexcenter
+
+      height: 0
+      width: 100%
+      background-color: currentColor
+
+  .overlay-bottom
+    position: absolute
+    padding: v.$offset
+    bottom: 0
+    left: 0
+    display: grid
+    grid-gap: 1.5rem
+    grid-template-rows: repeat(2, auto)
+
+    @media (min-width: v.$breakpoint-huge)
+      padding: v.$offset2x
+      padding-bottom: 4rem
+
+    @media (max-width: v.$breakpoint-small)
+      padding: 0 0 1.5rem 2rem
+
+    &-button-container
+      max-width: max-content
+
+    &-button
+      +v.kfocus('transform 0.5s ease-in-out')
+      +v.flexcenter
+
+      height: 1.75rem
+      width: 1.75rem
+      position: relative
+      transform: rotateZ(0)
+      transition: transform 0.5s ease-in-out
+      pointer-events: auto
+      cursor: pointer
+
+      &.active
+        transform: rotateZ(405deg)
+        transition: transform 0.5s ease-in-out
+
+      b
+        position: absolute
+        background-color: v.$black-dark
+        transition: background-color 0.3s
+
+        body.dark &
+          background-color: v.$white-bright
+          transition: background-color 0.3s
+
+      b:first-of-type
+        width: 0.5rem
+        height: 100%
+
+      b:last-of-type
+        height: 0.5rem
+        width: 100%
+
+    &-stats
+      +v.flexcenter
+
+      flex-direction: column
+      align-items: flex-start
+      color: v.$black-dark
+      transition: color 0.3s
+
+      body.dark &
+        color: v.$white-bright
+        transition: color 0.3s
+
+      &-nowplaying
+        font-family: v.$prompt
+        font-size: 0.5rem
+
+      ul
+        +v.flexcenter
+
+        flex-direction: column
+        list-style-type: none
+        width: 100%
+
+        li
+          +v.blurbg(1px)
+
+          display: flex
+          align-items: center
+          width: 100%
+          opacity: 0
+          transition: opacity 0.3s ease-out, outline-color 0.3s, transform 0.3s ease-out, background-color 0.2s
+          font-family: v.$prompt
+          font-size: 1.5rem
+          line-height: 1.2
+          min-width: max-content
+          transform: translateX(0)
+          padding: 0.15rem 0.5rem 0.15rem 0
+          border-radius: v.$border-radius
+          background-color: c.adjust(v.$white-bright, $alpha: -0.95)
+
+          body.dark &
+            background-color: c.adjust(v.$black-dark, $alpha: -0.95)
+            transition: opacity 0.3s ease-out, outline-color 0.3s, transform 0.3s ease-out, background-color 0.2s
+
+          &:hover
+            transition: opacity 0.3s ease-out, outline-color 0.3s, transform 0.3s ease-out, background-color 0.2s
+            transform: translateX(5px)
+
+          & + li
+            margin-top: 0.5rem
+
+          &:nth-of-type(1),
+          &:nth-of-type(2),
+          &:nth-of-type(3)
+            & a
+              display: flex
+              align-items: center
+
+            & a::before
+              display: inline-block
+              content: ''
+              margin-right: 1rem
+              height: 1.5rem
+              width: 1.75rem
+              filter: invert(0)
+              transition: filter 0.3s ease
+              background-repeat: no-repeat
+              background-position: center
+
+              body.dark &
+                filter: invert(1)
+                transition: filter 0.3s ease
+
+          &:nth-of-type(1)
+            & a::before
+              background-image: url('./img/social/discord.svg')
+
+          &:nth-of-type(2)
+            & a::before
+              background-image: url('./img/social/twitter.svg')
+
+          &:nth-of-type(3)
+            & a::before
+              background-image: url('./img/social/github.svg')
+
+          &.hidden
+            visibility: hidden
+
+          &:focus
+            outline: 1px dotted v.$black-dark
+            transition: opacity 0.3s ease-out, outline-color 0.3s
+            outline-offset: 0.25rem
+
+            body.dark &
+              outline: 1px dotted v.$white-bright
+              transition: opacity 0.3s ease-out, outline-color 0.3s
+
+          @for $i from 1 through 3
+            &:nth-of-type(#{$i})
+              transition-delay: #{$i * 0.20}s
+
+          a
+            +v.kfocus
+
+            text-decoration: none
+            color: currentColor
+
+            &:hover span
+              +f.fadeoutincolor(0.7s, v.$red)
+
+              @for $i from 1 through 7
+                &:nth-of-type(#{$i})
+                  animation-delay: #{$i * 0.05}s
+
+      &.active
+        pointer-events: auto
+        transition: color 0.3s
+
+        ul
+          li
+            opacity: 1
+            transition: opacity 0.3s ease-out, outline-color 0.3s, transform 0.3s ease-out
+            visibility: visible
+
+            @for $i from 1 through 3
+              &:nth-last-of-type(#{$i})
+                transition-delay: #{$i * 0.20}s, 0s, 0s
+
+  .cheatcode-display
+    +v.flexcenter
+    +v.color
+
+    position: fixed
+    width: 100vw
+    bottom: 0
+    font-family: v.$msgothic
+    padding: v.$offset
+
+    @media (min-width: v.$breakpoint-huge)
+      padding: v.$offset2x

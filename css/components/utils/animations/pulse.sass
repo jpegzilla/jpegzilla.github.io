@@ -1,0 +1,12 @@
+=pulse($spd: 3s, $halfpoint: 50%)
+  @keyframes pulse
+    from
+      opacity: 0
+
+    #{$halfpoint}
+      opacity: 1
+
+    to
+      opacity: 1
+
+  animation: pulse $spd ease-out infinite alternate

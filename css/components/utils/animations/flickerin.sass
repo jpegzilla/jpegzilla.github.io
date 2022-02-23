@@ -1,0 +1,27 @@
+=flickerin($fo: 0, $dur: 0.25s, $tim: ease, $del: 2s, $fill: forwards)
+  @keyframes flickerin
+    from
+      opacity: $fo
+
+    50%
+      opacity: 1
+
+    55%
+      opacity: 0
+
+    60%
+      opacity: 1
+
+    65%
+      opacity: 0
+
+    70%
+      opacity: 1
+
+    75%
+      opacity: 0
+
+    to
+      opacity: 1
+
+  animation: flickerin $dur $tim $del $fill

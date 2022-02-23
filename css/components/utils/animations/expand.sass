@@ -1,0 +1,20 @@
+=expand($fromh, $fromw, $toh, $tow, $fo, $dur, $tim, $del, $fill)
+  @keyframes expand
+    from
+      width: $fromw
+      height: $fromh
+      opacity: $fo
+
+    40%
+      height: $fromh
+      width: $tow
+
+    80%
+      width: $tow
+      height: $toh
+      opacity: $fo
+
+    to
+      opacity: 1
+
+  animation: $dur $tim $del 1 $fill expand

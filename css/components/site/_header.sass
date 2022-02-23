@@ -1,0 +1,176 @@
+// 音楽 → P * LIGHT ft. mow*2 & ななひら - ななななもーもー : https://www.youtube.com/watch?v=KO4O7DXOA2g
+
+@use 'sass:color' as c
+@use './../utils/vars' as v
+@use './../utils/animations/rotate' as r
+@use './../utils/animations/fadeoutincolor' as f
+@use './../utils/animations/breathefade' as b
+@use './../utils/animations/fadein' as fa
+@use './../utils/animations/glowbreathe' as g
+
+#site-header
+  +v.flexcenter
+
+  @media (max-width: v.$breakpoint-small)
+    background-color: c.adjust(v.$white-bright, $alpha: -0.75)
+    border-bottom: 1px solid c.adjust(v.$black-dark, $alpha: -0.95)
+    transition: border-color 0.3s ease, background-color 0.3s ease
+
+    body.dark &
+      border-bottom: 1px solid c.adjust(v.$white-bright, $alpha: -0.95)
+      transition: border-color 0.3s ease, background-color 0.3s ease
+      background-color: c.adjust(v.$black-dark, $alpha: -0.65)
+
+  @media (max-width: v.$breakpoint-miniscule)
+    +v.blurbg
+
+  width: 100vw
+  position: fixed
+  display: flex
+  align-items: center
+  top: 0
+  left: 0
+  padding: 2rem v.$offset
+  z-index: v.$layer-header
+  pointer-events: none
+
+  @media (min-width: v.$breakpoint-huge)
+    padding: 4rem v.$offset2x
+
+  @media (max-width: v.$breakpoint-small)
+    padding: 1rem 2rem
+
+  .wordmark, .links
+    +v.color
+
+  .wordmark
+    font-family: v.$crimson
+    display: flex
+    font-size: 3rem
+    flex-direction: column
+    user-select: none
+    pointer-events: auto
+
+    @media (max-width: v.$breakpoint-small)
+      font-size: 2rem
+
+    & > span:first-of-type:hover
+      +g.glowbreathe
+
+      &::after
+        opacity: 1
+        transition: opacity 0.5s 2s
+
+    & > span:first-of-type::after
+      content: ' (sixth edition)'
+      opacity: 0
+      font-size: 1rem
+      transition: opacity 0.3s
+
+    & > span:last-of-type
+      +v.hlblock
+      +v.ffonly
+        max-width: unset
+        width: max-content
+
+      & > span:last-of-type
+        // +v.color(v.$white-bright, v.$red-in-mid)
+
+      @media (max-width: v.$breakpoint-small)
+        font-size: 0.25em
+
+        +v.ffonly
+          font-size: 0.4em
+
+  .spacer
+    flex-grow: 1
+
+  .status-message
+    +v.color
+    +v.jfont
+    +v.blurbg(3px)
+
+    font-family: v.$crimson
+    border-radius: v.$border-radius
+    transition: color 0.3s ease, background-color 0.3s ease
+
+    &:not(:empty)
+      padding: 1rem
+      background-color: c.adjust(v.$white-bright, $alpha: -0.3)
+
+    body.dark &
+      transition: color 0.3s ease, background-color 0.3s ease
+      background-color: c.adjust(v.$black-dark, $alpha: -0.3)
+
+    @media (max-width: v.$breakpoint-small)
+      display: none
+
+  .links
+    +v.flexcenter
+
+    flex-direction: row
+    font-family: v.$prompt
+    font-weight: 300
+
+    ul
+      display: flex
+      list-style-type: none
+      font-size: 1.5rem
+      padding-right: 1rem
+      width: 10rem
+      justify-content: center
+      align-items: flex-end
+      flex-direction: column
+      pointer-events: auto
+
+      @media (max-width: v.$breakpoint-small)
+        &
+          padding-right: 0
+
+      li.active
+        +fa.fadein(0, 0.3s, ease-out, 2s, forwards)
+
+        @for $i from 1 through 3
+          &:nth-of-type(#{$i})
+            animation-delay: #{$i * 0.25}s
+
+      li
+        opacity: 0
+        max-width: max-content
+        transition: opacity 0.3s ease-out, outline-color 0.3s, transform 0.3s ease-out
+        transform: translateX(0)
+
+        &:hover
+          transition: opacity 0.3s ease-out, outline-color 0.3s, transform 0.3s ease-out
+          transform: translateX(-5px)
+
+        span
+          color: currentColor
+          transition: color 0.3s
+
+        &:hover span
+          +f.fadeoutincolor(0.7s, v.$hl)
+
+          @for $i from 1 through 7
+            &:nth-of-type(#{$i})
+              animation-delay: #{$i * 0.05}s
+
+          // これ以上は失敗だ
+
+      li > a
+        +v.kfocus
+
+        text-decoration: none
+        color: currentColor
+        display: flex
+
+      li:nth-of-type(1)
+        margin-right: 0.5rem
+
+      li:nth-of-type(2)
+        margin-right: 2.5rem
+
+      @media (max-width: v.$breakpoint-small)
+        li:nth-of-type(1),
+        li:nth-of-type(2)
+          margin-right: 0

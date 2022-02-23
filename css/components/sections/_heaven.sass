@@ -1,0 +1,64 @@
+// ♪音楽 → ゆくえしれずつれづ - 春夏秋闘 : https://www.youtube.com/watch?v=Uh40r6O1UI8
+
+@use './../utils/vars' as v
+@use 'sass:color' as c
+
+$bg: v.$black-dark
+
+#heaven
+  +v.section(visible, 2rem)
+
+  display: flex
+  justify-content: center
+  flex-direction: column
+  min-height: 100vh
+  gap: v.$halfgap
+  overflow: visible
+
+  @media (min-width: v.$breakpoint-huge), (max-width: v.$breakpoint-medium), (max-width: v.$breakpoint-tiny)
+    padding-top: 2rem
+
+  div
+    +v.color
+
+    font-family: v.$prompt
+    font-weight: 400
+    font-size: 5rem
+    line-height: 1.26
+    inline-size: 100%
+    position: relative
+
+    @media (min-width: v.$breakpoint-huge)
+      font-size: 7rem
+
+    @media (max-width: v.$breakpoint-medium)
+      font-size: 5rem
+
+    @media (max-width: v.$breakpoint-miniscule)
+      font-size: 3em
+
+    &.ja
+      +v.jfont
+
+    aside
+      +v.jfont
+        font-weight: 300
+
+      +v.color
+
+      font-family: v.$nunito
+      font-size: 1.5rem
+      font-style: italic
+      font-weight: 300
+      opacity: 0.75
+      padding-top: v.$p-m
+      position: absolute
+      right: 0
+      text-align: right
+      top: 100%
+
+      @media (max-width: v.$breakpoint-tiny)
+        padding-top: v.$p-s
+
+  span
+    display: block

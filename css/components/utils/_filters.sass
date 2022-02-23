@@ -1,0 +1,40 @@
+@use 'sass:color' as c
+@use './vars' as v
+@use './animations/bgshake' as b
+
+.filters
+  +v.flexcenter
+  // to turn off all filters, set display to none
+  // display: none
+  height: 100vh
+  width: 100vw
+  position: fixed
+  z-index: 9999
+  pointer-events: none
+  user-select: none
+  top: 0
+  left: 0
+  overflow: hidden
+
+  &.noise::after
+    +b.bgshake(0.5s)
+
+    content: ''
+    background-image: url("./img/textures/noise.png")
+    opacity: 0.55
+    background-repeat: repeat
+    background-size: 5rem
+    background-position: center 40%
+    height: 300vh
+    min-width: 300vw
+    display: block
+
+  &.limb
+    &:after
+      content: ""
+      position: absolute
+      top: 0
+      left: 0
+      bottom: 0
+      right: 0
+      box-shadow: inset 0px 0px 50vw 10rem c.adjust(black, $alpha: -0.5)
