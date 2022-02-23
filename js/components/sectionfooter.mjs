@@ -74,7 +74,10 @@ class SectionFooter extends Component {
               >humans.txt</a
             >
             &#9913;
-            <a href="./humans.txt" target="_blank" rel="noreferrer noopener"
+            <a
+              href="https://github.com/jpegzilla/jpegzilla.github.io"
+              target="_blank"
+              rel="noreferrer noopener"
               >source code</a
             >
             &#9913; may your flowers bloom eternally under the sky.
