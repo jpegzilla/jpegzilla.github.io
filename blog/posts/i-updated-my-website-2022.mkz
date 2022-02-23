@@ -1,0 +1,71 @@
+#h1 I updated my website!
+
+<hr>
+
+#p I updated my website today! after two years of [i veeeeerry] slow progress, I finally managed to finish it. I finished up the final designs yesterday, and I blazed through localization and configuration stuff today! I'm very proud of it, even though it took so long. also, isn't it weird that after two years, I finished it all on 2022 02 22? that's cool.
+
+#p a lot has happened in the last two years &mdash; I moved to maryland, got engaged to my favorite person in the world, got pretty good at cooking, and a [i lot] more, of course. it's been a fun ride up till now!
+
+#p also, thanks for reading. that's really all I had to say &mdash; [a go check it out!!](https://jpegzilla.com) I also put some minor development notes below if you're interested.
+
+<hr>
+
+#h2 some notes I took during the process.
+
+#p I put a lot of tiny details into this iteration of my website. I want the web to be more fun and interactive, so I put a bunch of little fun things on my website like sprinkles on a cake. I'll keep adding easter eggs over time, as well!
+
+<hr>
+
+#h3 variants and randomness
+
+#p one of the major concepts of my website has always been that of [i variants]. there are several components of my website that change based on user preference, window size, and more! there are also things that randomly change every time the site is reloaded, like the loading screen text and the little text underneath my wordmark in the upper right-hand corner.
+
+#p I spent a lot of time picking words and phrases to randomly generate interesting combinations for that wordmark flavor text. sometimes you get a really cool one, like [i 'elemental purity'] or [i 'heavenly monuments'], or [i 'dragon's chrysalis']. some of them are strange, and some are just meh. that's the beautiful power of random chance!
+
+<hr>
+
+#h3 easter eggs
+
+#p aside from the obvious things like randomized text in some places, there are a lot of other easter eggs that I put a [i ton] of effort into over the past few months. there may or may not be literal cheat codes for this website that you can enter on your keyboard.
+
+<hr>
+
+#h3 music
+
+#p another fun thing I did was add a comment at the top of a lot of the source code files, showing what music I was listening to at the time that I wrote the code. it could be fun to look through some if you have some time to waste. [a example here!](https://github.com/jpegzilla/jpegzilla.github.io/blob/main/js/components/sectionabout.mjs#L1) [a or here!](https://github.com/jpegzilla/jpegzilla.github.io/blob/main/css/components/sections/_about.sass#L1)
+
+#h3 webgl / 3d disappointment (and an unused image!)
+
+#p I wanted to use webgl for something on this website, since I'm working on my computer graphics skills, but I ended up with no real idea what to use it for. I was originally going to have some sort of 3d 'product visualization' thing for my projects, but I switched from canvas to blender to scrapping the idea entirely when my renders didn't really add anything interesting. here's the final static render of my [a 'thesis'](https://github.com/jpegzilla/thesis) visualization:
+
+#img ./../img/i-updated-my-website/thesis-box.png a picture of a clear rectangular plastic box containing small colorful cubes. the text on the side says 'thesis'.
+
+#p had no idea what to do with it, but it was fun to make.
+
+<hr>
+
+#h3 credits
+
+#p I've also added a credits file to the site. that way, you can see where my inspiration for certain things came from. [a that's linked right here as well!](https://jpegzilla.com/credits.html)
+
+#p thanks again for reading this, and I'll see you next time!
+
+<hr>
+
+#h2 currently listening to:
+
+#p - [a heal](https://www.youtube.com/watch?v=i5e_WoTq2vE) by [a driftcat](https://twitter.com/driftcatmusic)
+
+#p - [a Клятва](https://www.youtube.com/watch?v=6mau74-ruyA) by [a 沼倉愛](http://numakuramanami.com/)
+
+#p - [a someone is always moving on the surface](https://www.youtube.com/watch?v=9OyVMdD_zAQ) by [a frequency](https://frequency-harmonics.bandcamp.com/)
+
+#p - invincible rainbow arrow -grand finale- &mdash; [a english version](https://www.youtube.com/watch?v=F6vmTt4jWdI) & [a japanese version](https://www.youtube.com/watch?v=yVTAAFmL_q0) by [a keisuke ito](https://www.noisycroak.co.jp/staff/keisuke_ito.html)
+
+#p - [a weight of the wrld](https://www.youtube.com/watch?v=qOY5AdDcAjM) by [a triple-q](https://www.youtube.com/channel/UCLkTF30pU2c32zxHqPKYQLg)
+
+#p - [a dominate](https://www.youtube.com/watch?v=twB7mD3B9Ro) by [a beartooth](https://beartoothband.com/)
+
+#p - [a lightning returns](https://www.youtube.com/watch?v=ROibX7_8tBc) by [a masashi hamauzu](https://www.squareenixmusic.com/composers/hamauzu/index.shtml) and [a mitsuko suzuki](https://www.squareenixmusic.com/composers/suzuki/index.shtml)
+
+<hr>
