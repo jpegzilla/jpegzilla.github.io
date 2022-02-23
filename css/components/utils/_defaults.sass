@@ -6,9 +6,18 @@
   padding: 0
   word-wrap: break-word
   text-rendering: geometricPrecision
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+  @media (max-width: v.$breakpoint-infinitesimal)
+    font-weight: normal
+
 
 :root
   font-size: 16px
 
   @media (max-width: v.$breakpoint-small)
     font-size: 14px
+
+  @media (max-width: v.$breakpoint-infinitesimal)
+    font-size: 12px

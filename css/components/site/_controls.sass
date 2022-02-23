@@ -23,16 +23,20 @@
   @media (max-width: v.$breakpoint-small)
     padding: 0 1.75rem 1.5rem 0
 
+  @media (max-width: v.$breakpoint-infinitesimal)
+    padding-bottom: v.$p-xl
+
   > div + div
     margin-top: 1rem
 
   .email-container
-    padding-bottom: v.$p-l
-    writing-mode: vertical-rl
+    display: block
     font-family: v.$prompt
     font-size: 1rem
-    display: block
     font-style: normal
+    padding-bottom: v.$p-l
+    text-orientation: sideways-right
+    writing-mode: vertical-rl
 
     @media (max-width: v.$breakpoint-miniscule)
       display: none
@@ -40,8 +44,7 @@
     a
       +v.color(v.$black-dark, v.$miku)
 
-      text-decoration: none
-      text-decoration: overline
+      text-decoration: underline
 
   .controls
     font-family: v.$prompt

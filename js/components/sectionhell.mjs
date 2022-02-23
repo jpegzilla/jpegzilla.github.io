@@ -61,7 +61,7 @@ class SectionHell extends Component {
           >
             <div class="contact-item-title">
               <span
-                class="title${name[this.lang] === name.en ? ' revert' : ''}"
+                class="title${name.ja === name.en ? ' revert' : ''}"
                 data-name=${name.en}
                 >${name[this.lang]}</span
               >
@@ -130,6 +130,10 @@ class SectionHell extends Component {
 
         element.textContent = contactMethod.name[this.lang]
       })
+
+      this.querySelector(
+        '.contact-item-list'
+      ).innerHtml = this.generateContactMethodList()
     })
 
     render()

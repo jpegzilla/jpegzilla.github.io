@@ -37,6 +37,9 @@ $bg: v.$black-dark
     @media (max-width: v.$breakpoint-miniscule)
       font-size: 3em
 
+    @media (max-width: v.$breakpoint-infinitesimal)
+      font-size: 2.5rem
+
     &.ja
       +v.jfont
 
@@ -55,10 +58,14 @@ $bg: v.$black-dark
       position: absolute
       right: 0
       text-align: right
+      text-transform: lowercase
       top: 100%
 
       @media (max-width: v.$breakpoint-tiny)
         padding-top: v.$p-s
+
+      @media (max-width: v.$breakpoint-infinitesimal)
+        font-size: 0.5em
 
   span
     display: block
