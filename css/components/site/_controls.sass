@@ -15,11 +15,9 @@
   right: 0
   color: white
   z-index: v.$layer-controls
+  padding: v.$offset
 
-  @media (max-width: v.$breakpoint-infinitesimal)
-    height: var(--full-height)
-
-  @media (max-width: v.$breakpoint-huge)
+  @media (min-width: v.$breakpoint-huge)
     padding: v.$offset2x
     padding-bottom: 4rem
 
@@ -28,6 +26,9 @@
 
   @media (max-width: v.$breakpoint-small)
     padding: 0 1.75rem 1.5rem 0
+
+  @media (max-width: v.$breakpoint-infinitesimal)
+    height: var(--full-height)
 
   > div + div
     margin-top: 1rem
