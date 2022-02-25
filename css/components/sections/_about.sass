@@ -35,6 +35,8 @@
       user-select: none
 
       &::after
+        +v.background-color(c.adjust(v.$red-in-mid, $alpha: -0.75), c.adjust(v.$calvin-light, $alpha: -0.9))
+
         position: absolute
         inset: 0
         height: 100%
@@ -42,7 +44,6 @@
         z-index: 1
         pointer-events: none
         content: ''
-        background-color: c.adjust(v.$red-in-mid, $alpha: -0.75)
 
       @media (max-width: v.$breakpoint-huge)
         min-height: 63rem
