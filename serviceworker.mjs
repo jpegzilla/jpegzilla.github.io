@@ -139,7 +139,7 @@ const FILES_TO_CACHE = [
   'css/img/app/ms-icon-310x310.png',
 ]
 
-const JPEGZILLA_VERSION = '6.000'
+const JPEGZILLA_VERSION = '6.001'
 const CACHE_NAME = `jpegzilla_${JPEGZILLA_VERSION}`
 const cacheWhitelist = [CACHE_NAME]
 
