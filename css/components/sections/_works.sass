@@ -121,6 +121,9 @@
         height: 1px
         font-weight: 300
 
+        .extra-info
+          margin: 0 1rem
+
         span
           display: inline-block
           min-width: max-content
@@ -137,14 +140,12 @@
           width: 100%
           height: 100%
           border-radius: v.$border-radius
-          margin-right: 1rem
           transition: background-color 0.2s
           background-color: v.$black-dark
           position: relative
 
           &:last-of-type
             width: 2rem
-            margin-left: 1rem
 
             @media (max-width: v.$breakpoint-medium)
               display: block

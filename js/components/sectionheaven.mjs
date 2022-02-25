@@ -8,8 +8,8 @@ const copy = {
   en: html`
     <div>
       <span>artist & creative developer.</span>
-      <span>I treasure motion, color,</span>
-      <span>and interaction design.</span>
+      <span class="not-on-mobile">I treasure motion, color,</span>
+      <span class="not-on-mobile">and interaction design.</span>
       <aside>
         <span>I'm currently looking for new projects &mdash;</span>
         <span>let's make something cool together!</span>
@@ -20,8 +20,8 @@ const copy = {
     <div class="ja">
       <span>アーティスト＆</span>
       <span>クリエイティブデベロッパー。</span>
-      <span>動き、色、インタラクション</span>
-      <span>を大切にしている。</span>
+      <span class="not-on-mobile">動き、色、インタラクション</span>
+      <span class="not-on-mobile">を大切にしている。</span>
       <aside>
         <span>現在、新しいプロジェクトを探しています &mdash;</span>
         <span>一緒にかっこいいものを作りましょう！</span>

@@ -48,6 +48,9 @@
   z-index: v.$layer-overlay
   overflow: hidden
 
+  @media (max-width: v.$breakpoint-infinitesimal)
+    height: var(--full-height)
+
   .overlay-hexbox
     +v.blurbg
     +v.notforscreenreaders
@@ -124,10 +127,7 @@
       padding-bottom: 4rem
 
     @media (max-width: v.$breakpoint-small)
-      padding: 0 0 1.5rem 2rem
-
-    @media (max-width: v.$breakpoint-infinitesimal)
-      display: none
+      padding: 0 0 1.75rem 1.5rem
 
     &-button-container
       max-width: max-content

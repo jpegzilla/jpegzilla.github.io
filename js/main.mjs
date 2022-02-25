@@ -82,6 +82,13 @@ window.onfocus = () => {
   document.title = originalTitle
 }
 
+const recalculateFullHeight = () => {
+  const docElement = document.documentElement
+  docElement.style.setProperty('--full-height', `${window.innerHeight}px`)
+}
+
+window.onresize = recalculateFullHeight
+
 // setupIntersector(), setupScrolling() // remove this!!
 
 state.on('loadingscreenremoved', () => {

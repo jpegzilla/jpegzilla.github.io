@@ -77,9 +77,12 @@ class SectionWorks extends Component {
               >
             </aside>
             <div class="bar">
-              <b></b><span itemprop="dateCreated">${year}</span>
-              <span class="works-item-subtitle-extra"
-                >&nbsp;&mdash; ${status}</span
+              <b></b
+              ><span class="extra-info"
+                ><span itemprop="dateCreated">${year}</span>
+                <span class="works-item-subtitle-extra"
+                  >&mdash; ${status}</span
+                ></span
               ><b></b>
             </div>
           </a>

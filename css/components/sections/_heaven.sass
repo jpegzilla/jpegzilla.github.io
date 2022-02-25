@@ -18,27 +18,25 @@ $bg: v.$black-dark
   @media (min-width: v.$breakpoint-huge), (max-width: v.$breakpoint-medium), (max-width: v.$breakpoint-tiny)
     padding-top: 2rem
 
+  .not-on-mobile
+    @media (max-width: v.$breakpoint-miniscule)
+      display: none
+
   div
     +v.color
 
     font-family: v.$prompt
     font-weight: 400
-    font-size: 5rem
     line-height: 1.26
     inline-size: 100%
     position: relative
-
-    @media (min-width: v.$breakpoint-huge)
-      font-size: 7rem
+    font-size: 5rem
 
     @media (max-width: v.$breakpoint-medium)
-      font-size: 5rem
+      font-size: 4rem
 
     @media (max-width: v.$breakpoint-miniscule)
       font-size: 3em
-
-    @media (max-width: v.$breakpoint-infinitesimal)
-      font-size: 2.5rem
 
     &.ja
       +v.jfont
@@ -65,7 +63,7 @@ $bg: v.$black-dark
         padding-top: v.$p-s
 
       @media (max-width: v.$breakpoint-infinitesimal)
-        font-size: 0.5em
+        font-size: 1.25rem
 
   span
     display: block

@@ -253,12 +253,12 @@ $layer-overlay: 54
   @media (max-width: $breakpoint-tiny)
     padding: 10rem 2rem $padding-bottom 2rem
 
+  @media (max-width: $breakpoint-miniscule)
+    padding: 10rem 0.5rem $padding-bottom 0.5rem
+
 =mfont
   @media (max-width: $breakpoint-miniscule)
     font-size: 5rem
-
-  @media (max-width: $breakpoint-microscopic)
-    font-size: 3rem
 
 =hiddentransition($time: 0.3s)
   transition: opacity $time ease-out
@@ -365,8 +365,8 @@ $layer-overlay: 54
   @media (max-width: $breakpoint-miniscule)
     font-size: 6rem
 
-  @media (max-width: $breakpoint-microscopic)
-    font-size: 3rem
+  @media (max-width: $breakpoint-infinitesimal)
+    font-size: 4rem
 
   &.intersector-visible
     border-bottom: $border-width solid $black-dark
@@ -397,7 +397,7 @@ $layer-overlay: 54
       margin-bottom: -0.75rem
 
     @media (max-width: $breakpoint-infinitesimal)
-      margin-bottom: -0.25rem
+      margin-bottom: -0.95rem
 
 =semisame
   opacity: 0
@@ -454,10 +454,6 @@ $layer-overlay: 54
 
   span.italic
     font-style: italic
-
-  span.hl
-    @media (max-width: $breakpoint-miniscule)
-      +color($calvin, $red-in-mid)
 
   span.break
     display: block
