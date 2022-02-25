@@ -10,7 +10,7 @@ const copy = {
   linkMessageText: {
     works: {
       en: 'some of the stuff I made!',
-      ja: 'さまざま作ったこと',
+      ja: 'さまざま作ったもの',
     },
     about: {
       en: 'who is this person, anyway...',
@@ -18,7 +18,7 @@ const copy = {
     },
     contact: {
       en: "I promise I won't ignore you",
-      ja: 'あなたは見逃されません!',
+      ja: '無視しない！',
     },
   },
 }
