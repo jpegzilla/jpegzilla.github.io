@@ -8,7 +8,6 @@ const FILES_TO_CACHE = [
   'css/404.min.css',
   'css/credits.min.css',
   'audio/click_small.wav',
-  'text/nowplayingmessage.txt',
   'humans.txt',
   'index.html',
 
