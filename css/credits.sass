@@ -24,6 +24,12 @@ body
   grid-auto-rows: max-content
   min-height: 100%
 
+  @media (max-width: v.$breakpoint-small)
+    padding: v.$p-s
+
+  @media (max-width: v.$breakpoint-infinitesimal)
+    padding: 0.5rem
+
   a
     +v.color
 
