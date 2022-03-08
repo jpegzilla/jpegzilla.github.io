@@ -3,7 +3,6 @@ const FILES_TO_CACHE = [
   'browserconfig.xml',
   'manifest.json',
   'favicon.ico',
-  'serviceworker.mjs',
   'credits.html',
   'css/404.min.css',
   'css/credits.min.css',
@@ -138,7 +137,7 @@ const FILES_TO_CACHE = [
   'css/img/app/ms-icon-310x310.png',
 ]
 
-const JPEGZILLA_VERSION = '6.003'
+const JPEGZILLA_VERSION = '6.004'
 const CACHE_NAME = `jpegzilla_${JPEGZILLA_VERSION}`
 const cacheWhitelist = [CACHE_NAME]
 
