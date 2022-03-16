@@ -137,7 +137,7 @@ const FILES_TO_CACHE = [
   'css/img/app/ms-icon-310x310.png',
 ]
 
-const JPEGZILLA_VERSION = '6.004'
+const JPEGZILLA_VERSION = '6.005'
 const CACHE_NAME = `jpegzilla_${JPEGZILLA_VERSION}`
 const cacheWhitelist = [CACHE_NAME]
 
@@ -172,36 +172,18 @@ self.addEventListener('fetch', event => {
     return
   }
 
-  const fromNetwork = resp => {
-    let cacheCopy = resp.clone()
-    console.log('[serviceworker] response from network: ', event.request.url)
-
-    if (event.request.url.startsWith('chrome-extension')) return
-
-    caches
-      .open(JPEGZILLA_VERSION + '_pages')
-      .then(cache => {
-        cache.put(event.request, cacheCopy)
-      })
-      .then(() => {
-        console.log(
-          '[serviceworker] fetch response stored in cache:',
-          event.request.url
-        )
-      })
-  }
-
   event.respondWith(
-    caches.match(event.request).then(cached => {
-      let networked = fetch(event.request).then(fromNetwork)
+    (async () => {
+      // try to get the response from a cache.
+      const cachedResponse = await caches.match(event.request)
+      if (cachedResponse) return cachedResponse
 
-      console.log(
-        '[serviceworker] fetch event',
-        cached ? '(cached)' : '(network)',
-        event.request.url
-      )
+      // update the cache
+      const activeCache = await caches.open(CACHE_NAME)
+      const responseFromNetwork = await fetch(event.request)
+      activeCache.put(event.request, responseFromNetwork)
 
-      return cached || networked
-    })
+      return responseFromNetwork
+    })()
   )
 })
