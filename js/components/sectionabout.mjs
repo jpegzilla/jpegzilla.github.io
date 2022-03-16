@@ -203,7 +203,7 @@ class SectionAbout extends Component {
     fillCopy()
 
     this.querySelector('.about-logos-container').addEventListener(
-      'click',
+      'dblclick',
       () => {
         if (!isB) {
           this.querySelector('.text-container-main').innerHTML = copy.bio.b
