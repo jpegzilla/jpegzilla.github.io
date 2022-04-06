@@ -1,11 +1,10 @@
 const FILES_TO_CACHE = [
+  '/',
   '404.html',
   'browserconfig.xml',
   'manifest.json',
   'favicon.ico',
   'credits.html',
-  'css/404.min.css',
-  'css/credits.min.css',
   'audio/click_small.wav',
   'humans.txt',
   'index.html',
@@ -64,7 +63,8 @@ const FILES_TO_CACHE = [
   'docs/resume.html',
   'docs/resume.min.css',
   'docs/resume.min.css.map',
-  'docs/resume.sass',
+  'css/404.min.css',
+  'css/credits.min.css',
 
   // scripts
   'js/main.mjs',
@@ -137,7 +137,7 @@ const FILES_TO_CACHE = [
   'css/img/app/ms-icon-310x310.png',
 ]
 
-const JPEGZILLA_VERSION = '6.005'
+const JPEGZILLA_VERSION = '6.006'
 const CACHE_NAME = `jpegzilla_${JPEGZILLA_VERSION}`
 const cacheWhitelist = [CACHE_NAME]
 
@@ -166,6 +166,20 @@ self.addEventListener('install', event => {
   )
 })
 
+self.addEventListener('activate', event => {
+  event.waitUntil(
+    caches.keys().then(keys => {
+      Promise.all(
+        keys.map(key => {
+          if (![CACHE_NAME].includes(key)) {
+            return caches.delete(key)
+          }
+        })
+      )
+    })
+  )
+})
+
 self.addEventListener('fetch', event => {
   if (event.request.method !== 'GET') {
     console.log('[serviceworker] fetch event ignored - not a get request')
@@ -173,17 +187,15 @@ self.addEventListener('fetch', event => {
   }
 
   event.respondWith(
-    (async () => {
-      // try to get the response from a cache.
-      const cachedResponse = await caches.match(event.request)
-      if (cachedResponse) return cachedResponse
+    caches.open(CACHE_NAME).then(cache =>
+      cache.match(event.request).then(response => {
+        if (response) return response
 
-      // update the cache
-      const activeCache = await caches.open(CACHE_NAME)
-      const responseFromNetwork = await fetch(event.request)
-      activeCache.put(event.request, responseFromNetwork)
-
-      return responseFromNetwork
-    })()
+        return fetch(event.request).then(networkResponse => {
+          cache.put(event.request, networkResponse.clone())
+          return networkResponse
+        })
+      })
+    )
   )
 })
