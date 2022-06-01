@@ -21,7 +21,7 @@ const copy = {
       </p>
 
       <p class="large">
-        my name is <span class="emph">eris.</span> I'm a twenty-two-year-old
+        my name is <span class="emph">eris.</span> I'm a twenty-three-year-old
         <span class="emph">creative developer</span> and
         <span class="emph">digital designer.</span>
       </p>
@@ -51,7 +51,7 @@ const copy = {
 
       <p class="large ja">
         エリスと申します。
-        私は22歳のクリエイティブデベロッパー兼デジタルデザイナーです。
+        私は23歳のクリエイティブデベロッパー兼デジタルデザイナーです。
       </p>
 
       <p class="ja">

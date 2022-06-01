@@ -33,10 +33,10 @@ const contactMethods = [
       ja: 'discord',
     },
     details: {
-      en: 'this is my discord server.',
-      ja: 'ディスコードサーバーです。',
+      en: 'this is my discord profile.',
+      ja: 'ディスコードプロフィールです。',
     },
-    link: 'https://discordapp.com/invite/Ft9rVA6',
+    link: 'https://discordapp.com/users/156441196191809536',
     status: 'open &mdash; casual',
   },
 ]
