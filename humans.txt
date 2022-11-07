@@ -3,7 +3,7 @@
 designer and developer: eris brown
 site: jpegzilla.com
 twitter: @jpegzilla
-location: baltimore, md
+location: atlanta, ga
 email: eris(at)jpegzilla.com
 
 /* SITE */
