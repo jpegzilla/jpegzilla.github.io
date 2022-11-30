@@ -11,12 +11,12 @@ class State {
 
     this.audioPlayer = new audiomanager({
       volume: {
-        effect: 10
-      }
+        effect: 0, // sound disabled for now
+      },
     })
 
     this.audioPlayer.load([
-      { file: './../../audio/click_small.wav', name: 'key' }
+      { file: './../../audio/click_small.wav', name: 'key' },
     ])
 
     this.events = {}
