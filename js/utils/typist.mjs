@@ -94,7 +94,7 @@ export default (
 
         element.innerText = line.slice(0, next) + a
 
-        if (sound) state.play('key')
+        // if (sound) state.play('key')
       }
 
       count++

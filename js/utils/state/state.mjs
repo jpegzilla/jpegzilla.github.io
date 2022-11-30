@@ -23,7 +23,7 @@ class State {
     this.temp = {}
     this.key = key
     this.store = this.load() || {}
-    this.store.audio = this.store.audio || true
+    this.store.audio = this.store.audio || false
   }
 
   get audio() {
