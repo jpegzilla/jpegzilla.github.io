@@ -91,23 +91,23 @@ export const works = {
     status: 'constantly ongoing',
   },
 
-  theTower: {
-    name: {
-      en: 'the tower',
-      ja: 'あの塔の上で',
-    },
-    canonName: 'theTower',
-    details: {
-      en: 'a game about piloting a military drone.',
-      ja: 'フライトシューティングゲーム。',
-    },
-    link: 'https://github.com/jpegzilla/the-tower',
-    image: 'css/img/goo.svg',
-    toolbox: 'game design / development',
-    year: '2022',
-    status: 'coming soon',
-    released: false,
-  },
+  // theTower: {
+  //   name: {
+  //     en: 'the tower',
+  //     ja: 'あの塔の上で',
+  //   },
+  //   canonName: 'theTower',
+  //   details: {
+  //     en: 'a game about piloting a military drone.',
+  //     ja: 'フライトシューティングゲーム。',
+  //   },
+  //   link: 'https://github.com/jpegzilla/the-tower',
+  //   image: 'css/img/goo.svg',
+  //   toolbox: 'game design / development',
+  //   year: '2022',
+  //   status: 'coming soon',
+  //   released: false,
+  // },
 }
 
 export const misc = {
