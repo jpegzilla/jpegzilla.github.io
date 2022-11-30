@@ -46,9 +46,11 @@ export const state = new State('jpegzilla-vi')
 
 state.load()
 
-if (isMobile()) {
-  state.set('audio', false)
-}
+state.set('audio', false)
+
+// if (isMobile()) {
+//   state.set('audio', false)
+// }
 
 // コンマ演算子 やほおぉぉぉぉぉぉぉぉ
 state.get('lang') || (state.set('lang', translationToUse), translationToUse)
