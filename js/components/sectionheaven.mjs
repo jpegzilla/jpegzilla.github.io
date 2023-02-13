@@ -11,7 +11,7 @@ const copy = {
       <span class="not-on-mobile">I treasure motion, color,</span>
       <span class="not-on-mobile">and interaction design.</span>
       <aside>
-        <span>I'm currently looking for new projects &mdash;</span>
+        <span>I'm currently looking for work &mdash;</span>
         <span>let's make something cool together!</span>
       </aside>
     </div>
