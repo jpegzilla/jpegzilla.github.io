@@ -88,7 +88,7 @@ const FILES_TO_CACHE = [
   'js/data/preloaderNouns.mjs',
   'js/data/preloaderSentences.mjs',
   'js/data/translate.json',
-  'js/data/works.mjs',
+  // 'js/data/works.mjs',
   'js/utils/audiomanager.mjs',
   'js/utils/canvas/shaderTools.mjs',
   'js/utils/cheatcodes.mjs',
