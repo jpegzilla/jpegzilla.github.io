@@ -1,87 +1,355 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="I am a web designer and creative developer. this is my blog, where I document interesting things I learn on the web. - my favorite serif font yet."
+    />
+    <meta name="author" content="jpegzilla" />
+    <meta name="robots" content="index, follow" />
+    <meta
+      property="og:description"
+      content="I am a web designer and creative developer. this is my blog, where I document interesting things I learn on the web. - my favorite serif font yet."
+    />
+    <meta property="og:url" content="https://jpegzilla.com" />
+    <meta property="og:site_name" content="jpegzilla - web design" />
+    <meta
+      property="og:image"
+      content="https://jpegzilla.com/css/img/21af09332037a999a3f58984cdd0cefe.png"
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:site" content="@jpegzilla" />
+    <meta name="twitter:creator" content="@jpegzilla" />
+    <meta
+      name="twitter:title"
+      content="jpegzilla - web design blog: my favorite serif font yet."
+    />
+    <meta
+      name="twitter:description"
+      content="jpegzilla is a web designer, creative developer, and digital artist. come make something cool with me."
+    />
+    <meta
+      name="twitter:image"
+      content="https://jpegzilla.com/css/img/21af09332037a999a3f58984cdd0cefe.png"
+    />
+    <meta name="twitter:card" content="summary-large-image" />
+    <meta name="application-name" content="jpegzilla.com/blog" />
 
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="I am a web designer and creative developer. this is my blog, where I document interesting things I learn on the web. - my favorite serif font yet.">
-<meta name="author" content="jpegzilla">
-<meta name="robots" content="index, follow">
-<meta property="og:description" content="I am a web designer and creative developer. this is my blog, where I document interesting things I learn on the web. - my favorite serif font yet.">
-<meta property="og:url" content="https://jpegzilla.com">
-<meta property="og:site_name" content="jpegzilla - web design">
-<meta property="og:image" content="https://jpegzilla.com/css/img/21af09332037a999a3f58984cdd0cefe.png">
-<meta property="og:type" content="website">
-<meta name="twitter:site" content="@jpegzilla">
-<meta name="twitter:creator" content="@jpegzilla">
-<meta name="twitter:title" content="jpegzilla - web design blog: my favorite serif font yet.">
-<meta name="twitter:description" content="jpegzilla is a web designer, creative developer, and digital artist. come make something cool with me.">
-<meta name="twitter:image" content="https://jpegzilla.com/css/img/21af09332037a999a3f58984cdd0cefe.png">
-<meta name="twitter:card" content="summary-large-image">
-<meta name="application-name" content="jpegzilla.com/blog" />
+    <link rel="author" href="http://jpegzilla.com/humans.txt" />
 
-<link rel="author" href="http://jpegzilla.com/humans.txt">
+    <title>my favorite serif font yet. &mdash; 2020 11 23</title>
 
-<title>my favorite serif font yet. &mdash; 2020 11 23</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-141114501-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || []
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141114501-1"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments)
+      }
 
-function gtag() {
-dataLayer.push(arguments);
-}
+      gtag('js', new Date())
 
-gtag('js', new Date());
+      gtag('config', 'UA-141114501-1')
+    </script>
+  </head>
 
-gtag('config', 'UA-141114501-1');
-</script>
-</head>
+  <style>
+    body {
+      font-size: 18px;
+      line-height: 1.6;
+      max-width: 38rem;
+      margin: 40px auto;
+      padding: 2rem;
+      color: #eee;
+      font-family: sans-serif;
+      background-color: #222;
+    }
 
-<style>
-body{font-size:18px;line-height:1.6;max-width:38rem;margin:40px auto;padding:2rem;color:#222;font-family:sans-serif;background-color:#eee}h1,h2,h3{line-height:1.2}span.i{font-style:italic}span.b{font-weight:bolder}span.s{text-decoration:line-through}span.u{text-decoration:underline}span.o{text-decoration:overline}p span.d{float:left;font-size:4rem;line-height:2.5rem;padding-top:0.7rem;padding-right:0.25rem;font-weight:bold}pre{display:inline}img{width:100%;height:auto;margin-bottom:1rem;border:1px solid #000}span.c{font-family:monospace;background-color:#d6d6d6;padding:0 0.25rem;border-radius:0.25rem}code{display:block;font-family:monospace;background:#d6d6d6;padding:0.5rem 0.25rem 0.5rem 1rem;border-radius:0.25rem;word-wrap:break-word}img+p{margin-top:0}
-</style>
+    a {
+      color: #fff;
+    }
 
-<body>
-<header>
-<h1><a target="_blank" href="https://jpegzilla.com">JPEGZILLA</a></h1>
-</header>
-<main>
-<article>
-<h1>my favorite serif font yet.<br><hr></h1>
-<time id="mkzDate"><span class='i'>2020 11 23</span></time>
+    h1,
+    h2,
+    h3 {
+      line-height: 1.2;
+    }
 
-<div id="mkzBody">
-<p><span class='d'>I</span>'m constantly looking for beautiful fonts to use. so, when <a target="_blank" href="https://halleylabs.com/">a musician I really like</a> posted <a target="_blank" href="https://twitter.com/HECKSCAPER/status/1260079636425342976">this print</a> (which also taught me about hyperart thomasson, more on that later), I was totally floored. the font was so gorgeous to me.</p>
-<p>of course, I immediately asked what it was &mdash; and she graciously just <a target="_blank" href="https://heckscaper.com/usefulthings/Fonts/">handed it to me</a>:</p>
-<img src="./../img/best-serif-font-and-hyperart-thomasson/tweet.png" alt="an image of me asking emma what font she used in the poster that she tweeted out." title="an image of me asking emma what font she used in the poster that she tweeted out.">
-<p>the font in action looks like this (this was captured from within <a target="_blank" href="https://github.com/jpegzilla/minervas-akasha">minerva's akasha</a>):</p>
-<img src="./../img/best-serif-font-and-hyperart-thomasson/font.png" alt="an image of the font in use, with some random placeholder text." title="an image of the font in use, with some random placeholder text.">
-<p>I later found it on the <a target="_blank" href="https://www.epson.jp/dl_soft/readme/9296.htm">official epson site</a> as well. it's called epson <ruby><rb>正解書体</rb><rt>せいかいしょたい</rt></ruby> (regular block print). enjoy!<br><hr></p>
-<h2>hyperart thomasson.</h2>
-<p>so the other thing that I learned about from that tweet was the concept of <a target="_blank" href="https://en.wikipedia.org/wiki/Hyperart_Thomasson">hyperart thomasson</a>. I highly recommend reading the wikipedia article if you're interested, but here's the gist of it: hyperart thomasson is a vestigial fragment of architecture or an environment. stairs that lead to a door that no longer exists. a fence that doesn't appear to contain anything. a bridge over a dry channel, and so on.<br><figure title="an image of a useless staircase - 無用階段. it's a short set of stairs in a corner of a building that ascend to an abrupt end at the wall." style="padding: 0; margin: 0;" width="100%"><br><img width="100%" style="margin-bottom: 0;" alt="an image of a useless staircase - 無用階段. it's a short set of stairs in a corner of a building that ascend to an abrupt end at the wall." src="./../img/best-serif-font-and-hyperart-thomasson/stair.jpg"><br><figcaption style="padding-top: 0.5rem; margin: 0; font-style: italic;">by yosukesan - old days, cc by 2.0, <a href="https://commons.wikimedia.org/w/index.php?curid=37373061" target="_blank" rel="noopener noreferrer">https://commons.wikimedia.org/w/index.php?curid=37373061</a></figcaption><br></figure></p>
-<p>these things fascinate me to no end and have become a concrete source of inspiration. thinking about what might have been there, or thinking of new purposes for seemingly absurd and useless structures is really fun for me. no matter how mundane, these things tell stories &mdash; but the people who know the real stories are probably mostly inaccessible to me. I may never know what the staircase once lead to, but it's nice to imagine....<br><hr></p>
-<p>that's all I had to say for today. I'll be back soon! oh also, I just finished writing my <a target="_blank" href="https://github.com/jpegzilla/thesis">thesis of web development</a> and I'd love to hear what you think about it, if you want to read it. I'll write something else soon! see you later.<br><hr></p>
-<h2>currently listening to:</h2>
-<p>- <a target="_blank" href="https://www.youtube.com/watch?v=nhVALamsSyA">the museum of unnatural disasters</a> by <a target="_blank" href="https://lapfoxtrax.com/album/halcyondaze">kitcaliber</a></p>
-<p>- <a target="_blank" href="https://www.youtube.com/watch?v=T0_-soPqP6M">bells of new life</a> by <a target="_blank" href="http://kenishii.com/">ken ishii</a></p>
-<p>- <a target="_blank" href="https://www.youtube.com/watch?v=FQ0AzrK5M-Y">freeze dry the pasts</a> by <a target="_blank" href="http://bish.tokyo">bish</a> <span class='i'>(flashing light warning)</span></p>
-<p>- <a target="_blank" href="https://www.youtube.com/watch?v=WK4t1putRm0">sunny day!!!</a> by <a target="_blank" href="http://www.tokagetokage.net/index.htm">tokage</a></p>
-<p>- <a target="_blank" href="https://www.youtube.com/watch?v=sIQQiORxoDY">domino effect</a> by <a target="_blank" href="https://ozmamusic.bandcamp.com/">ozma</a></p>
-<p>- <a target="_blank" href="https://www.youtube.com/watch?v=8JT8pVv1cT0">hand crushed by a mallet - remix</a> by <a target="_blank" href="https://100gecs.com/">100 gecs</a> <span class='i'>flashing everything warning)</span><br><hr></p>
+    span.i {
+      font-style: italic;
+    }
 
-</div>
-</article>
+    span.b {
+      font-weight: bolder;
+    }
 
-</main>
-<footer>
-<span class="non-icon">&copy;&nbsp;<span id="copyright"></span>&nbsp;<span class="name">jpegzilla</span>&nbsp;&vert;&nbsp;<a target="_blank" href="https://jpegzilla.com/humans.txt">humans.txt</a>
-&nbsp;&vert;&nbsp;<a href="../">blog directory</a>
-&nbsp;&vert;&nbsp;<a href="https://discordapp.com/invite/Ft9rVA6" target="_blank" class="con-links">discord</a>
-&nbsp;&vert;&nbsp;<a target="_blank" href="https://twitter.com/jpegzilla">twitter</a>
-</span>
-</footer>
-</body>
+    span.s {
+      text-decoration: line-through;
+    }
 
+    span.u {
+      text-decoration: underline;
+    }
+
+    span.o {
+      text-decoration: overline;
+    }
+
+    p span.d {
+      float: left;
+      font-size: 4rem;
+      line-height: 2.5rem;
+      padding-top: 0.7rem;
+      padding-right: 0.25rem;
+      font-weight: bold;
+    }
+
+    pre {
+      display: inline;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 1rem;
+      border: 1px solid #eee;
+    }
+
+    span.c {
+      font-family: monospace;
+      background-color: #333;
+      padding: 0 0.25rem;
+      border-radius: 0.25rem;
+    }
+
+    code {
+      display: block;
+      font-family: monospace;
+      background: #333;
+      padding: 0.5rem 0.25rem 0.5rem 1rem;
+      border-radius: 0.25rem;
+      word-wrap: break-word;
+    }
+  </style>
+
+  <body>
+    <header>
+      <h1><a target="_blank" href="https://jpegzilla.com">JPEGZILLA</a></h1>
+    </header>
+    <main>
+      <article>
+        <h1>
+          my favorite serif font yet.<br />
+          <hr />
+        </h1>
+        <time id="mkzDate"><span class="i">2020 11 23</span></time>
+
+        <div id="mkzBody">
+          <p>
+            <span class="d">I</span>'m constantly looking for beautiful fonts to
+            use. so, when
+            <a target="_blank" href="https://halleylabs.com/"
+              >a musician I really like</a
+            >
+            posted
+            <a
+              target="_blank"
+              href="https://twitter.com/HECKSCAPER/status/1260079636425342976"
+              >this print</a
+            >
+            (which also taught me about hyperart thomasson, more on that later),
+            I was totally floored. the font was so gorgeous to me.
+          </p>
+          <p>
+            of course, I immediately asked what it was &mdash; and she
+            graciously just
+            <a target="_blank" href="https://heckscaper.com/usefulthings/Fonts/"
+              >handed it to me</a
+            >:
+          </p>
+          <img
+            src="./../img/best-serif-font-and-hyperart-thomasson/tweet.png"
+            alt="an image of me asking emma what font she used in the poster that she tweeted out."
+            title="an image of me asking emma what font she used in the poster that she tweeted out."
+          />
+          <p>
+            the font in action looks like this (this was captured from within
+            <a
+              target="_blank"
+              href="https://github.com/jpegzilla/minervas-akasha"
+              >minerva's akasha</a
+            >):
+          </p>
+          <img
+            src="./../img/best-serif-font-and-hyperart-thomasson/font.png"
+            alt="an image of the font in use, with some random placeholder text."
+            title="an image of the font in use, with some random placeholder text."
+          />
+          <p>
+            I later found it on the
+            <a
+              target="_blank"
+              href="https://www.epson.jp/dl_soft/readme/9296.htm"
+              >official epson site</a
+            >
+            as well. it's called epson
+            <ruby><rb>正解書体</rb><rt>せいかいしょたい</rt></ruby> (regular
+            block print). enjoy!<br />
+            <hr />
+          </p>
+          <h2>hyperart thomasson.</h2>
+          <p>
+            so the other thing that I learned about from that tweet was the
+            concept of
+            <a
+              target="_blank"
+              href="https://en.wikipedia.org/wiki/Hyperart_Thomasson"
+              >hyperart thomasson</a
+            >. I highly recommend reading the wikipedia article if you're
+            interested, but here's the gist of it: hyperart thomasson is a
+            vestigial fragment of architecture or an environment. stairs that
+            lead to a door that no longer exists. a fence that doesn't appear to
+            contain anything. a bridge over a dry channel, and so on.<br />
+            <figure
+              title="an image of a useless staircase - 無用階段. it's a short set of stairs in a corner of a building that ascend to an abrupt end at the wall."
+              style="padding: 0; margin: 0;"
+              width="100%"
+            >
+              <br /><img
+                width="100%"
+                style="margin-bottom: 0;"
+                alt="an image of a useless staircase - 無用階段. it's a short set of stairs in a corner of a building that ascend to an abrupt end at the wall."
+                src="./../img/best-serif-font-and-hyperart-thomasson/stair.jpg"
+              /><br />
+              <figcaption
+                style="padding-top: 0.5rem; margin: 0; font-style: italic;"
+              >
+                by yosukesan - old days, cc by 2.0,
+                <a
+                  href="https://commons.wikimedia.org/w/index.php?curid=37373061"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >https://commons.wikimedia.org/w/index.php?curid=37373061</a
+                >
+              </figcaption>
+              <br />
+            </figure>
+          </p>
+          <p>
+            these things fascinate me to no end and have become a concrete
+            source of inspiration. thinking about what might have been there, or
+            thinking of new purposes for seemingly absurd and useless structures
+            is really fun for me. no matter how mundane, these things tell
+            stories &mdash; but the people who know the real stories are
+            probably mostly inaccessible to me. I may never know what the
+            staircase once lead to, but it's nice to imagine....<br />
+            <hr />
+          </p>
+          <p>
+            that's all I had to say for today. I'll be back soon! oh also, I
+            just finished writing my
+            <a target="_blank" href="https://github.com/jpegzilla/thesis"
+              >thesis of web development</a
+            >
+            and I'd love to hear what you think about it, if you want to read
+            it. I'll write something else soon! see you later.<br />
+            <hr />
+          </p>
+          <h2>currently listening to:</h2>
+          <p>
+            -
+            <a
+              target="_blank"
+              href="https://www.youtube.com/watch?v=nhVALamsSyA"
+              >the museum of unnatural disasters</a
+            >
+            by
+            <a target="_blank" href="https://lapfoxtrax.com/album/halcyondaze"
+              >kitcaliber</a
+            >
+          </p>
+          <p>
+            -
+            <a
+              target="_blank"
+              href="https://www.youtube.com/watch?v=T0_-soPqP6M"
+              >bells of new life</a
+            >
+            by <a target="_blank" href="http://kenishii.com/">ken ishii</a>
+          </p>
+          <p>
+            -
+            <a
+              target="_blank"
+              href="https://www.youtube.com/watch?v=FQ0AzrK5M-Y"
+              >freeze dry the pasts</a
+            >
+            by <a target="_blank" href="http://bish.tokyo">bish</a>
+            <span class="i">(flashing light warning)</span>
+          </p>
+          <p>
+            -
+            <a
+              target="_blank"
+              href="https://www.youtube.com/watch?v=WK4t1putRm0"
+              >sunny day!!!</a
+            >
+            by
+            <a target="_blank" href="http://www.tokagetokage.net/index.htm"
+              >tokage</a
+            >
+          </p>
+          <p>
+            -
+            <a
+              target="_blank"
+              href="https://www.youtube.com/watch?v=sIQQiORxoDY"
+              >domino effect</a
+            >
+            by
+            <a target="_blank" href="https://ozmamusic.bandcamp.com/">ozma</a>
+          </p>
+          <p>
+            -
+            <a
+              target="_blank"
+              href="https://www.youtube.com/watch?v=8JT8pVv1cT0"
+              >hand crushed by a mallet - remix</a
+            >
+            by <a target="_blank" href="https://100gecs.com/">100 gecs</a>
+            <span class="i">flashing everything warning)</span><br />
+            <hr />
+          </p>
+        </div>
+      </article>
+    </main>
+    <footer>
+      <span class="non-icon"
+        >&copy;&nbsp;<span id="copyright"></span>&nbsp;<span class="name"
+          >jpegzilla</span
+        >&nbsp;&vert;&nbsp;<a
+          target="_blank"
+          href="https://jpegzilla.com/humans.txt"
+          >humans.txt</a
+        >
+        &nbsp;&vert;&nbsp;<a href="../">blog directory</a> &nbsp;&vert;&nbsp;<a
+          href="https://discordapp.com/invite/Ft9rVA6"
+          target="_blank"
+          class="con-links"
+          >discord</a
+        >
+        &nbsp;&vert;&nbsp;<a
+          target="_blank"
+          href="https://twitter.com/jpegzilla"
+          >twitter</a
+        >
+      </span>
+    </footer>
+  </body>
 </html>

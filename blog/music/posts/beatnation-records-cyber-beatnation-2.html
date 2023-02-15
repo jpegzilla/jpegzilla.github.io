@@ -1,127 +1,407 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="I am a web designer and creative developer. this is my blog, where I document interesting things I learn on the web. - music of the week: beatnation records' cyber beatnation 2 -hi speed conclusion-"
+    />
+    <meta name="author" content="jpegzilla" />
+    <meta name="robots" content="index, follow" />
+    <meta
+      property="og:description"
+      content="I am a web designer and creative developer. this is my blog, where I document interesting things I learn on the web. - music of the week: beatnation records' cyber beatnation 2 -hi speed conclusion-"
+    />
+    <meta property="og:url" content="https://jpegzilla.com" />
+    <meta property="og:site_name" content="jpegzilla - web design" />
+    <meta
+      property="og:image"
+      content="https://jpegzilla.com/css/img/21af09332037a999a3f58984cdd0cefe.png"
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:site" content="@jpegzilla" />
+    <meta name="twitter:creator" content="@jpegzilla" />
+    <meta
+      name="twitter:title"
+      content="jpegzilla - web design blog: music of the week: beatnation records' cyber beatnation 2 -hi speed conclusion-"
+    />
+    <meta
+      name="twitter:description"
+      content="jpegzilla is a web designer, creative developer, and digital artist. come make something cool with me."
+    />
+    <meta
+      name="twitter:image"
+      content="https://jpegzilla.com/css/img/21af09332037a999a3f58984cdd0cefe.png"
+    />
+    <meta name="twitter:card" content="summary-large-image" />
+    <meta name="application-name" content="jpegzilla.com/blog" />
 
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="I am a web designer and creative developer. this is my blog, where I document interesting things I learn on the web. - music of the week: beatnation records' cyber beatnation 2 -hi speed conclusion-">
-<meta name="author" content="jpegzilla">
-<meta name="robots" content="index, follow">
-<meta property="og:description" content="I am a web designer and creative developer. this is my blog, where I document interesting things I learn on the web. - music of the week: beatnation records' cyber beatnation 2 -hi speed conclusion-">
-<meta property="og:url" content="https://jpegzilla.com">
-<meta property="og:site_name" content="jpegzilla - web design">
-<meta property="og:image" content="https://jpegzilla.com/css/img/21af09332037a999a3f58984cdd0cefe.png">
-<meta property="og:type" content="website">
-<meta name="twitter:site" content="@jpegzilla">
-<meta name="twitter:creator" content="@jpegzilla">
-<meta name="twitter:title" content="jpegzilla - web design blog: music of the week: beatnation records' cyber beatnation 2 -hi speed conclusion-">
-<meta name="twitter:description" content="jpegzilla is a web designer, creative developer, and digital artist. come make something cool with me.">
-<meta name="twitter:image" content="https://jpegzilla.com/css/img/21af09332037a999a3f58984cdd0cefe.png">
-<meta name="twitter:card" content="summary-large-image">
-<meta name="application-name" content="jpegzilla.com/blog" />
+    <link rel="author" href="http://jpegzilla.com/humans.txt" />
 
-<link rel="author" href="http://jpegzilla.com/humans.txt">
+    <title>
+      music of the week: beatnation records' cyber beatnation 2 -hi speed
+      conclusion- &mdash; 2020 03 22
+    </title>
 
-<title>music of the week: beatnation records' cyber beatnation 2 -hi speed conclusion- &mdash; 2020 03 22</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-141114501-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || []
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141114501-1"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments)
+      }
 
-function gtag() {
-dataLayer.push(arguments);
-}
+      gtag('js', new Date())
 
-gtag('js', new Date());
+      gtag('config', 'UA-141114501-1')
+    </script>
+  </head>
 
-gtag('config', 'UA-141114501-1');
-</script>
-</head>
+  <style>
+    body {
+      font-size: 18px;
+      line-height: 1.6;
+      max-width: 38rem;
+      margin: 40px auto;
+      padding: 2rem;
+      color: #eee;
+      font-family: sans-serif;
+      background-color: #222;
+    }
+    a {
+      color: #fff;
+    }
+    h1,
+    h2,
+    h3 {
+      line-height: 1.2;
+    }
+    span.i {
+      font-style: italic;
+    }
+    span.b {
+      font-weight: bolder;
+    }
+    span.s {
+      text-decoration: line-through;
+    }
+    span.u {
+      text-decoration: underline;
+    }
+    span.o {
+      text-decoration: overline;
+    }
+    p span.d {
+      float: left;
+      font-size: 4rem;
+      line-height: 2.5rem;
+      padding-top: 0.7rem;
+      padding-right: 0.25rem;
+      font-weight: bold;
+    }
+    pre {
+      display: inline;
+    }
+    img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 1rem;
+      border: 1px solid #eee;
+    }
+    span.c {
+      font-family: monospace;
+      background-color: #333;
+      padding: 0 0.25rem;
+      border-radius: 0.25rem;
+    }
+    code {
+      display: block;
+      font-family: monospace;
+      background: #333;
+      padding: 0.5rem 0.25rem 0.5rem 1rem;
+      border-radius: 0.25rem;
+      word-wrap: break-word;
+    }
+    #mkzAlbumCover {
+      display: flex;
+      margin-top: 1rem;
+    }
+    #mkzAlbumCover > div:nth-child(1) {
+      width: 150px;
+      flex-grow: 1;
+    }
+    #mkzAlbumCover > div:nth-child(2) {
+      flex-grow: 2;
+      padding: 0 1rem;
+    }
+    ol {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    ol li {
+      font-style: italic;
+    }
+    #mkzAlbumCover h2,
+    #mkzAlbumCover h3,
+    #mkzAlbumCover h4,
+    #mkzAlbumCover p {
+      margin: 0;
+    }
+    audio {
+      width: 100%;
+    }
+    img + p {
+      margin-top: 0;
+    }
+  </style>
 
-<style>
-body{font-size:18px;line-height:1.6;max-width:38rem;margin:40px auto;padding:2rem;color:#222;font-family:sans-serif;background-color:#eee}h1,h2,h3{line-height:1.2}span.i{font-style:italic}span.b{font-weight:bolder}span.s{text-decoration:line-through}span.u{text-decoration:underline}span.o{text-decoration:overline}p span.d{float:left;font-size:4rem;line-height:2.5rem;padding-top:0.7rem;padding-right:0.25rem;font-weight:bold}pre{display:inline}img{width:100%;height:auto;margin-bottom:1rem;border:1px solid #000}span.c{font-family:monospace;background-color:#d6d6d6;padding:0 0.25rem;border-radius:0.25rem}code{display:block;font-family:monospace;background:#d6d6d6;padding:0.5rem 0.25rem 0.5rem 1rem;border-radius:0.25rem;word-wrap:break-word}#mkzAlbumCover{display:flex;margin-top:1rem}#mkzAlbumCover > div:nth-child(1){width:150px;flex-grow:1}#mkzAlbumCover > div:nth-child(2){flex-grow:2;padding:0 1rem}ol{list-style-type:none;margin:0;padding:0}ol li{font-style:italic}#mkzAlbumCover h2, #mkzAlbumCover h3, #mkzAlbumCover h4,#mkzAlbumCover p{margin:0}audio{width: 100%}img+p{margin-top:0}
-</style>
-
-<body>
-<header>
-<h1><a target="_blank" href="https://jpegzilla.com">JPEGZILLA</a></h1>
-</header>
-<main>
-<article>
-<h1>music of the week: beatnation records' cyber beatnation 2 -hi speed conclusion-</h1>
-<time id="mkzDate"><span class='i'>2020 03 22</span></time>
-
-<hr>
-
-<div id="mkzAlbumCover">
-  <div>
-    <img src="./../img/beatnation-records-cyber-beatnation-2.jpg" alt="cover of cyber beatnation 2 -hi speed conclusion- by beatnation records" title="cover of cyber beatnation 2 -hi speed conclusion- by beatnation records">
-  </div>
-  <div>
+  <body>
     <header>
-      <span class="b">beatnation records, <span class="i">cyber beatnation 2 -hi speed conclusion-</span> - 2011.12.07</span>
+      <h1><a target="_blank" href="https://jpegzilla.com">JPEGZILLA</a></h1>
     </header>
-    <div>
-      <p><span class="b">length:</span><span class="i"> 1:10:37</span></p>
-      <p><span class="b">genre:</span><span class="i"> trance, j-core, happy hardcore, edm</span></p>
-      <div>
-        <span class="b">tracklist:</span>
-        <ol>
-            <li>1. cream puff - mermaid girl (ryu☆remix)</li>
-			<li>2. ryu☆ - second heaven (risk junk remix)</li>
-			<li>3. dj yoshitaka - flower (ryu☆ remix)</li>
-			<li>4. ryu☆ feat. lucky vacuum - I'm so happy</li>
-			<li>5. ryu☆ - mind mapping (kors k mix)</li>
-			<li>6. sota fujimori - fly above (ryu☆remix)</li>
-			<li>7. hhh×mm×st - follow tomorrow (l.e.d.-g style mix)</li>
-			<li>8. kors k - sigsig (ryu☆remix)</li>
-			<li>9. hhh - ignited night (redalice remix)</li>
-			<li>10. dj taka - absolute (ryu☆remix)</li>
-			<li>11. 青龍 - waxing and wanding (jakazid's 新月 remix)</li>
-			<li>12. ryu☆ - bass 2 bass (dj max steroid remix)</li>
-			<li>13. prim - 恋する☆宇宙戦争っ！！ (ryu☆remix)</li>
-			<li>14. ryu☆ - sakura reflection (dj shimamura remix)</li>
-			<li>15. ryu☆ - starmine (hommarju remix)</li>
-			<li>16. 雷龍 - thunderbolt (extended ver.)</li>
-        </ol>
-      </div>
-    </div>
-  </div>
-</div>
+    <main>
+      <article>
+        <h1>
+          music of the week: beatnation records' cyber beatnation 2 -hi speed
+          conclusion-
+        </h1>
+        <time id="mkzDate"><span class="i">2020 03 22</span></time>
 
-<hr>
+        <hr />
 
-<div id="mkzBody">
-<h2>favorite track - ryu☆ - starmine (hommarju remix)</h2>
-<audio controls src="./../audio/starmine.ogg"></audio>
-<h2>second favorite track - prim - 恋する☆宇宙戦争っ！！</h2>
-<p>believe it or not, this is sung by mayumi morinaga, aka <span class="i b"><a target="_blank" href="https://www.youtube.com/watch?v=vhbtiwpaaPg">senya.</a></span></p>
-<audio controls src="./../audio/koisuru-uchuu-sensou.ogg"></audio>
-<p><hr></p>
-<p><span class="i">the label that released this album, which is an internal recording label of konami's bemani music branch, has been on hiatus for about ten years. however, I think the album is available to purchase on <a target="_blank" href="https://music.apple.com/us/album/cyber-beatnation-2-hi-speed-conclusion/484835927">apple music</a>. you can also try and get the cd <a target="_blank" href="https://otaku.com/products/34266">here</a>.</span><br><hr></p>
-<p><span class='d'>C</span>hances are, if an artist appears on <a target="_blank" href="https://remywiki.com/Cyber_beatnation_2_-Hi_Speed_conclusion-">remywiki</a> (a website documenting rhythm games / rhythm game music), I probably love them. so of course, I've been listening to this album nonstop all this week.</p>
-<p>I'm a huge fan of high-speed, high-energy and especially intentionally crazy music like denpa (post on that coming soon). on top of that, this album is essentially a megamix. with the average bpm somewhere around 180, each song flows seamlessly into the next one. listening through the entire album in order is such a great experience &mdash; and I've done it multiple times over the past week or so while writing code.</p>
-<p>I'm not going to go over every song, but just know that if you like rhythm-game adjacent music in general, especially the type of music featured in the <span class='i'>bemani</span> series or <span class='i'>dance dance revolution</span>, you'll probably like this album. here are some of the tracks I thought were really notable:<br><hr></p>
-<h2><a target="_blank" href="kors k mix">track five - ryu☆ - mind mapping (kors k mix).</a></h2>
-<p>kors k, a massive name in the rhythm game scene, remixing one of the most well-known <a target="_blank" href="https://remywiki.com/AC_EMPRESS">iidx empress</a> tracks of all time. empress was probably my favorite in the series in terms of new tracks, because it also brought other legendary songs like kors k's <a target="_blank" href="https://www.youtube.com/watch?v=PARCgURBOOI">smooooch・∀・</a>. mind mapping, of course, is one of those bangers &mdash; and this remix is pretty intense.</p>
-<h2><a target="_blank" href="dj max steroid remix">track twelve - ryu☆ - bass 2 bass (dj max steroid remix).</a></h2>
-<p>another legendary song from the original <a target="_blank" href="https://remywiki.com/AC_jb">jubeat</a>. sota fujimori (dj max steroid, sota, system s.f.) brings bass 2 bass to a whole new level with complex synth riffs, some fat basslines, and of course, a higher bpm.</p>
-<h2><a target="_blank" href="hommarju remix">track fifteen - ryu☆ - starmine (hommarju remix).</a></h2>
-<p>this is definitely one of the most powerful songs on the album. it's a remix of a song from ryu's first album, <span class='i'>starmine</span>, and it's done by one of the greatest producers to <span class='i'>ever</span> come from the exit tunes label. it's a very well known fact that <a target="_blank" href="https://www.youtube.com/watch?v=Cnaiuof3rjM">hommarju</a> <a target="_blank" href="https://www.youtube.com/watch?v=u1Oyj3NogfY">has</a> <a target="_blank" href="https://www.youtube.com/watch?v=4Gowu9eNWpo">never</a> <a target="_blank" href="https://www.youtube.com/watch?v=4Gowu9eNWpo">made</a> <a target="_blank" href="https://www.youtube.com/watch?v=2P4M7ukrDZk">a</a> <a target="_blank" href="https://www.youtube.com/watch?v=Dl2KL-jOcs0">bad</a> <a target="_blank" href="https://www.youtube.com/watch?v=L0YVyLoDkd8">song</a>. this remix is not an exception to that rule &mdash; just one of the most legendary rhythm game / doujin producers bringing the heat again.<br><hr></p>
-<p>thanks for reading! I'm still listening to music ninety percent of my waking hours, so I'll keep getting these music-related posts out as much as I can. maybe I'll introduce someone to their new favorite artist. see you next time (probably next week with another album of the week).<br><hr></p>
+        <div id="mkzAlbumCover">
+          <div>
+            <img
+              src="./../img/beatnation-records-cyber-beatnation-2.jpg"
+              alt="cover of cyber beatnation 2 -hi speed conclusion- by beatnation records"
+              title="cover of cyber beatnation 2 -hi speed conclusion- by beatnation records"
+            />
+          </div>
+          <div>
+            <header>
+              <span class="b"
+                >beatnation records,
+                <span class="i">cyber beatnation 2 -hi speed conclusion-</span>
+                - 2011.12.07</span
+              >
+            </header>
+            <div>
+              <p>
+                <span class="b">length:</span><span class="i"> 1:10:37</span>
+              </p>
+              <p>
+                <span class="b">genre:</span
+                ><span class="i"> trance, j-core, happy hardcore, edm</span>
+              </p>
+              <div>
+                <span class="b">tracklist:</span>
+                <ol>
+                  <li>1. cream puff - mermaid girl (ryu☆remix)</li>
+                  <li>2. ryu☆ - second heaven (risk junk remix)</li>
+                  <li>3. dj yoshitaka - flower (ryu☆ remix)</li>
+                  <li>4. ryu☆ feat. lucky vacuum - I'm so happy</li>
+                  <li>5. ryu☆ - mind mapping (kors k mix)</li>
+                  <li>6. sota fujimori - fly above (ryu☆remix)</li>
+                  <li>7. hhh×mm×st - follow tomorrow (l.e.d.-g style mix)</li>
+                  <li>8. kors k - sigsig (ryu☆remix)</li>
+                  <li>9. hhh - ignited night (redalice remix)</li>
+                  <li>10. dj taka - absolute (ryu☆remix)</li>
+                  <li>11. 青龍 - waxing and wanding (jakazid's 新月 remix)</li>
+                  <li>12. ryu☆ - bass 2 bass (dj max steroid remix)</li>
+                  <li>13. prim - 恋する☆宇宙戦争っ！！ (ryu☆remix)</li>
+                  <li>14. ryu☆ - sakura reflection (dj shimamura remix)</li>
+                  <li>15. ryu☆ - starmine (hommarju remix)</li>
+                  <li>16. 雷龍 - thunderbolt (extended ver.)</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
 
-</div>
-</article>
+        <hr />
 
-</main>
-<footer>
-<span class="non-icon">&copy;&nbsp;<span id="copyright"></span>&nbsp;<span class="name">jpegzilla</span>&nbsp;&vert;&nbsp;<a target="_blank" href="https://jpegzilla.com/humans.txt">humans.txt</a>
-&nbsp;&vert;&nbsp;<a href="../">blog directory</a>
-&nbsp;&vert;&nbsp;<a href="https://discordapp.com/invite/Ft9rVA6" target="_blank" class="con-links">discord</a>
-&nbsp;&vert;&nbsp;<a target="_blank" href="https://twitter.com/jpegzilla">twitter</a>
-</span>
-</footer>
-</body>
-
+        <div id="mkzBody">
+          <h2>favorite track - ryu☆ - starmine (hommarju remix)</h2>
+          <audio controls src="./../audio/starmine.ogg"></audio>
+          <h2>second favorite track - prim - 恋する☆宇宙戦争っ！！</h2>
+          <p>
+            believe it or not, this is sung by mayumi morinaga, aka
+            <span class="i b"
+              ><a
+                target="_blank"
+                href="https://www.youtube.com/watch?v=vhbtiwpaaPg"
+                >senya.</a
+              ></span
+            >
+          </p>
+          <audio controls src="./../audio/koisuru-uchuu-sensou.ogg"></audio>
+          <hr>
+          <p>
+            <span class="i"
+              >the label that released this album, which is an internal
+              recording label of konami's bemani music branch, has been on
+              hiatus for about ten years. however, I think the album is
+              available to purchase on
+              <a
+                target="_blank"
+                href="https://music.apple.com/us/album/cyber-beatnation-2-hi-speed-conclusion/484835927"
+                >apple music</a
+              >. you can also try and get the cd
+              <a target="_blank" href="https://otaku.com/products/34266">here</a
+              >.</span
+            ><br />
+            <hr />
+          </p>
+          <p>
+            <span class="d">C</span>hances are, if an artist appears on
+            <a
+              target="_blank"
+              href="https://remywiki.com/Cyber_beatnation_2_-Hi_Speed_conclusion-"
+              >remywiki</a
+            >
+            (a website documenting rhythm games / rhythm game music), I probably
+            love them. so of course, I've been listening to this album nonstop
+            all this week.
+          </p>
+          <p>
+            I'm a huge fan of high-speed, high-energy and especially
+            intentionally crazy music like denpa (post on that coming soon). on
+            top of that, this album is essentially a megamix. with the average
+            bpm somewhere around 180, each song flows seamlessly into the next
+            one. listening through the entire album in order is such a great
+            experience &mdash; and I've done it multiple times over the past
+            week or so while writing code.
+          </p>
+          <p>
+            I'm not going to go over every song, but just know that if you like
+            rhythm-game adjacent music in general, especially the type of music
+            featured in the <span class="i">bemani</span> series or
+            <span class="i">dance dance revolution</span>, you'll probably like
+            this album. here are some of the tracks I thought were really
+            notable:<br />
+            <hr />
+          </p>
+          <h2>
+            <a target="_blank" href="kors k mix"
+              >track five - ryu☆ - mind mapping (kors k mix).</a
+            >
+          </h2>
+          <p>
+            kors k, a massive name in the rhythm game scene, remixing one of the
+            most well-known
+            <a target="_blank" href="https://remywiki.com/AC_EMPRESS"
+              >iidx empress</a
+            >
+            tracks of all time. empress was probably my favorite in the series
+            in terms of new tracks, because it also brought other legendary
+            songs like kors k's
+            <a
+              target="_blank"
+              href="https://www.youtube.com/watch?v=PARCgURBOOI"
+              >smooooch・∀・</a
+            >. mind mapping, of course, is one of those bangers &mdash; and this
+            remix is pretty intense.
+          </p>
+          <h2>
+            <a target="_blank" href="dj max steroid remix"
+              >track twelve - ryu☆ - bass 2 bass (dj max steroid remix).</a
+            >
+          </h2>
+          <p>
+            another legendary song from the original
+            <a target="_blank" href="https://remywiki.com/AC_jb">jubeat</a>.
+            sota fujimori (dj max steroid, sota, system s.f.) brings bass 2 bass
+            to a whole new level with complex synth riffs, some fat basslines,
+            and of course, a higher bpm.
+          </p>
+          <h2>
+            <a target="_blank" href="hommarju remix"
+              >track fifteen - ryu☆ - starmine (hommarju remix).</a
+            >
+          </h2>
+          <p>
+            this is definitely one of the most powerful songs on the album. it's
+            a remix of a song from ryu's first album,
+            <span class="i">starmine</span>, and it's done by one of the
+            greatest producers to <span class="i">ever</span> come from the exit
+            tunes label. it's a very well known fact that
+            <a
+              target="_blank"
+              href="https://www.youtube.com/watch?v=Cnaiuof3rjM"
+              >hommarju</a
+            >
+            <a
+              target="_blank"
+              href="https://www.youtube.com/watch?v=u1Oyj3NogfY"
+              >has</a
+            >
+            <a
+              target="_blank"
+              href="https://www.youtube.com/watch?v=4Gowu9eNWpo"
+              >never</a
+            >
+            <a
+              target="_blank"
+              href="https://www.youtube.com/watch?v=4Gowu9eNWpo"
+              >made</a
+            >
+            <a
+              target="_blank"
+              href="https://www.youtube.com/watch?v=2P4M7ukrDZk"
+              >a</a
+            >
+            <a
+              target="_blank"
+              href="https://www.youtube.com/watch?v=Dl2KL-jOcs0"
+              >bad</a
+            >
+            <a
+              target="_blank"
+              href="https://www.youtube.com/watch?v=L0YVyLoDkd8"
+              >song</a
+            >. this remix is not an exception to that rule &mdash; just one of
+            the most legendary rhythm game / doujin producers bringing the heat
+            again.<br />
+            <hr />
+          </p>
+          <p>
+            thanks for reading! I'm still listening to music ninety percent of
+            my waking hours, so I'll keep getting these music-related posts out
+            as much as I can. maybe I'll introduce someone to their new favorite
+            artist. see you next time (probably next week with another album of
+            the week).<br />
+            <hr />
+          </p>
+        </div>
+      </article>
+    </main>
+    <footer>
+      <span class="non-icon"
+        >&copy;&nbsp;<span id="copyright"></span>&nbsp;<span class="name"
+          >jpegzilla</span
+        >&nbsp;&vert;&nbsp;<a
+          target="_blank"
+          href="https://jpegzilla.com/humans.txt"
+          >humans.txt</a
+        >
+        &nbsp;&vert;&nbsp;<a href="../">blog directory</a> &nbsp;&vert;&nbsp;<a
+          href="https://discordapp.com/invite/Ft9rVA6"
+          target="_blank"
+          class="con-links"
+          >discord</a
+        >
+        &nbsp;&vert;&nbsp;<a
+          target="_blank"
+          href="https://twitter.com/jpegzilla"
+          >twitter</a
+        >
+      </span>
+    </footer>
+  </body>
 </html>

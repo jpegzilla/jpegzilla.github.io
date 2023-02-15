@@ -1,83 +1,334 @@
 <!DOCTYPE html>
-        <html lang="en" dir="ltr">
-        <head>
-          <meta charset="UTF-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1">
-          <meta name="description" content="I am a web designer and creative developer. this is my blog, where I document interesting things I learn on the web.">
-          <meta name="author" content="jpegzilla">
-          <meta name="robots" content="index, follow">
-          <meta property="og:description" content="I am a web designer and creative developer. this is my blog, where I document interesting things I learn on the web.">
-          <meta property="og:url" content="https://jpegzilla.com">
-          <meta property="og:site_name" content="jpegzilla - web design">
-          <meta property="og:image" content="https://jpegzilla.com/css/img/21af09332037a999a3f58984cdd0cefe.png">
-          <meta property="og:type" content="website">
-          <meta name="twitter:site" content="@jpegzilla">
-          <meta name="twitter:creator" content="@jpegzilla">
-          <meta name="twitter:title" content="jpegzilla - web design blog">
-          <meta name="twitter:description" content="jpegzilla is a web designer, creative developer, and digital artist. come make something cool with me.">
-          <meta name="twitter:image" content="https://jpegzilla.com/css/img/21af09332037a999a3f58984cdd0cefe.png">
-          <meta name="twitter:card" content="summary-large-image">
-          <meta name="application-name" content="jpegzilla.com/blog" />
-          <link rel="author" href="http://jpegzilla.com/humans.txt">
-          <title>findings - week of 26.5.2019 &mdash; 2019 06 02</title>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="I am a web designer and creative developer. this is my blog, where I document interesting things I learn on the web."
+    />
+    <meta name="author" content="jpegzilla" />
+    <meta name="robots" content="index, follow" />
+    <meta
+      property="og:description"
+      content="I am a web designer and creative developer. this is my blog, where I document interesting things I learn on the web."
+    />
+    <meta property="og:url" content="https://jpegzilla.com" />
+    <meta property="og:site_name" content="jpegzilla - web design" />
+    <meta
+      property="og:image"
+      content="https://jpegzilla.com/css/img/21af09332037a999a3f58984cdd0cefe.png"
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:site" content="@jpegzilla" />
+    <meta name="twitter:creator" content="@jpegzilla" />
+    <meta name="twitter:title" content="jpegzilla - web design blog" />
+    <meta
+      name="twitter:description"
+      content="jpegzilla is a web designer, creative developer, and digital artist. come make something cool with me."
+    />
+    <meta
+      name="twitter:image"
+      content="https://jpegzilla.com/css/img/21af09332037a999a3f58984cdd0cefe.png"
+    />
+    <meta name="twitter:card" content="summary-large-image" />
+    <meta name="application-name" content="jpegzilla.com/blog" />
+    <link rel="author" href="http://jpegzilla.com/humans.txt" />
+    <title>findings - week of 26.5.2019 &mdash; 2019 06 02</title>
 
-          <!-- Global site tag (gtag.js) - Google Analytics -->
-          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141114501-1"></script>
-          <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-141114501-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || []
+      function gtag() {
+        dataLayer.push(arguments)
+      }
+      gtag('js', new Date())
 
-            gtag('config', 'UA-141114501-1');
-          </script>
-        </head>
-          <style>
-            body{font-size:18px;line-height:1.6;max-width:38rem;margin:40px auto;padding:2rem;color:#222;font-family:sans-serif;background-color:#eee}h1,h2,h3{line-height:1.2}span.i{font-style:italic}span.b{font-weight:bolder}span.s{text-decoration:line-through}span.u{text-decoration:underline}span.o{text-decoration:overline}p span.d{float:left;font-size:4rem;line-height:2.5rem;padding-top:0.7rem;padding-right:0.25rem;font-weight:bold}pre{display:inline}img{width:100%;height:auto;margin-bottom:1rem;border:1px solid #000}span.c{font-family:monospace;background-color:#d6d6d6;padding:0 0.25rem;border-radius:0.25rem}code{display:block;font-family:monospace;background:#d6d6d6;padding:0.5rem 0.25rem 0.5rem 1rem;border-radius:0.25rem;word-wrap:break-word}
-          </style>
-          <body>
-            <header>
-              <h1><a target="_blank" href="https://jpegzilla.com">JPEGZILLA</a></h1>
-            </header>
-            <main>
-              <article>
-                <h1>findings - week of 26.5.2019</h1>
-                <time id="mkzDate"><span class='i'>2019 06 02</span></time>
+      gtag('config', 'UA-141114501-1')
+    </script>
+  </head>
+  <style>
+    body {
+      font-size: 18px;
+      line-height: 1.6;
+      max-width: 38rem;
+      margin: 40px auto;
+      padding: 2rem;
+      color: #eee;
+      font-family: sans-serif;
+      background-color: #222;
+    }
 
-                <div id="mkzBody">
-                  <p><span class='d'>T</span>his post is the first in a series of posts I wanted to use in order to document things I find on the internet during late-night search-engine rabbitholes. my goal is to post at least five findings per week, every saturday night or early sunday morning.</p>
-<p>without further ado, here's the stuff I found this week.</p>
-<h2>number one: <a target="_blank" href="https://beacon.nist.gov/beacon/2.0/pulse/last">nist beacon pulse</a>.</h2>
-<p>the <a target="_blank" href="https://www.nist.gov/programs-projects/nist-randomness-beacon">nist randomness pulse</a> is a public source of randomness. it shouldn't be used to generate cryptographic keys, according to the website, but aside from that the possibilities are endless. when you call the api, you'll get some json that looks like this:</p>
-<img src="./../img/beacon-pulse.png" alt="example json data returned from the nist pulse api" title="example json data returned from the nist pulse api">
-<p>which you can then do with as you'd like. the nist site describes several use cases for data such as this, all of which are heavily scientific and not of much interest to me currently. so, I am researching experimental projects within my field (web design) that involve random data. if you have an idea for something this could be used for, please contact me! <span class='s'>or don't. keep your secrets.</span></p>
-<h2>number two: <a target="_blank" href="http://extramentale.com/en/">extramentale</a>.</h2>
-<p>extramentale is a curatorial/editorial platform for a certain genere of modern art. it explores a theme called <span class='i'>primaverism</span>, a term that I've seen defined as <span class='i'>"the obsession with first experiences"</span> (<a target="_blank" href="https://www.e-flux.com/journal/87/169619/editorial/">x</a>). </p>
-<img src="./../img/extramentale.png" alt="front page of extramentale as it appeared on the date of this post" title="front page of extramentale as it appeared on the date of this post">
-<p>there's not much more to say about this one, as it speaks for itself. just take a look on your own; it also leads to some other interesting rabbitholes, so check it out.</p>
-<h2>number three: <a target="_blank" href="http://principiadiscordia.com/memebombs/">one-sentence memebomb</a>.</h2>
-<p><a target="_blank" href="http://principiadiscordia.com">principicadiscordia</a> is a rabbithole of its own, but this particular page stuck out to me as novel. click a category at the top of the page, recieve randomly generated shitposts and some bizzarely pseudo-poetic one- and two-liners.</p>
-<img src="./../img/memebombs.png" alt="a list of "memebombs". they come in a pretty funky font." title="a list of "memebombs". they come in a pretty funky font.">
-<h2>number four: <a target="_blank" href="http://txti.es/about">txti.es</a>.</h2>
-<p>txti.es is essentially a static web page generator by <a target="_blank" href="https://twitter.com/thebarrytone">@thebarrytone</a> that uses markdown. the purpose of it is to create web pages that are fast and accessible on *any* and all devices. there's even an image on the site of a txti post being viewed on a flip phone, something most modern websites don't even support.</p>
-<img src="./../img/txti.png" alt="the txti about page as it appeared on the date of this post." title="the txti about page as it appeared on the date of this post.">
-<h2>number five: <a target="_blank" href="https://www.librarystack.org/">library stack</a>.</h2>
-<p>library stack is a database of digital publications that primarily focuses on non-traditional/obscure/unknown visual artworks. it allows the user to search by subject, format, and keywords; it also offers a front page containing a selection of pieces from the ever-growing collection.</p>
-<img src="./../img/librarystack.png" alt="the front page of library stack showing the 'stacks', or publications, that were featured on the date of this post." title="the front page of library stack showing the 'stacks', or publications, that were featured on the date of this post.">
-<p>as far as I can tell, all of this material is free and open for anyone to download and consume however you please. if you like reading interesting/esoteric/'strange' publications, <span class='i'>please for the love of god</span> go look through this library. there are a ton of rabbitholes to go down from this website, and a lot of information to consume.<br><hr></p>
-<p>I hope some of these links were in some way fascinating to you, if not useful. I'll continue the series one week from this date. I'll keep the amount of links at five for now, despite the massive amount of research I do and especially because of the type of content I'm collecting. also, if you've found something good here, please show it to your friends! I am somewhat <a target="_blank" href="https://en.wikipedia.org/wiki/Missionary_Church_of_Kopimism">kopimist</a>, so I'm a strong believer in sharing information. see you next time!<br><hr></p>
-<p>currently listening to <a target="_blank" href="https://www.youtube.com/watch?v=00TdaTffFeY">DAYDREAM</a> by <a target="_blank" href="https://rookandnomie.bandcamp.com/">rook&nomie</a> and <a target="_blank" href="https://www.youtube.com/watch?v=2VB_KH7RjDE">Graces of Heaven</a> by <a target="_blank" href="http://aranmusic.net/">aran</a>.</p>
+    a {
+      color: #fff;
+    }
 
-                </div>
-              </article>
+    h1,
+    h2,
+    h3 {
+      line-height: 1.2;
+    }
 
-            </main>
-            <footer>
-            <span class="non-icon">&copy;&nbsp;<span id="copyright"></span>&nbsp;<span class="name">jpegzilla</span>&nbsp;&vert;&nbsp;<a target="_blank" href="https://jpegzilla.com/humans.txt">humans.txt</a>
-              &nbsp;&vert;&nbsp;<a href="../">blog directory</a>
-              &nbsp;&vert;&nbsp;<a href="https://discordapp.com/invite/Ft9rVA6" target="_blank" class="con-links">discord</a>
-              &nbsp;&vert;&nbsp;<a target="_blank" href="https://twitter.com/jpegzilla">twitter</a>
-            </span>
-            </footer>
-          </body>
-        </html>
-      
+    span.i {
+      font-style: italic;
+    }
+
+    span.b {
+      font-weight: bolder;
+    }
+
+    span.s {
+      text-decoration: line-through;
+    }
+
+    span.u {
+      text-decoration: underline;
+    }
+
+    span.o {
+      text-decoration: overline;
+    }
+
+    p span.d {
+      float: left;
+      font-size: 4rem;
+      line-height: 2.5rem;
+      padding-top: 0.7rem;
+      padding-right: 0.25rem;
+      font-weight: bold;
+    }
+
+    pre {
+      display: inline;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 1rem;
+      border: 1px solid #eee;
+    }
+
+    span.c {
+      font-family: monospace;
+      background-color: #333;
+      padding: 0 0.25rem;
+      border-radius: 0.25rem;
+    }
+
+    code {
+      display: block;
+      font-family: monospace;
+      background: #333;
+      padding: 0.5rem 0.25rem 0.5rem 1rem;
+      border-radius: 0.25rem;
+      word-wrap: break-word;
+    }
+  </style>
+  <body>
+    <header>
+      <h1><a target="_blank" href="https://jpegzilla.com">JPEGZILLA</a></h1>
+    </header>
+    <main>
+      <article>
+        <h1>findings - week of 26.5.2019</h1>
+        <time id="mkzDate"><span class="i">2019 06 02</span></time>
+
+        <div id="mkzBody">
+          <p>
+            <span class="d">T</span>his post is the first in a series of posts I
+            wanted to use in order to document things I find on the internet
+            during late-night search-engine rabbitholes. my goal is to post at
+            least five findings per week, every saturday night or early sunday
+            morning.
+          </p>
+          <p>without further ado, here's the stuff I found this week.</p>
+          <h2>
+            number one:
+            <a
+              target="_blank"
+              href="https://beacon.nist.gov/beacon/2.0/pulse/last"
+              >nist beacon pulse</a
+            >.
+          </h2>
+          <p>
+            the
+            <a
+              target="_blank"
+              href="https://www.nist.gov/programs-projects/nist-randomness-beacon"
+              >nist randomness pulse</a
+            >
+            is a public source of randomness. it shouldn't be used to generate
+            cryptographic keys, according to the website, but aside from that
+            the possibilities are endless. when you call the api, you'll get
+            some json that looks like this:
+          </p>
+          <img
+            src="./../img/beacon-pulse.png"
+            alt="example json data returned from the nist pulse api"
+            title="example json data returned from the nist pulse api"
+          />
+          <p>
+            which you can then do with as you'd like. the nist site describes
+            several use cases for data such as this, all of which are heavily
+            scientific and not of much interest to me currently. so, I am
+            researching experimental projects within my field (web design) that
+            involve random data. if you have an idea for something this could be
+            used for, please contact me!
+            <span class="s">or don't. keep your secrets.</span>
+          </p>
+          <h2>
+            number two:
+            <a target="_blank" href="http://extramentale.com/en/"
+              >extramentale</a
+            >.
+          </h2>
+          <p>
+            extramentale is a curatorial/editorial platform for a certain genere
+            of modern art. it explores a theme called
+            <span class="i">primaverism</span>, a term that I've seen defined as
+            <span class="i">"the obsession with first experiences"</span> (<a
+              target="_blank"
+              href="https://www.e-flux.com/journal/87/169619/editorial/"
+              >x</a
+            >).
+          </p>
+          <img
+            src="./../img/extramentale.png"
+            alt="front page of extramentale as it appeared on the date of this post"
+            title="front page of extramentale as it appeared on the date of this post"
+          />
+          <p>
+            there's not much more to say about this one, as it speaks for
+            itself. just take a look on your own; it also leads to some other
+            interesting rabbitholes, so check it out.
+          </p>
+          <h2>
+            number three:
+            <a target="_blank" href="http://principiadiscordia.com/memebombs/"
+              >one-sentence memebomb</a
+            >.
+          </h2>
+          <p>
+            <a target="_blank" href="http://principiadiscordia.com"
+              >principicadiscordia</a
+            >
+            is a rabbithole of its own, but this particular page stuck out to me
+            as novel. click a category at the top of the page, recieve randomly
+            generated shitposts and some bizzarely pseudo-poetic one- and
+            two-liners.
+          </p>
+          <img src="./../img/memebombs.png" alt="a list of "memebombs". they
+          come in a pretty funky font." title="a list of "memebombs". they come
+          in a pretty funky font.">
+          <h2>
+            number four:
+            <a target="_blank" href="http://txti.es/about">txti.es</a>.
+          </h2>
+          <p>
+            txti.es is essentially a static web page generator by
+            <a target="_blank" href="https://twitter.com/thebarrytone"
+              >@thebarrytone</a
+            >
+            that uses markdown. the purpose of it is to create web pages that
+            are fast and accessible on *any* and all devices. there's even an
+            image on the site of a txti post being viewed on a flip phone,
+            something most modern websites don't even support.
+          </p>
+          <img
+            src="./../img/txti.png"
+            alt="the txti about page as it appeared on the date of this post."
+            title="the txti about page as it appeared on the date of this post."
+          />
+          <h2>
+            number five:
+            <a target="_blank" href="https://www.librarystack.org/"
+              >library stack</a
+            >.
+          </h2>
+          <p>
+            library stack is a database of digital publications that primarily
+            focuses on non-traditional/obscure/unknown visual artworks. it
+            allows the user to search by subject, format, and keywords; it also
+            offers a front page containing a selection of pieces from the
+            ever-growing collection.
+          </p>
+          <img
+            src="./../img/librarystack.png"
+            alt="the front page of library stack showing the 'stacks', or publications, that were featured on the date of this post."
+            title="the front page of library stack showing the 'stacks', or publications, that were featured on the date of this post."
+          />
+          <p>
+            as far as I can tell, all of this material is free and open for
+            anyone to download and consume however you please. if you like
+            reading interesting/esoteric/'strange' publications,
+            <span class="i">please for the love of god</span> go look through
+            this library. there are a ton of rabbitholes to go down from this
+            website, and a lot of information to consume.<br />
+            <hr />
+          </p>
+          <p>
+            I hope some of these links were in some way fascinating to you, if
+            not useful. I'll continue the series one week from this date. I'll
+            keep the amount of links at five for now, despite the massive amount
+            of research I do and especially because of the type of content I'm
+            collecting. also, if you've found something good here, please show
+            it to your friends! I am somewhat
+            <a
+              target="_blank"
+              href="https://en.wikipedia.org/wiki/Missionary_Church_of_Kopimism"
+              >kopimist</a
+            >, so I'm a strong believer in sharing information. see you next
+            time!<br />
+            <hr />
+          </p>
+          <p>
+            currently listening to
+            <a
+              target="_blank"
+              href="https://www.youtube.com/watch?v=00TdaTffFeY"
+              >DAYDREAM</a
+            >
+            by
+            <a target="_blank" href="https://rookandnomie.bandcamp.com/"
+              >rook&nomie</a
+            >
+            and
+            <a
+              target="_blank"
+              href="https://www.youtube.com/watch?v=2VB_KH7RjDE"
+              >Graces of Heaven</a
+            >
+            by <a target="_blank" href="http://aranmusic.net/">aran</a>.
+          </p>
+        </div>
+      </article>
+    </main>
+    <footer>
+      <span class="non-icon"
+        >&copy;&nbsp;<span id="copyright"></span>&nbsp;<span class="name"
+          >jpegzilla</span
+        >&nbsp;&vert;&nbsp;<a
+          target="_blank"
+          href="https://jpegzilla.com/humans.txt"
+          >humans.txt</a
+        >
+        &nbsp;&vert;&nbsp;<a href="../">blog directory</a> &nbsp;&vert;&nbsp;<a
+          href="https://discordapp.com/invite/Ft9rVA6"
+          target="_blank"
+          class="con-links"
+          >discord</a
+        >
+        &nbsp;&vert;&nbsp;<a
+          target="_blank"
+          href="https://twitter.com/jpegzilla"
+          >twitter</a
+        >
+      </span>
+    </footer>
+  </body>
+</html>

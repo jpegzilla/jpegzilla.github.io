@@ -1,123 +1,568 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="I am a web designer and creative developer. this is my blog, where I document interesting things I learn on the web. - an introduction to web components. part one: making a component."
+    />
+    <meta name="author" content="jpegzilla" />
+    <meta name="robots" content="index, follow" />
+    <meta
+      property="og:description"
+      content="I am a web designer and creative developer. this is my blog, where I document interesting things I learn on the web. - an introduction to web components. part one: making a component."
+    />
+    <meta property="og:url" content="https://jpegzilla.com" />
+    <meta property="og:site_name" content="jpegzilla - web design" />
+    <meta
+      property="og:image"
+      content="https://jpegzilla.com/css/img/21af09332037a999a3f58984cdd0cefe.png"
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:site" content="@jpegzilla" />
+    <meta name="twitter:creator" content="@jpegzilla" />
+    <meta
+      name="twitter:title"
+      content="jpegzilla - web design blog: an introduction to web components. part one: making a component."
+    />
+    <meta
+      name="twitter:description"
+      content="jpegzilla is a web designer, creative developer, and digital artist. come make something cool with me."
+    />
+    <meta
+      name="twitter:image"
+      content="https://jpegzilla.com/css/img/21af09332037a999a3f58984cdd0cefe.png"
+    />
+    <meta name="twitter:card" content="summary-large-image" />
+    <meta name="application-name" content="jpegzilla.com/blog" />
 
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="I am a web designer and creative developer. this is my blog, where I document interesting things I learn on the web. - an introduction to web components. part one: making a component.">
-<meta name="author" content="jpegzilla">
-<meta name="robots" content="index, follow">
-<meta property="og:description" content="I am a web designer and creative developer. this is my blog, where I document interesting things I learn on the web. - an introduction to web components. part one: making a component.">
-<meta property="og:url" content="https://jpegzilla.com">
-<meta property="og:site_name" content="jpegzilla - web design">
-<meta property="og:image" content="https://jpegzilla.com/css/img/21af09332037a999a3f58984cdd0cefe.png">
-<meta property="og:type" content="website">
-<meta name="twitter:site" content="@jpegzilla">
-<meta name="twitter:creator" content="@jpegzilla">
-<meta name="twitter:title" content="jpegzilla - web design blog: an introduction to web components. part one: making a component.">
-<meta name="twitter:description" content="jpegzilla is a web designer, creative developer, and digital artist. come make something cool with me.">
-<meta name="twitter:image" content="https://jpegzilla.com/css/img/21af09332037a999a3f58984cdd0cefe.png">
-<meta name="twitter:card" content="summary-large-image">
-<meta name="application-name" content="jpegzilla.com/blog" />
+    <link rel="author" href="http://jpegzilla.com/humans.txt" />
 
-<link rel="author" href="http://jpegzilla.com/humans.txt">
+    <title>
+      an introduction to web components. part one: making a component. &mdash;
+      2021 06 24
+    </title>
 
-<title>an introduction to web components. part one: making a component. &mdash; 2021 06 24</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-141114501-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || []
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141114501-1"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments)
+      }
 
-function gtag() {
-dataLayer.push(arguments);
-}
+      gtag('js', new Date())
 
-gtag('js', new Date());
+      gtag('config', 'UA-141114501-1')
+    </script>
+  </head>
 
-gtag('config', 'UA-141114501-1');
-</script>
-</head>
+  <style>
+    body {
+      font-size: 18px;
+      line-height: 1.6;
+      max-width: 38rem;
+      margin: 40px auto;
+      padding: 2rem;
+      color: #eee;
+      font-family: sans-serif;
+      background-color: #222;
+    }
 
-<style>
-body{font-size:18px;line-height:1.6;max-width:38rem;margin:40px auto;padding:2rem;color:#222;font-family:sans-serif;background-color:#eee}h1,h2,h3{line-height:1.2}span.i{font-style:italic}span.b{font-weight:bolder}span.s{text-decoration:line-through}span.u{text-decoration:underline}span.o{text-decoration:overline}p span.d{float:left;font-size:4rem;line-height:2.5rem;padding-top:0.7rem;padding-right:0.25rem;font-weight:bold}pre{display:inline}img{width:100%;height:auto;margin-bottom:1rem;border:1px solid #000}span.c{font-family:monospace;background-color:#d6d6d6;padding:0 0.25rem;border-radius:0.25rem}code{display:block;font-family:monospace;background:#d6d6d6;padding:0.5rem 0.25rem 0.5rem 1rem;border-radius:0.25rem;word-wrap:break-word}img+p{margin-top:0}
-</style>
+    a {
+      color: #fff;
+    }
 
-<body>
-<header>
-<h1><a target="_blank" href="https://jpegzilla.com">JPEGZILLA</a></h1>
-</header>
-<main>
-<article>
-<h1>an introduction to web components. part one: making a component.<br><hr></h1>
-<time id="mkzDate"><span class='i'>2021 06 24</span></time>
+    h1,
+    h2,
+    h3 {
+      line-height: 1.2;
+    }
 
-<div id="mkzBody">
-<p><span class='d'>O</span>ver the past couple of months, I've been using <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/Web_Components">web components</a> to rebuild my personal website. I've learned a lot about how they work, so it's time to document some of that information for people who might want it.</p>
-<p>the last time I wrote an article about how to use this set of technologies, it was more geared toward people who already know react or some other component system, so this time it's going to be geared toward newcomers. plus, <abbr title="it's stinky and I don't like it >:(">react sucks anyway</abbr>, and I think web components are the future.</p>
-<p>this is going to be a short one! depending on how fast you'd like to go, I think it'll only take about 15-20 minutes to complete the example project. this is just a guess though, might take longer if you don't have some of the things in the initial setup section.<br><hr></p>
-<h2>assumptions I'm going to make.</h2>
-<p><span class='d'>I</span>n order to  do the stuff in this post, I'm assuming right now that you have some understanding of how to use the command line, how to use <a target="_blank" href="https://docs.npmjs.com/cli/v7/commands/npm">the npm cli</a>, and how to use html / css / javascript. that's about it!</p>
-<p>I <span class='i'>won't</span> assume you know much about other component systems like react, but if you already do, this post might feel pretty basic.<br><hr></p>
-<h2>initial setup.</h2>
-<p>there really isn't much setup required to get started with web components (because all the stuff you actually need is included in javascript already). however, I'll show you some stuff that I use to make my development process easier. neither of these are really required, but they might be useful for you too &mdash; still, <abbr title="...is the whole of the law.">do what thou wilt</abbr>.</p>
-<h3>one: <a target="_blank" href="https://sass-lang.com/install">sass - css preprocessor</a></h3>
-<p>if you're still using regular old css in 2021, you <span class='i'>might</span> be missing out. I'm not going to preach to you about this one, but sass makes writing css a lot more fun (and also the syntax is pretty, which is important to me at least).</p>
-<p>again though, this isn't <span class='i'>really</span> required. also, you can write css straight inside web components (which I'll show you) and you can only write sass in an external file.</p>
-<h3>two: some sort of boilerplate</h3>
-<p>in all my personal web projects, I use a tool I made called <a target="_blank" href="https://www.npmjs.com/package/jpegzilla-init">jpegzilla-init</a> (I know, really creative) to set up a foundation. if you run <span class='c'>npm i -g jpegzilla-init</span>, you can use it. </p>
-<p>to set up a basic web component project here, you'd run <span class='c'>jpegzilla-init</span> inside your (empty) project folder and then follow the prompts (or run <span class='c'>jpegzilla-init -w</span> to use the default setup). then, run something to compile the sass (this is important!!). the command you can use if you used <span class='c'>jpegzilla-init</span> is:</p>
-<code>sass --watch --style=compressed ./css/main.sass:./css/main.min.css</code>
-<p>...replacing .sass with .scss if you're <a target="_blank" href="https://sass-lang.com/documentation/syntax">using scss instead of sass</a>.</p>
-<h3>getting everything running.</h3>
-<p>ok, so now what you have to do is serve your files and get ready to build stuff. you need some kind of tool that behaves like a web server that you'll use to preview your website while you're working on it. for our purposes, <a target="_blank" href="https://www.npmjs.com/package/live-server">the live-server npm package</a> will do the trick! so <span class='c'>npm i -g live-server</span>, and then run <span class='c'>live-server</span> in your project directory. the site should just open in your browser, totally blank.</p>
-<p>also &mdash; if you're using sass, now is the time to run that sass command written above. I like to make this command into an <a target="_blank" href="https://docs.npmjs.com/cli/v7/using-npm/scripts/">npm script</a> in a <span class='c'>package.json</span> file, that way I can just type <span class='c'>npm run sass</span> or something and then I don't have to type out that whole long command. hell, you could even make it into a <a target="_blank" href="https://www.gnu.org/software/bash/manual/html_node/Aliases.html">bash alias</a> if you wanted to.<br><hr></p>
-<h2>building a web component.</h2>
-<p><span class='d'>N</span>ow that the environment is prepared, it's time to open up your text editor and make a new web component. the baseline setup to create a new <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements">custom element</a> for your component looks something like this:</p>
-<code>class NewElement extends HTMLElement {}</code>
-<p>what we're doing here is defining a new <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/extends">class that extends</a> &mdash; or builds on top of &mdash; the functionality of a regular old html element.</p>
-<p>we'll end up with an element that we can work with in the same way as all other html elements &mdash; but potentially much more powerful than the base set of elements, and greater than the sum of its parts. something reusable, modifiable, and extensible. a <span class='i'>component</span> that can become a part of a larger interface, just like a react component or something.</p>
-<p>if you're using the setup from <span class='c'>jpegzilla-init</span> (which I recommend you do!), you'll see a file called <span class='c'>component.js</span> (or <span class='c'>component.mjs</span>). inside this file is a class that extends the native <span class='c'>HTMLElement</span> and gives it extra powers. the methods that you see in this class &mdash; <span class='c'>toggleClass</span>, <span class='c'>setId</span>, etc. &mdash; will be available on our new element just like regular html element methods, like <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/querySelector" rel="noopener noreferrer" target="_blank"><span class='c'>querySelector</span></a>.</p>
-<p>either way, here's how we're going to create our own custom element. make a javascript file inside the folder you're storing your components inside. the name should be whatever your component is going to be called. inside that file, you're going to <a target="_blank" href="https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/export">export</a> a class of the same name that will extend an html element. if you're using <span class='c'>jpegzilla-init</span>, you'll be <a target="_blank" href="https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/import">import</a>ing and extending the included <span class='c'>Component</span> class.</p>
-<p>here's an example of what you should have after this step:</p>
-<code>import Component from './component.mjs'<br>class NewElement extends Component {}<br>export default { element: NewElement, name: 'new-element' }</code>
-<p>let's go through this line by line, since it's the basis of everything we'll be doing afterwards.</p>
-<p><span class='b'>one: importing the base component.</span> the base component is described above, and included in the base project. it's just an extension of javascript's <span class='c'>HTMLElement</span> class. if you don't feel like using my default project, you can extend <span class='c'>HTMLElement</span> yourself!</p>
-<p><span class='b'>two: creating our new element class.</span> in the second line we create a new element by extending the base component. again, this is just allowing us to add more functionality to the base <span class='c'>Component</span> class.</p>
-<p><span class='b'>three: exporting the element.</span> you'll notice that in the third line, we're exporting an object containing the actual class as well as the name of the class. the reason for this will become apparent when I show you how we're going to <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry/define">register each element</a> that we create.</p>
-<p>the mechanism for this registration is inside your main javascript file (assuming you're using the default project). you might be able to see what it's going to do, but don't worry if you don't understand it now. I'll explain it when it's time! for now, let's finish building our component.<br><hr></p>
-<h3>writing the html.</h3>
-<p>the first step for writing the html structure in your custom component involves adding a method to your class called <span class='c'>connectedCallback</span>. this method fires whenever you add the custom element to the DOM, so this is where we can write the html. you just have to set <span class='c'>this.innerHTML</span> to your desired html.</p>
-<code>connectedCallback() {<br>&emsp;this.innerHTML = &lt;p&gt;hello world&lt;/p&gt;<br>}</code>
-<p>now you have a custom element that displays the text 'hello world' (or whatever you decide to put in there). now we have to get the element to show up on our web page!<br><hr></p>
-<h3>registering our element.</h3>
-<p>inside our <span class='c'>main</span> javascript file, you'll see a console log, an empty array, and a loop that iterates over that array. we can go ahead and remove the console log and import our element. something like this:</p>
-<code>import NewElement from './components/newelement.mjs'</code>
-<p>now, place <span class='c'>NewElement</span> into the <span class='c'>elements</span> array. this array is used as a collection of all our custom elements so that they can all be registered when the javascript loads. the actual registering is done by the <span class='c'>customElements.define</span> function in the loop! the <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry/define">function used to define custom elements</a> enables our new element to be used like a regular element in our html document, under the name that we gave it. in this example, our element is called <span class='c'>new-element</span>. let's put that in our html document's <span class='c'>&lt;body></span> tag. something like this:</p>
-<code>...<br>&lt;body><br>&emsp;&lt;new-element&gt;&lt;/new-element&gt;<br>&lt;/body><br>...</code>
-<p>now, if you go back to your browser, you should see the element actually being rendered in the page. now you've gone through the whole process of creating and using a web component from beginning to end. nicely done!<br><hr></p>
-<h2>conclusion.</h2>
-<p><span class='d'>T</span>his <span class='i'>is</span> only an introduction, so I think that at this point you have all you need to get started from scratch with web components. anything else involved with developing a site using web components isn't really specific to web components. meaning anything you can do with regular html / react / etc, you can do with web components.</p>
-<p>I'll probably follow up this post with maybe some stuff about the <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM">shadow dom</a> or whatever else I think could be useful or interesting. until then, have fun and good luck.</p>
-<p>if you want to talk about this post or anything else, join my discord below and say something. I may respond instantaneously. don't be freaked out.<br><hr></p>
-<h2>currently listening to:</h2>
-<p>- <a target="_blank" href="https://www.youtube.com/watch?v=lC7LI98aZmA">the flesh failures / let the sunshine in</a> by <a target="_blank" href="http://www.melbamoore.com/">melba moore</a></p>
-<p>- <a target="_blank" href="https://www.youtube.com/watch?v=VuepFaUYxvk">HiDE iN SEW</a> by <a target="_blank" href="https://www.brandnewidolsociety.tokyo">BiS</a></p>
-<p>- <a target="_blank" href="https://www.youtube.com/watch?v=kkhuQRhWWf0">cold green eyes ft. roos denayer</a> by <a target="_blank" href="https://soundcloud.com/station-earth">station earth</a> and <a target="_blank" href="https://www.instagram.com/rosabutsi">roos denayer</a></p>
-<p>- <a target="_blank" href="https://www.youtube.com/watch?v=hK8MAW6FeLU">to the stage</a> by <a target="_blank" href="https://www.askingalexandria.com/">asking alexandria</a></p>
-<p>- <a target="_blank" href="https://www.youtube.com/watch?v=A6gIat5xLWI">摩天動物園 city zoo</a> by <a target="_blank" href="https://www.iamgem.com/">G.E.M.</a><br><hr></p>
+    span.i {
+      font-style: italic;
+    }
 
-</div>
-</article>
+    span.b {
+      font-weight: bolder;
+    }
 
-</main>
-<footer>
-<span class="non-icon">&copy;&nbsp;<span id="copyright"></span>&nbsp;<span class="name">jpegzilla</span>&nbsp;&vert;&nbsp;<a target="_blank" href="https://jpegzilla.com/humans.txt">humans.txt</a>
-&nbsp;&vert;&nbsp;<a href="../">blog directory</a>
-&nbsp;&vert;&nbsp;<a href="https://discordapp.com/invite/Ft9rVA6" target="_blank" class="con-links">discord</a>
-&nbsp;&vert;&nbsp;<a target="_blank" href="https://twitter.com/jpegzilla">twitter</a>
-</span>
-</footer>
-</body>
+    span.s {
+      text-decoration: line-through;
+    }
 
+    span.u {
+      text-decoration: underline;
+    }
+
+    span.o {
+      text-decoration: overline;
+    }
+
+    p span.d {
+      float: left;
+      font-size: 4rem;
+      line-height: 2.5rem;
+      padding-top: 0.7rem;
+      padding-right: 0.25rem;
+      font-weight: bold;
+    }
+
+    pre {
+      display: inline;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 1rem;
+      border: 1px solid #eee;
+    }
+
+    span.c {
+      font-family: monospace;
+      background-color: #333;
+      padding: 0 0.25rem;
+      border-radius: 0.25rem;
+    }
+
+    code {
+      display: block;
+      font-family: monospace;
+      background: #333;
+      padding: 0.5rem 0.25rem 0.5rem 1rem;
+      border-radius: 0.25rem;
+      word-wrap: break-word;
+    }
+  </style>
+
+  <body>
+    <header>
+      <h1><a target="_blank" href="https://jpegzilla.com">JPEGZILLA</a></h1>
+    </header>
+    <main>
+      <article>
+        <h1>
+          an introduction to web components. part one: making a component.<br />
+          <hr />
+        </h1>
+        <time id="mkzDate"><span class="i">2021 06 24</span></time>
+
+        <div id="mkzBody">
+          <p>
+            <span class="d">O</span>ver the past couple of months, I've been
+            using
+            <a
+              target="_blank"
+              href="https://developer.mozilla.org/en-US/docs/Web/Web_Components"
+              >web components</a
+            >
+            to rebuild my personal website. I've learned a lot about how they
+            work, so it's time to document some of that information for people
+            who might want it.
+          </p>
+          <p>
+            the last time I wrote an article about how to use this set of
+            technologies, it was more geared toward people who already know
+            react or some other component system, so this time it's going to be
+            geared toward newcomers. plus,
+            <abbr title="it's stinky and I don't like it >:("
+              >react sucks anyway</abbr
+            >, and I think web components are the future.
+          </p>
+          <p>
+            this is going to be a short one! depending on how fast you'd like to
+            go, I think it'll only take about 15-20 minutes to complete the
+            example project. this is just a guess though, might take longer if
+            you don't have some of the things in the initial setup section.<br />
+            <hr />
+          </p>
+          <h2>assumptions I'm going to make.</h2>
+          <p>
+            <span class="d">I</span>n order to do the stuff in this post, I'm
+            assuming right now that you have some understanding of how to use
+            the command line, how to use
+            <a target="_blank" href="https://docs.npmjs.com/cli/v7/commands/npm"
+              >the npm cli</a
+            >, and how to use html / css / javascript. that's about it!
+          </p>
+          <p>
+            I <span class="i">won't</span> assume you know much about other
+            component systems like react, but if you already do, this post might
+            feel pretty basic.<br />
+            <hr />
+          </p>
+          <h2>initial setup.</h2>
+          <p>
+            there really isn't much setup required to get started with web
+            components (because all the stuff you actually need is included in
+            javascript already). however, I'll show you some stuff that I use to
+            make my development process easier. neither of these are really
+            required, but they might be useful for you too &mdash; still,
+            <abbr title="...is the whole of the law.">do what thou wilt</abbr>.
+          </p>
+          <h3>
+            one:
+            <a target="_blank" href="https://sass-lang.com/install"
+              >sass - css preprocessor</a
+            >
+          </h3>
+          <p>
+            if you're still using regular old css in 2021, you
+            <span class="i">might</span> be missing out. I'm not going to preach
+            to you about this one, but sass makes writing css a lot more fun
+            (and also the syntax is pretty, which is important to me at least).
+          </p>
+          <p>
+            again though, this isn't <span class="i">really</span> required.
+            also, you can write css straight inside web components (which I'll
+            show you) and you can only write sass in an external file.
+          </p>
+          <h3>two: some sort of boilerplate</h3>
+          <p>
+            in all my personal web projects, I use a tool I made called
+            <a
+              target="_blank"
+              href="https://www.npmjs.com/package/jpegzilla-init"
+              >jpegzilla-init</a
+            >
+            (I know, really creative) to set up a foundation. if you run
+            <span class="c">npm i -g jpegzilla-init</span>, you can use it.
+          </p>
+          <p>
+            to set up a basic web component project here, you'd run
+            <span class="c">jpegzilla-init</span> inside your (empty) project
+            folder and then follow the prompts (or run
+            <span class="c">jpegzilla-init -w</span> to use the default setup).
+            then, run something to compile the sass (this is important!!). the
+            command you can use if you used
+            <span class="c">jpegzilla-init</span> is:
+          </p>
+          <code
+            >sass --watch --style=compressed
+            ./css/main.sass:./css/main.min.css</code
+          >
+          <p>
+            ...replacing .sass with .scss if you're
+            <a target="_blank" href="https://sass-lang.com/documentation/syntax"
+              >using scss instead of sass</a
+            >.
+          </p>
+          <h3>getting everything running.</h3>
+          <p>
+            ok, so now what you have to do is serve your files and get ready to
+            build stuff. you need some kind of tool that behaves like a web
+            server that you'll use to preview your website while you're working
+            on it. for our purposes,
+            <a target="_blank" href="https://www.npmjs.com/package/live-server"
+              >the live-server npm package</a
+            >
+            will do the trick! so <span class="c">npm i -g live-server</span>,
+            and then run <span class="c">live-server</span> in your project
+            directory. the site should just open in your browser, totally blank.
+          </p>
+          <p>
+            also &mdash; if you're using sass, now is the time to run that sass
+            command written above. I like to make this command into an
+            <a
+              target="_blank"
+              href="https://docs.npmjs.com/cli/v7/using-npm/scripts/"
+              >npm script</a
+            >
+            in a <span class="c">package.json</span> file, that way I can just
+            type <span class="c">npm run sass</span> or something and then I
+            don't have to type out that whole long command. hell, you could even
+            make it into a
+            <a
+              target="_blank"
+              href="https://www.gnu.org/software/bash/manual/html_node/Aliases.html"
+              >bash alias</a
+            >
+            if you wanted to.<br />
+            <hr />
+          </p>
+          <h2>building a web component.</h2>
+          <p>
+            <span class="d">N</span>ow that the environment is prepared, it's
+            time to open up your text editor and make a new web component. the
+            baseline setup to create a new
+            <a
+              target="_blank"
+              href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements"
+              >custom element</a
+            >
+            for your component looks something like this:
+          </p>
+          <code>class NewElement extends HTMLElement {}</code>
+          <p>
+            what we're doing here is defining a new
+            <a
+              target="_blank"
+              href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/extends"
+              >class that extends</a
+            >
+            &mdash; or builds on top of &mdash; the functionality of a regular
+            old html element.
+          </p>
+          <p>
+            we'll end up with an element that we can work with in the same way
+            as all other html elements &mdash; but potentially much more
+            powerful than the base set of elements, and greater than the sum of
+            its parts. something reusable, modifiable, and extensible. a
+            <span class="i">component</span> that can become a part of a larger
+            interface, just like a react component or something.
+          </p>
+          <p>
+            if you're using the setup from
+            <span class="c">jpegzilla-init</span> (which I recommend you do!),
+            you'll see a file called <span class="c">component.js</span> (or
+            <span class="c">component.mjs</span>). inside this file is a class
+            that extends the native <span class="c">HTMLElement</span> and gives
+            it extra powers. the methods that you see in this class &mdash;
+            <span class="c">toggleClass</span>, <span class="c">setId</span>,
+            etc. &mdash; will be available on our new element just like regular
+            html element methods, like
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/API/Element/querySelector"
+              rel="noopener noreferrer"
+              target="_blank"
+              ><span class="c">querySelector</span></a
+            >.
+          </p>
+          <p>
+            either way, here's how we're going to create our own custom element.
+            make a javascript file inside the folder you're storing your
+            components inside. the name should be whatever your component is
+            going to be called. inside that file, you're going to
+            <a
+              target="_blank"
+              href="https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/export"
+              >export</a
+            >
+            a class of the same name that will extend an html element. if you're
+            using <span class="c">jpegzilla-init</span>, you'll be
+            <a
+              target="_blank"
+              href="https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/import"
+              >import</a
+            >ing and extending the included
+            <span class="c">Component</span> class.
+          </p>
+          <p>here's an example of what you should have after this step:</p>
+          <code
+            >import Component from './component.mjs'<br />class NewElement
+            extends Component {}<br />export default { element: NewElement,
+            name: 'new-element' }</code
+          >
+          <p>
+            let's go through this line by line, since it's the basis of
+            everything we'll be doing afterwards.
+          </p>
+          <p>
+            <span class="b">one: importing the base component.</span> the base
+            component is described above, and included in the base project. it's
+            just an extension of javascript's
+            <span class="c">HTMLElement</span> class. if you don't feel like
+            using my default project, you can extend
+            <span class="c">HTMLElement</span> yourself!
+          </p>
+          <p>
+            <span class="b">two: creating our new element class.</span> in the
+            second line we create a new element by extending the base component.
+            again, this is just allowing us to add more functionality to the
+            base <span class="c">Component</span> class.
+          </p>
+          <p>
+            <span class="b">three: exporting the element.</span> you'll notice
+            that in the third line, we're exporting an object containing the
+            actual class as well as the name of the class. the reason for this
+            will become apparent when I show you how we're going to
+            <a
+              target="_blank"
+              href="https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry/define"
+              >register each element</a
+            >
+            that we create.
+          </p>
+          <p>
+            the mechanism for this registration is inside your main javascript
+            file (assuming you're using the default project). you might be able
+            to see what it's going to do, but don't worry if you don't
+            understand it now. I'll explain it when it's time! for now, let's
+            finish building our component.<br />
+            <hr />
+          </p>
+          <h3>writing the html.</h3>
+          <p>
+            the first step for writing the html structure in your custom
+            component involves adding a method to your class called
+            <span class="c">connectedCallback</span>. this method fires whenever
+            you add the custom element to the DOM, so this is where we can write
+            the html. you just have to set
+            <span class="c">this.innerHTML</span> to your desired html.
+          </p>
+          <code
+            >connectedCallback() {<br />&emsp;this.innerHTML = &lt;p&gt;hello
+            world&lt;/p&gt;<br />}</code
+          >
+          <p>
+            now you have a custom element that displays the text 'hello world'
+            (or whatever you decide to put in there). now we have to get the
+            element to show up on our web page!<br />
+            <hr />
+          </p>
+          <h3>registering our element.</h3>
+          <p>
+            inside our <span class="c">main</span> javascript file, you'll see a
+            console log, an empty array, and a loop that iterates over that
+            array. we can go ahead and remove the console log and import our
+            element. something like this:
+          </p>
+          <code>import NewElement from './components/newelement.mjs'</code>
+          <p>
+            now, place <span class="c">NewElement</span> into the
+            <span class="c">elements</span> array. this array is used as a
+            collection of all our custom elements so that they can all be
+            registered when the javascript loads. the actual registering is done
+            by the <span class="c">customElements.define</span> function in the
+            loop! the
+            <a
+              target="_blank"
+              href="https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry/define"
+              >function used to define custom elements</a
+            >
+            enables our new element to be used like a regular element in our
+            html document, under the name that we gave it. in this example, our
+            element is called <span class="c">new-element</span>. let's put that
+            in our html document's <span class="c">&lt;body></span> tag.
+            something like this:
+          </p>
+          <code
+            >...<br />&lt;body><br />&emsp;&lt;new-element&gt;&lt;/new-element&gt;<br />&lt;/body><br />...</code
+          >
+          <p>
+            now, if you go back to your browser, you should see the element
+            actually being rendered in the page. now you've gone through the
+            whole process of creating and using a web component from beginning
+            to end. nicely done!<br />
+            <hr />
+          </p>
+          <h2>conclusion.</h2>
+          <p>
+            <span class="d">T</span>his <span class="i">is</span> only an
+            introduction, so I think that at this point you have all you need to
+            get started from scratch with web components. anything else involved
+            with developing a site using web components isn't really specific to
+            web components. meaning anything you can do with regular html /
+            react / etc, you can do with web components.
+          </p>
+          <p>
+            I'll probably follow up this post with maybe some stuff about the
+            <a
+              target="_blank"
+              href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM"
+              >shadow dom</a
+            >
+            or whatever else I think could be useful or interesting. until then,
+            have fun and good luck.
+          </p>
+          <p>
+            if you want to talk about this post or anything else, join my
+            discord below and say something. I may respond instantaneously.
+            don't be freaked out.<br />
+            <hr />
+          </p>
+          <h2>currently listening to:</h2>
+          <p>
+            -
+            <a
+              target="_blank"
+              href="https://www.youtube.com/watch?v=lC7LI98aZmA"
+              >the flesh failures / let the sunshine in</a
+            >
+            by
+            <a target="_blank" href="http://www.melbamoore.com/">melba moore</a>
+          </p>
+          <p>
+            -
+            <a
+              target="_blank"
+              href="https://www.youtube.com/watch?v=VuepFaUYxvk"
+              >HiDE iN SEW</a
+            >
+            by
+            <a target="_blank" href="https://www.brandnewidolsociety.tokyo"
+              >BiS</a
+            >
+          </p>
+          <p>
+            -
+            <a
+              target="_blank"
+              href="https://www.youtube.com/watch?v=kkhuQRhWWf0"
+              >cold green eyes ft. roos denayer</a
+            >
+            by
+            <a target="_blank" href="https://soundcloud.com/station-earth"
+              >station earth</a
+            >
+            and
+            <a target="_blank" href="https://www.instagram.com/rosabutsi"
+              >roos denayer</a
+            >
+          </p>
+          <p>
+            -
+            <a
+              target="_blank"
+              href="https://www.youtube.com/watch?v=hK8MAW6FeLU"
+              >to the stage</a
+            >
+            by
+            <a target="_blank" href="https://www.askingalexandria.com/"
+              >asking alexandria</a
+            >
+          </p>
+          <p>
+            -
+            <a
+              target="_blank"
+              href="https://www.youtube.com/watch?v=A6gIat5xLWI"
+              >摩天動物園 city zoo</a
+            >
+            by <a target="_blank" href="https://www.iamgem.com/">G.E.M.</a
+            ><br />
+            <hr />
+          </p>
+        </div>
+      </article>
+    </main>
+    <footer>
+      <span class="non-icon"
+        >&copy;&nbsp;<span id="copyright"></span>&nbsp;<span class="name"
+          >jpegzilla</span
+        >&nbsp;&vert;&nbsp;<a
+          target="_blank"
+          href="https://jpegzilla.com/humans.txt"
+          >humans.txt</a
+        >
+        &nbsp;&vert;&nbsp;<a href="../">blog directory</a> &nbsp;&vert;&nbsp;<a
+          href="https://discordapp.com/invite/Ft9rVA6"
+          target="_blank"
+          class="con-links"
+          >discord</a
+        >
+        &nbsp;&vert;&nbsp;<a
+          target="_blank"
+          href="https://twitter.com/jpegzilla"
+          >twitter</a
+        >
+      </span>
+    </footer>
+  </body>
 </html>
