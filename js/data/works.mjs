@@ -73,6 +73,25 @@ export const works = {
     status: 'done',
   },
 
+  cheatcodes: {
+    name: {
+      en: 'cheatcodes',
+      ja: 'チートコード',
+    },
+    canonName: 'emerald',
+    details: {
+      en: 'simple library for javascript cheat codes.',
+      ja: 'javascriptチートコードツール。',
+    },
+    // details:
+    //   'a class for creating "hotkey" or "cheat code" actions in the browser.',
+    link: 'https://jpegzilla.com/cheatcodes',
+    image: 'css/img/cheatcodes.png',
+    toolbox: 'programming',
+    year: '2020',
+    status: 'done',
+  },
+
   articles: {
     name: {
       en: 'articles',
@@ -89,6 +108,21 @@ export const works = {
     toolbox: 'writing',
     year: '2019',
     status: 'constantly ongoing',
+  },
+
+  customElementsBlogPost: {
+    name: {
+      en: 'intro to custom elements',
+      ja: 'intro to custom elements',
+    },
+    details: {
+      en: 'an introduction to web components.',
+      ja: 'an introduction to web components.',
+    },
+    link: 'https://jpegzilla.com/blog/posts/an-intro-to-web-components.html',
+    toolbox: 'writing',
+    year: '2021',
+    status: 'done',
   },
 
   // theTower: {
@@ -123,8 +157,8 @@ export const misc = {
     name: 'cheatcodes',
     title:
       "cheatcodes: a small library for creating 'hotkey' actions in the browser.",
-    details:
-      "I don't really remember making this, nor do I remember why I made it. it is pretty useful though (and I used it again on this website).",
+    // details:
+    //   "I don't really remember making this, nor do I remember why I made it. it is pretty useful though (and I used it again on this website).",
     link: 'https://jpegzilla.com/cheatcodes',
     image: 'css/img/cheatcodes.png',
     toolbox: 'programming',
@@ -135,9 +169,11 @@ export const misc = {
 
 export const blogposts = [
   {
-    name: 'epson seikaishotai & hyperart thomasson',
-    link:
-      'https://jpegzilla.com/blog/posts/best-serif-font-and-hyperart-thomasson.html',
+    name: 'intro to custom elements',
+    link: 'https://jpegzilla.com/blog/posts/an-intro-to-web-components.html',
+    toolbox: 'writing',
+    year: '2021',
+    status: 'done',
   },
   {
     name: 'epson seikaishotai & hyperart thomasson',
