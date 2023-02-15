@@ -54,9 +54,12 @@ class SectionWorks extends Component {
         status,
         released = true,
         canonName,
+        recentUpdate = false,
       }) => html`
         <li
-          class="works-item intersection-item ${!released ? 'unreleased' : ''}"
+          class="works-item intersection-item ${!released
+            ? 'unreleased'
+            : ''} ${recentUpdate ? 'recentupdate' : ''}"
           itemscope
           itemtype="https://schema.org/CreativeWork"
         >

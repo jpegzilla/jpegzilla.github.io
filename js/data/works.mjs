@@ -17,20 +17,23 @@ export const works = {
     status: 'complete',
   },
 
-  minervasAkasha: {
-    name: { en: 'minerva', ja: 'ミネルウァ' },
-    canonName: 'minervasAkasha',
-    details: {
-      en: 'a data organization tool. currently dormant, but in a usable state.',
-      ja: 'データ整理のためのツール。',
+  articles: {
+    name: {
+      en: 'articles',
+      ja: 'ブログ',
     },
-    // details:
-    //   'I started this project in order to get as good at react / modern javascript as I possibly could, as quickly as I could. that goal was achieved, but the project is lying dormant until I find motivation. I used to stream myself working on this every day, but now...',
-    link: 'https://github.com/jpegzilla/minervas-akasha',
-    image: 'css/img/minervas-akasha.png',
-    toolbox: 'programming, design',
+    canonName: 'articles',
+    details: {
+      en: 'my blog for scavenged findings and occasional tech things.',
+      ja: '拾い集めた知見や、たまに技術的なことを書いています。',
+    },
+    // details: 'sometimes I write about the things I find on the web.',
+    link: 'https://jpegzilla.com/blog/',
+    image: 'css/img/goo.svg',
+    toolbox: 'writing',
     year: '2019',
-    status: 'in beta',
+    status: 'constantly ongoing',
+    recentUpdate: true,
   },
 
   tsurezure: {
@@ -53,6 +56,25 @@ export const works = {
     status: 'ongoing',
   },
 
+  cheatcodes: {
+    name: {
+      en: 'cheatcodes',
+      ja: 'チートコード',
+    },
+    canonName: 'cheatcodes',
+    details: {
+      en: 'simple library for javascript cheat codes.',
+      ja: 'javascriptチートコードツール。',
+    },
+    // details:
+    //   'a class for creating "hotkey" or "cheat code" actions in the browser.',
+    link: 'https://jpegzilla.com/cheatcodes',
+    image: 'css/img/cheatcodes.png',
+    toolbox: 'programming',
+    year: '2020',
+    status: 'done',
+  },
+
   emerald: {
     name: {
       en: 'emerald',
@@ -73,56 +95,20 @@ export const works = {
     status: 'done',
   },
 
-  cheatcodes: {
-    name: {
-      en: 'cheatcodes',
-      ja: 'チートコード',
-    },
-    canonName: 'emerald',
+  minervasAkasha: {
+    name: { en: 'minerva', ja: 'ミネルウァ' },
+    canonName: 'minervasAkasha',
     details: {
-      en: 'simple library for javascript cheat codes.',
-      ja: 'javascriptチートコードツール。',
+      en: 'a data organization tool. currently dormant, but in a usable state.',
+      ja: 'データ整理のためのツール。',
     },
     // details:
-    //   'a class for creating "hotkey" or "cheat code" actions in the browser.',
-    link: 'https://jpegzilla.com/cheatcodes',
-    image: 'css/img/cheatcodes.png',
-    toolbox: 'programming',
-    year: '2020',
-    status: 'done',
-  },
-
-  articles: {
-    name: {
-      en: 'articles',
-      ja: 'ブログ',
-    },
-    canonName: 'articles',
-    details: {
-      en: 'my blog for scavenged findings and occasional tech things.',
-      ja: '拾い集めた知見や、たまに技術的なことを書いています。',
-    },
-    // details: 'sometimes I write about the things I find on the web.',
-    link: 'https://jpegzilla.com/blog/',
-    image: 'css/img/goo.svg',
-    toolbox: 'writing',
+    //   'I started this project in order to get as good at react / modern javascript as I possibly could, as quickly as I could. that goal was achieved, but the project is lying dormant until I find motivation. I used to stream myself working on this every day, but now...',
+    link: 'https://github.com/jpegzilla/minervas-akasha',
+    image: 'css/img/minervas-akasha.png',
+    toolbox: 'programming, design',
     year: '2019',
-    status: 'constantly ongoing',
-  },
-
-  customElementsBlogPost: {
-    name: {
-      en: 'intro to custom elements',
-      ja: 'intro to custom elements',
-    },
-    details: {
-      en: 'an introduction to web components.',
-      ja: 'an introduction to web components.',
-    },
-    link: 'https://jpegzilla.com/blog/posts/an-intro-to-web-components.html',
-    toolbox: 'writing',
-    year: '2021',
-    status: 'done',
+    status: 'in beta',
   },
 
   // theTower: {
