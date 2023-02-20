@@ -18,8 +18,8 @@ const icons = [
     alt: 'a maple leaf.',
   },
   {
-    icon: 'bisexual_flag',
-    alt: 'a bi flag.',
+    icon: 'lesbian_flag',
+    alt: 'a lesbian flag.',
   },
   {
     icon: 'pirate_flag',
@@ -28,6 +28,10 @@ const icons = [
   {
     icon: 'transgender_flag',
     alt: 'a trans flag.',
+  },
+  {
+    icon: 'rave',
+    alt: 'an acid house / happy hardcore smiley face.',
   },
   {
     icon: 'gamepad',
