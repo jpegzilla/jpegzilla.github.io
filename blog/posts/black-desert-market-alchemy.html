@@ -4,18 +4,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="I am a web designer and creative developer. this is my blog, where I document interesting things I learn on the web. - a black desert alchemist's quest for profit.">
+<meta name="description" content="my name is jpegzilla. this where I document interesting things I learn on the web! - a black desert alchemist's quest for profit.">
 <meta name="author" content="jpegzilla">
 <meta name="robots" content="index, follow">
-<meta property="og:description" content="I am a web designer and creative developer. this is my blog, where I document interesting things I learn on the web. - a black desert alchemist's quest for profit.">
+<meta property="og:description" content="my name is jpegzilla. this where I document interesting things I learn on the web! - a black desert alchemist's quest for profit.">
 <meta property="og:url" content="https://jpegzilla.com">
-<meta property="og:site_name" content="jpegzilla - web design">
+<meta property="og:site_name" content="jpegzilla - tech">
 <meta property="og:image" content="https://jpegzilla.com/css/img/21af09332037a999a3f58984cdd0cefe.png">
 <meta property="og:type" content="website">
 <meta name="twitter:site" content="@jpegzilla">
 <meta name="twitter:creator" content="@jpegzilla">
-<meta name="twitter:title" content="jpegzilla - web design blog: a black desert alchemist's quest for profit.">
-<meta name="twitter:description" content="jpegzilla is a web designer, creative developer, and digital artist. come make something cool with me.">
+<meta name="twitter:title" content="jpegzilla - a black desert alchemist's quest for profit.">
+<meta name="twitter:description" content="my name is jpegzilla. this where I document interesting things I learn on the web!">
 <meta name="twitter:image" content="https://jpegzilla.com/css/img/21af09332037a999a3f58984cdd0cefe.png">
 <meta name="twitter:card" content="summary-large-image">
 <meta name="application-name" content="jpegzilla.com/blog" />
@@ -54,7 +54,7 @@ body {font-size: 18px;line-height: 1.6;max-width: 38rem;margin: 40px auto;paddin
 
 <div id="mkzBody">
 <p><span class='d'>D</span>uring the past few months, I've become totally addicted to an mmorpg called <a target="_blank" href="https://www.naeu.playblackdesert.com/en-US/Main/Index">black desert online</a>. it's a game that has a beautiful world, excellent combat mechanics, diverse character class types, and one of (if not the best) character creation menus I've ever seen in a video game. but the thing I'm most interested in is the game's <span class='i'>life skill</span> system.</p>
-<p>the life skill system is a set of eleven skills that your character can learn: gathering, alchemy, farming, fishing, processing, sailing, hunting, training, barter, cooking, and trading. all of these skills are very complex and deep systems that can take hundreds of hours to truly master, so many people, such as myself, choose to focus on only one. my specialty is alchemy&mdash;because no matter the game, I just love making potions.</p>
+<p>the life skill system is a set of eleven skills that your character can learn: gathering, alchemy, farming, fishing, processing, sailing, hunting, training, barter, cooking, and trading. all of these skills are very complex and deep systems that can take hundreds of hours to truly master. so, many people choose to focus on only one. my specialty is alchemy&mdash;because no matter the game, I just love making potions. if I could become an alchemist in real life, the software world would never see me again.</p>
 <img src="./../img/black-desert-market-alchemy/making-reagents.gif" alt="my main character whipping up some alchemical reagents." title="my main character whipping up some alchemical reagents.">
 <p>but there was one thing I didn't know when I was just a noob wanting to try alchemy...</p>
 <h2>alchemy is extremely impractical.</h2>
@@ -91,13 +91,13 @@ body {font-size: 18px;line-height: 1.6;max-width: 38rem;margin: 40px auto;paddin
 <p>I started my investigation by trying to find out how the web marketplace communicates with the api. if you go to the market and click around with chrome devtools open, you can gather a list of requests to analyze:</p>
 <img src="./../img/black-desert-market-alchemy/web-market-requests.png" alt="a list of requests in chrome devtools showing the endpoints used by the market api." title="a list of requests in chrome devtools showing the endpoints used by the market api.">
 <p>the important endpoints are <span class='c'>/GetWorldMarketList</span> (used to get a list of items by category), <span class='c'>/GetWorldMarketSubList</span> (used to get price data for a specific item), <span class='c'>/GetWorldMarketSearchList</span> (used to fuzzy search for items), and <span class='c'>/GetItemSellBuyInfo</span> (used to read very detailed information about the price and trade volume of items).</p>
-<p>I'll spare you the gory details, but what I found by digging through these is that all you really need is a <a target="_blank" href="https://learn.microsoft.com/en-us/aspnet/core/security/anti-request-forgery?view=aspnetcore-7.0">requestVerificationToken</a> pair to hit the api from whatever you want. I have no idea why this is the only thing securing the api. the damn token doesn't even expire, as far as I can tell. I wasn't able to figure out if someone could do anything malicious if you had my token, but I used an alternate black desert account's token just in case.</p>
+<p>I'll spare you the gory details, but what I found by digging through these is that all you really need is a <a target="_blank" href="https://learn.microsoft.com/en-us/aspnet/core/security/anti-request-forgery?view=aspnetcore-7.0">requestVerificationToken</a> pair to hit the api from whatever you want. I have no idea why this is the only thing securing the api. the damn token doesn't even expire, as far as I can tell. I wasn't able to figure out if someone could do anything malicious if they had my token, but I used an alternate black desert account's token just in case.</p>
 <p>the rest of the script goes like this: access the information at these endpoints to secure current data on alchemy product prices, look up product recipes on bdocodex, and then take those ingredients back to the marketplace to look up their current prices. then, it discards the recipe if the ingredients are more expensive than the selling price of the final product. after about twenty minutes, you're left with a comprehensive, detailed list of items that you can craft with ingredients purchased from the market.</p>
 <img src="./../img/black-desert-market-alchemy/alchemy-profits-output.png" alt="a list of potentially profitable items compiled by my script." title="a list of potentially profitable items compiled by my script.">
 <p>there's just one issue with this entire endeavour.</p>
 <h2>nobody wants to buy this stuff.</h2>
 <p>not even mizella&mdash;<span class='i'>whose entire purpose is to buy this stuff</span>&mdash;wants to buy this stuff.</p>
-<p>a serious issue with profitability in alchemy is that there are like a million items you can brew (big exaggeration). but at high levels, where people are actually using these things in combat, only like ten of them are useful (small exaggeration). that means <span class='i'>most</span> alchemy products will take days, or even weeks to sell, and some are so useless that they'll never sell at all.<br><figure title="some several hundred low-level elixirs I've listed for sale in the market." style="padding: 0; margin: 0;" width="100%"><br><img width="100%" style="margin-bottom: 0;" alt="some several hundred low-level elixirs I've listed for sale in the market." src="./../img/black-desert-market-alchemy/useless-elixirs.png"><br><figcaption style="padding-top: 0.5rem; margin: 0; font-style: italic;">I've had these listed for sale for weeks.</figcaption><br></figure></p>
+<p>a serious issue with profitability in alchemy is that there are like a million items you can brew (big exaggeration). but at high levels, only like ten of them are useful (small exaggeration). that means <span class='i'>most</span> alchemy products will take days or even weeks to sell, and some are so useless that they'll never sell at all.<br><figure title="some several hundred low-level elixirs I've listed for sale in the market." style="padding: 0; margin: 0;" width="100%"><br><img width="100%" style="margin-bottom: 0;" alt="some several hundred low-level elixirs I've listed for sale in the market." src="./../img/black-desert-market-alchemy/useless-elixirs.png"><br><figcaption style="padding-top: 0.5rem; margin: 0; font-style: italic;">I've had these listed for sale for weeks.</figcaption><br></figure></p>
 <p>I didn't integrate this "usefulness" information into my script, so the script will even show items that have almost no chance of being bought. an item is listed as long as it sells for more than the cost of its ingredients.</p>
 <p>the only real warning sign given by the script is showing the current total stock number of an alchemy item:</p>
 <p><span class='b'>thousands in stock:</span> typically low demand or extremely high volume.</p>
@@ -120,7 +120,7 @@ body {font-size: 18px;line-height: 1.6;max-width: 38rem;margin: 40px auto;paddin
 <p>finally, if you want to talk to me, my discord username is <span class='c'>jpegzilla#6969</span>, and my twitter username is <a target="_blank" href="https://twitter.com/jpegzilla">@jpegzilla</a>. see you later, and enjoy the music recommendations if you want!<br><hr></p>
 <h2>currently listening to:</h2>
 <p>- <a target="_blank" href="https://www.youtube.com/watch?v=orLgPpGVNkY">Day After Day</a> by <a target="_blank" href="https://www.fromsoundrecords.com/">FreQuency</a></p>
-<p>- <a target="_blank" href="https://www.youtube.com/watch?v=iZ_P3F3nA1U">Cabinet Man</a> by <a target="_blank" href="http://www.lemondemon.com/">lemon demon</a></p>
+<p>- <a target="_blank" href="https://www.youtube.com/watch?v=iZ_P3F3nA1U">Cabinet Man</a> by <a target="_blank" href="http://www.lemondemon.com/">Lemon Demon</a></p>
 <p>- <a target="_blank" href="https://www.youtube.com/watch?v=BuHfp4ZVmMI">Leisureforce</a> by <a target="_blank" href="https://aesoprock.com/">Aesop Rock</a></p>
 <p>- <a target="_blank" href="https://www.youtube.com/watch?v=IjBvfGrP8NU">family name</a> by <a target="_blank" href="https://metamuse.tokyo/">METAMUSE / ZOC</a></p>
 <p>- <a target="_blank" href="https://www.youtube.com/watch?v=dR1wIsyt4lk">Give me a Break</a> by <a target="_blank" href="https://maththeband.bandcamp.com/">Math the Band</a></p>
