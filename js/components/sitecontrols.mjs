@@ -111,7 +111,7 @@ class SiteControls extends HTMLElement {
       <div lang="${this.lang}" id="site-controls">
         <address class="email-container">
           <a
-            href="mailto:eris@jpegzilla.com"
+            href="mailto:eris@jpegzilla.com?subject=hello%20eris!&body=I%20want%20you%20to%20make%20something%20for%20me..."
             target="_blank"
             rel="noopener noreferrer"
             aria-label="eris@jpegzilla.com"
