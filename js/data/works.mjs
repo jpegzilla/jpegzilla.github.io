@@ -1,10 +1,30 @@
 export const works = {
   main: {
     name: {
+      en: 'onyx',
+      ja: 'オニキス',
+    },
+    canonName: 'main',
+    details: {
+      en:
+        'a simple color palette creation tool for experimentation and design.',
+      ja: '単純なカラーパレット作成ツール。',
+    },
+    // details:
+    //   'I needed to combine features from some of my favorite color tools in order to make a tool that would be more convenient for me. here is the result.',
+    link: 'https://jpegzilla.com/onyx',
+    image: 'css/img/goo.svg',
+    toolbox: 'programming, design',
+    year: '2023',
+    status: 'done',
+  },
+
+  thesis: {
+    name: {
       en: 'thesis',
       ja: 'テーゼ',
     },
-    canonName: 'main',
+    canonName: 'thesis',
     // details: 'theory of web development written out of annoyance.',
     details: {
       en: 'a collection of opinions on individual web development work.',
