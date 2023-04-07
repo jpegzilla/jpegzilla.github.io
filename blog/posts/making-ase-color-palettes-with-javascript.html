@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content=".ase is a pretty useful file format for transferring color palettes between adobe products. here's how to make a .ase palette using javascript!">
+<meta name="author" content="jpegzilla">
+<meta name="robots" content="index, follow">
+<meta property="og:description" content=".ase is a pretty useful file format for transferring color palettes between adobe products. here's how to make a .ase palette using javascript!">
+<meta property="og:url" content="https://jpegzilla.com">
+<meta property="og:site_name" content="jpegzilla's blog">
+<meta property="og:image" content="https://jpegzilla.com/blog/img/ase-palettes-javascript/hex-editor-file.png">
+<meta property="og:type" content="website">
+<meta name="twitter:site" content="@jpegzilla">
+<meta name="twitter:creator" content="@jpegzilla">
+<meta name="twitter:title" content="jpegzilla - web design blog: how to make .ase color palettes with javascript">
+<meta name="twitter:description" content=".ase is a pretty useful file format for transferring color palettes between adobe products. here's how to make a .ase palette using javascript!">
+<meta name="twitter:image" content="https://jpegzilla.com/blog/img/ase-palettes-javascript/hex-editor-file.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="application-name" content="jpegzilla.com/blog" />
+
+<link rel="author" href="http://jpegzilla.com/humans.txt">
+
+<title>how to make .ase color palettes with javascript &mdash; 2023 04 03</title>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141114501-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+
+function gtag() {
+dataLayer.push(arguments);
+}
+
+gtag('js', new Date());
+
+gtag('config', 'UA-141114501-1');
+</script>
+</head>
+
+<style>
+body {font-size: 18px;line-height: 1.6;max-width: 38rem;margin: 40px auto;padding: 2rem;color: #eee;font-family: sans-serif;background-color: #222;}a {color: #fff;}h1, h2, h3 {line-height: 1.2;}span.i {font-style: italic;}span.b {font-weight: bolder;}span.s {text-decoration: line-through;}span.u {text-decoration: underline;}span.o {text-decoration: overline;}p span.d {float: left;font-size: 4rem;line-height: 2.5rem;padding-top: 0.7rem;padding-right: 0.25rem;font-weight: bold;}pre {display: inline;}img {width: 100%;height: auto;margin-bottom: 1rem;border: 1px solid #eee;}span.c {font-family: monospace;background-color: #333;padding: 0 0.25rem;border-radius: 0.25rem;}code {display: block;font-family: monospace;background: #333;padding: 0.5rem 0.25rem 0.5rem 1rem;border-radius: 0.25rem;word-wrap: break-word;}
+</style>
+
+<body>
+<header>
+<h1><a target="_blank" href="https://jpegzilla.com">JPEGZILLA</a></h1>
+</header>
+<main>
+<article>
+<h1>how to make .ase color palettes with javascript</h1>
+<time id="mkzDate"><span class='i'>2023 04 03</span></time>
+
+<div id="mkzBody">
+<p><span class='d'>F</span>or the last year or so, I've been working on a color tool called <a target="_blank" href="https://github.com/jpegzilla/onyx">onyx</a> to replace an old tool I made called <a target="_blank" href="https://github.com/jpegzilla/emerald">emerald</a>. one of the primary functions of onyx is to allow the creation of color palettes for use in other software. however, there are just <span class='i'>so many</span> color palette formats floating around in the world...so I just decided to pick seven for onyx's initial release.</p>
+<p><span class='c'>sass</span> <span class='c'>css</span>, <span class='c'>.hex</span>, <span class='c'>.pal</span>, <span class='c'>.gpl</span>, <span class='c'>.txt</span>, and <span class='c'>.png</span> are the seven formats. the one I had the most trouble with was definitely <span class='c'>.ase</span>, so I figured I'd write down what I did in case someone else needed to know. let's get right into it!</p>
+<h2>one: ase file format specification.</h2>
+<p>the ase file format, which stands for <span class='i'>adobe swatch exchange</span>, can be used to import and export color palettes between most products in the adobe suite. here's what one of the files looks like, inspected in a hex editor:</p>
+<img src="./../img/ase-palettes-javascript/hex-editor-file.png" alt="a color palette open in imhex, a hex editor." title="a color palette open in imhex, a hex editor.">
+<p><span class='i'>side note: the hex editor I'm using is</span> <a target="_blank" href="https://github.com/WerWolv/ImHex">imhex</a> <span class='i'>&mdash; which, as far as I'm concerned, is the best hex editor ever created.</span></p>
+<p>the file format is quite simple. I read a few other posts elsewhere about this format, but it seems that many of them are now out of date. so here's how it works: the entire palette is just a header, followed by however many color entries you want. I wrote some <a target="_blank" href="https://docs.werwolv.net/pattern-language/">imhex patterns</a> to help me understand the file structure. if you can read some typed language like c, you can probably figure out what these mean. the header goes as follows:</p>
+<code>struct ASEHeader {<br>&nbsp;&nbsp;char sig&#91;4&#93;; // constant ASEF (adobe swatch exchange format)<br>&nbsp;&nbsp;u32 version; // constant 0x0001 0x0000<br>&nbsp;&nbsp;be u32 color_count; // amount of colors in the palette<br>};</code>
+<p>that's it. just two constants followed by the number of colors that are in the palette. to construct the color entries, we'll use this structure:</p>
+<code>struct ColorBlock {<br>&nbsp;&nbsp;be u16 group_start;<br>&nbsp;&nbsp;be u32 block_length;<br>&nbsp;&nbsp;be u16 color_name_length;<br>&nbsp;&nbsp;be u96 color_name; // hex color, zeroes between characters<br>&nbsp;&nbsp;be u16 null_term;<br>&nbsp;&nbsp;be char color_space&#91;4&#93;;<br>&nbsp;&nbsp;be float red;<br>&nbsp;&nbsp;be float green;<br>&nbsp;&nbsp;be float blue;<br>&nbsp;&nbsp;be u16 mode; // 0x0000: global, 0x0010: spot, 0x0020: normal<br>};</code>
+<h2>two: translation.</h2>
+<p>in order to translate this into javascript, we'll need a color palette. here's the color palette we'll be using (<a target="_blank" href="https://lospec.com/palette-list/neo-5">neo-5 by munche</a>):</p>
+<img src="./../img/ase-palettes-javascript/neo-5_munche.png" alt="a color palette from lospec.com called neo-5." title="a color palette from lospec.com called neo-5.">
+<p>for this, I used hsl colors. here are the five colors from the palette above, in order from left to right: <span class='c'>hsl(0.00, 0.00%, 5.49%)</span>, <span class='c'>hsl(254.24, 57.68%, 47.25%)</span>, <span class='c'>hsl(317.01, 79.51%, 52.16%)</span>, <span class='c'>hsl(175.21, 94.00%, 60.78%)</span>, and <span class='c'>hsl(180.00, 52.38%, 95.88%)</span></p>
+<p>here's how you convert your array of colors into a hexadecimal version of the final binary <span class='c'>.ase</span> file. this intermediate step might not be necessary, but it sure made things easier for me.</p>
+<p>make two copies of your array, one in which the colors are converted to rgb, and another one in which the colors are converted to hexadecimal. I won't show the code for this (because it would be too long), but there are plenty of color conversion algorithms available online.</p>
+<p>second, create the file header. here's a utility function to convert a number to a zero-padded hexadecimal string:</p>
+<code>const zeroPaddedHex = d => (+d).toString(16).padStart(2, '0')</code>
+<p>and here's how the header is built:</p>
+<code>const fileHeader = `41 53 45 46 00 01 00 00 00 00 00 ${zeroPaddedHex(palette.length)}`</code>
+<p>then, create a mapping function to convert your hexadecimal colors to color blocks in the manner described by the struct above:</p>
+<code>const generateColorBlock = (color, index) => {<br>&nbsp;&nbsp;const GROUP_START = '00 01'<br>&nbsp;&nbsp;const BLOCK_LENGTH = '00 00 00 22'<br>&nbsp;&nbsp;const COLOR_NAME_LENGTH = `00 ${zeroPaddedHex(color.length)}`<br>&nbsp;&nbsp;const COLOR_NAME = color<br>&nbsp;&nbsp;&nbsp;.replace('#', '')<br>&nbsp;&nbsp;&nbsp;.split('')<br>&nbsp;&nbsp;&nbsp;.map(f => `00 ${f.charCodeAt(0).toString(16).padStart(2, 0)}`)<br>&nbsp;&nbsp;&nbsp;.join(' ')<br>&nbsp;&nbsp;const NULL_TERM = '00 00'<br>&nbsp;&nbsp;const COLOR_SPACE = '52 47 42 20'<br>&nbsp;&nbsp;const RED = floatToHex(rgbColors<span class=''>index</span>.r / 255)<br>&nbsp;&nbsp;const GREEN = floatToHex(rgbColors<span class=''>index</span>.g / 255)<br>&nbsp;&nbsp;const BLUE = floatToHex(rgbColors<span class=''>index</span>.b / 255)<br>&nbsp;&nbsp;const MODE = '00 00'<br>&nbsp;<br>&nbsp;&nbsp;return `${GROUP_START} ${BLOCK_LENGTH} ${COLOR_NAME_LENGTH} ${COLOR_NAME} ${NULL_TERM} ${COLOR_SPACE} ${RED} ${GREEN} ${BLUE} ${MODE}`<br>&nbsp;}</code>
+<p>first, note the <span class='c'>BLOCK_LENGTH</span> variable. you'll need to change this depending on the format you decide to use and the names of your colors. keep the struct from earlier in mind &mdash; you have to change around some lengths here and there if you want to change the color name. this doesn't matter if you just use the hexadecimal representation of the color as the color name, which is what I did.</p>
+<p>second of all, you might have to change the <span class='c'>COLOR_SPACE</span> string. I'm using rgb here, which is the string <span class='c'>"RGB "</span>. the trailing space is significant because you have four color space options: <span class='c'>RGB</span>, <span class='c'>LAB</span>, <span class='c'>CMYK</span>, or <span class='c'>gray</span>. no matter what you pick, the <span class='c'>COLOR_SPACE</span> string has to be four characters. rgb in hex is <span class='c'>52 47 42 20</span>, cmyk is <span class='c'>63 6D 79 6B</span>, and so forth.</p>
+<p>lastly, look at the <span class='c'>RED</span>, <span class='c'>GREEN</span>, and <span class='c'>BLUE</span> variables. I formatted my rgb colors into objects like <span class='c'>{ r, g, b }</span> with r, g, and b in range &#91;0, 255&#93;. keep that in mind so you can adapt this code for your use. also, my hex color array is an array of six-digit hex color strings like <span class='c'>'#ffffff'</span>, <span class='c'>'#000000'</span>, etc. by the way, if you're not even using rgb, you'll have a different amount of color values here. cmyk requires four thirty-two bit floats, gray requires only one, lab and rgb require three.</p>
+<p>use the <span class='c'>generateColorBlock</span> function to map your color array to hexadecimal strings and join the blocks together with spaces. if you're using the same color palette as I am, and you're using hsl colors, you should have close to this exact string:</p>
+<code>00 01 00 00 00 22 00 07 00 30 00 65 00 30 00 65 00 30 00 65 00 00 52 47 42 20 3D 60 E0 E1 3D 60 E0 E1 3D 60 E0 E1 00 00 00 01 00 00 00 22 00 07 00 35 00 34 00 33 00 33 00 62 00 65 00 00 52 47 42 20 3E A8 A8 A9 3E 4C CC CD 3F 3E BE BF 00 00 00 01 00 00 00 22 00 07 00 65 00 36 00 32 00 34 00 61 00 66 00 00 52 47 42 20 3F 66 E6 E7 3E 10 90 91 3F 2F AF B0 00 00 00 01 00 00 00 22 00 07 00 33 00 64 00 66 00 39 00 65 00 61 00 00 52 47 42 20 3E 74 F4 F5 3F 79 F9 FA 3F 6A EA EB 00 00 00 01 00 00 00 22 00 07 00 65 00 66 00 66 00 61 00 66 00 61 00 00 52 47 42 20 3F 6F EF F0 3F 7A FA FB 3F 7A FA FB 00 00</code>
+<p>then, just stick the header from earlier on the front:</p>
+<code>41 53 45 46 00 01 00 00 00 00 00 05 00 01 00 00 00 22 00 07 00 30 00 65 00 30 00 65 00 30 00 65 00 00 52 47 42 20 3D 60 E0 E1 3D 60 E0 E1 3D 60 E0 E1 00 00 00 01 00 00 00 22 00 07 00 35 00 34 00 33 00 33 00 62 00 65 00 00 52 47 42 20 3E A8 A8 A9 3E 4C CC CD 3F 3E BE BF 00 00 00 01 00 00 00 22 00 07 00 65 00 36 00 32 00 34 00 61 00 66 00 00 52 47 42 20 3F 66 E6 E7 3E 10 90 91 3F 2F AF B0 00 00 00 01 00 00 00 22 00 07 00 33 00 64 00 66 00 39 00 65 00 61 00 00 52 47 42 20 3E 74 F4 F5 3F 79 F9 FA 3F 6A EA EB 00 00 00 01 00 00 00 22 00 07 00 65 00 66 00 66 00 61 00 66 00 61 00 00 52 47 42 20 3F 6F EF F0 3F 7A FA FB 3F 7A FA FB 00 00</code>
+<p>if you look back at the hex editor screenshot from earlier, you'll see that this hexadecimal is the same as the data in the screenshot. now, all we have to do is convert the hexadecimal into a binary file that we can download as an <span class='c'>.ase</span>.</p>
+<h2>three: downloading.</h2>
+<p>creating a binary file out of hexadecimal is pretty straightforward in javascript. here's the code I used to create a url to the file:</p>
+<code>const downloadHexadecimalData = (data, filename, extension) => {<br>&nbsp;const hexData = data.replaceAll(' ', '')<br>&nbsp;let byteArray = new Uint8Array(hexData.length / 2)<br>&nbsp;<br>&nbsp;for (let i = 0; i < byteArray.length; i++) {<br>&nbsp;&nbsp;byteArray<span class=''>i</span> = parseInt(hexData.substr(i * 2, 2), 16)<br>&nbsp;}<br>&nbsp;<br>&nbsp;const blob = new Blob(<span class=''>byteArray</span>, { type: 'application/octet-stream' })<br>&nbsp;const url = URL.createObjectURL(blob)<br>&nbsp;<br>&nbsp;return {<br>&nbsp;&nbsp;href: url,<br>&nbsp;&nbsp;download: `${filename}.${extension}`,<br>&nbsp;}<br>}</code>
+<p>then, call this function with three arguments: the hexadecimal data, your desired filename, and the string <span class='c'>'ase'</span>. you'll get back an object URL and a download filename that you can attach to a link. if you don't want to download the file, just use this function up to the creation of the <span class='c'>Blob</span> and do whatever you want with it. the end!<br><hr></p>
+<h2>see also:</h2>
+<p><a target="_blank" href="http://www.selapa.net/swatches/colors/fileformats.php">http://www.selapa.net/swatches/colors/fileformats.php</a>: this is a great reference for many different kinds of color file formats!<br><hr></p>
+<h2>currently listening to:</h2>
+<p>- <a target="_blank" href="https://www.youtube.com/watch?v=ZL39Sy3jiQo">START!!</a> by <a target="_blank" href="https://twitter.com/eriko_co_log">中村繪里子</a></p>
+<p>- <a target="_blank" href="https://www.youtube.com/watch?v=r3Ul36FQZ64">Holy Waterfall</a> by <a target="_blank" href="https://aesoprock.com/">Aesop Rock</a></p>
+<p>- <a target="_blank" href="https://www.youtube.com/watch?v=2RecBY1Mh-8">The Gates</a> by <a target="_blank" href="https://aesoprock.com/">Aesop Rock</a><br><hr></p>
+
+</div>
+</article>
+
+</main>
+<footer>
+<span class="non-icon">&copy;&nbsp;<span id="copyright"></span>&nbsp;<span class="name">jpegzilla</span>&nbsp;&vert;&nbsp;<a target="_blank" href="https://jpegzilla.com/humans.txt">humans.txt</a>
+&nbsp;&vert;&nbsp;<a href="../">blog directory</a>
+&nbsp;&vert;&nbsp;<a href="https://discordapp.com/invite/Ft9rVA6" target="_blank" class="con-links">discord</a>
+&nbsp;&vert;&nbsp;<a target="_blank" href="https://twitter.com/jpegzilla">twitter</a>&nbsp;&#124;&nbsp;<a target="_blank" type="application/rss+xml" href="https://jpegzilla.com/blog/rss/feed.xml">rss feed</a>
+</span>
+</footer>
+</body>
+
+</html>

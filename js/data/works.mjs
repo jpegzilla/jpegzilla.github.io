@@ -75,25 +75,25 @@ export const works = {
     status: 'done',
   },
 
-  emerald: {
-    name: {
-      en: 'emerald',
-      ja: 'エメラルド',
-    },
-    canonName: 'emerald',
-    details: {
-      en:
-        'a simple color palette creation tool for experimentation and design.',
-      ja: '単純なカラーパレット作成ツール。',
-    },
-    // details:
-    //   'I needed to combine features from some of my favorite color tools in order to make a tool that would be more convenient for me. here is the result.',
-    link: 'https://jpegzilla.com/emerald',
-    image: 'css/img/emerald.png',
-    toolbox: 'programming, design',
-    year: '2019',
-    status: 'done',
-  },
+  // emerald: {
+  //   name: {
+  //     en: 'emerald',
+  //     ja: 'エメラルド',
+  //   },
+  //   canonName: 'emerald',
+  //   details: {
+  //     en:
+  //       'a simple color palette creation tool for experimentation and design.',
+  //     ja: '単純なカラーパレット作成ツール。',
+  //   },
+  //   // details:
+  //   //   'I needed to combine features from some of my favorite color tools in order to make a tool that would be more convenient for me. here is the result.',
+  //   link: 'https://jpegzilla.com/emerald',
+  //   image: 'css/img/emerald.png',
+  //   toolbox: 'programming, design',
+  //   year: '2019',
+  //   status: 'done',
+  // },
 
   minervasAkasha: {
     name: { en: 'minerva', ja: 'ミネルウァ' },

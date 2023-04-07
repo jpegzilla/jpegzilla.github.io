@@ -164,5 +164,11 @@
       <link>https://jpegzilla.com/blog/posts/black-desert-market-alchemy.html</link>
       <description>alchemy is unprofitable in black desert...but maybe it doesn't have to be!</description>
     </item>
+
+    <item>
+      <title>how to make .ase color palettes with javascript — 2023 04 03</title>
+      <link>https://jpegzilla.com/blog/posts/making-ase-color-palettes-with-javascript.html</link>
+      <description>if you're working on a javascript application that needs to turn color data into an adobe .ase file, here's how to do that.</description>
+    </item>
   </channel>
 </rss>
