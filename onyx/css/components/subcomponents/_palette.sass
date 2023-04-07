@@ -1,0 +1,32 @@
+@use '../../utils/vars' as v
+
+.onyx-palette
+  // +v.colordisplayborderfade12
+  +v.colordisplaybgfade7
+
+  // border-radius: v.$border-radius
+  padding: v.$halfgap
+  display: flex
+  gap: v.$halfgap
+  flex-direction: column
+
+  .palette-header
+    +v.lightmono
+
+    font-size: 1rem
+    justify-content: center
+    border-radius: v.$border-radius
+
+  .color-grid
+    // +v.colordisplaybgfade7
+    display: flex
+    border-radius: v.$border-radius
+    gap: v.$small-space
+    max-width: 100%
+    overflow: hidden
+
+  .onyx-palette-color
+    +v.center
+
+    height: 2rem
+    flex-grow: 1

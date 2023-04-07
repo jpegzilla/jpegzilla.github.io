@@ -1,0 +1,120 @@
+@use '../utils/vars' as v
+@use '../utils/range'
+
+#onyx-controls
+  +v.fill
+  +v.colordisplaycolor
+
+  grid-area: controls
+  padding-right: v.$p-m
+
+  @media (max-width: v.$breakpoint-medium)
+    padding-right: v.$halfgap
+
+  section
+    display: flex
+    height: 100%
+    align-items: flex-end
+
+    & > *
+      flex-grow: 1
+
+  .controls-container
+    button, .drag
+      +v.onyxbutton(1.25rem)
+      +v.kfocus
+
+      border-radius: 0
+
+      @media (max-width: v.$breakpoint-large)
+        +v.onyxbutton($bigpadding: false)
+
+      @media (max-width: v.$breakpoint-tiny)
+        padding: 0 0.15rem
+
+      &:first-of-type
+        border-radius: v.$border-radius
+        border-top-right-radius: 0
+        border-bottom-right-radius: 0
+
+      &:last-of-type
+        border-radius: v.$border-radius
+        border-top-left-radius: 0
+        border-bottom-left-radius: 0
+
+    .drag
+      user-select: none
+      padding: v.$button-padding-big-even
+      padding-right: 0.557rem
+      padding-top: 0.527rem
+
+      div:last-child
+        +v.center
+
+        width: 1rem
+
+      svg
+        display: inline-block
+        height: 1rem
+        width: 1rem
+        fill: currentColor
+        margin-right: -1px
+
+      &:hover
+        cursor: grab
+
+      &.dragging
+        cursor: grabbing
+
+  .controls-container-sliders
+    +v.lightmono
+
+    display: grid
+    grid-template-columns: 1fr 1fr
+    gap: v.$p-l
+
+    @media (max-width: v.$breakpoint-large)
+      gap: v.$p-s
+
+    .controls-header
+      font-size: 1.5rem
+      margin-bottom: v.$p-m
+      display: flex
+      align-items: stretch
+      gap: v.$halfgap
+
+    .controls-sliders
+      display: grid
+      grid-template-rows: repeat(3, 1fr)
+      gap: v.$p-m
+      opacity: 1
+      transition: opacity v.$color-transition ease-out
+
+      @media (max-width: v.$breakpoint-large)
+        gap: v.$p-s
+
+      &.disabled
+        opacity: 0.5
+        cursor: not-allowed
+
+        & > *
+          pointer-events: none
+
+      .slider-container
+        display: flex
+
+        flex-direction: column
+        gap: v.$halfgap
+        align-items: flex-start
+
+        input
+          flex-grow: 666
+          width: 100%
+
+        span
+          +v.croptext(1.2)
+
+          font-size: 1rem
+          line-height: 1.2rem
+          white-space: pre
+

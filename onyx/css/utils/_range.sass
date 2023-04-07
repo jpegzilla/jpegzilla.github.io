@@ -1,0 +1,108 @@
+@use './vars' as v
+@use 'sass:math'
+
+=thumbcolor
+  +v.colordisplaycolor
+
+  background-color: currentColor
+
+input[type=range]
+  +v.colordisplaycolor
+  +v.kfocus
+
+  $size1x1: 1rem
+  $trackheight: 1px
+  $thumboffset: 0
+  $trackradius: v.$border-radius
+  $thumbradius: 50%
+
+  margin: v.$halfgap 0
+  background-color: transparent
+  -webkit-appearance: none
+  display: inline-flex
+  align-items: center
+  position: relative
+
+  &::before
+    +thumbcolor
+
+    content: ''
+    height: $trackheight
+    position: absolute
+    width: 100%
+    transform: scaleY(0.25)
+    transition: transform v.$color-transition ease-out
+
+  &:focus::before
+    transform: none
+
+  &::-webkit-slider-runnable-track
+    background-color: transparent
+    border-radius: $trackradius
+    cursor: pointer
+    height: $trackheight
+    width: 100%
+
+  &::-webkit-slider-thumb
+    +thumbcolor
+
+    margin-top: $thumboffset
+    width: $size1x1
+    height: $size1x1
+    border-radius: $thumbradius
+    cursor: pointer
+    -webkit-appearance: none
+    border: 0
+    margin-top: -#{v.$halfgap}
+
+  &:focus::-webkit-slider-runnable-track
+    background-color: transparent
+    border-color: transparent
+
+  &::-moz-range-track
+    background: currentColor
+    background-color: currentColor
+    border-radius: $trackradius
+    cursor: pointer
+    height: 0.25rem
+    width: 100%
+    opacity: 0.3
+
+  &:focus::-moz-range-track
+    opacity: 0.6
+
+  &::-moz-range-thumb
+    +thumbcolor
+
+    width: $size1x1
+    height: $size1x1
+    border-radius: $thumbradius
+    cursor: pointer
+    border: 0
+
+  &::-ms-track
+    background-color: currentColor
+    color: currentColor
+    width: 100%
+    height: $trackheight
+    cursor: pointer
+    border-radius: $trackradius
+
+  &::-ms-fill-lower,
+  &::-ms-fill-upper
+    background: currentColor
+    border: 0
+
+  &::-ms-thumb
+    +thumbcolor
+
+    width: $size1x1
+    height: $size1x1
+    border-radius: 50%
+    cursor: pointer
+    margin-top: $thumboffset
+
+  &:focus
+    &::-ms-fill-lower,
+    &::-ms-fill-upper
+      background: currentColor

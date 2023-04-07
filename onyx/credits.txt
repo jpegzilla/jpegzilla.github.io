@@ -1,0 +1,23 @@
+resources
+
+kurenaido font - 大平善道 - https://zenfont.jp/
+
+montserrat alternates - julieta ulanovsky - https://github.com/JulietaUla/Montserrat
+
+poppins - ninad kale / jonny pinhorn - https://github.com/itfoundry/poppins
+
+space mono - colophon foundry - https://www.colophon-foundry.org/
+
+ral and hks color lists - james pederson - https://github.com/jpederson/colornerd/tree/gh-pages/csv
+
+color names list (various sources) - https://en.wikipedia.org/wiki/List_of_colors_(compact), https://en.wikipedia.org/wiki/List_of_colors_by_shade
+
+help creating range input styles: daniel stern - http://danielstern.ca/range.css
+
+color conversion formulas - bruse lindbloom - http://www.brucelindbloom.com/index.html?Math.html
+
+inspiration
+
+colorable - jxnblk - https://colorable.jxnblk.com/
+colori - remiscan - https://remiscan.fr/colori/
+nippon colors - ono takehiko - https://nipponcolors.com/

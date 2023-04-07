@@ -1,0 +1,247 @@
+// ♪音楽 → AESOP ROCK - THE GATES : https://youtu.be/2RecBY1Mh-8
+
+@use 'sass:color' as c
+@use 'sass:math' as m
+@use '../utils/vars' as v
+
+#onyx-sidebar
+  +v.fill
+  +v.lightmono
+
+  display: grid
+  gap: v.$p-s
+  grid-area: sidebar
+  grid-template-rows: minmax(0, 2fr) minmax(0, 8fr)
+  grid-template-columns: 100%
+  max-width: 100%
+  width: 25vw
+
+  @media (max-width: v.$breakpoint-large)
+    grid-template-rows: minmax(0, 2.5fr) minmax(0, 8fr)
+
+    width: 100%
+
+  .sidebar-container
+    +v.colordisplaybgfade7
+    +v.colordisplayborderfade12
+
+    border-radius: v.$border-radius-inner
+    padding: v.$halfgap
+    max-width: 100%
+    width: 100%
+
+  .empty-notifier
+    +v.center
+    +v.morebg
+
+    border-radius: v.$border-radius-inner
+    font-size: 1.25rem
+    height: 100%
+    opacity: 0.5
+    grid-column: 1 / -1
+    width: 100%
+
+  .data-display-container
+    +v.fill
+
+  .palette-history-container
+    +v.lightmono
+
+    display: flex
+    height: 100%
+
+  .primary-palette-container
+    display: flex
+    flex-direction: column
+    gap: v.$halfgap
+    height: 100%
+
+  .controls
+    display: flex
+    gap: v.$halfgap
+
+    @media (max-width: v.$breakpoint-large)
+      gap: v.$quartergap
+
+    & > *:first-child
+      border-radius: v.$border-radius-inner
+      border-top-right-radius: 0
+      border-bottom-right-radius: 0
+
+    & > *:last-child
+      border-radius: v.$border-radius-inner
+      border-top-left-radius: 0
+      border-bottom-left-radius: 0
+
+    .palette-limit-container
+      height: 100%
+      display: flex
+
+      span
+        +v.onyxbutton
+        +v.center
+        +v.colordisplayborderfade12
+
+        border-radius: 0
+        height: 100%
+        cursor: default
+        border-right: 0
+
+        &:hover:not(:disabled)
+          +v.colordisplayborderfade12
+
+      input
+        +v.destroy
+        +v.colordisplaycolor
+        +v.colordisplaybgfade7
+        +v.colordisplayborderfade12
+        +v.kfocus
+        +v.croptext(1.25)
+
+        font-size: 1.25rem
+        line-height: 1.5rem
+        padding: v.$button-padding
+        padding-left: v.$halfgap
+        border-radius: v.$border-radius-inner
+        border-left: 0
+        width: 10ch
+
+        &::placeholder
+          +v.colordisplaycolor
+
+          opacity: 0.5
+
+    button
+      +v.destroy
+      +v.onyxbutton($bigpadding: false)
+
+      border-radius: 0
+
+  .palette
+    display: grid
+    grid-template-columns: repeat(5, 1fr)
+    gap: v.$halfgap
+    height: 100%
+    width: 100%
+    max-width: 100%
+    overflow: auto hidden
+
+    @media (max-width: v.$breakpoint-large)
+      gap: v.$quartergap
+
+    .palette-swatch
+      display: flex
+      flex-direction: column
+      flex-grow: 1
+      gap: v.$quartergap
+      height: 100%
+
+      div
+        width: 100%
+
+      &-color
+        +v.colordisplayborderfade7
+
+        border-radius: v.$border-radius-inner
+        border-bottom-left-radius: 0
+        border-bottom-right-radius: 0
+        gap: v.$quartergap
+        flex-grow: 1
+        max-height: 8rem
+
+      &-controls
+        +v.center
+
+        display: flex
+        gap: v.$quartergap
+
+        button
+          +v.destroy
+          +v.onyxbutton(0.75rem, false)
+          +v.medmono
+
+          border-width: 1px
+          cursor: pointer
+          height: 100%
+          border-radius: v.$border-radius-inner
+
+          &:first-of-type
+            border-bottom-right-radius: 0
+            border-top-left-radius: 0
+            border-top-right-radius: 0
+
+          &:last-of-type
+            border-bottom-left-radius: 0
+            border-top-left-radius: 0
+            border-top-right-radius: 0
+
+        .center-button-container
+          display: flex
+          flex-direction: column
+          flex-grow: 1
+          gap: v.$quartergap
+          padding: 0
+
+          button
+            border-radius: 0
+            height: auto
+            width: 100%
+
+  .palette-history-container
+    display: flex
+
+    .palettes
+      +v.fill
+
+      display: flex
+      flex-direction: column
+      gap: v.$halfgap
+      overflow: hidden auto
+      padding-right: v.$quartergap
+
+      .saved-palette
+        display: flex
+        gap: v.$quartergap
+        flex-direction: column
+        width: 100%
+
+        &-swatches
+          display: grid
+          border-radius: v.$border-radius-inner
+          overflow: hidden
+          grid-template-columns: repeat(5, 1fr)
+
+          .swatch
+            aspect-ratio: 2 / 1
+
+            &:first-of-type
+              border-radius: v.$border-radius-inner
+              border-top-right-radius: 0
+              border-bottom-right-radius: 0
+
+            &:last-of-type
+              border-radius: v.$border-radius-inner
+              border-top-left-radius: 0
+              border-bottom-left-radius: 0
+
+        &-controls
+          display: flex
+          gap: v.$quartergap
+          // justify-content: flex-end
+
+          button
+            +v.onyxbutton($bigpadding: false)
+
+            font-size: 1rem
+            border-radius: 0
+            padding: v.$button-padding
+
+            &:first-of-type
+              border-radius: v.$border-radius-inner
+              border-top-right-radius: 0
+              border-bottom-right-radius: 0
+
+            &:last-of-type
+              border-radius: v.$border-radius-inner
+              border-top-left-radius: 0
+              border-bottom-left-radius: 0

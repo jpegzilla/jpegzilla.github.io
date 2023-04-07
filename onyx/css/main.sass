@@ -1,0 +1,85 @@
+// compile main
+
+@use "utils/fontfaces"
+@use 'utils/defaults'
+@use 'utils/vars' as v
+@use 'utils/filters'
+@use 'utils/hovereffects'
+
+// components
+
+@use "components/loadingscreen"
+@use "components/maincontainer"
+@use "components/header"
+@use "components/colordisplay"
+@use "components/sidebar"
+@use "components/logo"
+@use "components/footer"
+@use "components/body"
+@use "components/controls"
+@use "components/droptarget"
+@use "components/palettemodal"
+
+// subcomponents
+
+@use "components/subcomponents/palette"
+
+:root
+  &.dark
+    +v.theme("dark")
+
+  &.light
+    +v.theme("light")
+
+  +v.bgcolor
+
+  height: 100vh
+  z-index: v.$layer-sections
+  font-size: 16px
+
+  @media (max-width: v.$breakpoint-large)
+    font-size: 14px
+
+
+.ensure-visibility
+  +v.ensurevisibility
+
+.noselect
+  user-select: none
+
+// firefox only:
+*
+  scrollbar-width: thin
+  // scrollbar-color: fg color, bg color
+  scrollbar-color: var(--text-color) var(--bg-color)
+
+*::-webkit-scrollbar
+  width: v.$halfgap
+  height: v.$halfgap
+
+*::-webkit-scrollbar-track
+  background: var(--bg-color)
+
+*::-webkit-scrollbar-thumb
+  background-color: var(--text-color)
+  border-radius: v.$border-radius-inner
+  border: none
+
+.no-mobile
+  +v.positionzero
+  +v.center
+  +v.lightmono
+  +v.colordisplaybg
+  +v.colordisplaycolor
+
+  font-size: 1.5rem
+  height: 100vh
+  position: absolute
+  width: 100vw
+  z-index: v.$layer-nomobile
+  display: none
+  text-align: center
+  padding: v.$p-m
+
+  @media (max-width: v.$breakpoint-miniscule)
+    display: flex

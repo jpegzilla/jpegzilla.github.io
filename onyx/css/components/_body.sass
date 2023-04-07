@@ -1,0 +1,13 @@
+@use '../utils/vars' as v
+
+body
+  +v.fontcolor
+  +v.bgcolor
+  +v.fill
+
+  ::selection
+    color: var(--text-color)
+    color: var(--color-display-background)
+    background-color: var(--bg-color)
+    background-color: var(--color-display-color)
+

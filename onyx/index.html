@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./css/main.min.css" />
+    <link rel="icon" href="assets/img/icons/png/favicon-alt.png" />
+    <link rel="manifest" href="manifest.json" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="onyx is a color palette tool, designed to give digital artists detailed, useful color information."
+    />
+    <meta name="author" content="jpegzilla" />
+    <meta name="robots" content="index, follow" />
+    <meta
+      property="og:description"
+      content="onyx is a color palette tool, designed to give digital artists detailed, useful color information."
+    />
+    <meta property="og:url" content="https://jpegzilla.com/onyx" />
+    <meta property="og:site_name" content="onyx chromatics research system" />
+    <meta
+      property="og:image"
+      content="./development-screenshots/116b2204a927debec9f1b0fcc11e7747.png"
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:site" content="@jpegzilla" />
+    <meta name="twitter:creator" content="@jpegzilla" />
+    <meta name="twitter:title" content="onyx: a color palette creation tool." />
+    <meta
+      name="twitter:description"
+      content="onyx is a color palette tool, designed to give digital artists detailed, useful color information."
+    />
+    <meta
+      name="twitter:image"
+      content="./development-screenshots/116b2204a927debec9f1b0fcc11e7747.png"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="application-name" content="jpegzilla.com/blog" />
+
+    <link rel="author" href="http://jpegzilla.com/humans.txt" />
+
+    <title>onyx &mdash; chromatics research system</title>
+  </head>
+
+  <!-- Google tag (gtag.js) -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-Y7JEXYVMS7"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || []
+    function gtag() {
+      dataLayer.push(arguments)
+    }
+    gtag('js', new Date())
+
+    gtag('config', 'G-Y7JEXYVMS7')
+  </script>
+
+  <noscript
+    >looks like you have javascript disabled. sorry, but there's just no way for
+    onyx to work without it! please re-enable javascript if you'd like to use
+    onyx.</noscript
+  >
+
+  <body>
+    <onyx-loading-screen></onyx-loading-screen>
+
+    <div class="no-mobile">
+      <span
+        >onyx isn't ready to be crammed into such a small space! I'm working on
+        it.</span
+      >
+    </div>
+
+    <!-- modal containers go here -->
+    <onyx-drop-target></onyx-drop-target>
+    <onyx-palette-modal></onyx-palette-modal>
+
+    <main>
+      <onyx-header></onyx-header>
+      <onyx-color-display></onyx-color-display>
+      <onyx-sidebar></onyx-sidebar>
+      <onyx-controls></onyx-controls>
+      <onyx-footer></onyx-footer>
+    </main>
+  </body>
+
+  <script src="./js/main.mjs" type="module" charset="utf-8"></script>
+
+  <script type="text/javascript">
+    window.isUpdateAvailable = new Promise((resolve, reject) => {
+      if (
+        'serviceWorker' in navigator &&
+        !['127.0.0.1', 'localhost'].includes(window.location.hostname)
+      ) {
+        // register service worker file
+        navigator.serviceWorker
+          .register('./serviceWorker.mjs')
+          .then(reg => {
+            console.log('[serviceworker] registered. ', reg.scope)
+
+            reg.onupdatefound = () => {
+              console.log('[serviceworker] update found. requesting update')
+              const installingWorker = reg.installing
+              installingWorker.onstatechange = () => {
+                switch (installingWorker.state) {
+                  case 'installed':
+                    if (navigator.serviceWorker.controller) {
+                      window.localStorage.setItem('onyxUpdateAvailable', true)
+                      resolve(true)
+                    } else {
+                      window.localStorage.setItem('onyxUpdateAvailable', false)
+                      resolve(false)
+                    }
+                    break
+                }
+              }
+            }
+          })
+          .catch(err => console.error('[serviceworker] error: ', err))
+      }
+    })
+  </script>
+</html>

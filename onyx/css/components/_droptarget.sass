@@ -1,0 +1,30 @@
+@use '../utils/vars' as v
+
+#onyx-drop-target
+  +v.fill
+  +v.positionzero
+  +v.lightmono
+  +v.center
+  +v.colordisplaycolor
+  +v.colordisplaybgfade7
+  +v.blurbg
+
+  border: 4px dashed currentColor
+  font-size: 2rem
+  opacity: 0
+  pointer-events: none
+  position: absolute
+  transition: opacity 0.2s ease-out
+  user-select: none
+  z-index: v.$layer-overlay
+
+  &.drag-over
+    pointer-events: auto
+    opacity: 1
+
+  p
+    +v.bgcolor
+
+    border-radius: v.$border-radius
+    padding: v.$button-padding-big
+    text-align: center

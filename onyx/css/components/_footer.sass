@@ -1,0 +1,98 @@
+@use 'sass:color' as c
+@use '../utils/vars' as v
+
+#onyx-footer
+  +v.fill
+  +v.lightmono
+  +v.colordisplaycolor
+
+  grid-area: footer
+  margin-top: v.$p-s
+
+  .border-top
+    +v.thinborder
+
+  footer
+    +v.colordisplaycolor
+
+    align-items: center
+    display: flex
+    gap: v.$halfgap
+    padding-top: v.$p-s
+
+    b
+      flex-grow: 666
+      display: inline-block
+
+      @media (max-width: v.$breakpoint-miniscule)
+        display: none
+
+    .status-indicator
+      +v.croptext(1.2)
+
+      font-size: 0.8rem
+      line-height: 1.1rem
+      user-select: none
+      text-align: center
+
+      &-label
+        opacity: 0.6
+
+    .footer-attribution
+      +v.croptext(1.2)
+
+      font-size: 0.8rem
+      gap: v.$quartergap
+      line-height: 1.1rem
+
+      a
+        +v.kfocus
+
+        color: currentColor
+
+    .footer-controls
+      display: grid
+      gap: v.$halfgap
+      grid-template-columns: repeat(3, max-content)
+
+      .options-selector
+        +v.colordisplaycolor
+
+        display: flex
+        max-height: max-content
+        max-width: max-content
+        gap: v.$halfgap
+
+        button, label
+          +v.destroy
+          +v.kfocus
+
+          cursor: pointer
+          color: currentColor
+
+          &:hover
+            text-decoration: underline
+
+        button, span, label
+          +v.croptext(1.2)
+          +v.lightmono
+
+          display: block
+          font-size: 0.8rem
+          line-height: 1.1rem
+          text-transform: uppercase
+
+          &.fade
+            opacity: 0.6
+            user-select: none
+
+        #configuration-upload
+          display: none
+
+      @media (max-width: v.$breakpoint-miniscule)
+        grid-template-columns: 1fr
+        grid-template-rows: 1fr 1fr
+
+    .footer-attribution
+      display: flex
+      justify-content: flex-end
