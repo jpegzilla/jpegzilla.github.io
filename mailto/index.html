@@ -1,74 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- extra meta tags -->
+    <meta
+      name="description"
+      content="interactive generator for mailto links."
+    />
+    <meta name="author" content="jpegzilla" />
+    <meta name="robots" content="index, follow" />
+    <meta name="application-name" content="jpegzilla.com/mailto" />
+    <!-- opengraph tags -->
+    <meta property="og:title" content="jpegzilla - mailto link generator" />
+    <meta
+      property="og:description"
+      content="interactive generator for mailto links."
+    />
+    <meta property="og:url" content="https://jpegzilla.com" />
+    <meta property="og:site_name" content="jpegzilla - mailto link generator" />
+    <meta property="og:image" content="../css/img/6a7065677a696c6c61.png" />
+    <meta property="og:type" content="website" />
+    <!-- links -->
+    <link type="text/plain" rel="author" href="../humans.txt" />
+    <link rel="icon" href="favicon.ico" />
+    <link rel="stylesheet" href="./styles/main.min.css" />
+    <link rel="canonical" href="https://jpegzilla.com/mailto" />
+    <!-- regular meta tags -->
+    <title>jpegzilla - mailto link generator</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <!-- extra meta tags -->
-  <meta name="description" content="this is a mailto link generator created by jpegzilla. enjoy!">
-  <meta name="author" content="jpegzilla">
-  <meta name="robots" content="index, follow">
-  <meta name="application-name" content="jpegzilla.com/mailto">
-  <!-- opengraph tags -->
-  <meta property="og:title" content="jpegzilla - mailto link generator">
-  <meta property="og:description" content="this is a mailto link generator created by jpegzilla. enjoy!">
-  <meta property="og:url" content="https://jpegzilla.com">
-  <meta property="og:site_name" content="jpegzilla - mailto link generator">
-  <meta property="og:image" content="../css/img/6a7065677a696c6c61.png">
-  <meta property="og:type" content="website">
-  <!-- links -->
-  <link type="text/plain" rel="author" href="../humans.txt">
-  <link rel="icon" href="favicon.ico">
-  <link rel="stylesheet" href="./styles/main.min.css">
-  <link rel="canonical" href="https://jpegzilla.com/mailto">
-  <!-- regular meta tags -->
-  <title>jpegzilla - mailto link generator</title>
-</head>
+  <!-- Google tag (gtag.js) -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-Y7JEXYVMS7"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || []
+    function gtag() {
+      dataLayer.push(arguments)
+    }
+    gtag('js', new Date())
 
-<!-- Google tag (gtag.js) -->
-<script
-  async
-  src="https://www.googletagmanager.com/gtag/js?id=G-Y7JEXYVMS7"
-></script>
-<script>
-  window.dataLayer = window.dataLayer || []
-  function gtag() {
-    dataLayer.push(arguments)
-  }
-  gtag('js', new Date())
+    gtag('config', 'G-Y7JEXYVMS7')
+  </script>
 
-  gtag('config', 'G-Y7JEXYVMS7')
-</script>
+  <body>
+    <section>
+      <h1>mailto link generator</h1>
+      <h2>click generated text to copy</h2>
 
-<body>
-  <section>
-    <h1>mailto link generator</h1>
-    <h2>click generated text to copy</h2>
-
-    <form class="form">
-      <fieldset>
-        <legend>&nbsp;email settings (* = required)&nbsp;</legend>
-        <label title="required" for="to">to *</label>
-        <input required class="input" type="text" id="to" placeholder="email@example.com">
-        <label for="cc">cc</label>
-        <input class="input" type="text" id="cc" placeholder="email@example.com">
-        <label for="bcc">bcc</label>
-        <input class="input" type="text" id="bcc" placeholder="email@example.com">
-        <label for="subject">subject</label>
-        <input class="input" type="text" id="subject" placeholder="re: printer paper">
-        <label for="body">body</label>
-        <textarea cols="40" wrap="hard" class="input" type="text" id="body" placeholder="can you buy some more printer paper? and get the good brand, that last box tasted pretty bland...."></textarea>
-      </fieldset>
-    </form>
-    <p title="click here to copy the link!" id="generated">
-      &rarr; generated link will show up here &larr;
-    </p>
-    <footer>
-      created by <a href="https://jpegzilla.com">jpegzilla</a>
-    </footer>
-  </section>
-</body>
-<script src="./scripts/main.js" charset="utf-8"></script>
-
+      <form class="form">
+        <fieldset>
+          <legend>&nbsp;email settings (* = required)&nbsp;</legend>
+          <label title="required" for="to">to *</label>
+          <input
+            required
+            class="input"
+            type="text"
+            id="to"
+            placeholder="email@example.com"
+          />
+          <label for="cc">cc</label>
+          <input
+            class="input"
+            type="text"
+            id="cc"
+            placeholder="email@example.com"
+          />
+          <label for="bcc">bcc</label>
+          <input
+            class="input"
+            type="text"
+            id="bcc"
+            placeholder="email@example.com"
+          />
+          <label for="subject">subject</label>
+          <input
+            class="input"
+            type="text"
+            id="subject"
+            placeholder="re: printer paper"
+          />
+          <label for="body">body</label>
+          <textarea
+            cols="40"
+            wrap="hard"
+            class="input"
+            type="text"
+            id="body"
+            placeholder="can you buy some more printer paper? and get the good brand, that last box tasted pretty bland...."
+          ></textarea>
+        </fieldset>
+      </form>
+      <p title="click here to copy the link!" id="generated">
+        &rarr; generated link will show up here &larr;
+      </p>
+      <footer>created by <a href="https://jpegzilla.com">jpegzilla</a></footer>
+    </section>
+  </body>
+  <script src="./scripts/main.js" charset="utf-8"></script>
 </html>
