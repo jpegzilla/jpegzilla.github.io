@@ -6,7 +6,7 @@
   "theme_color": "#060408",
   "background_color": "#060408",
   "display": "standalone",
-  "scope": "./",
+  "scope": ".",
   "id": "./onyx",
   "orientation": "landscape",
   "icons": [
