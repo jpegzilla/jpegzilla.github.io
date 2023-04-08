@@ -2,6 +2,7 @@
   "name": "jpegzilla 2023",
   "short_name": "jpegzilla",
   "description": "jpegzilla's portfolio site - 2023 edition!",
+  "id": "./",
   "icons": [
     {
       "src": "/css/img/app/36x36.png",

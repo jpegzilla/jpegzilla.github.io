@@ -7,7 +7,7 @@
   "background_color": "#060408",
   "display": "standalone",
   "scope": "./",
-  "id": "./",
+  "id": "./onyx",
   "orientation": "landscape",
   "icons": [
     {
