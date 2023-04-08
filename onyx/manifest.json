@@ -5,7 +5,7 @@
   "start_url": "./index.html",
   "theme_color": "#060408",
   "background_color": "#060408",
-  "display": "standalone",
+  "display": "fullscreen",
   "scope": "./",
   "id": "onyx",
   "orientation": "landscape",
