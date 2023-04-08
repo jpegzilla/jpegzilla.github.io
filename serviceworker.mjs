@@ -24,10 +24,11 @@ const FILES_TO_CACHE = [
   // mtns icons
   'css/img/mtns-icons/red_heart.svg',
   'css/img/mtns-icons/furry_pride.svg',
-  'css/img/mtns-icons/bisexual_flag.svg',
+  'css/img/mtns-icons/lesbian_flag.svg',
   'css/img/mtns-icons/maple_leaf.svg',
   'css/img/mtns-icons/pirate_flag.svg',
   'css/img/mtns-icons/transgender_flag.svg',
+  'css/img/mtns-icons/rave.svg',
   'css/img/mtns-icons/gamepad.svg',
 
   // my icons
@@ -151,7 +152,7 @@ const FILES_TO_CACHE = [
   'css/img/app/favicon.ico',
 ]
 
-const JPEGZILLA_VERSION = '6.017'
+const JPEGZILLA_VERSION = '6.020'
 const CACHE_NAME = `jpegzilla_${JPEGZILLA_VERSION}`
 const cacheWhitelist = [CACHE_NAME]
 
