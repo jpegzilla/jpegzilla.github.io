@@ -1,13 +1,12 @@
 export const works = {
   main: {
     name: {
-      en: 'onyx',
+      en: 'o. chromatics',
       ja: 'オニキス',
     },
     canonName: 'main',
     details: {
-      en:
-        'a simple color palette creation tool for experimentation and design.',
+      en: 'a simple color palette creation tool built for interface design.',
       ja: '単純なカラーパレット作成ツール。',
     },
     // details:
@@ -16,25 +15,26 @@ export const works = {
     image: 'css/img/goo.svg',
     toolbox: 'programming, design',
     year: '2023',
-    status: 'done',
+    status: 'ongoing',
   },
 
-  thesis: {
+  case: {
     name: {
-      en: 'thesis',
-      ja: 'テーゼ',
+      en: 'case study',
+      ja: 'ケーススタディ',
     },
-    canonName: 'thesis',
-    // details: 'theory of web development written out of annoyance.',
+    canonName: 'case',
     details: {
-      en: 'a collection of opinions on individual web development work.',
-      ja: '個人web開発の仕事に対する意見をまとめたもの。',
+      en: 'a recent project retrospective.',
+      ja: '最近のケーススタディ。',
     },
-    link: 'https://github.com/jpegzilla/thesis',
+    // details:
+    //   'I needed to combine features from some of my favorite color tools in order to make a tool that would be more convenient for me. here is the result.',
+    link: 'https://jpegzilla.com/blog/case/docusign',
     image: 'css/img/goo.svg',
-    toolbox: 'writing',
-    year: '2020',
-    status: 'complete',
+    toolbox: 'front-end and back-end programming',
+    year: '2022 - 2023',
+    status: 'finished',
   },
 
   articles: {
@@ -56,6 +56,24 @@ export const works = {
     recentUpdate: true,
   },
 
+  thesis: {
+    name: {
+      en: 'thesis',
+      ja: 'テーゼ',
+    },
+    canonName: 'thesis',
+    // details: 'theory of web development written out of annoyance.',
+    details: {
+      en: 'a collection of opinions on individual web development work.',
+      ja: '個人web開発の仕事に対する意見をまとめたもの。',
+    },
+    link: 'https://github.com/jpegzilla/thesis',
+    image: 'css/img/goo.svg',
+    toolbox: 'writing',
+    year: '2020',
+    status: 'complete',
+  },
+
   tsurezure: {
     name: {
       en: 'tsurezure',
@@ -63,8 +81,7 @@ export const works = {
     },
     canonName: 'tsurezure',
     details: {
-      en:
-        'a barebones server framework in ruby. made by someone who knows very little ruby.',
+      en: 'a barebones server framework in ruby.',
       ja: 'どうやらrubyのサーバフレームワーク。',
     },
     // details:
@@ -115,21 +132,21 @@ export const works = {
   //   status: 'done',
   // },
 
-  minervasAkasha: {
-    name: { en: 'minerva', ja: 'ミネルウァ' },
-    canonName: 'minervasAkasha',
-    details: {
-      en: 'a data organization tool. currently dormant, but in a usable state.',
-      ja: 'データ整理のためのツール。',
-    },
-    // details:
-    //   'I started this project in order to get as good at react / modern javascript as I possibly could, as quickly as I could. that goal was achieved, but the project is lying dormant until I find motivation. I used to stream myself working on this every day, but now...',
-    link: 'https://github.com/jpegzilla/minervas-akasha',
-    image: 'css/img/minervas-akasha.png',
-    toolbox: 'programming, design',
-    year: '2019',
-    status: 'in beta',
-  },
+  // minervasAkasha: {
+  //   name: { en: 'minerva', ja: 'ミネルウァ' },
+  //   canonName: 'minervasAkasha',
+  //   details: {
+  //     en: 'a data organization tool. currently dormant, but in a usable state.',
+  //     ja: 'データ整理のためのツール。',
+  //   },
+  //   // details:
+  //   //   'I started this project in order to get as good at react / modern javascript as I possibly could, as quickly as I could. that goal was achieved, but the project is lying dormant until I find motivation. I used to stream myself working on this every day, but now...',
+  //   link: 'https://github.com/jpegzilla/minervas-akasha',
+  //   image: 'css/img/minervas-akasha.png',
+  //   toolbox: 'programming, design',
+  //   year: '2019',
+  //   status: 'in beta',
+  // },
 
   // theTower: {
   //   name: {

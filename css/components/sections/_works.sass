@@ -95,7 +95,10 @@
         transition: opacity 0.3s ease 0.3s, transform 0.5s ease-out, margin 0.3s ease-out
 
       &.unreleased
-        +v.coolshittag('UNRELEASED', v.$pflag-yellow)
+        +v.coolshittag('未公開', v.$pflag-yellow)
+
+        [lang=en] &
+          +v.coolshittag('UNRELEASED', v.$pflag-yellow, $top: 120%)
 
         pointer-events: none
 
@@ -104,14 +107,20 @@
           z-index: -1
 
       &.recentupdate
-        +v.coolshittag('RECENT UPDATE', v.$pflag-yellow)
+        +v.coolshittag('最近更新', v.$pflag-yellow)
+
+        [lang=en] &
+          +v.coolshittag('RECENT UPDATE', v.$pflag-yellow, $top: 120%)
 
       body.dark &
         // border-bottom: 1px solid v.$white-bright
         transition: opacity 0.3s ease 0.3s, transform 0.5s ease-out, margin 0.3s ease-out
 
       &:first-of-type
-        +v.coolshittag('NEW SHIT')
+        +v.coolshittag('新着')
+
+        [lang=en] &
+          +v.coolshittag('NEW SHIT', $top: 120%)
 
       .bar
         display: flex

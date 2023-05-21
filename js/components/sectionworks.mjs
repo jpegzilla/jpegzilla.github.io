@@ -57,6 +57,7 @@ class SectionWorks extends Component {
         recentUpdate = false,
       }) => html`
         <li
+          lang="${this.lang}"
           class="works-item intersection-item ${!released
             ? 'unreleased'
             : ''} ${recentUpdate ? 'recentupdate' : ''}"
@@ -179,6 +180,10 @@ class SectionWorks extends Component {
 
     state.on('lang', lang => {
       this.lang = lang
+
+      this.querySelectorAll('.works-item').forEach(element => {
+        element.lang = this.lang
+      })
 
       this.querySelectorAll('.title').forEach(element => {
         const canonName = element.dataset.name

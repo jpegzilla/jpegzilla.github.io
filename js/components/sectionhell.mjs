@@ -13,7 +13,7 @@ const contactMethods = [
       ja: '営業のためにメッセージを送信してください。',
     },
     link: 'mailto:eris@jpegzilla.com?subject=hello!',
-    status: 'open &mdash; business only',
+    status: 'open &mdash; all comms',
   },
   {
     name: {

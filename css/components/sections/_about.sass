@@ -35,7 +35,7 @@
       user-select: none
 
       &::after
-        +v.background-color(c.adjust(v.$red-in-mid, $alpha: -0.75), c.adjust(v.$calvin-light, $alpha: -0.9))
+        +v.background-color(c.adjust(v.$red-in-mid, $alpha: -0.75), c.adjust(v.$nabi-light, $alpha: -0.9))
 
         position: absolute
         inset: 0
@@ -80,6 +80,12 @@
 
       display: flex
       flex-direction: column
+
+      a
+        +v.color(v.$black-dark, v.$miku)
+
+        text-decoration: underline
+        text-decoration-thickness: 0.15rem
 
       .text-container-main,
       .text-container-extra

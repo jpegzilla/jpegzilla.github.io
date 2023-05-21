@@ -21,8 +21,8 @@ const copy = {
       </p>
 
       <p class="large">
-        my name is <span class="emph">eris.</span> I'm a twenty-three-year-old
-        <span class="emph">creative developer</span> and
+        my name is <span class="emph">eris.</span> I'm an experienced
+        <span class="emph">software engineer</span> and
         <span class="emph">digital designer.</span>
       </p>
 
@@ -40,8 +40,16 @@ const copy = {
       </p>
 
       <p>
-        if you need someone like me, I'm currently available. I'm sure we could
-        be friends, so please get in touch!
+        if you need to make something unique on the web, I'm currently
+        available.
+        <a
+          href="mailto:eris@jpegzilla.com?subject=hello%20eris!&amp;body=I%20want%20you%20to%20make%20something%20for%20me..."
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="eris@jpegzilla.com"
+          >send me an email</a
+        >
+        describing your project! I'm sure we could be friends.
       </p>
     `,
     ja: html`
