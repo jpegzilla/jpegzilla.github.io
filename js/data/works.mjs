@@ -20,7 +20,7 @@ export const works = {
 
   case: {
     name: {
-      en: 'case study',
+      en: 'case: docusign',
       ja: 'ケーススタディ',
     },
     canonName: 'case',
