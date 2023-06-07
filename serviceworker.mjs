@@ -152,7 +152,7 @@ const FILES_TO_CACHE = [
   'css/img/app/favicon.ico',
 ]
 
-const JPEGZILLA_VERSION = '6.032'
+const JPEGZILLA_VERSION = '6.033'
 const CACHE_NAME = `jpegzilla_${JPEGZILLA_VERSION}`
 const cacheWhitelist = [CACHE_NAME]
 
