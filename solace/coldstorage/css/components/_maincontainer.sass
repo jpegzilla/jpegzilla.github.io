@@ -1,0 +1,16 @@
+@use '../utils/vars' as v
+
+$grid-area-1: "header header"
+$grid-area-2: "notes-list note-container"
+
+main
+  +v.fill
+
+  display: grid
+  gap: v.$pad-1
+  grid-template-areas: $grid-area-1 $grid-area-2
+  grid-template-rows: min-content 1fr
+  grid-template-columns: 1fr 9fr
+  max-width: v.$max-width
+  margin: 0 auto
+  padding: v.$pad-2 v.$pad-1 v.$pad-2 v.$pad-1

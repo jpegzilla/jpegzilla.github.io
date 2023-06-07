@@ -1,0 +1,106 @@
+@use 'sass:color'
+
+// measurements
+
+$pad-8: 8rem
+$pad-4: 4rem
+$pad-2: 2rem
+$pad-1: 1rem
+$pad-05: 0.5rem
+$button-padding: $pad-05 $pad-1
+
+$breakpoint-1920: 1920px
+$breakpoint-1500: 1500px
+$breakpoint-1200: 1200px
+$breakpoint-900: 900px
+$breakpoint-700: 700px
+
+$max-width: 2500px
+$border-radius: 4px
+
+// layering
+
+$layer-overlay: 49
+$layer-primary: 48
+
+// timing
+
+$color-transition: 0.2s
+
+// fonts
+
+$ibm: "ibm", monospace
+$crimson: "crimson", serif
+
+// colors
+
+$white: hsl(51.18, 77.27%, 91.37%)
+$beige: hsl(27.27, 49.68%, 69.61%)
+$black: hsl(340.00, 15.79%, 11.18%)
+$orange: hsl(19.51, 65.99%, 48.43%)
+$yellow: hsl(37.22, 87.79%, 58.24%)
+
+// $color-1: hsl(240.00, 13.89%, 14.12%)
+// $color-2: hsl(292.50, 6.45%, 24.31%)
+// $color-3: hsl(221.74, 11.44%, 39.41%)
+// $color-4: hsl(215.17, 16.02%, 64.51%)
+// $color-5: hsl(75.00, 44.44%, 89.41%)
+
+// theming
+
+=theme($theme: "dark")
+  @if $theme == "light"
+    --bg: #{$white}
+    --alt: #{$beige}
+    --bg-halfop: #{color.adjust($white, $alpha: -0.5)}
+    --text: #{$black}
+    --text-halfop: #{color.adjust($black, $alpha: -0.5)}
+    --hl: #{$orange}
+  @else if $theme == "dark"
+    --alt: #{$beige}
+    --bg: #{$black}
+    --bg-halfop: #{color.adjust($black, $alpha: -0.5)}
+    --text: #{$white}
+    --text-halfop: #{color.adjust($white, $alpha: -0.5)}
+    --hl: #{$yellow}
+
+// mixins
+
+=blurbg($distance: 2px, $sat: 180%)
+  backdrop-filter: blur($distance) saturate($sat)
+
+=custom-scrollbar
+  overflow-y: auto
+
+  &::-webkit-scrollbar
+    width: 1rem
+    display: block
+    background-color: transparent
+
+  &::-webkit-scrollbar-track
+    -webkit-box-shadow: inset 0 0 10px 10px transparent
+    box-shadow: inset 0 0 10px 10px transparent
+    border: solid 5px transparent
+    width: 6px !important
+    display: block
+
+  &::-webkit-scrollbar-thumb
+    -webkit-box-shadow: inset 0 0 10px 10px var(--text)
+    box-shadow: inset 0 0 10px 10px var(--text)
+    border: solid 5px transparent
+
+  &::-webkit-scrollbar-corner, &::-webkit-resizer
+    display: none
+
+=big
+  height: 100vh
+  width: 100vw
+
+=fill
+  height: 100%
+  width: 100%
+
+=antibullet
+  list-style-type: none
+  margin: 0
+  padding: 0

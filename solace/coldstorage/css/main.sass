@@ -1,0 +1,20 @@
+@use 'utils/defaults'
+@use 'utils/fonts'
+@use 'utils/vars' as v
+
+// components
+
+@use 'components/maincontainer'
+@use 'components/header'
+@use 'components/list'
+@use 'components/notepad'
+
+body
+  background-color: var(--bg)
+  color: var(--text)
+  font-size: #{'clamp(1rem, -0.875rem + 8.333vw, 1rem)'}
+  height: 100vh
+  overflow-x: hidden
+  transition: background-color v.$color-transition, color v.$color-transition
+  width: 100vw
+  max-height: 100vh
