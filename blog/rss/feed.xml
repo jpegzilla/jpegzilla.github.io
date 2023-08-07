@@ -170,5 +170,11 @@
       <link>https://jpegzilla.com/blog/posts/making-ase-color-palettes-with-javascript.html</link>
       <description>if you're working on a javascript application that needs to turn color data into an adobe .ase file, here's how to do that.</description>
     </item>
+
+    <item>
+      <title>the tensest summer of my life — 2023.08.06</title>
+      <link>https://jpegzilla.com/blog/posts/the-tensest-summer-of-my-life.html</link>
+      <description>my summer was...scary.</description>
+    </item>
   </channel>
 </rss>
