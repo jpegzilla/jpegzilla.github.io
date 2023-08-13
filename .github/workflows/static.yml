@@ -4,7 +4,7 @@ name: Deploy static content to Pages
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ["main"]
+    branches: ['main']
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -18,7 +18,7 @@ permissions:
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 # However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
-  group: "pages"
+  group: 'pages'
   cancel-in-progress: false
 
 jobs:
@@ -42,8 +42,8 @@ jobs:
         run: |
           echo ${{ secrets.HELLO }}
           echo "HELLO=${{ secrets.HELLO }}"
-          touch env.mjs
-          echo "export default { key: \"${{ secrets.HELLO }}\" }" > env.mjs
+          touch ./envtest/env.mjs
+          echo "export default { key: \"${{ secrets.HELLO }}\" }" > ./envtest/env.mjs
           echo "hello_thing=${{ secrets.HELLO }}" >> $GITHUB_ENV
       - name: Deploy to GitHub Pages
         id: deployment
