@@ -102,8 +102,11 @@ $layer-overlay: 54
   @media (max-width: $breakpoint-tiny)
     display: none
 
-=blurbg($distance: 2px, $sat: 180%)
-  backdrop-filter: blur($distance) saturate($sat)
+=blurbg($distance: 2px, $sat: 180%, $backdrop: true)
+  @if $backdrop == true
+    backdrop-filter: blur($distance) saturate($sat)
+  @if $backdrop == false
+    filter: blur($distance) saturate($sat)
 
 =theme($theme: "dark")
   --text-highlight: #{$red-in-mid}

@@ -23,19 +23,21 @@ class SiteUnderlay extends Component {
       </section>
     `
 
-    document.addEventListener('scroll', () => {
-      const scrollind = this.querySelector('.moon-inner')
-      const delta = document.documentElement.scrollTop
-      const height =
-        document.documentElement.scrollHeight -
-        document.documentElement.clientHeight
-
-      const progress = (delta / height) * 30
-
-      requestAnimationFrame(() => {
-        scrollind.style.transform = `translate3d(-${progress}px, 0, 0)`
-      })
-    })
+    // document.addEventListener('scroll', () => {
+    //   const scrollind = this.querySelector('.moon-inner')
+    //   const delta = document.documentElement.scrollTop
+    //   const height =
+    //     document.documentElement.scrollHeight -
+    //     document.documentElement.clientHeight
+    //
+    //   const progress = (delta / height) * 30
+    //
+    //   console.log(progress, { actual: -progress })
+    //
+    //   requestAnimationFrame(() => {
+    //     scrollind.style.transform = `translate3d(-${progress}px, 0, 0)`
+    //   })
+    // })
   }
 }
 

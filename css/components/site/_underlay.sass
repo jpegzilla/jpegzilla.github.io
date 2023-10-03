@@ -4,6 +4,12 @@
 @use './../utils/vars' as v
 @use './../utils/animations/rotate' as r
 
+@keyframes eclipse
+  from
+    transform: translate3d(-1px, 0, 0)
+  to
+    transform: translate3d(-30px, 0, 0)
+
 #site-underlay
   +v.jfont
 
@@ -15,11 +21,13 @@
   width: 100vw
   z-index: v.$layer-underlay
 
+  // TODO: fix perf on this, but for now goodbye
+  display: none
+
   // @media (max-width: v.$breakpoint-tiny)
   //   display: none
 
   .overlay
-    +v.blurbg(3px)
     +v.background-color(c.adjust(v.$black-dark, $alpha: -0.2), c.adjust(v.$white-bright, $alpha: -0.3))
 
     +v.ffonly
@@ -48,12 +56,11 @@
     $innersize: 99%
     $sizesmall: 90vw
 
-    // @media (max-width: v.$breakpoint-tiny)
-    //   display: none
+    @media (max-width: v.$breakpoint-tiny)
 
     .moon-color
       +v.flexcenter
-      +r.rotate(120s)
+      // +r.rotate(120s)
 
       position: absolute
       height: $size
@@ -81,8 +88,10 @@
         +v.background-color
 
         background-clip: border-box
+        will-change: translate3d
         height: $innersize
         width: $innersize
         display: block
         border-radius: 50%
         position: relative
+        // transform: translate3d(-6px, 0, 0)

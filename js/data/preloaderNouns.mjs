@@ -54,5 +54,5 @@ export default [
   'heart',
   'revulsion',
   'fury',
-  'revenge'
+  'revenge',
 ]
