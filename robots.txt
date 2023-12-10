@@ -1,3 +1,14 @@
 # Rule 1
 User-agent: *
 Allow: /
+
+# known ai bots
+
+User-agent: GPTBot
+Disallow: /
+User-agent: ChatGPT-User
+Disallow: /
+User-agent: Google-Extended
+Disallow: /
+User-agent: CCBot
+Disallow: /
