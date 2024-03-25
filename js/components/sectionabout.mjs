@@ -69,10 +69,7 @@ const copy = {
         仕事以外では、ゲーム開発、料理、ボーカロイド、ビデオゲーム、チップチューンにとても興味があります。
       </p>
 
-      <p class="ja">
-        私のような人間が必要であれば、現在利用可能です。
-        きっと友達になれると思うので、ぜひ連絡をください！
-      </p>
+      <p class="ja">ぜひ連絡をください！</p>
     `,
     b: html`
       <p class="large">I make <span class="emph">web software</span>.</p>
