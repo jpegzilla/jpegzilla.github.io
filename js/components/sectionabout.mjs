@@ -53,9 +53,7 @@ const copy = {
       </p>
     `,
     ja: html`
-      <p class="large ja">
-        webを美しくしたい。
-      </p>
+      <p class="large ja">webを美しくしたい。</p>
 
       <p class="large ja">
         エリスと申します。
@@ -68,7 +66,7 @@ const copy = {
       </p>
 
       <p class="ja">
-        仕事以外では、ケーム開発、料理、ボーカロイド、ビデオゲーム、チップチューンにとても興味があります。
+        仕事以外では、ゲーム開発、料理、ボーカロイド、ビデオゲーム、チップチューンにとても興味があります。
       </p>
 
       <p class="ja">
@@ -139,9 +137,7 @@ class SectionAbout extends Component {
                 alt=""
               />
               <img src="./css/img/me/hello.gif" class="me animated" alt="" />
-              <div class="about-logos-container">
-                ${renderLogo()}
-              </div>
+              <div class="about-logos-container">${renderLogo()}</div>
             </div>
             <div class="about-info-container-text">
               <div class="text-container-main"></div>
