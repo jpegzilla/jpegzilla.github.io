@@ -10,19 +10,19 @@ const contactMethods = [
     },
     details: {
       en: "send me an email! I'll typically respond within 24 hours.",
-      ja: '営業のためにメッセージを送信してください。',
+      ja: 'メールを送信して',
     },
     link: 'mailto:eris@jpegzilla.com?subject=hello!',
     status: 'open &mdash; all comms',
   },
   {
     name: {
-      en: 'twitter',
-      ja: 'ツイッター',
+      en: 'bluesky',
+      ja: 'bluesky',
     },
     details: {
-      en: 'you can also contact me through twitter messages!',
-      ja: 'ツイッターでコンタクトを取ることができます！',
+      en: 'you can also contact me through bluesky messages!',
+      ja: 'bluesky垢作った！',
     },
     link: 'https://twitter.com/jpegzilla',
     status: 'open &mdash; casual',
@@ -34,7 +34,7 @@ const contactMethods = [
     },
     details: {
       en: 'this is my discord profile.',
-      ja: 'ディスコードプロフィールです。',
+      ja: 'discordプロフィール',
     },
     link: 'https://discordapp.com/users/156441196191809536',
     status: 'open &mdash; casual',
@@ -131,9 +131,8 @@ class SectionHell extends Component {
         element.textContent = contactMethod.name[this.lang]
       })
 
-      this.querySelector(
-        '.contact-item-list'
-      ).innerHtml = this.generateContactMethodList()
+      this.querySelector('.contact-item-list').innerHtml =
+        this.generateContactMethodList()
     })
 
     render()
