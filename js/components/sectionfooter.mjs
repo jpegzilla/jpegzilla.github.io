@@ -84,18 +84,9 @@ class SectionFooter extends Component {
               rel="noreferrer noopener"
               >source code</a
             >
-            &#9913;
-            <a
-              href="https://jpegzilla.com/blog/posts/the-lowercase-cult.html"
-              target="_blank"
-              rel="noreferrer noopener"
-              >lowercase cult</a
-            >
             &#9913; may your flowers bloom eternally under the sky.
           </span>
-          <span class="emojis">
-            ${renderIcons()}
-          </span>
+          <span class="emojis"> ${renderIcons()} </span>
         </div>
       </footer>
     `
