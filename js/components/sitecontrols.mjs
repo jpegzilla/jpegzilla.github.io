@@ -168,7 +168,7 @@ class SiteControls extends HTMLElement {
             </g>
           </svg>
         </div>
-        <div
+        <!-- <div
           accesskey="l"
           class="controls lang-controls"
           id="lang-controls"
@@ -187,6 +187,7 @@ class SiteControls extends HTMLElement {
           </div>
           <div class="lang-controls-ja" lang="ja">日本</div>
         </div>
+      </div> -->
       </div>
     `
 
