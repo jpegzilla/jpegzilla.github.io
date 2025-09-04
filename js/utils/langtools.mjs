@@ -7,7 +7,7 @@ export const getLang = () => {
 
 export const supportedLangs = {
   en: { code: 'en', native: 'hello' },
-  ja: { code: 'ja', native: 'こんにちは' }
+  // ja: { code: 'ja', native: 'こんにちは' }
 }
 
 export const translationToUse = supportedLangs[getLang()] || supportedLangs.en
