@@ -220,16 +220,16 @@ class SiteControls extends HTMLElement {
       })
     })
 
-    hotkey('l', () => {
-      const langControls = this.querySelector('.lang-controls-switch')
-
-      this.handleSwitch({ target: langControls })
-
-      toggleActiveLang({
-        type: 'keydown',
-        key: 'Enter',
-      })
-    })
+    // hotkey('l', () => {
+    //   const langControls = this.querySelector('.lang-controls-switch')
+    //
+    //   this.handleSwitch({ target: langControls })
+    //
+    //   toggleActiveLang({
+    //     type: 'keydown',
+    //     key: 'Enter',
+    //   })
+    // })
 
     this.querySelectorAll('.controls').forEach(sw => {
       sw.addEventListener('click', this.handleSwitch)
@@ -253,9 +253,9 @@ class SiteControls extends HTMLElement {
                 ? lightSwitchText.dark[this.lang]
                 : lightSwitchText.light[this.lang]
             break
-          case 'lang-controls':
-            message = this.lang === 'ja' ? langSwitchText.ja : langSwitchText.en
-            break
+          // case 'lang-controls':
+          //   message = this.lang === 'ja' ? langSwitchText.ja : langSwitchText.en
+          //   break
         }
 
         state.do('headermessage', message)
@@ -266,11 +266,11 @@ class SiteControls extends HTMLElement {
       })
     })
 
-    const langControls = this.querySelector('.lang-controls')
+    // const langControls = this.querySelector('.lang-controls')
     const lightControls = this.querySelector('.light-controls')
 
-    langControls.addEventListener('click', toggleActiveLang)
-    langControls.addEventListener('keydown', toggleActiveLang)
+    // langControls.addEventListener('click', toggleActiveLang)
+    // langControls.addEventListener('keydown', toggleActiveLang)
 
     lightControls.addEventListener('click', toggleLights)
     lightControls.addEventListener('keydown', toggleLights)
