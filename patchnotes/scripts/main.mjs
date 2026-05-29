@@ -26,6 +26,7 @@ const generatePatchNumber = (usePatch = true) => {
 // should there just be a link that randomizes every time you click?
 // should the input be freeform or just there to show the number?
 // no the input was better
+// no just kidding made the input into just a link that gets randomized
 
 // elements
 /**
@@ -39,16 +40,14 @@ const patchNotesLink = document.querySelector('#patch-notes-link')
 
 // functionality
 let shouldUsePatchVersion = patchToggle.checked
+
 const updatePatchNumber = () => {
   versionNumber = generatePatchNumber(shouldUsePatchVersion)
+
   versionNumberDisplay.innerHTML = `&nbsp;${versionNumber}&nbsp;`
   patchNotesLink.href = `https://www.google.com/search?q=${encodeURIComponent(
     versionNumber
   )}+patch+notes&udm=14`
-  console.log({
-    version: versionNumber,
-    patchOn: shouldUsePatchVersion,
-  })
 }
 
 updatePatchNumber()
@@ -57,9 +56,8 @@ updatePatchNumber()
 patchToggle.onchange = e => {
   shouldUsePatchVersion = e.target.checked
   updatePatchNumber()
-  console.log(shouldUsePatchVersion)
 }
 
-randomizeButton.onclick = e => {
+randomizeButton.onclick = () => {
   updatePatchNumber()
 }
