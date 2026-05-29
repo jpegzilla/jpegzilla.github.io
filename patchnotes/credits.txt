@@ -1,0 +1,12 @@
+this website uses the a font called "fs jenson one" by opipik for the "patch notes" text:
+https://fontstruct.com/fontstructors/759789/opipik
+
+and another font called "victor mono" for all the other text:
+https://fontstruct.com/fontstructors/759789/opipik
+
+the other stuff is all me baybee
+
+blender (4.2 and yes they changed all the fucking hotkeys again god I've been using this software for like half my life and it feels like they just remap the keyboard every 5 years)
+atom (1.60.0, RIP)
+chrome (148.0.7778.179 checking the version caused chrome to start auto updating lol)
+the new windows terminal app (is it new?) (nope, 2019 was 7 years ago apparently.)
