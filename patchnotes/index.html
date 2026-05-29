@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="./css/main.min.css" />
+    <title>jpegzilla - let's read the patch notes!</title>
+  </head>
+  <body>
+    <main>
+      <b></b>
+
+      <header>
+        <h1>let's read the</h1>
+        <div class="wordmark-image-container">
+          <img src="./assets/patch-notes.png" alt="PATCH NOTES!!!" />
+        </div>
+      </header>
+
+      <section class="patch-notes-search">
+        <div class="input-controls-container">
+          <a
+            id="patch-notes-link"
+            class="patch"
+            target="_blank"
+            rel="noreferrer"
+            href=""
+          >
+            <div type="text" id="patch-notes-input">
+              <span class="fake-placeholder"
+                >click to see what's new in version</span
+              ><span class="version-number">&nbsp;1.0.0&nbsp;</span>
+            </div>
+          </a>
+        </div>
+        <div class="input-sub-controls-container">
+          <button id="randomize-button" type="button" name="button">
+            randomize
+          </button>
+          <div>
+            <input
+              id="version-patch-toggle"
+              name="version-patch-toggle"
+              type="checkbox"
+              checked="true"
+            />
+            <label for="version-patch-toggle">use build / patch number</label>
+          </div>
+        </div>
+      </section>
+
+      <b></b>
+
+      <footer>
+        <p>
+          made by
+          <a
+            href="https://jpegzilla.com"
+            target="_blank"
+            rel="noreferrer noopener"
+            >jpegzilla</a
+          >
+          due to slight excess energy.
+        </p>
+        <p>
+          <a href="https://github.com/jpegzilla/jpegzilla.github.io"
+            >source code here</a
+          >.
+        </p>
+      </footer>
+    </main>
+  </body>
+  <script src="./scripts/main.mjs" type="module" charset="utf-8"></script>
+</html>

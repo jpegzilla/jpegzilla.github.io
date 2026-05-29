@@ -1,0 +1,168 @@
+@font-face
+  font-family: "victor mono", monospace
+  src: url("./../assets/victormono.ttf") format('ttf'), url("./../assets/victormono.ttf")
+
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+// vars
+
+$text: #eee
+$background: #111
+$border: #555
+$erisred: hsl(335.09, 100.00%, 43.92%)
+
+// main container and stuff
+
+html, body
+  margin: 0
+  padding: 0
+
+a
+  color: $erisred
+
+input
+  accent-color: $erisred
+
+b
+  flex-grow: 1
+
+body
+  height: 100vh
+  width: 100vw
+  color: $text
+  font-family: "victor mono"
+
+main
+  width: 100%
+  height: 100%
+  display: flex
+  flex-direction: column
+  background-color: $background
+  padding: 0
+  margin: 0
+  justify-content: center
+  align-items: center
+  gap: 0.5rem
+
+header
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  font-size: clamp(0.75rem, 1vmin, 1.5rem)
+
+  h1
+    font-style: italic
+
+  .wordmark-image-container
+    margin-top: 1.5rem
+    filter: brightness(1.5)
+
+    img
+      width: 100%
+
+.input-controls-container
+  display: flex
+  flex-direction: column
+  gap: 0.5rem
+  display: flex
+  align-items: center
+  justify-content: center
+
+.input-sub-controls-container
+  display: flex
+  gap: 1rem
+  align-items: center
+
+.patch-notes-search
+  display: flex
+  flex-direction: column
+  justify-content: center
+  gap: 0.5rem
+  align-items: center
+
+  a
+    opacity: 0.6
+    transition: opacity 1s
+
+    &:hover
+        opacity: 1
+
+    .version-number
+      font-weight: bold
+      color: $erisred
+
+
+#patch-notes-link
+  margin-top: 1rem
+  margin-bottom: 1rem
+  text-shadow: #FFF 0px 0px 1px
+  transition: text-shadow 1s ease-in opacity 1s
+
+  &:hover
+    text-shadow: #FFF 0px 0px 2rem
+    // animation: shaking 0.1s infinite
+
+#patch-notes-link,
+#randomize-button
+  color: $text
+  font-family: "victor mono"
+  font-size: 1vmin
+  text-decoration: none
+
+#version-patch-toggle, label
+  cursor: pointer
+  font-size: clamp(1rem, 1vmin, 2rem)
+
+#randomize-button
+  appearance: none
+  background-color: transparent
+  width: max-content
+  border: 1px solid $text
+  padding: 0.15rem 0.35rem
+  cursor: pointer
+  // border-radius: 0.25rem
+  font-size: 1rem
+
+#patch-notes-input
+  padding-bottom: 0.1rem
+  font-size: clamp(1rem, 2.5vmin, 2rem)
+
+  span
+    display: inline-block
+
+footer
+  margin: 2rem 0
+  opacity: 0.5
+  transition: opacity 0.25s
+  font-size: clamp(0.75rem, 1vmin, 2rem)
+
+  &:hover
+    opacity: 1
+
+  p
+    text-align: center
+    display: inline-block
+
+// animation?
+
+@keyframes shaking
+  0%
+    transform: translate(0, 0)
+  25%
+    transform: translateX(1px)
+  50%
+    transform: translate(0, 0)
+  75%
+    transform: translateX(-1px)
+  100%
+    transform: translate(0, 0)
+
+// aaaaaamediaquery
+
+@media (prefers-reduced-motion: reduce)
+  #patch-notes-link:hover
+    animation: none
