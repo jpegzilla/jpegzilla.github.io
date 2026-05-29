@@ -2,7 +2,7 @@ this website uses the a font called "fs jenson one" by opipik for the "patch not
 https://fontstruct.com/fontstructors/759789/opipik
 
 and another font called "victor mono" for all the other text:
-https://fontstruct.com/fontstructors/759789/opipik
+https://rubjo.github.io/victor-mono/
 
 the other stuff is all me baybee
 
