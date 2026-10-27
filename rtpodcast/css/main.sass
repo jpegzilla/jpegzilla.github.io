@@ -1,0 +1,188 @@
+@font-face
+  font-family: "crimson text", serif
+  src: url("./../assets/crimsontext_r.ttf") format('ttf'), url("./../assets/crimsontext_r.ttf") format('ttf'), url("./assets/crimsontext_r.ttf") format('ttf'), url("assets/crimsontext_r.ttf") format('ttf'), url("https://jpegzilla.com/rtpodcast/assets/crimsontext_r.ttf") format('ttf')
+
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+// vars
+
+$text: #eee
+$secondarytext: #999
+$background: #111
+$border: #555
+$erisred: hsl(335.09, 100.00%, 43.92%)
+
+// main container and stuff
+
+html, body
+  margin: 0
+  padding: 0
+
+a
+  color: $erisred
+
+  &:focus, &:focus-within
+    outline: 1px solid $erisred
+    outline-offset: 0.25em
+
+input
+  accent-color: $erisred
+
+b
+  flex-grow: 1
+
+body
+  min-height: 100vh
+  height: 100vh
+  overflow: hidden
+  overflow-y: auto
+  width: 100vw
+  color: $text
+  font-family: "crimson text"
+  background-color: $background
+
+  overflow-y: auto
+
+  &::-webkit-scrollbar
+    width: 1rem
+    display: block
+    background-color: transparent
+
+  &::-webkit-scrollbar-track
+    -webkit-box-shadow: inset 0 0 10px 10px transparent
+    box-shadow: inset 0 0 10px 10px transparent
+    border: solid 5px transparent
+    width: 6px !important
+    display: block
+
+  &::-webkit-scrollbar-thumb
+    -webkit-box-shadow: inset 0 0 10px 10px $text
+    box-shadow: inset 0 0 10px 10px $text
+    border: solid 5px transparent
+
+  &::-webkit-scrollbar-corner, &::-webkit-resizer
+    display: none
+
+h1
+  font-weight: normal
+
+.background
+  width: 100%
+  height: 100%
+  position: absolute
+  top: 0
+  left: 0
+  z-index: -1
+  // background-color: green
+
+main
+  width: 100%
+  height: auto
+  min-height: 100%
+  display: flex
+  flex-direction: column
+  padding: 0
+  margin: 0
+  justify-content: center
+  align-items: center
+  gap: 0.5rem
+  text-align: center
+  font-size : clamp(1rem, 10vw, 2rem)
+  padding: 0 2rem
+
+ul
+  list-style-type: none
+  overflow-y: auto
+  overflow-x: hidden
+  max-height: 100%
+  padding-bottom: calc(1ex + 6rem)
+  padding-top: 1rem
+
+.header-container
+  margin-top: 6rem
+  line-height: 1
+
+.list-container
+  z-index: 1
+  position: relative
+  overflow: hidden
+  max-height: 50%
+
+  // &::after
+  //   pointer-events: none
+  //   width: 100%
+  //   z-index: 2
+  //   left: 0
+  //   right: 0
+  //   height: 6rem
+  //   position: absolute
+  //   bottom: 0
+  //   content: ''
+  //   background-image: linear-gradient(to bottom, transparent, $background)
+
+footer
+  padding: 2rem
+  font-size: 1.5rem
+
+ul
+  display: flex
+  flex-direction: column
+  text-align: center
+  align-items: center
+  gap: 1.5rem
+  line-height: 1.25
+  padding: 2rem 1.5rem
+
+  li
+    vertical-align: top
+    max-width: max-content
+    text-box-trim: trim-both
+
+    a
+      border-bottom: 1px dotted $text
+      text-decoration: none
+      color: $text
+      width: 100%
+      transition: 0.1s color
+
+      .go-arrow
+        display: inline-block
+        transition: 0.1s ease-out padding-left
+
+      &:hover, &:focus, &:focus-within
+        color: $erisred
+
+        .go-arrow
+          padding-left: 0.25rem
+
+        .supporting-text
+          color: $erisred
+
+      &.has-no-link
+        // border-bottom: 1px wavy $erisred
+        opacity: 0.5
+        transition: 0.2s ease opacity
+        text-decoration: wavy
+
+        &:hover
+          opacity: 1
+          color: $text
+
+          .episode-number,
+          .supporting-text
+            color: $text
+
+        .go-arrow
+          display: none
+
+    .episode-number
+      font-size: 3rem
+      color: $erisred
+      transition: 0.1s color
+
+    .supporting-text
+      color: $secondarytext
+      transition: 0.1s color

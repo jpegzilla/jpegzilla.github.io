@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link rel="icon" href="../favicon.ico" />
+
+    <meta
+      name="description"
+      content="the answer to the question &ldquo;what rooster teeth podcasts aired on todays date?&rdquo;"
+    />
+    <meta name="author" content="jpegzilla" />
+    <meta name="robots" content="index, follow" />
+    <meta
+      property="og:description"
+      content="the answer to the question &ldquo;what rooster teeth podcasts aired on todays date?&rdquo;"
+    />
+    <meta property="og:url" content="https://jpegzilla.com/rtpodcast" />
+    <meta property="og:site_name" content="rooster teeth podcast calendar" />
+    <meta property="og:image" content="./screenshots/example.jpg" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:site" content="@jpegzilla" />
+    <meta name="twitter:creator" content="@jpegzilla" />
+    <meta name="twitter:title" content="rooster teeth podcast calendar" />
+    <meta
+      name="twitter:description"
+      content="the answer to the question &ldquo;what rooster teeth podcasts aired on todays date?&rdquo;"
+    />
+    <meta name="twitter:image" content="./screenshots/example.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="application-name" content="jpegzilla.com/rtpodcast" />
+
+    <link rel="author" href="http://jpegzilla.com/humans.txt" />
+
+    <title>rooster teeth podcast calendar</title>
+    <link rel="stylesheet" href="./css/main.min.css" />
+  </head>
+  <body>
+    <div class="background"></div>
+    <main>
+      <b></b>
+      <div class="header-container">
+        <header>
+          <h1>
+            rooster teeth podcast calendar for
+            <span id="todaysDate">00/00</span>
+          </h1>
+        </header>
+        <div class="list-container">
+          <ul id="podcastList"></ul>
+        </div>
+      </div>
+      <b></b>
+      <footer>
+        <p class="download-link">
+          want these to appear within your calendar tool of choice?
+          <a href="#" id="downloadICS"
+            >click here to download the .ics / calendar file</a
+          >
+        </p>
+        <p>
+          created by
+          <a href="../" target="_blank" rel="noreferrer">jpegzilla</a>
+          ⚹ podcast data from
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://docs.google.com/spreadsheets/d/1X-KmXMChWeAdNXTUeIrTSy0ZDCn9SMC2rbt7KnuyOAA/edit?gid=0#gid=0"
+            >this spreadsheet</a
+          >
+        </p>
+      </footer>
+    </main>
+    <script src="./scripts/main.mjs" type="module" charset="utf-8"></script>
+  </body>
+</html>

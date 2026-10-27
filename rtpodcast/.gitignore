@@ -1,0 +1,4 @@
+*.csv
+yarn.lock
+node_modules
+*.ics
