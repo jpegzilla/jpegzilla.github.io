@@ -63,9 +63,11 @@ const createCalendar = events => {
         month: date[0],
         day: date[1],
         year: date[2],
-        url: event.youtubeLink,
+        url: event.youtubeLink || event.roosterTeethLink || '',
         episodeNumber: event.episodeNumber,
-        episodeTitle: event.episodeTitle,
+        episodeTitle: `${
+          event.youtubeLink || event.roosterTeethLink || '(no link available)'
+        } - ${event.episodeTitle}`,
       })
     })
     .join('\n')
