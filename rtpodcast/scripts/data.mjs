@@ -8431,14 +8431,4 @@ export default [
     episodeTitle:
       'Rooster Teeth kicks off with a gamerscore challenge issued to Geoff by Burnie',
   },
-  {
-    episodeNumber: '',
-    episodeDate: '',
-    roosterTeethLink: 'Total:',
-    youtubeLink: '',
-    duration: '127:09:01',
-    postShowLink: 'Total:',
-    guests: [],
-    episodeTitle: '',
-  },
 ]

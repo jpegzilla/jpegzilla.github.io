@@ -23,14 +23,28 @@ const createICSEvent = ({
   episodeNumber,
   episodeTitle,
 }) => {
+  console.log({
+    day,
+    month,
+    year,
+    formatted: `${year}${month.toString().padStart(2, '0')}${day
+      .toString()
+      .padStart(2, '0')}`,
+  })
   const formattedDate = buildICSDate()
 
   return `BEGIN:VEVENT
 DTSTAMP:${formattedDate}
 UID:${formattedDate}+${uuidv4()}
-DTSTART;VALUE=DATE:${year}${month}${day}
+DTSTART;VALUE=DATE:${year}${month.toString().padStart(2, '0')}${day
+    .toString()
+    .padStart(2, '0')}
 RRULE:FREQ=YEARLY;BYMONTH=${month};BYMONTHDAY=${day}
-DTEND;VALUE=DATE:${year}${month}${parseInt(day) + 1}
+DTEND;VALUE=DATE:${year}${month.toString().padStart(2, '0')}${(
+    parseInt(day) + 1
+  )
+    .toString()
+    .padStart(2, '0')}
 SUMMARY:RT podcast episode #${episodeNumber}
 URL:${url}
 DESCRIPTION:${episodeTitle}
